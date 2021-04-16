@@ -1192,16 +1192,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                keyCredential:
-                  $ref: '#/components/schemas/microsoft.graph.keyCredential'
-                passwordCredential:
-                  $ref: '#/components/schemas/microsoft.graph.passwordCredential'
-                proof:
-                  type: string
-              additionalProperties:
-                type: object
+              $ref: '#/components/schemas/microsoft.graph.application.addKeyParameters'
         required: true
       responses:
         '200':
@@ -18553,6 +18544,18 @@ paths:
       x-ms-docs-operation-type: operation
 components:
   schemas:
+    microsoft.graph.application.addKeyParameters:
+      title: addKeyParameters
+      type: object
+      properties:
+        keyCredential:
+          $ref: '#/components/schemas/microsoft.graph.keyCredential'
+        passwordCredential:
+          $ref: '#/components/schemas/microsoft.graph.passwordCredential'
+        proof:
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.application:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
