@@ -1,0 +1,530 @@
+{
+  "Get-CreatedObject": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/createdObjects"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-CreatedObjectByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/createdObjects/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-DirectReport": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/directReports"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-DirectReportByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/directReports/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-Extension": {
+    "ParameterSets": {
+      "-userid -todoTaskListid -todoTaskid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions"
+      ],
+      "-userid -todoTaskListid -todoTaskid -extensionid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions/{extension-id}"
+      ],
+      "-userid -todoTaskListid -extensionid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/extensions/{extension-id}"
+      ],
+      "-userid -todoTaskListid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/extensions"
+      ],
+      "-userid -extensionid": ["/users/{user-id}/extensions/{extension-id}"],
+      "-userid": ["/users/{user-id}/extensions"]
+    },
+    "TypeName": "todo"
+  },
+  "Get-LicenseDetail": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/licenseDetails"],
+      "-userid -licenseDetailsid": [
+        "/users/{user-id}/licenseDetails/{licenseDetails-id}"
+      ]
+    },
+    "TypeName": "licenseDetails"
+  },
+  "Get-LinkedResource": {
+    "ParameterSets": {
+      "-userid -todoTaskListid -todoTaskid -linkedResourceid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources/{linkedResource-id}"
+      ],
+      "-userid -todoTaskListid -todoTaskid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "Get-List": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/todo/lists"],
+      "-userid -todoTaskListid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "Get-Manager": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/manager"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-ManagerByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/manager/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-MasterCategory": {
+    "ParameterSets": {
+      "-userid -outlookCategoryid": [
+        "/users/{user-id}/outlook/masterCategories/{outlookCategory-id}"
+      ],
+      "-userid": ["/users/{user-id}/outlook/masterCategories"]
+    },
+    "TypeName": "outlookUser"
+  },
+  "Get-MemberOf": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/memberOf"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-MemberOfByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/memberOf/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-Oauth2PermissionGrant": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/oauth2PermissionGrants"]
+    },
+    "TypeName": "oAuth2PermissionGrant"
+  },
+  "Get-Oauth2PermissionGrantByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/oauth2PermissionGrants/$ref"]
+    },
+    "TypeName": "oAuth2PermissionGrant"
+  },
+  "Get-Outlook": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/outlook"]
+    },
+    "TypeName": "outlookUser"
+  },
+  "Get-OwnedDevice": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/ownedDevices"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-OwnedDeviceByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/ownedDevices/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-OwnedObject": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/ownedObjects"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-OwnedObjectByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/ownedObjects/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-Photo": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/photo", "/users/{user-id}/photos"],
+      "-userid -profilePhotoid": ["/users/{user-id}/photos/{profilePhoto-id}"]
+    },
+    "TypeName": "profilePhoto"
+  },
+  "Get-PhotoValue": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/photo/$value"],
+      "-userid -profilePhotoid": [
+        "/users/{user-id}/photos/{profilePhoto-id}/$value"
+      ]
+    },
+    "TypeName": "profilePhoto"
+  },
+  "Get-RegisteredDevice": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/registeredDevices"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-RegisteredDeviceByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/registeredDevices/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-Setting": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/settings"]
+    },
+    "TypeName": "userSettings"
+  },
+  "Get-ShiftPreference": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/settings/shiftPreferences"]
+    },
+    "TypeName": "userSettings"
+  },
+  "Get-Task": {
+    "ParameterSets": {
+      "-userid -todoTaskListid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks"
+      ],
+      "-userid -todoTaskListid -todoTaskid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "Get-Todo": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/todo"]
+    },
+    "TypeName": "todo"
+  },
+  "Get-TransitiveMemberOf": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/transitiveMemberOf"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-TransitiveMemberOfByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/transitiveMemberOf/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Get-User": {
+    "ParameterSets": {
+      " ": ["/users"],
+      "-userid": ["/users/{user-id}"]
+    },
+    "TypeName": "user"
+  },
+  "New-CreatedObjectByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/createdObjects/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "New-DirectReportByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/directReports/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "New-Extension": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/extensions"],
+      "-userid -todoTaskListid -todoTaskid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions"
+      ],
+      "-userid -todoTaskListid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/extensions"
+      ]
+    },
+    "TypeName": "extension"
+  },
+  "New-LicenseDetail": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/licenseDetails"]
+    },
+    "TypeName": "licenseDetails"
+  },
+  "New-LinkedResource": {
+    "ParameterSets": {
+      "-userid -todoTaskListid -todoTaskid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "New-List": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/todo/lists"]
+    },
+    "TypeName": "todo"
+  },
+  "New-MasterCategory": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/outlook/masterCategories"]
+    },
+    "TypeName": "outlookUser"
+  },
+  "New-MemberOfByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/memberOf/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "New-Oauth2PermissionGrantByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/oauth2PermissionGrants/$ref"]
+    },
+    "TypeName": "oAuth2PermissionGrant"
+  },
+  "New-OwnedDeviceByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/ownedDevices/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "New-OwnedObjectByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/ownedObjects/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "New-Photo": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/photos"]
+    },
+    "TypeName": "profilePhoto"
+  },
+  "New-RegisteredDeviceByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/registeredDevices/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "New-Task": {
+    "ParameterSets": {
+      "-userid -todoTaskListid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "New-TransitiveMemberOfByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/transitiveMemberOf/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "New-User": {
+    "ParameterSets": {
+      " ": ["/users"]
+    },
+    "TypeName": "user"
+  },
+  "Remove-Extension": {
+    "ParameterSets": {
+      "-userid -extensionid": ["/users/{user-id}/extensions/{extension-id}"],
+      "-userid -todoTaskListid -todoTaskid -extensionid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions/{extension-id}"
+      ],
+      "-userid -todoTaskListid -extensionid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/extensions/{extension-id}"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "Remove-LicenseDetail": {
+    "ParameterSets": {
+      "-userid -licenseDetailsid": [
+        "/users/{user-id}/licenseDetails/{licenseDetails-id}"
+      ]
+    },
+    "TypeName": "licenseDetails"
+  },
+  "Remove-LinkedResource": {
+    "ParameterSets": {
+      "-userid -todoTaskListid -todoTaskid -linkedResourceid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources/{linkedResource-id}"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "Remove-List": {
+    "ParameterSets": {
+      "-userid -todoTaskListid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "Remove-ManagerByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/manager/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Remove-MasterCategory": {
+    "ParameterSets": {
+      "-userid -outlookCategoryid": [
+        "/users/{user-id}/outlook/masterCategories/{outlookCategory-id}"
+      ]
+    },
+    "TypeName": "outlookUser"
+  },
+  "Remove-Outlook": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/outlook"]
+    },
+    "TypeName": "outlookUser"
+  },
+  "Remove-Photo": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/photo"],
+      "-userid -profilePhotoid": ["/users/{user-id}/photos/{profilePhoto-id}"]
+    },
+    "TypeName": "profilePhoto"
+  },
+  "Remove-Setting": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/settings"]
+    },
+    "TypeName": "userSettings"
+  },
+  "Remove-ShiftPreference": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/settings/shiftPreferences"]
+    },
+    "TypeName": "userSettings"
+  },
+  "Remove-Task": {
+    "ParameterSets": {
+      "-userid -todoTaskListid -todoTaskid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "Remove-Todo": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/todo"]
+    },
+    "TypeName": "todo"
+  },
+  "Remove-User": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}"]
+    },
+    "TypeName": "user"
+  },
+  "Set-ManagerByRef": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/manager/$ref"]
+    },
+    "TypeName": "directoryObject"
+  },
+  "Set-PhotoValue": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/photo/$value"],
+      "-userid -profilePhotoid": [
+        "/users/{user-id}/photos/{profilePhoto-id}/$value"
+      ]
+    },
+    "TypeName": "profilePhoto"
+  },
+  "Update-Extension": {
+    "ParameterSets": {
+      "-userid -extensionid": ["/users/{user-id}/extensions/{extension-id}"],
+      "-userid -todoTaskListid -todoTaskid -extensionid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions/{extension-id}"
+      ],
+      "-userid -todoTaskListid -extensionid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/extensions/{extension-id}"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "Update-LicenseDetail": {
+    "ParameterSets": {
+      "-userid -licenseDetailsid": [
+        "/users/{user-id}/licenseDetails/{licenseDetails-id}"
+      ]
+    },
+    "TypeName": "licenseDetails"
+  },
+  "Update-LinkedResource": {
+    "ParameterSets": {
+      "-userid -todoTaskListid -todoTaskid -linkedResourceid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources/{linkedResource-id}"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "Update-List": {
+    "ParameterSets": {
+      "-userid -todoTaskListid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "Update-MasterCategory": {
+    "ParameterSets": {
+      "-userid -outlookCategoryid": [
+        "/users/{user-id}/outlook/masterCategories/{outlookCategory-id}"
+      ]
+    },
+    "TypeName": "outlookUser"
+  },
+  "Update-Outlook": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/outlook"]
+    },
+    "TypeName": "outlookUser"
+  },
+  "Update-Photo": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/photo"],
+      "-userid -profilePhotoid": ["/users/{user-id}/photos/{profilePhoto-id}"]
+    },
+    "TypeName": "profilePhoto"
+  },
+  "Update-Setting": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/settings"]
+    },
+    "TypeName": "userSettings"
+  },
+  "Update-ShiftPreference": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/settings/shiftPreferences"]
+    },
+    "TypeName": "userSettings"
+  },
+  "Update-Task": {
+    "ParameterSets": {
+      "-userid -todoTaskListid -todoTaskid": [
+        "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}"
+      ]
+    },
+    "TypeName": "todo"
+  },
+  "Update-Todo": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}/todo"]
+    },
+    "TypeName": "todo"
+  },
+  "Update-User": {
+    "ParameterSets": {
+      "-userid": ["/users/{user-id}"]
+    },
+    "TypeName": "user"
+  }
+}

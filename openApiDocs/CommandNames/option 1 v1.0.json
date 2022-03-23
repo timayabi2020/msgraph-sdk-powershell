@@ -1,0 +1,833 @@
+{
+  "post-transitiveMemberOfByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/transitiveMemberOf/$ref",
+    "Verb": "post",
+    "TypeName": "directoryObject"
+  },
+  "get-transitiveMemberOfByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/transitiveMemberOf/$ref",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "get-extensions -userid -todoTaskListid -todoTaskid -extensionid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid",
+      "extensionid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions/{extension-id}",
+    "Verb": "get",
+    "TypeName": "todo"
+  },
+  "patch-extensions -userid -todoTaskListid -todoTaskid -extensionid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid",
+      "extensionid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions/{extension-id}",
+    "Verb": "patch",
+    "TypeName": "todo"
+  },
+  "delete-extensions -userid -todoTaskListid -todoTaskid -extensionid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid",
+      "extensionid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions/{extension-id}",
+    "Verb": "delete",
+    "TypeName": "todo"
+  },
+  "get-manager -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/manager",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "get-tasks -userid -todoTaskListid -todoTaskid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}",
+    "Verb": "get",
+    "TypeName": "todo"
+  },
+  "patch-tasks -userid -todoTaskListid -todoTaskid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}",
+    "Verb": "patch",
+    "TypeName": "todo"
+  },
+  "delete-tasks -userid -todoTaskListid -todoTaskid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}",
+    "Verb": "delete",
+    "TypeName": "todo"
+  },
+  "get-directReports -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/directReports",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "get-ownedDevices -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/ownedDevices",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "get-extensions -userid -todoTaskListid -extensionid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "extensionid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/extensions/{extension-id}",
+    "Verb": "get",
+    "TypeName": "todo"
+  },
+  "patch-extensions -userid -todoTaskListid -extensionid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "extensionid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/extensions/{extension-id}",
+    "Verb": "patch",
+    "TypeName": "todo"
+  },
+  "delete-extensions -userid -todoTaskListid -extensionid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "extensionid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/extensions/{extension-id}",
+    "Verb": "delete",
+    "TypeName": "todo"
+  },
+  "get-registeredDevices -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/registeredDevices",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "get-licenseDetails -userid -licenseDetailsid": {
+    "PathParameters": [
+      "userid",
+      "licenseDetailsid"
+    ],
+    "Path": "/users/{user-id}/licenseDetails/{licenseDetails-id}",
+    "Verb": "get",
+    "TypeName": "licenseDetails"
+  },
+  "patch-licenseDetails -userid -licenseDetailsid": {
+    "PathParameters": [
+      "userid",
+      "licenseDetailsid"
+    ],
+    "Path": "/users/{user-id}/licenseDetails/{licenseDetails-id}",
+    "Verb": "patch",
+    "TypeName": "licenseDetails"
+  },
+  "delete-licenseDetails -userid -licenseDetailsid": {
+    "PathParameters": [
+      "userid",
+      "licenseDetailsid"
+    ],
+    "Path": "/users/{user-id}/licenseDetails/{licenseDetails-id}",
+    "Verb": "delete",
+    "TypeName": "licenseDetails"
+  },
+  "get-outlook -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/outlook",
+    "Verb": "get",
+    "TypeName": "outlookUser"
+  },
+  "patch-outlook -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/outlook",
+    "Verb": "patch",
+    "TypeName": "outlookUser"
+  },
+  "delete-outlook -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/outlook",
+    "Verb": "delete",
+    "TypeName": "outlookUser"
+  },
+  "post-extensions -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/extensions",
+    "Verb": "post",
+    "TypeName": "extension"
+  },
+  "get-extensions -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/extensions",
+    "Verb": "get",
+    "TypeName": "extension"
+  },
+  "get-memberOf -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/memberOf",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "get-ownedObjects -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/ownedObjects",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "get-photo -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/photo",
+    "Verb": "get",
+    "TypeName": "profilePhoto"
+  },
+  "patch-photo -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/photo",
+    "Verb": "patch",
+    "TypeName": "profilePhoto"
+  },
+  "delete-photo -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/photo",
+    "Verb": "delete",
+    "TypeName": "profilePhoto"
+  },
+  "get-settings -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/settings",
+    "Verb": "get",
+    "TypeName": "userSettings"
+  },
+  "patch-settings -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/settings",
+    "Verb": "patch",
+    "TypeName": "userSettings"
+  },
+  "delete-settings -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/settings",
+    "Verb": "delete",
+    "TypeName": "userSettings"
+  },
+  "post-licenseDetails -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/licenseDetails",
+    "Verb": "post",
+    "TypeName": "licenseDetails"
+  },
+  "get-licenseDetails -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/licenseDetails",
+    "Verb": "get",
+    "TypeName": "licenseDetails"
+  },
+  "get-oauth2PermissionGrants -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/oauth2PermissionGrants",
+    "Verb": "get",
+    "TypeName": "oAuth2PermissionGrant"
+  },
+  "post-extensions -userid -todoTaskListid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/extensions",
+    "Verb": "post",
+    "TypeName": "todo"
+  },
+  "get-extensions -userid -todoTaskListid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/extensions",
+    "Verb": "get",
+    "TypeName": "todo"
+  },
+  "post-lists -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/todo/lists",
+    "Verb": "post",
+    "TypeName": "todo"
+  },
+  "get-lists -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/todo/lists",
+    "Verb": "get",
+    "TypeName": "todo"
+  },
+  "post-masterCategories -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/outlook/masterCategories",
+    "Verb": "post",
+    "TypeName": "outlookUser"
+  },
+  "get-masterCategories -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/outlook/masterCategories",
+    "Verb": "get",
+    "TypeName": "outlookUser"
+  },
+  "get-masterCategories -userid -outlookCategoryid": {
+    "PathParameters": [
+      "userid",
+      "outlookCategoryid"
+    ],
+    "Path": "/users/{user-id}/outlook/masterCategories/{outlookCategory-id}",
+    "Verb": "get",
+    "TypeName": "outlookUser"
+  },
+  "patch-masterCategories -userid -outlookCategoryid": {
+    "PathParameters": [
+      "userid",
+      "outlookCategoryid"
+    ],
+    "Path": "/users/{user-id}/outlook/masterCategories/{outlookCategory-id}",
+    "Verb": "patch",
+    "TypeName": "outlookUser"
+  },
+  "delete-masterCategories -userid -outlookCategoryid": {
+    "PathParameters": [
+      "userid",
+      "outlookCategoryid"
+    ],
+    "Path": "/users/{user-id}/outlook/masterCategories/{outlookCategory-id}",
+    "Verb": "delete",
+    "TypeName": "outlookUser"
+  },
+  "get-todo -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/todo",
+    "Verb": "get",
+    "TypeName": "todo"
+  },
+  "patch-todo -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/todo",
+    "Verb": "patch",
+    "TypeName": "todo"
+  },
+  "delete-todo -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/todo",
+    "Verb": "delete",
+    "TypeName": "todo"
+  },
+  "get-shiftPreferences -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/settings/shiftPreferences",
+    "Verb": "get",
+    "TypeName": "userSettings"
+  },
+  "patch-shiftPreferences -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/settings/shiftPreferences",
+    "Verb": "patch",
+    "TypeName": "userSettings"
+  },
+  "delete-shiftPreferences -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/settings/shiftPreferences",
+    "Verb": "delete",
+    "TypeName": "userSettings"
+  },
+  "post-memberOfByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/memberOf/$ref",
+    "Verb": "post",
+    "TypeName": "directoryObject"
+  },
+  "get-memberOfByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/memberOf/$ref",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "get-linkedResources -userid -todoTaskListid -todoTaskid -linkedResourceid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid",
+      "linkedResourceid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources/{linkedResource-id}",
+    "Verb": "get",
+    "TypeName": "todo"
+  },
+  "patch-linkedResources -userid -todoTaskListid -todoTaskid -linkedResourceid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid",
+      "linkedResourceid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources/{linkedResource-id}",
+    "Verb": "patch",
+    "TypeName": "todo"
+  },
+  "delete-linkedResources -userid -todoTaskListid -todoTaskid -linkedResourceid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid",
+      "linkedResourceid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources/{linkedResource-id}",
+    "Verb": "delete",
+    "TypeName": "todo"
+  },
+  "post-oauth2PermissionGrantsByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/oauth2PermissionGrants/$ref",
+    "Verb": "post",
+    "TypeName": "oAuth2PermissionGrant"
+  },
+  "get-oauth2PermissionGrantsByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/oauth2PermissionGrants/$ref",
+    "Verb": "get",
+    "TypeName": "oAuth2PermissionGrant"
+  },
+  "post-registeredDevicesByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/registeredDevices/$ref",
+    "Verb": "post",
+    "TypeName": "directoryObject"
+  },
+  "get-registeredDevicesByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/registeredDevices/$ref",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "get-createdObjects -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/createdObjects",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "post-linkedResources -userid -todoTaskListid -todoTaskid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources",
+    "Verb": "post",
+    "TypeName": "todo"
+  },
+  "get-linkedResources -userid -todoTaskListid -todoTaskid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources",
+    "Verb": "get",
+    "TypeName": "todo"
+  },
+  "get-transitiveMemberOf -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/transitiveMemberOf",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "post-users": {
+    "PathParameters": null,
+    "Path": "/users",
+    "Verb": "post",
+    "TypeName": "user"
+  },
+  "get-users": {
+    "PathParameters": null,
+    "Path": "/users",
+    "Verb": "get",
+    "TypeName": "user"
+  },
+  "post-directReportsByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/directReports/$ref",
+    "Verb": "post",
+    "TypeName": "directoryObject"
+  },
+  "get-directReportsByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/directReports/$ref",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "put-photosValue -userid -profilePhotoid": {
+    "PathParameters": [
+      "userid",
+      "profilePhotoid"
+    ],
+    "Path": "/users/{user-id}/photos/{profilePhoto-id}/$value",
+    "Verb": "put",
+    "TypeName": "profilePhoto"
+  },
+  "get-photosValue -userid -profilePhotoid": {
+    "PathParameters": [
+      "userid",
+      "profilePhotoid"
+    ],
+    "Path": "/users/{user-id}/photos/{profilePhoto-id}/$value",
+    "Verb": "get",
+    "TypeName": "profilePhoto"
+  },
+  "get-managerByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/manager/$ref",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "put-managerByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/manager/$ref",
+    "Verb": "put",
+    "TypeName": "directoryObject"
+  },
+  "delete-managerByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/manager/$ref",
+    "Verb": "delete",
+    "TypeName": "directoryObject"
+  },
+  "post-ownedDevicesByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/ownedDevices/$ref",
+    "Verb": "post",
+    "TypeName": "directoryObject"
+  },
+  "get-ownedDevicesByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/ownedDevices/$ref",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "post-extensions -userid -todoTaskListid -todoTaskid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions",
+    "Verb": "post",
+    "TypeName": "todo"
+  },
+  "get-extensions -userid -todoTaskListid -todoTaskid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid",
+      "todoTaskid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions",
+    "Verb": "get",
+    "TypeName": "todo"
+  },
+  "post-photos -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/photos",
+    "Verb": "post",
+    "TypeName": "profilePhoto"
+  },
+  "get-photos -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/photos",
+    "Verb": "get",
+    "TypeName": "profilePhoto"
+  },
+  "get-users -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}",
+    "Verb": "get",
+    "TypeName": "user"
+  },
+  "patch-users -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}",
+    "Verb": "patch",
+    "TypeName": "user"
+  },
+  "delete-users -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}",
+    "Verb": "delete",
+    "TypeName": "user"
+  },
+  "post-ownedObjectsByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/ownedObjects/$ref",
+    "Verb": "post",
+    "TypeName": "directoryObject"
+  },
+  "get-ownedObjectsByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/ownedObjects/$ref",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "get-lists -userid -todoTaskListid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}",
+    "Verb": "get",
+    "TypeName": "todo"
+  },
+  "patch-lists -userid -todoTaskListid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}",
+    "Verb": "patch",
+    "TypeName": "todo"
+  },
+  "delete-lists -userid -todoTaskListid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}",
+    "Verb": "delete",
+    "TypeName": "todo"
+  },
+  "get-photos -userid -profilePhotoid": {
+    "PathParameters": [
+      "userid",
+      "profilePhotoid"
+    ],
+    "Path": "/users/{user-id}/photos/{profilePhoto-id}",
+    "Verb": "get",
+    "TypeName": "profilePhoto"
+  },
+  "patch-photos -userid -profilePhotoid": {
+    "PathParameters": [
+      "userid",
+      "profilePhotoid"
+    ],
+    "Path": "/users/{user-id}/photos/{profilePhoto-id}",
+    "Verb": "patch",
+    "TypeName": "profilePhoto"
+  },
+  "delete-photos -userid -profilePhotoid": {
+    "PathParameters": [
+      "userid",
+      "profilePhotoid"
+    ],
+    "Path": "/users/{user-id}/photos/{profilePhoto-id}",
+    "Verb": "delete",
+    "TypeName": "profilePhoto"
+  },
+  "post-createdObjectsByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/createdObjects/$ref",
+    "Verb": "post",
+    "TypeName": "directoryObject"
+  },
+  "get-createdObjectsByRef -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/createdObjects/$ref",
+    "Verb": "get",
+    "TypeName": "directoryObject"
+  },
+  "get-extensions -userid -extensionid": {
+    "PathParameters": [
+      "userid",
+      "extensionid"
+    ],
+    "Path": "/users/{user-id}/extensions/{extension-id}",
+    "Verb": "get",
+    "TypeName": "extension"
+  },
+  "patch-extensions -userid -extensionid": {
+    "PathParameters": [
+      "userid",
+      "extensionid"
+    ],
+    "Path": "/users/{user-id}/extensions/{extension-id}",
+    "Verb": "patch",
+    "TypeName": "extension"
+  },
+  "delete-extensions -userid -extensionid": {
+    "PathParameters": [
+      "userid",
+      "extensionid"
+    ],
+    "Path": "/users/{user-id}/extensions/{extension-id}",
+    "Verb": "delete",
+    "TypeName": "extension"
+  },
+  "post-tasks -userid -todoTaskListid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks",
+    "Verb": "post",
+    "TypeName": "todo"
+  },
+  "get-tasks -userid -todoTaskListid": {
+    "PathParameters": [
+      "userid",
+      "todoTaskListid"
+    ],
+    "Path": "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks",
+    "Verb": "get",
+    "TypeName": "todo"
+  },
+  "put-photoValue -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/photo/$value",
+    "Verb": "put",
+    "TypeName": "profilePhoto"
+  },
+  "get-photoValue -userid": {
+    "PathParameters": [
+      "userid"
+    ],
+    "Path": "/users/{user-id}/photo/$value",
+    "Verb": "get",
+    "TypeName": "profilePhoto"
+  }
+}

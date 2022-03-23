@@ -1,0 +1,468 @@
+{
+  "Get-Attachment": {
+    "ParameterSets": {
+      "-userid -mailFolderid -messageid -attachmentid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments/{attachment-id}"
+      ],
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}/attachments"
+      ],
+      "-userid -messageid -attachmentid": [
+        "/users/{user-id}/messages/{message-id}/attachments/{attachment-id}"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "Get-ChildFolder": {
+    "ParameterSets": {
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders"
+      ],
+      "-userid -mailFolderid -mailFolderid1": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Get-Extension": {
+    "ParameterSets": {
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}/extensions"
+      ],
+      "-userid -messageid -extensionid": [
+        "/users/{user-id}/messages/{message-id}/extensions/{extension-id}"
+      ],
+      "-userid -mailFolderid -messageid -extensionid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions/{extension-id}"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "Get-InferenceClassification": {
+    "ParameterSets": {
+      "-userid": [
+        "/users/{user-id}/inferenceClassification"
+      ]
+    },
+    "TypeName": "inferenceClassification"
+  },
+  "Get-MailFolder": {
+    "ParameterSets": {
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}"
+      ],
+      "-userid": [
+        "/users/{user-id}/mailFolders"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Get-Message": {
+    "ParameterSets": {
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages"
+      ],
+      "-userid": [
+        "/users/{user-id}/messages"
+      ],
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "Get-MessageRule": {
+    "ParameterSets": {
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messageRules"
+      ],
+      "-userid -mailFolderid -messageRuleid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messageRules/{messageRule-id}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Get-MessageValue": {
+    "ParameterSets": {
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}/$value"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/$value"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "Get-MultiValueExtendedProperty": {
+    "ParameterSets": {
+      "-userid -messageid -multiValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -mailFolderid -messageid -multiValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -mailFolderid -multiValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties"
+      ],
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}/multiValueExtendedProperties"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "Get-Override": {
+    "ParameterSets": {
+      "-userid": [
+        "/users/{user-id}/inferenceClassification/overrides"
+      ],
+      "-userid -inferenceClassificationOverrideid": [
+        "/users/{user-id}/inferenceClassification/overrides/{inferenceClassificationOverride-id}"
+      ]
+    },
+    "TypeName": "inferenceClassification"
+  },
+  "Get-SingleValueExtendedProperty": {
+    "ParameterSets": {
+      "-userid -messageid -singleValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties"
+      ],
+      "-userid -mailFolderid -messageid -singleValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}/singleValueExtendedProperties"
+      ],
+      "-userid -mailFolderid -singleValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "New-Attachment": {
+    "ParameterSets": {
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}/attachments"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "New-ChildFolder": {
+    "ParameterSets": {
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "New-Extension": {
+    "ParameterSets": {
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}/extensions"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "New-MailFolder": {
+    "ParameterSets": {
+      "-userid": [
+        "/users/{user-id}/mailFolders"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "New-Message": {
+    "ParameterSets": {
+      "-userid": [
+        "/users/{user-id}/messages"
+      ],
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "New-MessageRule": {
+    "ParameterSets": {
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messageRules"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "New-MultiValueExtendedProperty": {
+    "ParameterSets": {
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties"
+      ],
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}/multiValueExtendedProperties"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "New-Override": {
+    "ParameterSets": {
+      "-userid": [
+        "/users/{user-id}/inferenceClassification/overrides"
+      ]
+    },
+    "TypeName": "inferenceClassification"
+  },
+  "New-SingleValueExtendedProperty": {
+    "ParameterSets": {
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties"
+      ],
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}/singleValueExtendedProperties"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Remove-Attachment": {
+    "ParameterSets": {
+      "-userid -mailFolderid -messageid -attachmentid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments/{attachment-id}"
+      ],
+      "-userid -messageid -attachmentid": [
+        "/users/{user-id}/messages/{message-id}/attachments/{attachment-id}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Remove-ChildFolder": {
+    "ParameterSets": {
+      "-userid -mailFolderid -mailFolderid1": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Remove-Extension": {
+    "ParameterSets": {
+      "-userid -mailFolderid -messageid -extensionid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions/{extension-id}"
+      ],
+      "-userid -messageid -extensionid": [
+        "/users/{user-id}/messages/{message-id}/extensions/{extension-id}"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "Remove-InferenceClassification": {
+    "ParameterSets": {
+      "-userid": [
+        "/users/{user-id}/inferenceClassification"
+      ]
+    },
+    "TypeName": "inferenceClassification"
+  },
+  "Remove-MailFolder": {
+    "ParameterSets": {
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Remove-Message": {
+    "ParameterSets": {
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "Remove-MessageRule": {
+    "ParameterSets": {
+      "-userid -mailFolderid -messageRuleid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messageRules/{messageRule-id}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Remove-MultiValueExtendedProperty": {
+    "ParameterSets": {
+      "-userid -messageid -multiValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -mailFolderid -messageid -multiValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -mailFolderid -multiValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Remove-Override": {
+    "ParameterSets": {
+      "-userid -inferenceClassificationOverrideid": [
+        "/users/{user-id}/inferenceClassification/overrides/{inferenceClassificationOverride-id}"
+      ]
+    },
+    "TypeName": "inferenceClassification"
+  },
+  "Remove-SingleValueExtendedProperty": {
+    "ParameterSets": {
+      "-userid -mailFolderid -messageid -singleValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -mailFolderid -singleValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -messageid -singleValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Set-MessageValue": {
+    "ParameterSets": {
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}/$value"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/$value"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "Update-Attachment": {
+    "ParameterSets": {
+      "-userid -mailFolderid -messageid -attachmentid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments/{attachment-id}"
+      ],
+      "-userid -messageid -attachmentid": [
+        "/users/{user-id}/messages/{message-id}/attachments/{attachment-id}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Update-ChildFolder": {
+    "ParameterSets": {
+      "-userid -mailFolderid -mailFolderid1": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Update-Extension": {
+    "ParameterSets": {
+      "-userid -mailFolderid -messageid -extensionid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions/{extension-id}"
+      ],
+      "-userid -messageid -extensionid": [
+        "/users/{user-id}/messages/{message-id}/extensions/{extension-id}"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "Update-InferenceClassification": {
+    "ParameterSets": {
+      "-userid": [
+        "/users/{user-id}/inferenceClassification"
+      ]
+    },
+    "TypeName": "inferenceClassification"
+  },
+  "Update-MailFolder": {
+    "ParameterSets": {
+      "-userid -mailFolderid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Update-Message": {
+    "ParameterSets": {
+      "-userid -messageid": [
+        "/users/{user-id}/messages/{message-id}"
+      ],
+      "-userid -mailFolderid -messageid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}"
+      ]
+    },
+    "TypeName": "message"
+  },
+  "Update-MessageRule": {
+    "ParameterSets": {
+      "-userid -mailFolderid -messageRuleid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messageRules/{messageRule-id}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Update-MultiValueExtendedProperty": {
+    "ParameterSets": {
+      "-userid -messageid -multiValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -mailFolderid -messageid -multiValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -mailFolderid -multiValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  },
+  "Update-Override": {
+    "ParameterSets": {
+      "-userid -inferenceClassificationOverrideid": [
+        "/users/{user-id}/inferenceClassification/overrides/{inferenceClassificationOverride-id}"
+      ]
+    },
+    "TypeName": "inferenceClassification"
+  },
+  "Update-SingleValueExtendedProperty": {
+    "ParameterSets": {
+      "-userid -mailFolderid -messageid -singleValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -mailFolderid -singleValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}"
+      ],
+      "-userid -messageid -singleValueLegacyExtendedPropertyid": [
+        "/users/{user-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}"
+      ]
+    },
+    "TypeName": "mailFolder"
+  }
+}
