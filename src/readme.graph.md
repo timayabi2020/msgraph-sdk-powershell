@@ -558,6 +558,21 @@ directive:
 
         return $;
       }
+# Modify generated .cs Identity model classes.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5CModels%2F\w*Identity.TypeConverter.cs/gm))
+      {
+        return $;
+      } else {
+        let dynamicEntityIdPropertyImplementation = 'jsonString = jsonString.Insert(1, $"\\"{type.Name.TrimStart("MicrosoftGraph".ToCharArray()).ToLowerInvariant()}-id\\" : \\"{sourceValue.Id}\\",")'
+        let fromJsonStringRegex = /(return.*Identity\.FromJsonString\()(.*)\);/gmi
+        if($.match(fromJsonStringRegex)) {
+          $ = $.replace(fromJsonStringRegex, `\n var jsonString = $2;\n $1${dynamicEntityIdPropertyImplementation})`);
+        }
+        return $;
+      }
 # Modify generated .cs cmdlets.
   - from: source-file-csharp
     where: $
