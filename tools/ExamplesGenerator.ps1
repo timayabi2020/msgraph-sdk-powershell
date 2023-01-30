@@ -48,8 +48,8 @@ function Get-FilesByProfile {
     )
 
 
-    $ModulesToGenerate | ForEach-Object {
-        $ModuleName = $_
+     $ModulesToGenerate | ForEach-Object {
+         $ModuleName = $_
         $ModulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\$GraphProfilePath"
         $OpenApiFile = Join-Path $PSScriptRoot "..\openApiDocs\v1.0\$ModuleName.yml"
         #test this path first before proceeding
@@ -136,7 +136,6 @@ function Get-ExternalDocs-Url {
         if (-not([string]::IsNullOrEmpty($ManualExternalDocsUrl))) {
     
             WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ManualExternalDocsUrl -Command $Command -GraphProfilePath $GraphProfilePath
-            #Write-Host $GraphProfilePath
         }
 
     }
@@ -146,7 +145,21 @@ function Get-ExternalDocs-Url {
                 foreach ($path in $openApiContent.paths) {
                     $MethodName = $Method | Out-String
                
-                    $externalDocUrl = $path[$UriPath].get.externalDocs.url 
+                    $externalDocUrl = $path[$UriPath].get.externalDocs.url
+                    if([string]::IsNullOrEmpty($externalDocUrl)) {
+                       $PathSplit = $UriPath.Split("/")
+                       $PathToAppend = $PathSplit[$PathSplit.Count - 1]
+                       if($PathToAppend.StartsWith("{") -or $PathToAppend.StartsWith("$")){
+                        #skip
+                       }else{
+                       $PathRebuild = "/"+$PathSplit[0]
+                       for($i = 1; $i -lt $PathSplit.Count - 1; $i++){
+                        $PathRebuild += $PathSplit[$i]+"/" 
+                       }
+                       $RebuiltPath =  $PathRebuild + "microsoft.graph." +$PathToAppend
+                       $externalDocUrl = $path[$RebuiltPath].get.externalDocs.url
+                    }
+                    }
                     if ($MethodName -eq "POST") {
                         $externalDocUrl = $path[$UriPath].post.externalDocs.url 
                     }
@@ -169,7 +182,7 @@ function Get-ExternalDocs-Url {
                         if (-not (Test-Path $MissingExternalDocsUrlFolder)) {
                             Write-Error "File: $MissingExternalDocsUrlFolder."
                             #New-Item -Path $MissingExternalDocsUrlFolder -ItemType File
-                            "Graph profile, Graph Module, Command, UriPath, ExternalUrlDoc" | Out-File -FilePath  $MissingExternalDocsUrlFolder -Encoding ASCII
+                            "Graph profile, Graph Module, Command, UriPath, ExternalUrlDoc " | Out-File -FilePath  $MissingExternalDocsUrlFolder -Encoding ASCII
                         }
 
                         #Check if module already exists
