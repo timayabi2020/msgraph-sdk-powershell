@@ -9,3 +9,18 @@ Update-MgBetaTeamworkTeamAppSetting -BodyParameter $params
 ```
 This example shows how to use the Update-MgBetaTeamworkTeamAppSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Allow Teams users to request admins for access to certain Teams Apps
+
+```powershell
+Import-Module Microsoft.Graph.Beta.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.teamsAppSettings"
+	AllowUserRequestsForAppAccess = "true"
+}
+
+Update-MgBetaTeamworkTeamAppSetting -BodyParameter $params
+```
+
+This example shows how to use the Update-MgBetaTeamworkTeamAppSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
