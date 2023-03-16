@@ -3,12 +3,12 @@
 
 $title = $env:Title
 $body = $env:Body
-$base = $env:BaseBranch
+$baseBranch = $env:BaseBranch
 $baseBranchParameter = ""
 
-if (![string]::IsNullOrEmpty($env:BaseBranch))
+if (![string]::IsNullOrEmpty($baseBranch))
 {
-    $baseBranchParameter = "-B $env:BaseBranch" # optionally pass the base branch if provided as the PR will target the default branch otherwise
+    $baseBranchParameter = "-B $baseBranch" # optionally pass the base branch if provided as the PR will target the default branch otherwise
 }
 Write-Host "Base branch => " $base " Title " $body
 # Code owners will be added automatically as reviewers.
