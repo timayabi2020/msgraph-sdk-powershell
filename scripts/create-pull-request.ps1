@@ -10,7 +10,7 @@ if (![string]::IsNullOrEmpty($baseBranch))
 {
     $baseBranchParameter = "-B $baseBranch" # optionally pass the base branch if provided as the PR will target the default branch otherwise
 }
-Write-Host "Base branch => " $base " Title " $body
+Write-Host "Base branch => " $baseBranch " Title " $body
 # Code owners will be added automatically as reviewers.
 Invoke-Expression "gh auth login" # login to GitHub
 Invoke-Expression "gh pr create -t ""$title"" -b ""$body"" $baseBranchParameter | Write-Host"

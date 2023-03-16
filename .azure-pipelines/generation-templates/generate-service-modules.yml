@@ -168,7 +168,7 @@ jobs:
           displayName: 'Create Pull Request for generated build'
           env:
             GITHUB_TOKEN: $(GITHUB_TOKEN)
-            BaseBranch: ${{ parameters.BaseBranch }}
+            BaseBranch: $(BaseBranch)
             Title: '[v1] Weekly OpenApiDocs Refresh'
             Body: 'This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR.'
 
