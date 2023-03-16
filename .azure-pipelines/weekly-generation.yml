@@ -33,15 +33,15 @@ schedules:
     always: true
 
 stages:
-  - stage: DownloadOpenAPIDocs
-    displayName: Download OpenAPI docs
-    jobs:
-      - template: common-templates/download-openapi-docs.yml
-        parameters:
-          Branch: $(Branch)
-          BaseBranch: $(BaseBranch)
-          BuildAgent: $(BuildAgent)
-          SkipForceRefresh: $(SkipForceRefresh)
+  # - stage: DownloadOpenAPIDocs
+  #   displayName: Download OpenAPI docs
+  #   jobs:
+  #     - template: common-templates/download-openapi-docs.yml
+  #       parameters:
+  #         Branch: $(Branch)
+  #         BaseBranch: $(BaseBranch)
+  #         BuildAgent: $(BuildAgent)
+  #         SkipForceRefresh: $(SkipForceRefresh)
 
   - stage: GenerateServiceModules
     displayName: Generate service modules
