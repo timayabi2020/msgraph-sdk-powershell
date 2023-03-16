@@ -45,7 +45,7 @@ stages:
 
   - stage: GenerateServiceModules
     displayName: Generate service modules
-    condition: succeeded()
+    #condition: succeeded()
     jobs:
       - template: generation-templates/generate-service-modules.yml
         parameters:
