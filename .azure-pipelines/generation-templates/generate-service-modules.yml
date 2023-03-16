@@ -27,7 +27,7 @@ parameters:
     default: false
   - name: GeneratePullRequest
     type: boolean
-    default: false
+    default: true
   - name: DOCSBRANCH
     type: string
     default: "DocsGeneration"
@@ -39,7 +39,7 @@ jobs:
   - job: GenerateServiceModules
     displayName: Service module generation
     timeoutInMinutes: 840
-    condition: and(succeeded(), ne(stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
+    #condition: and(succeeded(), ne(stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
     variables:
       Branch: ${{ parameters.Branch }}
       ModulesToGenerate: ${{ parameters.ModulesToGenerate }}
@@ -58,110 +58,110 @@ jobs:
         parameters:
           TargetBranch: $(Branch)
 
-      - template: ../common-templates/install-tools-template.yml
-      - template: ../common-templates/security-prechecks-template.yml
+      # - template: ../common-templates/install-tools-template.yml
+      # - template: ../common-templates/security-prechecks-template.yml
 
-      - task: PowerShell@2
-        displayName: Build auth module
-        inputs:
-          targetType: inline
-          pwsh: true
-          script: |
-            [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
-            . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning:$EnableSigning -BuildWhenEqual -RepositoryName "LocalNugetFeed"
+      # - task: PowerShell@2
+      #   displayName: Build auth module
+      #   inputs:
+      #     targetType: inline
+      #     pwsh: true
+      #     script: |
+      #       [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
+      #       . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning:$EnableSigning -BuildWhenEqual -RepositoryName "LocalNugetFeed"
 
-      - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
-        displayName: ESRP DLL strong name (Auth Module)
-        condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
-        inputs:
-          ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
-          FolderPath: $(AuthModulePath)
-          Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll'
-          signConfigType: inlineSignParams
-          inlineOperation: |
-            [
-                {
-                    "keyCode": "CP-233863-SN",
-                    "operationSetCode": "StrongNameSign",
-                    "parameters": [],
-                    "toolName": "sign",
-                    "toolVersion": "1.0"
-                },
-                {
-                    "keyCode": "CP-233863-SN",
-                    "operationSetCode": "StrongNameVerify",
-                    "parameters": [],
-                    "toolName": "sign",
-                    "toolVersion": "1.0"
-                }
-            ]
-          SessionTimeout: 20
+      # - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+      #   displayName: ESRP DLL strong name (Auth Module)
+      #   condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
+      #   inputs:
+      #     ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
+      #     FolderPath: $(AuthModulePath)
+      #     Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll'
+      #     signConfigType: inlineSignParams
+      #     inlineOperation: |
+      #       [
+      #           {
+      #               "keyCode": "CP-233863-SN",
+      #               "operationSetCode": "StrongNameSign",
+      #               "parameters": [],
+      #               "toolName": "sign",
+      #               "toolVersion": "1.0"
+      #           },
+      #           {
+      #               "keyCode": "CP-233863-SN",
+      #               "operationSetCode": "StrongNameVerify",
+      #               "parameters": [],
+      #               "toolName": "sign",
+      #               "toolVersion": "1.0"
+      #           }
+      #       ]
+      #     SessionTimeout: 20
 
-      - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
-        displayName: "ESRP DLL code sign (Auth Module)"
-        condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
-        inputs:
-          ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
-          FolderPath: $(AuthModulePath)
-          Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll'
-          signConfigType: inlineSignParams
-          inlineOperation: |
-            [
-                {
-                    "keyCode": "CP-230012",
-                    "operationSetCode": "SigntoolSign",
-                    "parameters": [
-                        {
-                            "parameterName": "OpusName",
-                            "parameterValue": "Microsoft"
-                        },
-                        {
-                            "parameterName": "OpusInfo",
-                            "parameterValue": "http://www.microsoft.com"
-                        },
-                        {
-                            "parameterName": "FileDigest",
-                            "parameterValue": "/fd \"SHA256\""
-                        },
-                        {
-                            "parameterName": "PageHash",
-                            "parameterValue": "/NPH"
-                        },
-                        {
-                            "parameterName": "TimeStamp",
-                            "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
-                        }
-                    ],
-                    "toolName": "sign",
-                    "toolVersion": "1.0"
-                },
-                {
-                    "keyCode": "CP-230012",
-                    "operationSetCode": "SigntoolVerify",
-                    "parameters": [],
-                    "toolName": "sign",
-                    "toolVersion": "1.0"
-                }
-            ]
-          SessionTimeout: 20
+      # - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+      #   displayName: "ESRP DLL code sign (Auth Module)"
+      #   condition: and(succeeded(), eq('${{ parameters.EnableSigning }}', true))
+      #   inputs:
+      #     ConnectedServiceName: "microsoftgraph ESRP CodeSign DLL and NuGet (AKV)"
+      #     FolderPath: $(AuthModulePath)
+      #     Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll'
+      #     signConfigType: inlineSignParams
+      #     inlineOperation: |
+      #       [
+      #           {
+      #               "keyCode": "CP-230012",
+      #               "operationSetCode": "SigntoolSign",
+      #               "parameters": [
+      #                   {
+      #                       "parameterName": "OpusName",
+      #                       "parameterValue": "Microsoft"
+      #                   },
+      #                   {
+      #                       "parameterName": "OpusInfo",
+      #                       "parameterValue": "http://www.microsoft.com"
+      #                   },
+      #                   {
+      #                       "parameterName": "FileDigest",
+      #                       "parameterValue": "/fd \"SHA256\""
+      #                   },
+      #                   {
+      #                       "parameterName": "PageHash",
+      #                       "parameterValue": "/NPH"
+      #                   },
+      #                   {
+      #                       "parameterName": "TimeStamp",
+      #                       "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
+      #                   }
+      #               ],
+      #               "toolName": "sign",
+      #               "toolVersion": "1.0"
+      #           },
+      #           {
+      #               "keyCode": "CP-230012",
+      #               "operationSetCode": "SigntoolVerify",
+      #               "parameters": [],
+      #               "toolName": "sign",
+      #               "toolVersion": "1.0"
+      #           }
+      #       ]
+      #     SessionTimeout: 20
 
-      - task: PowerShell@2
-        displayName: Generate and build service modules
-        inputs:
-          targetType: inline
-          pwsh: true
-          script: |
-            [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
-            if ("${{ parameters.GenerateCommandMetadata }}" -eq "false") {
-              $ModulesToGenerate = "${{ parameters.ModulesToGenerate }}"
-              $Modules = $ModulesToGenerate.Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
-              . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules -ExcludeExampleTemplates -ExcludeNotesSection
-            } else {
-              . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ExcludeExampleTemplates -ExcludeNotesSection
-            }
+      # - task: PowerShell@2
+      #   displayName: Generate and build service modules
+      #   inputs:
+      #     targetType: inline
+      #     pwsh: true
+      #     script: |
+      #       [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
+      #       if ("${{ parameters.GenerateCommandMetadata }}" -eq "false") {
+      #         $ModulesToGenerate = "${{ parameters.ModulesToGenerate }}"
+      #         $Modules = $ModulesToGenerate.Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
+      #         . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules -ExcludeExampleTemplates -ExcludeNotesSection
+      #       } else {
+      #         . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ExcludeExampleTemplates -ExcludeNotesSection
+      #       }
 
-      - ${{ if eq(parameters.GenerateCommandMetadata, true) }}:
-        - template: ./generate-command-metadata-template.yml
+      # - ${{ if eq(parameters.GenerateCommandMetadata, true) }}:
+      #   - template: ./generate-command-metadata-template.yml
 
       - ${{ if eq(parameters.GeneratePullRequest, true) }}:
         - pwsh: '$(System.DefaultWorkingDirectory)/scripts/create-pull-request.ps1'
