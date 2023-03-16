@@ -58,8 +58,8 @@ jobs:
         parameters:
           TargetBranch: $(Branch)
 
-      - template: ../common-templates/install-tools-template.yml
-      - template: ../common-templates/security-prechecks-template.yml
+      # - template: ../common-templates/install-tools-template.yml
+      # - template: ../common-templates/security-prechecks-template.yml
 
       # - task: PowerShell@2
       #   displayName: Build auth module
