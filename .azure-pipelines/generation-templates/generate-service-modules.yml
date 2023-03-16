@@ -27,7 +27,7 @@ parameters:
     default: false
   - name: GeneratePullRequest
     type: boolean
-    default: false
+    default: true
   - name: DOCSBRANCH
     type: string
     default: "DocsGeneration"
