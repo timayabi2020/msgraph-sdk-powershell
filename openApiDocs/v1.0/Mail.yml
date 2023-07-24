@@ -6,6 +6,34 @@ servers:
   - url: https://graph.microsoft.com/v1.0/
     description: Core
 paths:
+  '/users/{user-id}/onenote/pages':
+    post:
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      description: Create a new page in the specified section.
+      tags:
+        - pages.create
+      operationId: create_page
+      requestBody:
+        content:
+          'multipart/form-data':
+            schema:
+              properties:
+                Presentation:
+                  type: string
+            encoding:
+              Presentation:
+                contentType: text/html
+      responses:
+        '204':
+          description: No Content
   '/users/{user-id}/inferenceClassification':
     get:
       tags:
