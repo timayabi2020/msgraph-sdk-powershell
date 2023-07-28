@@ -6,7 +6,7 @@
 azure: false
 powershell: true
 version: latest
-use: "@autorest/powershell@3.x"
+use: C:\Dev\peombwa\autorest.powershell
 export-properties-for-dict: false
 metadata:
     authors: Microsoft Corporation
@@ -33,6 +33,7 @@ require:
 ``` yaml
 prefix: Mg
 sanitize-names: false
+disable-via-identity: true
 ```
 
 > Folders
@@ -276,6 +277,10 @@ directive:
   - from: 'openapi-document'
     where: $.components.schemas.ReferenceUpdate..properties['@odata.id']
     transform: $['description'] = 'The entity reference URL of the resource. For example, https://graph.microsoft.com/v1.0/directoryObjects/{id}.'
+# Mark entity.id property as readonly.
+  - from: 'openapi-document'
+    where: $.components.schemas['microsoft.graph.entity'].properties['id']
+    transform: $['readOnly'] = true
 # Fix Base64 serialization.
   - from: 'openapi-document'
     where: $.components.schemas..properties.*
