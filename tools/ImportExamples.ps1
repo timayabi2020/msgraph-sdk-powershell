@@ -3,8 +3,10 @@
 Param(
     $ModulesToGenerate = @(),
     $Available = @(),
+    $HandWrittenCmdlets = @{},
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [string] $FolderForExamplesToBeReviewed = (Join-Path $PSScriptRoot "..\examplesreport"),
+    [string] $HandWrittenExamplesRecord = (Join-Path $PSScriptRoot "..\handwrittenexamples\record.csv"),
     [string] $ExamplesToBeReviewed = "ExamplesToBeReviewed.csv",
     $MetaDataJsonFile = (Join-Path $PSScriptRoot "../src/Authentication/Authentication/custom/common/MgCommandMetadata.json")
 )
@@ -21,7 +23,7 @@ function Start-Generator {
 
     $GraphMapping = @{
         "v1.0" = "v1.0\examples"
-        "beta" = "beta\examples"
+        #"beta" = "beta\examples"
     }
     if ($GenerationMode -eq "auto") {
         $GraphMapping.Keys | ForEach-Object {
@@ -212,17 +214,18 @@ function Start-WebScrapping {
         [string] $Module = "Users",
         [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\Users\examples\v1.0")
     )
-        $ExternalDocUrlPaths = $ExternalDocUrl.Split("://")[1].Split("/")
-        $LastExternalDocUrlPathSegmentWithQueryParam = $ExternalDocUrlPaths[$ExternalDocUrlPaths.Length - 1]
-        $LastExternalDocUrlPathSegmentWithoutQueryParam = $LastExternalDocUrlPathSegmentWithQueryParam.Split("?")[0]
+    $ExternalDocUrlPaths = $ExternalDocUrl.Split("://")[1].Split("/")
+    $LastExternalDocUrlPathSegmentWithQueryParam = $ExternalDocUrlPaths[$ExternalDocUrlPaths.Length - 1]
+    $LastExternalDocUrlPathSegmentWithoutQueryParam = $LastExternalDocUrlPathSegmentWithQueryParam.Split("?")[0]
 
-        $GraphDocsUrl = "https://raw.githubusercontent.com/microsoftgraph/microsoft-graph-docs-contrib/main/api-reference/$GraphProfile/api/$LastExternalDocUrlPathSegmentWithoutQueryParam.md"
-        $UrlPaths = $GraphDocsUrl.Split("://")[1].Split("/")
-        $LastPathSegment = $UrlPaths[$UrlPaths.Length - 1]
-        $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
-        $ExampleLinks = New-Object -TypeName 'System.Collections.ArrayList';
-        $Snippets = New-Object -TypeName 'System.Collections.ArrayList';
-    try{
+    $GraphDocsUrl = "https://raw.githubusercontent.com/microsoftgraph/microsoft-graph-docs-contrib/main/api-reference/$GraphProfile/api/$LastExternalDocUrlPathSegmentWithoutQueryParam.md"
+    Write-Host $GraphDocsUrl
+    $UrlPaths = $GraphDocsUrl.Split("://")[1].Split("/")
+    $LastPathSegment = $UrlPaths[$UrlPaths.Length - 1]
+    $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
+    $ExampleLinks = New-Object -TypeName 'System.Collections.ArrayList';
+    $Snippets = New-Object -TypeName 'System.Collections.ArrayList';
+    try {
         ($readStream, $HttpWebResponse) = FetchStream -GraphDocsUrl $GraphDocsUrl
 
         while (-not $readStream.EndOfStream) {
@@ -269,9 +272,9 @@ function Start-WebScrapping {
         }
         $DescriptionCommand = $Command  
         $Description = "This example shows how to use the $DescriptionCommand Cmdlet."
-    
         Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $Snippets -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
-    }catch {
+    }
+    catch {
         Write-Host "`nError Message: " $_.Exception.Message
         Write-Host "`nError in Line: " $_.InvocationInfo.Line
         Write-Host "`nError in Line Number: "$_.InvocationInfo.ScriptLineNumber
@@ -307,6 +310,7 @@ function Update-ExampleFile {
     ) 
     $CommandPattern = $Command
     $Content = Get-Content -Path $ExampleFile
+    $HandWrittenExamplesRecordContent = Get-Content -Path $HandWrittenExamplesRecord
     $SearchText = "Example"
     $SearchTextForNewImports = "{{ Add description here }}"
     $ReplaceEverything = $False
@@ -375,7 +379,7 @@ function Update-ExampleFile {
     if ($GraphProfile -eq "beta") {
         $PatternToSearch = "Import-Module Microsoft.Graph.Beta.$Module"
     }
-    if (($Content | Select-String -pattern $SearchText) -and ($Content | Select-String -pattern "This example shows")) {
+    if (($Content | Select-String -pattern $SearchText) -and ($Content | Select-String -pattern "This example")) {
         $ContainsPatternToSearch = $False
         foreach ($List in $ExampleList) {
             if ($List.Contains($PatternToSearch) -and $List.Contains($CommandPattern)) {
@@ -383,13 +387,39 @@ function Update-ExampleFile {
             }
         }
         if ($ContainsPatternToSearch) {
-            Clear-Content $ExampleFile -Force    
+            
+            [int]$NoOfExistinghandWrittenExamples = $HandWrittenCmdlets[$CommandPattern]
+            $ReplaceTitleCounter = $True
+            if ($null -eq $NoOfExistinghandWrittenExamples) {
+                Write-Host $CommandPattern
+                Clear-Content $ExampleFile -Force 
+                $ReplaceTitleCounter = $False
+            }
+            if ($True) {
+                #First clear anything from $NoOfExistinghandWrittenExamples + 1 to end of file
+                $Lines = $Content.Count
+                $StartLine = 0;
+                foreach ($Line in $Content) {
+                    if ($Line.Contains("### Example " + ($NoOfExistinghandWrittenExamples + 1))) {
+                        break;
+                    }
+                    $startLine++
+                }
+                $LastLines = ($Lines - $StartLine) + 1
+                if ($StartLine -lt $content.length) {
+                    $content[0..($content.length - $LastLines)] | Out-File $ExampleFile -Force
+                }
+            }
+               
             for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
                 #We should only add the correct examples from external docs link
                 if ($ExampleList[$d] -match "\b$CommandPattern\b") {
                     $CodeValue = $ExampleList[$d].Trim()
                     $TitleValue = $HeaderList[$d].Trim()
                     $TitleDesc = $TitleValue
+                    if ($ReplaceTitleCounter) {
+                        $TitleValue = $TitleValue.Replace("Example " + ($d + 1), "Example " + ($d + $NoOfExistinghandWrittenExamples + 1))
+                    }
                     if (-not($TitleValue.Contains("Code snippet"))) {
                         if ($TitleDesc -match $DescriptionRegex) {
                             $TitleDesc = $TitleDesc -replace $DescriptionRegex, ''
@@ -591,6 +621,11 @@ if (!(Get-Module "powershell-yaml" -ListAvailable -ErrorAction SilentlyContinue)
 if (-not (Test-Path $ModuleMappingConfigPath)) {
     Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
 }
+
+if (-not (Test-Path $HandWrittenExamplesRecord)) {
+    Write-Error "Hand written records file not be found: $HandWrittenExamplesRecord."
+}
+
 If (-not (Get-Module -ErrorAction Ignore -ListAvailable PowerHTML)) {
     Write-Verbose "Installing PowerHTML module for the current user..."
     Install-Module PowerHTML -ErrorAction Stop -Scope CurrentUser -Force
@@ -601,7 +636,12 @@ if ($ModulesToGenerate.Count -eq 0) {
     [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
     $ModulesToGenerate = $ModuleMapping.Keys
 }
-Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
+
+$csvfile = Import-CSV -Path $HandWrittenExamplesRecord ","
+Foreach ($el in $csvfile) {
+    $HandWrittenCmdlets.Add($el.Cmdlet, $el.ExampleCount)
+}
+#Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #Comment the above and uncomment the below start command, if you manually want to manually pass ExternalDocs url.
 #This is for scenarios where the correponding external docs url to the uri path gotten from Find-MgGraph command, is missing on the openapi.yml file for a particular module.
@@ -621,4 +661,4 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/teamsappsettings-update?view=graph-rest-beta&tabs=powershell" -GraphCommand "Update-MgBetaTeamworkTeamAppSetting" -GraphModule "Teams" -Profile "v1.0"
+Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&tabs=powershell" -GraphCommand "Get-MgUser" -GraphModule "Users" -Profile "v1.0"
