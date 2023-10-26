@@ -70,7 +70,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities.Runtime.Cmdlets
 
         private IEnumerable<CommandInfo> GetModuleCmdlets(string modulePath)
         {
-            var getCmdletsCommand = $"(Get-Command -Module (Import-Module '{modulePath}' -PassThru))";
+            var wrappedFolder = modulePath.Contains("'") ? $"\"{modulePath}\"" : $"'{modulePath}'";
+            var getCmdletsCommand = $"(Get-Command -Module (Import-Module {wrappedFolder} -PassThru))";
             return PSCmdletExtensions.RunScript<CommandInfo>(getCmdletsCommand);
         }
     }

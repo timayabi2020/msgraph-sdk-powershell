@@ -67,9 +67,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities.Runtime.Cmdlets
         private IEnumerable<FunctionInfo> GetScriptCmdlets(string scriptFolder)
         {
             // https://stackoverflow.com/a/40969712/294804
+            var wrappedFolder = scriptFolder.Contains("'") ? $"\"{scriptFolder}\"" : $"'{scriptFolder}'";
             var getCmdletsCommand = $@"
                 $currentFunctions = Get-ChildItem function:
-                Get-ChildItem -Path '{scriptFolder}' -Recurse -Include '*.ps1' -File | ForEach-Object {{ . $_.FullName }}
+                Get-ChildItem -Path {wrappedFolder} -Recurse -Include '*.ps1' -File | ForEach-Object {{ . $_.FullName }}
                 Get-ChildItem function: | Where-Object {{ ($currentFunctions -notcontains $_) -and $_.CmdletBinding }}
                 ";
             return this.RunScript<FunctionInfo>(getCmdletsCommand);
