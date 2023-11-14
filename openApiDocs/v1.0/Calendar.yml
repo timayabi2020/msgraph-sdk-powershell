@@ -8986,6 +8986,323 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.roomList'
         default:
           $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.roomList/rooms':
+    get:
+      tags:
+        - places.room
+      summary: Get rooms from places
+      operationId: place_ListRoom
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - address
+                - address desc
+                - displayName
+                - displayName desc
+                - geoCoordinates
+                - geoCoordinates desc
+                - phone
+                - phone desc
+                - audioDeviceName
+                - audioDeviceName desc
+                - bookingType
+                - bookingType desc
+                - building
+                - building desc
+                - capacity
+                - capacity desc
+                - displayDeviceName
+                - displayDeviceName desc
+                - emailAddress
+                - emailAddress desc
+                - floorLabel
+                - floorLabel desc
+                - floorNumber
+                - floorNumber desc
+                - isWheelChairAccessible
+                - isWheelChairAccessible desc
+                - label
+                - label desc
+                - nickname
+                - nickname desc
+                - tags
+                - tags desc
+                - videoDeviceName
+                - videoDeviceName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - address
+                - displayName
+                - geoCoordinates
+                - phone
+                - audioDeviceName
+                - bookingType
+                - building
+                - capacity
+                - displayDeviceName
+                - emailAddress
+                - floorLabel
+                - floorNumber
+                - isWheelChairAccessible
+                - label
+                - nickname
+                - tags
+                - videoDeviceName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.roomCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.room
+      summary: Create new navigation property to rooms for places
+      operationId: place_CreateRoom
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.room'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.room'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/rooms/{room-id}':
+    get:
+      tags:
+        - places.room
+      summary: Get rooms from places
+      operationId: place_GetRoom
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: room-id
+          in: path
+          description: The unique identifier of room
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: room
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - address
+                - displayName
+                - geoCoordinates
+                - phone
+                - audioDeviceName
+                - bookingType
+                - building
+                - capacity
+                - displayDeviceName
+                - emailAddress
+                - floorLabel
+                - floorNumber
+                - isWheelChairAccessible
+                - label
+                - nickname
+                - tags
+                - videoDeviceName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.room'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.room
+      summary: Update the navigation property rooms in places
+      operationId: place_UpdateRoom
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: room-id
+          in: path
+          description: The unique identifier of room
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: room
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.room'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.room'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.room
+      summary: Delete navigation property rooms for places
+      operationId: place_DeleteRoom
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: room-id
+          in: path
+          description: The unique identifier of room
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: room
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/rooms/$count':
+    get:
+      tags:
+        - places.room
+      summary: Get the number of the resource
+      operationId: place.room_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /places/$count:
     get:
       tags:
