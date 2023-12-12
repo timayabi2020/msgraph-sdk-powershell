@@ -1614,11 +1614,11 @@ paths:
     get:
       tags:
         - chats.conversationMember
-      summary: Get conversationMember in a chat
-      description: Retrieve a conversationMember from a chat.
+      summary: Get conversationMember
+      description: Retrieve a conversationMember from a chat or channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
       operationId: chat_GetMember
       parameters:
         - name: chat-id
@@ -1972,11 +1972,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -6467,11 +6467,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: group.team.channel_UpdateMember
       parameters:
         - name: group-id
@@ -6518,11 +6518,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete conversationMember
-      description: Delete a conversationMember from a channel.
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: group.team.channel_DeleteMember
       parameters:
         - name: group-id
@@ -11875,11 +11875,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: group.team.primaryChannel_UpdateMember
       parameters:
         - name: group-id
@@ -11918,11 +11918,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete conversationMember
-      description: Delete a conversationMember from a channel.
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: group.team.primaryChannel_DeleteMember
       parameters:
         - name: group-id
@@ -19172,11 +19172,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.channel_UpdateMember
       parameters:
         - name: team-id
@@ -19223,11 +19223,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Delete conversationMember
-      description: Delete a conversationMember from a channel.
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: team.channel_DeleteMember
       parameters:
         - name: team-id
@@ -25947,11 +25947,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.primaryChannel_UpdateMember
       parameters:
         - name: team-id
@@ -25990,11 +25990,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Delete conversationMember
-      description: Delete a conversationMember from a channel.
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: team.primaryChannel_DeleteMember
       parameters:
         - name: team-id
@@ -33979,11 +33979,11 @@ paths:
     patch:
       tags:
         - teamwork.deletedTeam
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_UpdateMember
       parameters:
         - name: deletedTeam-id
@@ -34030,11 +34030,11 @@ paths:
     delete:
       tags:
         - teamwork.deletedTeam
-      summary: Delete conversationMember
-      description: Delete a conversationMember from a channel.
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_DeleteMember
       parameters:
         - name: deletedTeam-id
@@ -39689,11 +39689,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get conversationMember in a chat
-      description: Retrieve a conversationMember from a chat.
+      summary: Get conversationMember
+      description: Retrieve a conversationMember from a chat or channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
       operationId: user.chat_GetMember
       parameters:
         - name: user-id
@@ -40031,11 +40031,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: user.chat_CreateMessage
       parameters:
         - name: user-id
@@ -44256,11 +44256,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_UpdateMember
       parameters:
         - name: user-id
@@ -44315,11 +44315,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete conversationMember
-      description: Delete a conversationMember from a channel.
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_DeleteMember
       parameters:
         - name: user-id
@@ -50424,11 +50424,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_UpdateMember
       parameters:
         - name: user-id
@@ -50475,11 +50475,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete conversationMember
-      description: Delete a conversationMember from a channel.
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_DeleteMember
       parameters:
         - name: user-id

@@ -5032,10 +5032,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Retrieve the properties and relationships of conversation object.
+      description: The group's conversations.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -5436,10 +5436,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -29262,11 +29262,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversationThread
-      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
+      summary: Get conversation thread
+      description: Get a thread object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -29401,10 +29401,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id

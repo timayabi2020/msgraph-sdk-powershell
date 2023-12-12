@@ -296,6 +296,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityContainer'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -318,6 +323,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityContainer'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/apiConnectors:
     get:
@@ -386,6 +396,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.identityApiConnectorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -415,6 +430,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/apiConnectors/{identityApiConnector-id}':
     get:
@@ -471,6 +491,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -506,6 +531,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -536,6 +566,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/apiConnectors/{identityApiConnector-id}/microsoft.graph.uploadClientCertificate':
     post:
@@ -581,6 +616,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: action
   /identity/apiConnectors/$count:
     get:
@@ -596,6 +636,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/authenticationEventListeners:
     get:
       tags:
@@ -663,6 +708,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.authenticationEventListenerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -692,6 +742,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationEventListener'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/authenticationEventListeners/{authenticationEventListener-id}':
     get:
@@ -744,6 +799,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationEventListener'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -779,6 +839,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationEventListener'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -809,6 +874,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/authenticationEventListeners/$count:
     get:
@@ -824,6 +894,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/authenticationEventsFlows:
     get:
       tags:
@@ -894,6 +969,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.authenticationEventsFlowCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -923,6 +1003,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationEventsFlow'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}':
     get:
@@ -980,6 +1065,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationEventsFlow'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1015,6 +1105,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationEventsFlow'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1045,6 +1140,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions':
     get:
@@ -1095,6 +1195,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationConditions'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions/applications/includeApplications':
     get:
       tags:
@@ -1157,6 +1262,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.authenticationConditionApplicationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1191,6 +1301,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationConditionApplication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions/applications/includeApplications/{authenticationConditionApplication-appId}':
     get:
@@ -1248,6 +1363,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationConditionApplication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1287,6 +1407,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationConditionApplication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1321,6 +1446,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions/applications/includeApplications/$count':
     get:
@@ -1344,6 +1474,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow':
     get:
       tags:
@@ -1396,6 +1531,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/conditions':
     get:
       tags:
@@ -1445,6 +1585,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationConditions'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications':
     get:
       tags:
@@ -1507,6 +1652,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.authenticationConditionApplicationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1541,6 +1691,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationConditionApplication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications/{authenticationConditionApplication-appId}':
     get:
@@ -1598,6 +1753,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationConditionApplication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1637,6 +1797,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationConditionApplication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1671,6 +1836,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/conditions/applications/includeApplications/$count':
     get:
@@ -1694,6 +1864,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection':
     get:
       tags:
@@ -1741,6 +1916,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onAttributeCollectionHandler'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp':
     get:
       tags:
@@ -1761,6 +1941,11 @@ paths:
           description: ''
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1838,6 +2023,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1883,6 +2073,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/$count':
     get:
@@ -1906,6 +2101,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/$ref':
     get:
       tags:
@@ -1952,6 +2152,11 @@ paths:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1977,6 +2182,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart':
     get:
@@ -2025,6 +2235,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onAuthenticationMethodLoadStartHandler'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp':
     get:
       tags:
@@ -2045,6 +2260,11 @@ paths:
           description: ''
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2113,6 +2333,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2158,6 +2383,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/$count':
     get:
@@ -2181,6 +2411,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/$ref':
     get:
       tags:
@@ -2221,6 +2456,11 @@ paths:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2246,6 +2486,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/authenticationEventsFlows/$count:
     get:
@@ -2261,6 +2506,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/authenticationEventsFlows/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow:
     get:
       tags:
@@ -2327,6 +2577,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.externalUsersSelfServiceSignUpEventsFlowCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2344,6 +2599,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/b2cUserFlows:
     get:
       tags:
@@ -2425,6 +2685,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.b2cIdentityUserFlowCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2454,6 +2719,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}':
     get:
@@ -2520,6 +2790,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2555,6 +2830,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2585,6 +2865,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/identityProviders':
     get:
@@ -2666,10 +2951,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2721,10 +3005,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/identityProviders/$count':
     get:
@@ -2750,10 +3033,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/identityProviders/$ref':
     get:
       tags:
@@ -2806,10 +3088,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2841,10 +3122,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages':
     get:
@@ -2922,6 +3202,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userFlowLanguageConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2956,6 +3241,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}':
     get:
@@ -3023,6 +3313,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3066,6 +3361,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3104,6 +3404,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages':
     get:
@@ -3179,6 +3484,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3221,6 +3531,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/{userFlowLanguagePage-id}':
     get:
@@ -3287,6 +3602,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3334,6 +3654,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3376,6 +3701,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/{userFlowLanguagePage-id}/$value':
     get:
@@ -3421,6 +3751,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -3465,6 +3800,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/$count':
     get:
@@ -3496,6 +3836,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages':
     get:
       tags:
@@ -3570,6 +3915,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3612,6 +3962,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/{userFlowLanguagePage-id}':
     get:
@@ -3678,6 +4033,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3725,6 +4085,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3767,6 +4132,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/{userFlowLanguagePage-id}/$value':
     get:
@@ -3812,6 +4182,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -3856,6 +4231,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/$count':
     get:
@@ -3887,6 +4267,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/languages/$count':
     get:
       tags:
@@ -3909,6 +4294,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments':
     get:
       tags:
@@ -3992,6 +4382,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4030,6 +4425,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments/{identityUserFlowAttributeAssignment-id}':
     get:
@@ -4098,6 +4498,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4141,6 +4546,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4179,6 +4589,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments/{identityUserFlowAttributeAssignment-id}/userAttribute':
     get:
@@ -4241,6 +4656,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments/$count':
     get:
@@ -4264,6 +4684,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.getOrder()':
     get:
       tags:
@@ -4288,6 +4713,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.assignmentOrder'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: function
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.setOrder':
     post:
@@ -4325,6 +4755,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: action
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userFlowIdentityProviders':
     get:
@@ -4391,6 +4826,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4452,6 +4892,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2cUserFlows/{b2cIdentityUserFlow-id}/userFlowIdentityProviders/$count':
     get:
@@ -4475,6 +4920,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/b2cUserFlows/$count:
     get:
       tags:
@@ -4489,6 +4939,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/b2xUserFlows:
     get:
       tags:
@@ -4564,6 +5019,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.b2xIdentityUserFlowCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4593,6 +5053,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}':
     get:
@@ -4657,6 +5122,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4688,6 +5158,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4718,6 +5193,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration':
     get:
@@ -4773,6 +5253,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowApiConnectorConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postAttributeCollection':
     get:
       tags:
@@ -4824,6 +5309,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4855,6 +5345,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4881,6 +5376,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postAttributeCollection/$ref':
     get:
@@ -4906,6 +5406,11 @@ paths:
                 type: string
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -4928,6 +5433,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4954,6 +5464,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postAttributeCollection/microsoft.graph.uploadClientCertificate':
     post:
@@ -4999,6 +5514,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: action
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postFederationSignup':
     get:
@@ -5051,6 +5571,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5082,6 +5607,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5108,6 +5638,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postFederationSignup/$ref':
     get:
@@ -5133,6 +5668,11 @@ paths:
                 type: string
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -5155,6 +5695,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5181,6 +5726,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/postFederationSignup/microsoft.graph.uploadClientCertificate':
     post:
@@ -5226,6 +5776,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: action
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/preTokenIssuance':
     get:
@@ -5278,6 +5833,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5309,6 +5869,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5335,6 +5900,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/apiConnectorConfiguration/preTokenIssuance/microsoft.graph.uploadClientCertificate':
     post:
@@ -5380,6 +5950,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: action
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/identityProviders':
     get:
@@ -5461,10 +6036,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5531,10 +6105,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5575,10 +6148,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/identityProviders/$count':
     get:
@@ -5604,10 +6176,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-15T00:00:00.0000000+00:00'
-        date: '2021-08-24T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages':
     get:
       tags:
@@ -5684,6 +6255,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userFlowLanguageConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5718,6 +6294,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}':
     get:
@@ -5782,6 +6363,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5821,6 +6407,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5855,6 +6446,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages':
     get:
@@ -5930,6 +6526,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5972,6 +6573,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/{userFlowLanguagePage-id}':
     get:
@@ -6038,6 +6644,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6085,6 +6696,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6127,6 +6743,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/{userFlowLanguagePage-id}/$value':
     get:
@@ -6172,6 +6793,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -6216,6 +6842,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/defaultPages/$count':
     get:
@@ -6247,6 +6878,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages':
     get:
       tags:
@@ -6321,6 +6957,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userFlowLanguagePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6363,6 +7004,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/{userFlowLanguagePage-id}':
     get:
@@ -6429,6 +7075,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6476,6 +7127,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguagePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6518,6 +7174,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/{userFlowLanguagePage-id}/$value':
     get:
@@ -6563,6 +7224,11 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -6607,6 +7273,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/{userFlowLanguageConfiguration-id}/overridesPages/$count':
     get:
@@ -6638,6 +7309,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/languages/$count':
     get:
       tags:
@@ -6660,6 +7336,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments':
     get:
       tags:
@@ -6743,6 +7424,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6781,6 +7467,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/{identityUserFlowAttributeAssignment-id}':
     get:
@@ -6846,6 +7537,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6885,6 +7581,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6919,6 +7620,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/{identityUserFlowAttributeAssignment-id}/userAttribute':
     get:
@@ -6981,6 +7687,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/$count':
     get:
@@ -7004,6 +7715,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.getOrder()':
     get:
       tags:
@@ -7028,6 +7744,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.assignmentOrder'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: function
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userAttributeAssignments/microsoft.graph.setOrder':
     post:
@@ -7065,6 +7786,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: action
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders':
     get:
@@ -7131,6 +7857,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7176,6 +7907,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/$count':
     get:
@@ -7199,6 +7935,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/$ref':
     get:
       tags:
@@ -7239,6 +7980,11 @@ paths:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7264,6 +8010,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/b2xUserFlows/$count:
     get:
@@ -7279,6 +8030,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/conditionalAccess:
     get:
       tags:
@@ -7332,6 +8088,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7354,6 +8115,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7372,6 +8138,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/conditionalAccess/authenticationContextClassReferences:
     get:
@@ -7440,6 +8211,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.authenticationContextClassReferenceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7469,6 +8245,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/authenticationContextClassReferences/{authenticationContextClassReference-id}':
     get:
@@ -7525,6 +8306,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7560,6 +8346,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationContextClassReference'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7590,6 +8381,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/conditionalAccess/authenticationContextClassReferences/$count:
     get:
@@ -7605,6 +8401,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/conditionalAccess/authenticationStrength:
     get:
       tags:
@@ -7652,6 +8453,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7674,6 +8480,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7692,6 +8503,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/conditionalAccess/authenticationStrength/authenticationMethodModes:
     get:
@@ -7757,6 +8573,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.authenticationMethodModeDetailCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7782,6 +8603,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodModeDetail'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/{authenticationMethodModeDetail-id}':
     get:
@@ -7834,6 +8660,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodModeDetail'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7865,6 +8696,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodModeDetail'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7891,6 +8727,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/conditionalAccess/authenticationStrength/authenticationMethodModes/$count:
     get:
@@ -7906,6 +8747,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/conditionalAccess/authenticationStrength/policies:
     get:
       tags:
@@ -7984,6 +8830,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.authenticationStrengthPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8009,6 +8860,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}':
     get:
@@ -8068,6 +8924,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8099,6 +8960,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8125,6 +8991,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations':
     get:
@@ -8195,6 +9066,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.authenticationCombinationConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8233,6 +9109,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationCombinationConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/{authenticationCombinationConfiguration-id}':
     get:
@@ -8295,6 +9176,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationCombinationConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8338,6 +9224,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationCombinationConfiguration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8376,6 +9267,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/$count':
     get:
@@ -8399,6 +9295,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/microsoft.graph.updateAllowedCombinations':
     post:
       tags:
@@ -8441,6 +9342,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.updateAllowedCombinationsResult'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: action
   '/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/microsoft.graph.usage()':
     get:
@@ -8466,6 +9372,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationStrengthUsage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: function
   /identity/conditionalAccess/authenticationStrength/policies/$count:
     get:
@@ -8481,6 +9392,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/conditionalAccess/authenticationStrength/policies/microsoft.graph.findByMethodMode(authenticationMethodModes={authenticationMethodModes})':
     get:
       tags:
@@ -8571,10 +9487,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/FindByMethodModeRemove
-        description: The findByMethodMode function is deprecated. Please use OData filter query instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -8627,10 +9542,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8655,10 +9569,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8679,10 +9592,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/conditionalAccess/authenticationStrengths/authenticationMethodModes:
     get:
@@ -8750,10 +9662,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8781,10 +9692,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/authenticationStrengths/authenticationMethodModes/{authenticationMethodModeDetail-id}':
     get:
@@ -8839,10 +9749,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8876,10 +9785,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8908,10 +9816,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/conditionalAccess/authenticationStrengths/authenticationMethodModes/$count:
     get:
@@ -8929,10 +9836,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/conditionalAccess/authenticationStrengths/policies:
     get:
       tags:
@@ -9013,10 +9919,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9044,10 +9949,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy-id}':
     get:
@@ -9109,10 +10013,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9146,10 +10049,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9178,10 +10080,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy-id}/combinationConfigurations':
     get:
@@ -9254,10 +10155,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9298,10 +10198,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/{authenticationCombinationConfiguration-id}':
     get:
@@ -9366,10 +10265,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -9415,10 +10313,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -9459,10 +10356,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/$count':
     get:
@@ -9488,10 +10384,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy-id}/microsoft.graph.updateAllowedCombinations':
     post:
       tags:
@@ -9536,10 +10431,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: action
   '/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy-id}/microsoft.graph.usage()':
     get:
@@ -9567,10 +10461,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: function
   /identity/conditionalAccess/authenticationStrengths/policies/$count:
     get:
@@ -9588,10 +10481,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   '/identity/conditionalAccess/authenticationStrengths/policies/microsoft.graph.findByMethodMode(authenticationMethodModes={authenticationMethodModes})':
     get:
       tags:
@@ -9682,10 +10574,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-03-31T00:00:00.0000000+00:00'
-        date: '2023-02-01T00:00:00.0000000+00:00'
-        version: 2023-02/AuthenticationStrengthsRemove
-        description: The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -9757,6 +10648,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.namedLocationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9786,6 +10682,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.namedLocation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/namedLocations/{namedLocation-id}':
     get:
@@ -9842,15 +10743,20 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.namedLocation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update ipNamedlocation
-      description: Update the properties of an ipNamedLocation object.
+      summary: Update countryNamedLocation
+      description: Update the properties of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9877,15 +10783,20 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.namedLocation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete countryNamedLocation
-      description: Delete a countryNamedLocation object.
+      summary: Delete ipNamedLocation
+      description: Delete an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9907,6 +10818,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/conditionalAccess/namedLocations/$count:
     get:
@@ -9922,6 +10838,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/conditionalAccess/policies:
     get:
       tags:
@@ -10004,6 +10925,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.conditionalAccessPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10033,6 +10959,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/conditionalAccess/policies/{conditionalAccessPolicy-id}':
     get:
@@ -10094,6 +11025,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10129,6 +11065,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10159,6 +11100,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/conditionalAccess/policies/$count:
     get:
@@ -10174,6 +11120,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/conditionalAccess/templates:
     get:
       tags:
@@ -10244,6 +11195,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.conditionalAccessTemplateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10304,6 +11260,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessTemplate'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/conditionalAccess/templates/$count:
     get:
@@ -10319,6 +11280,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/continuousAccessEvaluationPolicy:
     get:
       tags:
@@ -10369,6 +11335,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.continuousAccessEvaluationPolicy'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10395,6 +11366,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.continuousAccessEvaluationPolicy'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10413,6 +11389,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/customAuthenticationExtensions:
     get:
@@ -10487,6 +11468,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.customAuthenticationExtensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10516,6 +11502,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.customAuthenticationExtension'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/customAuthenticationExtensions/{customAuthenticationExtension-id}':
     get:
@@ -10574,6 +11565,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.customAuthenticationExtension'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10605,6 +11601,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.customAuthenticationExtension'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10635,6 +11636,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/customAuthenticationExtensions/{customAuthenticationExtension-id}/microsoft.graph.validateAuthenticationConfiguration':
     post:
@@ -10664,6 +11670,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationConfigurationValidation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: action
   /identity/customAuthenticationExtensions/$count:
     get:
@@ -10679,6 +11690,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/customAuthenticationExtensions/microsoft.graph.validateAuthenticationConfiguration:
     post:
       tags:
@@ -10708,6 +11724,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationConfigurationValidation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: action
   /identity/identityProviders:
     get:
@@ -10770,6 +11791,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10799,6 +11825,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/identityProviders/{identityProviderBase-id}':
     get:
@@ -10853,6 +11884,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10888,6 +11924,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10918,6 +11959,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/identityProviders/$count:
     get:
@@ -10933,6 +11979,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/identityProviders/microsoft.graph.availableProviderTypes():
     get:
       tags:
@@ -10965,6 +12016,11 @@ paths:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -11039,6 +12095,11 @@ paths:
           $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11068,6 +12129,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/userFlowAttributes/{identityUserFlowAttribute-id}':
     get:
@@ -11125,6 +12191,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11160,6 +12231,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11190,6 +12266,11 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/userFlowAttributes/$count:
     get:
@@ -11205,6 +12286,11 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identity/userFlows:
     get:
       tags:
@@ -11271,10 +12357,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-01-15T00:00:00.0000000+00:00'
-        date: '2021-05-21T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -11306,10 +12391,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-01-15T00:00:00.0000000+00:00'
-        date: '2021-05-21T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   '/identity/userFlows/{identityUserFlow-id}':
     get:
@@ -11367,10 +12451,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-01-15T00:00:00.0000000+00:00'
-        date: '2021-05-21T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -11404,10 +12487,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-01-15T00:00:00.0000000+00:00'
-        date: '2021-05-21T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -11440,10 +12522,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-01-15T00:00:00.0000000+00:00'
-        date: '2021-05-21T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
       x-ms-docs-operation-type: operation
   /identity/userFlows/$count:
     get:
@@ -11461,10 +12542,9 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2022-01-15T00:00:00.0000000+00:00'
-        date: '2021-05-21T00:00:00.0000000+00:00'
-        version: 2021-05/identityProvider
-        description: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.
+        removalDate: '2023-08-23T00:00:00.0000000+00:00'
+        date: '2023-08-23T00:00:00.0000000+00:00'
+        version: 2023-08/PrivatePreview:changeManagement
   /identityProtection:
     get:
       tags:
@@ -11686,11 +12766,11 @@ paths:
     get:
       tags:
         - identityProtection.riskDetection
-      summary: Get riskDetection
-      description: Retrieve the properties of a riskDetection object.
+      summary: List riskDetection
+      description: Retrieve the properties of a collection of riskDetection objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0
       operationId: identityProtection_GetRiskDetection
       parameters:
         - name: riskDetection-id
@@ -12455,11 +13535,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: List riskyUsers
-      description: Retrieve the properties and relationships of a collection of riskyUser objects.
+      summary: Get riskyUser
+      description: Retrieve the properties and relationships of a riskyUser object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0
       operationId: identityProtection_ListRiskyUser
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17539,7 +18619,6 @@ paths:
             type: array
             items:
               enum:
-                - id
                 - accessReviewPolicy
                 - activityBasedTimeoutPolicies
                 - adminConsentRequestPolicy
@@ -28506,11 +29585,11 @@ paths:
     patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Create multiTenantOrganization
-      description: 'Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.'
+      summary: Update multiTenantOrganization
+      description: Update the properties of a multi-tenant organization.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0
       operationId: tenantRelationship_UpdateMultiTenantOrganization
       requestBody:
         description: New navigation property values
@@ -37733,131 +38812,129 @@ components:
           additionalProperties:
             type: object
     microsoft.graph.policyRoot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: policyRoot
-          type: object
-          properties:
-            accessReviewPolicy:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewPolicy'
-            activityBasedTimeoutPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
-              description: The policy that controls the idle time-out for web sessions for applications.
-              x-ms-navigationProperty: true
-            adminConsentRequestPolicy:
-              $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
-            appManagementPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
-              description: 'The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.'
-              x-ms-navigationProperty: true
-            authenticationFlowsPolicy:
-              $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
-            authenticationMethodsPolicy:
-              $ref: '#/components/schemas/microsoft.graph.authenticationMethodsPolicy'
-            authenticationStrengthPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
-              description: The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
-              x-ms-navigationProperty: true
-            authorizationPolicy:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
-              description: The policy that controls Microsoft Entra authorization settings.
-              x-ms-navigationProperty: true
-            b2cAuthenticationMethodsPolicy:
-              $ref: '#/components/schemas/microsoft.graph.b2cAuthenticationMethodsPolicy'
-            claimsMappingPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
-              description: 'The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.'
-              x-ms-navigationProperty: true
-            conditionalAccessPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
-              description: The custom rules that define an access scenario.
-              x-ms-navigationProperty: true
-            crossTenantAccessPolicy:
-              $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
-            defaultAppManagementPolicy:
-              $ref: '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
-            deviceRegistrationPolicy:
-              $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
-            directoryRoleAccessReviewPolicy:
-              $ref: '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
-            externalIdentitiesPolicy:
-              $ref: '#/components/schemas/microsoft.graph.externalIdentitiesPolicy'
-            featureRolloutPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
-              description: The feature rollout policy associated with a directory object.
-              x-ms-navigationProperty: true
-            federatedTokenValidationPolicy:
-              $ref: '#/components/schemas/microsoft.graph.federatedTokenValidationPolicy'
-            homeRealmDiscoveryPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-              description: The policy to control Microsoft Entra authentication behavior for federated users.
-              x-ms-navigationProperty: true
-            identitySecurityDefaultsEnforcementPolicy:
-              $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
-            mobileAppManagementPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
-              description: The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
-              x-ms-navigationProperty: true
-            mobileDeviceManagementPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
-              x-ms-navigationProperty: true
-            permissionGrantPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
-              description: The policy that specifies the conditions under which consent can be granted.
-              x-ms-navigationProperty: true
-            roleManagementPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
-              description: Represents the role management policies.
-              x-ms-navigationProperty: true
-            roleManagementPolicyAssignments:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
-              description: Represents the role management policy assignments.
-              x-ms-navigationProperty: true
-            servicePrincipalCreationPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.servicePrincipalCreationPolicy'
-              x-ms-navigationProperty: true
-            tokenIssuancePolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-              description: The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
-              x-ms-navigationProperty: true
-            tokenLifetimePolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-              description: 'The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.'
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
+      title: policyRoot
+      type: object
+      properties:
+        accessReviewPolicy:
+          $ref: '#/components/schemas/microsoft.graph.accessReviewPolicy'
+        activityBasedTimeoutPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
+          description: The policy that controls the idle time-out for web sessions for applications.
+          x-ms-navigationProperty: true
+        adminConsentRequestPolicy:
+          $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
+        appManagementPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
+          description: 'The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.'
+          x-ms-navigationProperty: true
+        authenticationFlowsPolicy:
+          $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
+        authenticationMethodsPolicy:
+          $ref: '#/components/schemas/microsoft.graph.authenticationMethodsPolicy'
+        authenticationStrengthPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
+          description: The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
+          x-ms-navigationProperty: true
+        authorizationPolicy:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
+          description: The policy that controls Microsoft Entra authorization settings.
+          x-ms-navigationProperty: true
+        b2cAuthenticationMethodsPolicy:
+          $ref: '#/components/schemas/microsoft.graph.b2cAuthenticationMethodsPolicy'
+        claimsMappingPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
+          description: 'The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.'
+          x-ms-navigationProperty: true
+        conditionalAccessPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+          description: The custom rules that define an access scenario.
+          x-ms-navigationProperty: true
+        crossTenantAccessPolicy:
+          $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
+        defaultAppManagementPolicy:
+          $ref: '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
+        deviceRegistrationPolicy:
+          $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
+        directoryRoleAccessReviewPolicy:
+          $ref: '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
+        externalIdentitiesPolicy:
+          $ref: '#/components/schemas/microsoft.graph.externalIdentitiesPolicy'
+        featureRolloutPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
+          description: The feature rollout policy associated with a directory object.
+          x-ms-navigationProperty: true
+        federatedTokenValidationPolicy:
+          $ref: '#/components/schemas/microsoft.graph.federatedTokenValidationPolicy'
+        homeRealmDiscoveryPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+          description: The policy to control Microsoft Entra authentication behavior for federated users.
+          x-ms-navigationProperty: true
+        identitySecurityDefaultsEnforcementPolicy:
+          $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
+        mobileAppManagementPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
+          description: The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
+          x-ms-navigationProperty: true
+        mobileDeviceManagementPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
+          x-ms-navigationProperty: true
+        permissionGrantPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+          description: The policy that specifies the conditions under which consent can be granted.
+          x-ms-navigationProperty: true
+        roleManagementPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
+          description: Represents the role management policies.
+          x-ms-navigationProperty: true
+        roleManagementPolicyAssignments:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
+          description: Represents the role management policy assignments.
+          x-ms-navigationProperty: true
+        servicePrincipalCreationPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.servicePrincipalCreationPolicy'
+          x-ms-navigationProperty: true
+        tokenIssuancePolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+          description: The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
+          x-ms-navigationProperty: true
+        tokenLifetimePolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+          description: 'The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.'
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -40468,16 +41545,6 @@ components:
         lastSignInRequestId:
           type: string
           description: Request identifier of the last interactive sign-in performed by this user.
-          nullable: true
-        lastSuccessfulSignInDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The datetime of the user's most recent successful sign in activity.
-          format: date-time
-          nullable: true
-        lastSuccessfulSignInRequestId:
-          type: string
-          description: The requestID of the last successful signIn.
           nullable: true
       additionalProperties:
         type: object
@@ -44351,8 +45418,20 @@ components:
       title: azureADJoinPolicy
       type: object
       properties:
-        allowedToJoin:
-          $ref: '#/components/schemas/microsoft.graph.deviceRegistrationMembership'
+        allowedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The identifiers of the groups that are in the scope of the policy. Required when the appliesTo property is set to selected.
+        allowedUsers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The identifiers of users that are in the scope of the policy. Required when the appliesTo property is set to selected.
+        appliesTo:
+          $ref: '#/components/schemas/microsoft.graph.policyScope'
         isAdminConfigurable:
           type: boolean
           description: 'Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).'
@@ -44363,8 +45442,20 @@ components:
       title: azureADRegistrationPolicy
       type: object
       properties:
-        allowedToRegister:
-          $ref: '#/components/schemas/microsoft.graph.deviceRegistrationMembership'
+        allowedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The identifiers of the groups that are in the scope of the policy. Either this property or allowedUsers is required when the appliesTo property is set to selected.
+        allowedUsers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The identifiers of users that are in the scope of the policy. Either this property or allowedGroups is required when the appliesTo property is set to selected.
+        appliesTo:
+          $ref: '#/components/schemas/microsoft.graph.policyScope'
         isAdminConfigurable:
           type: boolean
           description: 'Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).'
@@ -44483,11 +45574,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -48790,10 +49881,6 @@ components:
         - title: schedule
           type: object
           properties:
-            activitiesIncludedWhenCopyingShiftsEnabled:
-              type: boolean
-              description: Indicates whether copied shifts should include the activities.
-              nullable: true
             enabled:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
@@ -48813,8 +49900,6 @@ components:
               description: Additional information about why schedule provisioning failed.
               nullable: true
               readOnly: true
-            startDayOfWeek:
-              $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
             swapShiftsRequestsEnabled:
               type: boolean
               description: Indicates whether swap shifts requests are enabled for the schedule.
@@ -52942,11 +54027,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.deviceRegistrationMembership:
-      title: deviceRegistrationMembership
-      type: object
-      additionalProperties:
-        type: object
     microsoft.graph.accessReviewApplyAction:
       title: accessReviewApplyAction
       type: object
@@ -55849,20 +56929,8 @@ components:
               type: string
               description: ID for the scheduling group that the open shift belongs to.
               nullable: true
-            schedulingGroupName:
-              type: string
-              nullable: true
-              readOnly: true
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
-            teamId:
-              type: string
-              nullable: true
-              readOnly: true
-            teamName:
-              type: string
-              nullable: true
-              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.schedulingGroup:
@@ -55871,10 +56939,6 @@ components:
         - title: schedulingGroup
           type: object
           properties:
-            code:
-              type: string
-              description: The code for the schedulingGroup to represent an external identifier.
-              nullable: true
             displayName:
               type: string
               description: The display name for the schedulingGroup. Required.
@@ -55962,10 +57026,6 @@ components:
         - title: timeOffReason
           type: object
           properties:
-            code:
-              type: string
-              description: The code of the timeOffReason to represent an external identifier.
-              nullable: true
             displayName:
               type: string
               description: The name of the timeOffReason. Required.

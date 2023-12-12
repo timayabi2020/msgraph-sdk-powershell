@@ -2179,11 +2179,15 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    put:
+    patch:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Update the navigation property definitions in identityGovernance
-      operationId: identityGovernance.accessReview_SetDefinition
+      summary: Update accessReviewScheduleDefinition
+      description: Update an existing accessReviewScheduleDefinition object to change one or more of its properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-update?view=graph-rest-1.0
+      operationId: identityGovernance.accessReview_UpdateDefinition
       parameters:
         - name: accessReviewScheduleDefinition-id
           in: path
@@ -8172,11 +8176,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackage
-      description: Retrieve the properties and relationships of an accessPackage object.
+      summary: List resourceRoleScopes
+      description: Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackage-list-resourcerolescopes?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement_GetAccessPackage
       parameters:
         - name: accessPackage-id
@@ -17078,11 +17082,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignmentWorkflowExtension
-      description: Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+      summary: Get accessPackageAssignmentRequestWorkflowExtension
+      description: Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_GetCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -17186,11 +17190,11 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentWorkflowExtension
-      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
+      summary: Delete accessPackageAssignmentRequestWorkflowExtension
+      description: 'Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-delete?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_DeleteCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -27824,11 +27828,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackageAssignmentWorkflowExtension
-      description: Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+      summary: Get accessPackageAssignmentRequestWorkflowExtension
+      description: Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_GetCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -27932,11 +27936,11 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentWorkflowExtension
-      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
+      summary: Delete accessPackageAssignmentRequestWorkflowExtension
+      description: 'Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-delete?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_DeleteCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -70553,11 +70557,11 @@ paths:
     get:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: Get agreement
-      description: Retrieve the properties and relationships of an agreement object.
+      summary: List files (terms of use agreement files)
+      description: Retrieve all files related to an agreement. This includes the default file and all localized files.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0
       operationId: identityGovernance.termsGraphOPreUse_GetAgreement
       parameters:
         - name: agreement-id
