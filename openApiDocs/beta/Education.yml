@@ -835,7 +835,7 @@ paths:
       tags:
         - education.educationClass
       summary: List class assignments
-      description: 'Retrieve a list of assignment objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application executing with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.'
+      description: 'Retrieve a list of educationAssignment objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application executing with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationclass-list-assignments?view=graph-rest-1.0
@@ -1194,7 +1194,7 @@ paths:
       tags:
         - education.educationClass
       summary: List categories
-      description: 'List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
+      description: 'List all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
@@ -1394,7 +1394,7 @@ paths:
       tags:
         - education.educationClass
       summary: List categories
-      description: 'List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
+      description: 'List all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
@@ -1563,6 +1563,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get gradingCategory from education
+      description: 'When set, enables users to weight assignments differently when computing a class average grade.'
       operationId: education.class.assignment_GetGradingCategory
       parameters:
         - name: educationClass-id
@@ -1845,7 +1846,7 @@ paths:
       tags:
         - education.educationClass
       summary: List assignment resources
-      description: 'Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
+      description: 'Get all the educationAssignmentResource objects for an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0
@@ -2787,7 +2788,7 @@ paths:
       tags:
         - education.educationClass
       summary: List submissions
-      description: 'List all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they''re associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section.'
+      description: 'List all the submission objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they''re associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
@@ -3400,7 +3401,7 @@ paths:
       tags:
         - education.educationClass
       summary: List outcomes
-      description: 'Retrieve a list of educationOutcome objects.  There are four types of outcomes: educationPointsOutcome, educationFeedbackOutcome, educationRubricOutcome, and educationFeedbackResourceOutcome. Only teachers, students, and applications with application permissions can perform this operation. A submission for a credit assignment (one that has no point value and no rubric) will have an educationFeedbackOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for a points assignment (one that has a point value assigned) will have both an educationFeedbackOutcome and an educationPointsOutcome. A submission for an assignment with an attached rubric, if the rubric is a credit rubric (no points), will have an educationFeedbackOutcome and an educationRubricOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for an assignment with an attached rubric, if the rubric is a points rubric, will have an educationFeedbackOutcome, an educationPointsOutcome, and an educationRubricOutcome. A submission for a feedback resource will have an educationFeedbackResourceOutcome. All outcome types have a regular and a published property appropriate to that type of outcome; for example, points and publishedPoints, feedback and publishedFeedback. The regular property is the most recent value updated by the teacher; the published property is the most recent value returned to the student.'
+      description: 'Retrieve a list of educationOutcome objects. There are four types of outcomes: educationPointsOutcome, educationFeedbackOutcome, educationRubricOutcome, and educationFeedbackResourceOutcome. Only teachers, students, and applications with application permissions can perform this operation. A submission for a credit assignment (one that has no point value and no rubric) has an educationFeedbackOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for a points assignment (one that has a point value assigned) has both an educationFeedbackOutcome and an educationPointsOutcome. A submission for an assignment with an attached rubric, if the rubric is a credit rubric (no points), has an educationFeedbackOutcome and an educationRubricOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for an assignment with an attached rubric, if the rubric is a points rubric, has an educationFeedbackOutcome, an educationPointsOutcome, and an educationRubricOutcome. A submission for a feedback resource has an educationFeedbackResourceOutcome. All outcome types have a regular and a published property appropriate to that type of outcome; for example, points and publishedPoints, feedback and publishedFeedback. The regular property is the most recent value updated by the teacher; the published property is the most recent value returned to the student.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-list-outcomes?view=graph-rest-1.0
@@ -3769,7 +3770,7 @@ paths:
       tags:
         - education.educationClass
       summary: List submission resources
-      description: 'List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The submittedResources are the resources that have officially been submitted to be graded.'
+      description: 'List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if the resource was copied from the assignment during the assign process. These resources are the working copy of the assignment. The submittedResources are the resources that were officially submitted for grading.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-1.0
@@ -5623,11 +5624,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List educationGradingCategories
-      description: Get a list of the educationGradingCategory objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationassignment-list-gradingcategory?view=graph-rest-1.0
+      summary: Get gradingCategories from education
+      description: 'When set, enables users to weight assignments differently when computing a class average grade.'
       operationId: education.class.assignmentSetting_ListGradingCategory
       parameters:
         - name: educationClass-id
@@ -5731,6 +5729,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get gradingCategories from education
+      description: 'When set, enables users to weight assignments differently when computing a class average grade.'
       operationId: education.class.assignmentSetting_GetGradingCategory
       parameters:
         - name: educationClass-id
@@ -8153,7 +8152,7 @@ paths:
       tags:
         - education.educationUser
       summary: List assignments of a user
-      description: 'Returns a list of assignments assigned to a user for all classes. Only teachers, students, and applications with application permissions can perform this operation. This utility namespace allows a caller to find all the assignments belonging to a student or a teacher in a single call rather than having to request assignments from each class. The assignment list contains what is needed to get the detailed information for the assignment from within the class namespace. All other operations on the assignment should use the class namespace.'
+      description: 'Returns a list of assignments assigned to a user for all classes. Only teachers, students, and applications with application permissions can perform this operation. This utility namespace allows a caller to find all of a student''s or teacher''s assignments in a single call, rather than having to request assignments from each class. The assignment list contains what is needed to get the detailed information for the assignment from within the class namespace. All other operations on the assignment should use the class namespace.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-list-assignments?view=graph-rest-1.0
@@ -8456,7 +8455,7 @@ paths:
       tags:
         - education.educationUser
       summary: List categories
-      description: 'List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
+      description: 'List all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
@@ -8624,7 +8623,7 @@ paths:
       tags:
         - education.educationUser
       summary: List categories
-      description: 'List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
+      description: 'List all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
@@ -8769,6 +8768,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get gradingCategory from education
+      description: 'When set, enables users to weight assignments differently when computing a class average grade.'
       operationId: education.me.assignment_GetGradingCategory
       parameters:
         - name: educationAssignment-id
@@ -8995,7 +8995,7 @@ paths:
       tags:
         - education.educationUser
       summary: List assignment resources
-      description: 'Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
+      description: 'Get all the educationAssignmentResource objects for an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0
@@ -9793,7 +9793,7 @@ paths:
       tags:
         - education.educationUser
       summary: List submissions
-      description: 'List all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they''re associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section.'
+      description: 'List all the submission objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they''re associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
@@ -10318,7 +10318,7 @@ paths:
       tags:
         - education.educationUser
       summary: List outcomes
-      description: 'Retrieve a list of educationOutcome objects.  There are four types of outcomes: educationPointsOutcome, educationFeedbackOutcome, educationRubricOutcome, and educationFeedbackResourceOutcome. Only teachers, students, and applications with application permissions can perform this operation. A submission for a credit assignment (one that has no point value and no rubric) will have an educationFeedbackOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for a points assignment (one that has a point value assigned) will have both an educationFeedbackOutcome and an educationPointsOutcome. A submission for an assignment with an attached rubric, if the rubric is a credit rubric (no points), will have an educationFeedbackOutcome and an educationRubricOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for an assignment with an attached rubric, if the rubric is a points rubric, will have an educationFeedbackOutcome, an educationPointsOutcome, and an educationRubricOutcome. A submission for a feedback resource will have an educationFeedbackResourceOutcome. All outcome types have a regular and a published property appropriate to that type of outcome; for example, points and publishedPoints, feedback and publishedFeedback. The regular property is the most recent value updated by the teacher; the published property is the most recent value returned to the student.'
+      description: 'Retrieve a list of educationOutcome objects. There are four types of outcomes: educationPointsOutcome, educationFeedbackOutcome, educationRubricOutcome, and educationFeedbackResourceOutcome. Only teachers, students, and applications with application permissions can perform this operation. A submission for a credit assignment (one that has no point value and no rubric) has an educationFeedbackOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for a points assignment (one that has a point value assigned) has both an educationFeedbackOutcome and an educationPointsOutcome. A submission for an assignment with an attached rubric, if the rubric is a credit rubric (no points), has an educationFeedbackOutcome and an educationRubricOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for an assignment with an attached rubric, if the rubric is a points rubric, has an educationFeedbackOutcome, an educationPointsOutcome, and an educationRubricOutcome. A submission for a feedback resource has an educationFeedbackResourceOutcome. All outcome types have a regular and a published property appropriate to that type of outcome; for example, points and publishedPoints, feedback and publishedFeedback. The regular property is the most recent value updated by the teacher; the published property is the most recent value returned to the student.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-list-outcomes?view=graph-rest-1.0
@@ -10639,7 +10639,7 @@ paths:
       tags:
         - education.educationUser
       summary: List submission resources
-      description: 'List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The submittedResources are the resources that have officially been submitted to be graded.'
+      description: 'List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if the resource was copied from the assignment during the assign process. These resources are the working copy of the assignment. The submittedResources are the resources that were officially submitted for grading.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-1.0
@@ -15763,7 +15763,7 @@ paths:
       tags:
         - education.educationUser
       summary: List assignments of a user
-      description: 'Returns a list of assignments assigned to a user for all classes. Only teachers, students, and applications with application permissions can perform this operation. This utility namespace allows a caller to find all the assignments belonging to a student or a teacher in a single call rather than having to request assignments from each class. The assignment list contains what is needed to get the detailed information for the assignment from within the class namespace. All other operations on the assignment should use the class namespace.'
+      description: 'Returns a list of assignments assigned to a user for all classes. Only teachers, students, and applications with application permissions can perform this operation. This utility namespace allows a caller to find all of a student''s or teacher''s assignments in a single call, rather than having to request assignments from each class. The assignment list contains what is needed to get the detailed information for the assignment from within the class namespace. All other operations on the assignment should use the class namespace.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationuser-list-assignments?view=graph-rest-1.0
@@ -16107,7 +16107,7 @@ paths:
       tags:
         - education.educationUser
       summary: List categories
-      description: 'List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
+      description: 'List all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
@@ -16307,7 +16307,7 @@ paths:
       tags:
         - education.educationUser
       summary: List categories
-      description: 'List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
+      description: 'List all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
@@ -16476,6 +16476,7 @@ paths:
       tags:
         - education.educationUser
       summary: Get gradingCategory from education
+      description: 'When set, enables users to weight assignments differently when computing a class average grade.'
       operationId: education.user.assignment_GetGradingCategory
       parameters:
         - name: educationUser-id
@@ -16758,7 +16759,7 @@ paths:
       tags:
         - education.educationUser
       summary: List assignment resources
-      description: 'Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
+      description: 'Get all the educationAssignmentResource objects for an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0
@@ -17700,7 +17701,7 @@ paths:
       tags:
         - education.educationUser
       summary: List submissions
-      description: 'List all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they''re associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section.'
+      description: 'List all the submission objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions, a student can only get submissions that they''re associated with. Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status. For details, see the examples section.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
@@ -18313,7 +18314,7 @@ paths:
       tags:
         - education.educationUser
       summary: List outcomes
-      description: 'Retrieve a list of educationOutcome objects.  There are four types of outcomes: educationPointsOutcome, educationFeedbackOutcome, educationRubricOutcome, and educationFeedbackResourceOutcome. Only teachers, students, and applications with application permissions can perform this operation. A submission for a credit assignment (one that has no point value and no rubric) will have an educationFeedbackOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for a points assignment (one that has a point value assigned) will have both an educationFeedbackOutcome and an educationPointsOutcome. A submission for an assignment with an attached rubric, if the rubric is a credit rubric (no points), will have an educationFeedbackOutcome and an educationRubricOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for an assignment with an attached rubric, if the rubric is a points rubric, will have an educationFeedbackOutcome, an educationPointsOutcome, and an educationRubricOutcome. A submission for a feedback resource will have an educationFeedbackResourceOutcome. All outcome types have a regular and a published property appropriate to that type of outcome; for example, points and publishedPoints, feedback and publishedFeedback. The regular property is the most recent value updated by the teacher; the published property is the most recent value returned to the student.'
+      description: 'Retrieve a list of educationOutcome objects. There are four types of outcomes: educationPointsOutcome, educationFeedbackOutcome, educationRubricOutcome, and educationFeedbackResourceOutcome. Only teachers, students, and applications with application permissions can perform this operation. A submission for a credit assignment (one that has no point value and no rubric) has an educationFeedbackOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for a points assignment (one that has a point value assigned) has both an educationFeedbackOutcome and an educationPointsOutcome. A submission for an assignment with an attached rubric, if the rubric is a credit rubric (no points), has an educationFeedbackOutcome and an educationRubricOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for an assignment with an attached rubric, if the rubric is a points rubric, has an educationFeedbackOutcome, an educationPointsOutcome, and an educationRubricOutcome. A submission for a feedback resource has an educationFeedbackResourceOutcome. All outcome types have a regular and a published property appropriate to that type of outcome; for example, points and publishedPoints, feedback and publishedFeedback. The regular property is the most recent value updated by the teacher; the published property is the most recent value returned to the student.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-list-outcomes?view=graph-rest-1.0
@@ -18682,7 +18683,7 @@ paths:
       tags:
         - education.educationUser
       summary: List submission resources
-      description: 'List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The submittedResources are the resources that have officially been submitted to be graded.'
+      description: 'List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if the resource was copied from the assignment during the assign process. These resources are the working copy of the assignment. The submittedResources are the resources that were officially submitted for grading.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-1.0
@@ -22207,7 +22208,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.educationAddToCalendarOptions'
             allowLateSubmissions:
               type: boolean
-              description: 'Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.'
+              description: 'Identifies whether students can submit after the due date. If this property isn''t specified during create, it defaults to true.'
               nullable: true
             allowStudentsToAddResourcesToSubmission:
               type: boolean
@@ -22216,7 +22217,7 @@ components:
             assignDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date when the assignment should become active.  If in the future, the assignment is not shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The date when the assignment should become active.  If in the future, the assignment isn''t shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
               readOnly: true
@@ -22231,12 +22232,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentRecipient'
             classId:
               type: string
-              description: Class which this assignment belongs.
+              description: Class to which this assignment belongs.
               nullable: true
             closeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment doesn''t allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             createdBy:
@@ -22282,7 +22283,7 @@ components:
               nullable: true
             notificationChannelUrl:
               type: string
-              description: 'Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.'
+              description: 'Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn''t allowed after the assignment has been published.'
               nullable: true
             resourcesFolderUrl:
               type: string
@@ -22530,6 +22531,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.educationGradingCategory'
+              description: 'When set, enables users to weight assignments differently when computing a class average grade.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -25680,7 +25682,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -25690,7 +25692,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted (either successfully or unsuccessfully) to sign in to the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -26365,6 +26367,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
+            disasterRecoveryCapability:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapability'
             diskEncryptionState:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionState'
             displayName:
@@ -28380,6 +28384,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: Represents the chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: Represents the region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -28865,11 +28877,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -29724,6 +29736,8 @@ components:
         - title: plannerPlan
           type: object
           properties:
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             container:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
             contexts:
@@ -29738,6 +29752,9 @@ components:
               nullable: true
             creationSource:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
+            isArchived:
+              type: boolean
+              nullable: true
             owner:
               type: string
               nullable: true
@@ -30323,6 +30340,9 @@ components:
               type: string
               description: The email address for sending messages to the channel. Read-only.
               nullable: true
+            isArchived:
+              type: boolean
+              nullable: true
             isFavoriteByDefault:
               type: boolean
               description: 'Indicates whether the channel should automatically be marked ''favorite'' for all members of the team. Can only be set programmatically with Create team. Default: false.'
@@ -30504,6 +30524,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.dayNote'
+              description: The day notes in the schedule.
               x-ms-navigationProperty: true
             offerShiftRequests:
               type: array
@@ -30545,6 +30566,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeCard'
+              description: The time cards in the schedule.
               x-ms-navigationProperty: true
             timeOffReasons:
               type: array
@@ -31464,13 +31486,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             resourceLocation:
@@ -31874,6 +31896,20 @@ components:
           type: string
           description: 'Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.'
           format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcDisasterRecoveryCapability:
+      title: cloudPcDisasterRecoveryCapability
+      type: object
+      properties:
+        capabilityType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDisasterRecoveryCapabilityType'
+        primaryRegion:
+          type: string
+          nullable: true
+        secondaryRegion:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcDiskEncryptionState:
@@ -35173,6 +35209,8 @@ components:
               nullable: true
             appliedCategories:
               $ref: '#/components/schemas/microsoft.graph.plannerAppliedCategories'
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             assigneePriority:
               type: string
               description: Hint used to order items of this type in a list view. The format is defined as outlined here.
@@ -35221,6 +35259,17 @@ components:
             hasDescription:
               type: boolean
               description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              nullable: true
+            isArchived:
+              type: boolean
+              nullable: true
+            isOnMyDay:
+              type: boolean
+              nullable: true
+            isOnMyDayLastModifiedDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
             orderHint:
               type: string
@@ -37158,6 +37207,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalLink'
       additionalProperties:
         type: object
+    microsoft.graph.plannerArchivalInfo:
+      title: plannerArchivalInfo
+      type: object
+      properties:
+        justification:
+          type: string
+          nullable: true
+        statusChangedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        statusChangedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerPlanContainer:
       title: plannerPlanContainer
       type: object
@@ -37203,8 +37268,13 @@ components:
         - title: plannerBucket
           type: object
           properties:
+            archivalInfo:
+              $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
             creationSource:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
+            isArchived:
+              type: boolean
+              nullable: true
             name:
               type: string
               description: Name of the bucket.
@@ -38037,6 +38107,8 @@ components:
         - teamifyGroup
         - createChannel
         - createChat
+        - archiveChannel
+        - unarchiveChannel
       type: string
     microsoft.graph.teamsAsyncOperationStatus:
       title: teamsAsyncOperationStatus
@@ -38073,6 +38145,7 @@ components:
             dayNoteDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date of the day note.
               format: date
               nullable: true
             draftDayNote:
@@ -38130,23 +38203,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
             isStagedForDeletion:
               type: boolean
+              description: 'The openShift is marked for deletion, a process that is finalized when the schedule is shared.'
               nullable: true
             schedulingGroupId:
               type: string
-              description: ID for the scheduling group that the open shift belongs to.
+              description: The ID of the schedulingGroup that contains the openShift.
               nullable: true
             schedulingGroupName:
               type: string
+              description: The name of the schedulingGroup that contains the openShift.
               nullable: true
               readOnly: true
             sharedOpenShift:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
             teamId:
               type: string
+              description: The ID of the team in which the openShift is located.
               nullable: true
               readOnly: true
             teamName:
               type: string
+              description: The name of the team in which the openShift is located.
               nullable: true
               readOnly: true
           additionalProperties:
@@ -38188,6 +38265,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
             isStagedForDeletion:
               type: boolean
+              description: 'The shift is marked for deletion, a process that is finalized when the schedule is shared.'
               nullable: true
             schedulingGroupId:
               type: string
@@ -38298,6 +38376,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
             isStagedForDeletion:
               type: boolean
+              description: 'The timeOff is marked for deletion, a process that is finalized when the schedule is shared.'
               nullable: true
             sharedTimeOff:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
@@ -38960,6 +39039,14 @@ components:
         - available
         - availableWithWarning
         - unavailable
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcDisasterRecoveryCapabilityType:
+      title: cloudPcDisasterRecoveryCapabilityType
+      enum:
+        - none
+        - failover
+        - failback
         - unknownFutureValue
       type: string
     microsoft.graph.actionState:
@@ -41167,6 +41254,8 @@ components:
         - none
         - checklistCompletion
         - unknownFutureValue
+        - formCompletion
+        - approvalCompletion
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -41202,6 +41291,8 @@ components:
         - title: plannerTaskDetails
           type: object
           properties:
+            approvalAttachment:
+              $ref: '#/components/schemas/microsoft.graph.plannerBaseApprovalAttachment'
             checklist:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
             completionRequirements:
@@ -41210,6 +41301,8 @@ components:
               type: string
               description: Description of the task.
               nullable: true
+            forms:
+              $ref: '#/components/schemas/microsoft.graph.plannerFormsDictionary'
             notes:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             previewType:
@@ -41616,7 +41709,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
@@ -41625,7 +41718,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
               readOnly: true
@@ -41771,7 +41864,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             displayName:
               type: string
-              description: Display name of the virtual event
+              description: Display name of the virtual event.
               nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -41783,13 +41876,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
-              description: Presenters' information of the virtual event.
+              description: The virtual event presenters.
               x-ms-navigationProperty: true
             sessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
-              description: Sessions of the virtual event.
+              description: Sessions for the virtual event.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -44658,6 +44751,14 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.plannerBaseApprovalAttachment:
+      title: plannerBaseApprovalAttachment
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/microsoft.graph.plannerApprovalStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.plannerChecklistItems:
       title: plannerChecklistItems
       type: object
@@ -44667,10 +44768,21 @@ components:
       title: plannerTaskCompletionRequirementDetails
       type: object
       properties:
+        approvalRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerApprovalRequirement'
         checklistRequirement:
           $ref: '#/components/schemas/microsoft.graph.plannerChecklistRequirement'
+        formsRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerFormsRequirement'
       additionalProperties:
         type: object
+    microsoft.graph.plannerFormsDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: plannerFormsDictionary
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.plannerExternalReferences:
       title: plannerExternalReferences
       type: object
@@ -46922,6 +47034,24 @@ components:
         - deviceIntent
       type: string
       description: Authoring source of a policy
+    microsoft.graph.plannerApprovalStatus:
+      title: plannerApprovalStatus
+      enum:
+        - requested
+        - approved
+        - rejected
+        - cancelled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerApprovalRequirement:
+      title: plannerApprovalRequirement
+      type: object
+      properties:
+        isApprovalRequired:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerChecklistRequirement:
       title: plannerChecklistRequirement
       type: object
@@ -46932,6 +47062,22 @@ components:
             type: string
             nullable: true
           description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerFormsRequirement:
+      title: plannerFormsRequirement
+      type: object
+      properties:
+        requiredForms:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.endpointType:
@@ -47508,6 +47654,7 @@ components:
           items:
             type: string
             nullable: true
+          description: 'The identifiers of containers, such as organizational units, that are in scope for a synchronization rule. For Active Directory organizational units, use the distinguished names. An empty list means no container filtering is configured.'
       additionalProperties:
         type: object
     microsoft.graph.groupFilter:
@@ -47519,6 +47666,7 @@ components:
           items:
             type: string
             nullable: true
+          description: 'Identifiers of groups that are in scope for a synchronization rule. For Active Directory groups, use the distinguished names. An empty list means no group filtering is configured.'
       additionalProperties:
         type: object
     microsoft.graph.stringKeyStringValuePair:
