@@ -7594,11 +7594,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: 'presence: setStatusMessage'
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      summary: Get presence
+      description: Get a user's presence information.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -8205,6 +8205,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingRestricted'
             rosterSequenceNumber:
               type: integer
+              description: Indicates the roster sequence number in which the participant was last updated.
               format: int64
               nullable: true
           additionalProperties:
@@ -8801,6 +8802,7 @@ components:
       properties:
         reason:
           type: string
+          description: The removal reason for the participant resource.
           nullable: true
       additionalProperties:
         type: object
