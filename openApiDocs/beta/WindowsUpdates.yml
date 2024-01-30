@@ -4179,11 +4179,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get resourceConnection
-      description: Read the properties and relationships of a resourceConnection object.
+      summary: Get operationalInsightsConnection
+      description: Read the properties and relationships of an operationalInsightsConnection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-1.0
       operationId: admin.window.update_GetResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -4396,11 +4396,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get azureADDevice
-      description: Read the properties of an azureADDevice object.
+      summary: Get updatableAssetGroup
+      description: Read the properties and relationships of an updatableAssetGroup object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-get?view=graph-rest-1.0
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -4479,11 +4479,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete updatableAsset
-      description: Delete an updatableAsset object.
+      summary: Delete updatableAssetGroup
+      description: 'Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-1.0
       operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -7751,6 +7751,9 @@ components:
           type: integer
           description: 'Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.'
           format: int32
+          nullable: true
+        offerAsOptional:
+          type: boolean
           nullable: true
       additionalProperties:
         type: object
