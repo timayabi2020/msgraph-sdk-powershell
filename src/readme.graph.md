@@ -7,7 +7,7 @@ azure: false
 powershell: true
 version: latest
 #use: "@autorest/powershell@3.0.509"
-use: "$(this-folder)../autorest.powershell"
+use: "C:\\Projects\\ForkedAutorest\\autorest.powershell"
 export-properties-for-dict: false
 metadata:
     authors: Microsoft Corporation
