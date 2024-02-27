@@ -4089,6 +4089,8 @@ paths:
                 - isBroadcast desc
                 - joinUrl
                 - joinUrl desc
+                - meetingTemplateId
+                - meetingTemplateId desc
                 - participants
                 - participants desc
                 - recording
@@ -4140,6 +4142,7 @@ paths:
                 - externalId
                 - isBroadcast
                 - joinUrl
+                - meetingTemplateId
                 - participants
                 - recording
                 - startDateTime
@@ -4256,6 +4259,7 @@ paths:
                 - externalId
                 - isBroadcast
                 - joinUrl
+                - meetingTemplateId
                 - participants
                 - recording
                 - startDateTime
@@ -6235,11 +6239,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: communication.onlineMeeting_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -7405,6 +7409,7 @@ paths:
                 - externalId
                 - isBroadcast
                 - joinUrl
+                - meetingTemplateId
                 - participants
                 - recording
                 - startDateTime
@@ -8373,6 +8378,8 @@ paths:
                 - isBroadcast desc
                 - joinUrl
                 - joinUrl desc
+                - meetingTemplateId
+                - meetingTemplateId desc
                 - participants
                 - participants desc
                 - recording
@@ -8424,6 +8431,7 @@ paths:
                 - externalId
                 - isBroadcast
                 - joinUrl
+                - meetingTemplateId
                 - participants
                 - recording
                 - startDateTime
@@ -8562,6 +8570,7 @@ paths:
                 - externalId
                 - isBroadcast
                 - joinUrl
+                - meetingTemplateId
                 - participants
                 - recording
                 - startDateTime
@@ -10662,11 +10671,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: user.onlineMeeting_DeleteRegistration
       parameters:
         - name: user-id
@@ -11920,6 +11929,7 @@ paths:
                 - externalId
                 - isBroadcast
                 - joinUrl
+                - meetingTemplateId
                 - participants
                 - recording
                 - startDateTime
@@ -13077,6 +13087,10 @@ components:
             joinUrl:
               type: string
               nullable: true
+            meetingTemplateId:
+              type: string
+              description: The ID of the meeting template.
+              nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             recording:
@@ -13186,9 +13200,11 @@ components:
       properties:
         phoneNumber:
           type: string
+          description: The phone number of the external attendee. Required.
           nullable: true
         timeZone:
           type: string
+          description: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
           nullable: true
       additionalProperties:
         type: object

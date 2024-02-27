@@ -3610,6 +3610,119 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/reports/microsoft.graph.getRelyingPartyDetailedSummary(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getRelyingPartyDetailedSummary
+      operationId: report_getRelyingPartyDetailedSummary
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - failedSignInCount
+                - migrationStatus
+                - migrationValidationDetails
+                - relyingPartyId
+                - relyingPartyName
+                - replyUrls
+                - serviceId
+                - signInSuccessRate
+                - successfulSignInCount
+                - totalSignInCount
+                - uniqueUserCount
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - failedSignInCount
+                - failedSignInCount desc
+                - migrationStatus
+                - migrationStatus desc
+                - migrationValidationDetails
+                - migrationValidationDetails desc
+                - relyingPartyId
+                - relyingPartyId desc
+                - relyingPartyName
+                - relyingPartyName desc
+                - replyUrls
+                - replyUrls desc
+                - serviceId
+                - serviceId desc
+                - signInSuccessRate
+                - signInSuccessRate desc
+                - successfulSignInCount
+                - successfulSignInCount desc
+                - totalSignInCount
+                - totalSignInCount desc
+                - uniqueUserCount
+                - uniqueUserCount desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of relyingPartyDetailedSummary
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/reports/microsoft.graph.getSharePointActivityFileCounts(period=''{period}'')':
     get:
       tags:
@@ -7582,6 +7695,45 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
       additionalProperties:
         type: object
+    microsoft.graph.relyingPartyDetailedSummary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: relyingPartyDetailedSummary
+          type: object
+          properties:
+            failedSignInCount:
+              type: integer
+              format: int64
+            migrationStatus:
+              $ref: '#/components/schemas/microsoft.graph.migrationStatus'
+            migrationValidationDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+            relyingPartyId:
+              type: string
+            relyingPartyName:
+              type: string
+            replyUrls:
+              type: array
+              items:
+                type: string
+            serviceId:
+              type: string
+            signInSuccessRate:
+              type: number
+              format: double
+            successfulSignInCount:
+              type: integer
+              format: int64
+            totalSignInCount:
+              type: integer
+              format: int64
+            uniqueUserCount:
+              type: integer
+              format: int64
+          additionalProperties:
+            type: object
     microsoft.graph.partners:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8322,6 +8474,32 @@ components:
         - aborted
         - unknownFutureValue
       type: string
+    microsoft.graph.migrationStatus:
+      title: migrationStatus
+      enum:
+        - ready
+        - needsReview
+        - additionalStepsRequired
+        - unknownFutureValue
+      type: string
+    microsoft.graph.keyValuePair:
+      title: keyValuePair
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name for this key-value pair
+        value:
+          type: string
+          description: Value for this key-value pair
+          nullable: true
+      additionalProperties:
+        type: object
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
     microsoft.graph.partners.billing.blob:
       title: blob
       type: object
@@ -8699,11 +8877,6 @@ components:
         - success
         - unknownFutureValue
       type: string
-    ReferenceNumeric:
-      enum:
-        - '-INF'
-        - INF
-        - NaN
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code

@@ -11938,11 +11938,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create openTypeExtension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
+      summary: Create conversation
+      description: Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -11975,10 +11975,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Get a conversation object.
+      description: Retrieve the properties and relationships of conversation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -12029,7 +12029,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete conversation
-      description: Delete a conversation object.
+      description: Delete a group's conversation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
@@ -12379,10 +12379,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -43239,11 +43239,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversation thread
-      description: Get a thread object.
+      summary: Get conversationThread
+      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -43339,11 +43339,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversation thread
-      description: Delete a thread object.
+      summary: Delete conversationThread
+      description: Delete conversationThread.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -43379,10 +43379,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -50042,6 +50042,8 @@ components:
           type: string
           description: Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.
           nullable: true
+        driveItemSource:
+          $ref: '#/components/schemas/microsoft.graph.driveItemSource'
         fileSize:
           type: integer
           description: Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
@@ -50049,6 +50051,8 @@ components:
           nullable: true
         fileSystemInfo:
           $ref: '#/components/schemas/microsoft.graph.fileSystemInfo'
+        mediaSource:
+          $ref: '#/components/schemas/microsoft.graph.mediaSource'
         name:
           type: string
           description: The name of the item (filename and extension). Read-write.
@@ -50251,6 +50255,18 @@ components:
             isMemberManagementRestricted:
               type: boolean
               description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don''t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can''t be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.'
+              nullable: true
+            membershipRule:
+              type: string
+              description: 'Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.'
+              nullable: true
+            membershipRuleProcessingState:
+              type: string
+              description: 'Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.'
+              nullable: true
+            membershipType:
+              type: string
+              description: 'Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.'
               nullable: true
             visibility:
               type: string
@@ -51465,6 +51481,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
               x-ms-navigationProperty: true
+            cloudClipboard:
+              $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
             cloudPCs:
               type: array
               items:
@@ -54451,6 +54469,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.mediaSource:
+      title: mediaSource
+      type: object
+      properties:
+        contentCategory:
+          $ref: '#/components/schemas/microsoft.graph.mediaSourceContentCategory'
+      additionalProperties:
+        type: object
     microsoft.graph.sensitivityLabelAssignment:
       title: sensitivityLabelAssignment
       type: object
@@ -55311,6 +55337,7 @@ components:
             subject:
               type: string
               description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.homeRealmDiscoveryPolicy:
@@ -56365,6 +56392,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the chat. Nullable.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardRoot
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -57670,6 +57710,10 @@ components:
             joinUrl:
               type: string
               nullable: true
+            meetingTemplateId:
+              type: string
+              description: The ID of the meeting template.
+              nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             recording:
@@ -58105,6 +58149,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            windows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -58115,11 +58164,11 @@ components:
           properties:
             locale:
               type: string
-              description: Represents the chosen locale of a user in Microsoft Teams.
+              description: The chosen locale of a user in Microsoft Teams.
               nullable: true
             region:
               type: string
-              description: Represents the region of the user in Microsoft Teams.
+              description: The region of the user in Microsoft Teams.
               nullable: true
             associatedTeams:
               type: array
@@ -58401,6 +58450,7 @@ components:
         - unknownFutureValue
         - formCompletion
         - approvalCompletion
+        - completionInHostedApp
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -59938,6 +59988,14 @@ components:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
               nullable: true
+            isCrossLocationShiftRequestApprovalRequired:
+              type: boolean
+              description: Indicates whether approval is required by a manager of this schedule for cross location shift requests.
+              nullable: true
+            isCrossLocationShiftsEnabled:
+              type: boolean
+              description: Indicates whether the cross-location marketplace feature is enabled for this schedule.
+              nullable: true
             offerShiftRequestsEnabled:
               type: boolean
               description: Indicates whether offer shift requests are enabled for the schedule.
@@ -59978,7 +60036,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The Ids for the workforce integrations associated with this schedule.
+              description: The IDs for the workforce integrations associated with this schedule.
             dayNotes:
               type: array
               items:
@@ -60421,14 +60479,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.mediaSource:
-      title: mediaSource
-      type: object
-      properties:
-        contentCategory:
-          $ref: '#/components/schemas/microsoft.graph.mediaSourceContentCategory'
-      additionalProperties:
-        type: object
     microsoft.graph.pendingContentUpdate:
       title: pendingContentUpdate
       type: object
@@ -60451,6 +60501,9 @@ components:
         - stream
         - powerPoint
         - office
+        - loki
+        - loop
+        - other
         - unknownFutureValue
       type: string
     microsoft.graph.itemActionSet:
@@ -60777,6 +60830,20 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.mediaSourceContentCategory:
+      title: mediaSourceContentCategory
+      enum:
+        - meeting
+        - liveStream
+        - presentation
+        - screenRecording
+        - story
+        - profile
+        - chat
+        - note
+        - comment
+        - unknownFutureValue
+      type: string
     microsoft.graph.booleanColumn:
       title: booleanColumn
       type: object
@@ -61429,11 +61496,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -62173,6 +62240,31 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcConnectionSettings:
@@ -66014,6 +66106,27 @@ components:
               description: Availability of the user to be scheduled for work and its recurrence pattern.
           additionalProperties:
             type: object
+    microsoft.graph.windowsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSetting
+          type: object
+          properties:
+            payloadType:
+              type: string
+              nullable: true
+            settingType:
+              $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
+            windowsDeviceId:
+              type: string
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.associatedTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -66963,6 +67076,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardDefinition'
+              description: Dashboard cards specified in the Teams app manifest.
               x-ms-navigationProperty: true
             outlineIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
@@ -67104,7 +67218,7 @@ components:
           properties:
             code:
               type: string
-              description: The code for the schedulingGroup to represent an external identifier.
+              description: 'The code for the schedulingGroup to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.'
               nullable: true
             displayName:
               type: string
@@ -67189,7 +67303,7 @@ components:
           properties:
             code:
               type: string
-              description: The code of the timeOffReason to represent an external identifier.
+              description: 'The code of the timeOffReason to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.'
               nullable: true
             displayName:
               type: string
@@ -67325,15 +67439,6 @@ components:
         - endDate
         - noEnd
         - numbered
-      type: string
-    microsoft.graph.mediaSourceContentCategory:
-      title: mediaSourceContentCategory
-      enum:
-        - meeting
-        - liveStream
-        - presentation
-        - screenRecording
-        - unknownFutureValue
       type: string
     microsoft.graph.commentAction:
       title: commentAction
@@ -68278,6 +68383,16 @@ components:
           type: string
           description: Url for showing tab contents outside of Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudClipboardItemPayload:
+      title: cloudClipboardItemPayload
+      type: object
+      properties:
+        content:
+          type: string
+        formatName:
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcHealthCheckItem:
@@ -70783,6 +70898,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsSettingType:
+      title: windowsSettingType
+      enum:
+        - roaming
+        - backup
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsSettingInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSettingInstance
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payload:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -71317,14 +71462,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSize'
             description:
               type: string
+              description: The description for the card. Required.
               nullable: true
             displayName:
               type: string
+              description: The name of the card. Required.
               nullable: true
             icon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardIcon'
             pickerGroupId:
               type: string
+              description: ID for the group in the card picker. Required.
               nullable: true
           additionalProperties:
             type: object
@@ -73534,13 +73682,9 @@ components:
               description: Email address of the presenter.
               nullable: true
             identity:
-              $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+              $ref: '#/components/schemas/microsoft.graph.identity'
             presenterDetails:
               $ref: '#/components/schemas/microsoft.graph.virtualEventPresenterDetails'
-            profilePhoto:
-              type: string
-              format: base64url
-              nullable: true
             sessions:
               type: array
               items:
@@ -73690,9 +73834,11 @@ components:
       properties:
         iconUrl:
           type: string
+          description: 'The icon for the card, displayed in the toolbox and card bar, is represented as a URL. The preferred size for raster images is 28x28 pixels. If this property has a value, the officeFabricIconFontName property is ignored.'
           nullable: true
         officeUIFabricIconName:
           type: string
+          description: 'The friendly name of the Office UI Fabric/Fluent UI icon for the card that is used when the iconUrl property isn''t specified. For example, ''officeUIFabricIconName'': ''Search''.'
           nullable: true
       additionalProperties:
         type: object
@@ -75363,6 +75509,11 @@ components:
           type: string
           description: The presenter's personal website URL.
           nullable: true
+        photo:
+          type: string
+          description: The content stream of the presenter's photo.
+          format: base64url
+          nullable: true
         twitterProfileWebUrl:
           type: string
           description: The presenter's Twitter profile URL.
@@ -75389,6 +75540,7 @@ components:
       properties:
         botId:
           type: string
+          description: The ID (usually a GUID) of the bot associated with the specific teamsAppDefinition. This is a unique app ID for the bot as registered with the Bot Framework.
           nullable: true
       additionalProperties:
         type: object

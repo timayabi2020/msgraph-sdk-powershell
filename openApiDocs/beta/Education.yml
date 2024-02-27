@@ -961,6 +961,7 @@ paths:
                 - webUrl
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -978,6 +979,7 @@ paths:
                 - '*'
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -1031,7 +1033,7 @@ paths:
       tags:
         - education.educationClass
       summary: Get educationAssignment
-      description: 'Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, you will get an unknownFutureValue value in the response.'
+      description: 'Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, the response value for the status property is unknownFutureValue.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-get?view=graph-rest-1.0
@@ -1089,6 +1091,7 @@ paths:
                 - webUrl
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -1106,6 +1109,7 @@ paths:
                 - '*'
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -1677,12 +1681,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/gradingScheme':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get gradingScheme from education
+      operationId: education.class.assignment_GetGradingScheme
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - grades
+                - hidePointsDuringGrading
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.activate':
     post:
       tags:
         - education.Actions
       summary: Invoke action activate
-      description: Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
+      description: Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0
@@ -5434,6 +5498,7 @@ paths:
                 - webUrl
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -5510,6 +5575,7 @@ paths:
                 - '*'
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -5572,7 +5638,9 @@ paths:
               enum:
                 - id
                 - submissionAnimationDisabled
+                - defaultGradingScheme
                 - gradingCategories
+                - gradingSchemes
               type: string
         - name: $expand
           in: query
@@ -5585,7 +5653,9 @@ paths:
             items:
               enum:
                 - '*'
+                - defaultGradingScheme
                 - gradingCategories
+                - gradingSchemes
               type: string
       responses:
         2XX:
@@ -5655,6 +5725,58 @@ paths:
       responses:
         2XX:
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignmentSettings/defaultGradingScheme':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get defaultGradingScheme from education
+      operationId: education.class.assignmentSetting_GetDefaultGradingScheme
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - grades
+                - hidePointsDuringGrading
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5825,7 +5947,11 @@ paths:
     patch:
       tags:
         - education.educationClass
-      summary: Update the navigation property gradingCategories in education
+      summary: Update gradingCategory
+      description: Update a single gradingCategory on the educationAssignmentSettings. Only teachers can perform this operation.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/educationgradingcategory-update?view=graph-rest-1.0
       operationId: education.class.assignmentSetting_UpdateGradingCategory
       parameters:
         - name: educationClass-id
@@ -5901,6 +6027,267 @@ paths:
         - education.educationClass
       summary: Get the number of the resource
       operationId: education.class.assignmentSetting.gradingCategory_GetCount
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/education/classes/{educationClass-id}/assignmentSettings/gradingSchemes':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get gradingSchemes from education
+      operationId: education.class.assignmentSetting_ListGradingScheme
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - grades
+                - grades desc
+                - hidePointsDuringGrading
+                - hidePointsDuringGrading desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - grades
+                - hidePointsDuringGrading
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.educationGradingSchemeCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - education.educationClass
+      summary: Create new navigation property to gradingSchemes for education
+      operationId: education.class.assignmentSetting_CreateGradingScheme
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignmentSettings/gradingSchemes/{educationGradingScheme-id}':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get gradingSchemes from education
+      operationId: education.class.assignmentSetting_GetGradingScheme
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationGradingScheme-id
+          in: path
+          description: The unique identifier of educationGradingScheme
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationGradingScheme
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - grades
+                - hidePointsDuringGrading
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - education.educationClass
+      summary: Update the navigation property gradingSchemes in education
+      operationId: education.class.assignmentSetting_UpdateGradingScheme
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationGradingScheme-id
+          in: path
+          description: The unique identifier of educationGradingScheme
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationGradingScheme
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - education.educationClass
+      summary: Delete navigation property gradingSchemes for education
+      operationId: education.class.assignmentSetting_DeleteGradingScheme
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationGradingScheme-id
+          in: path
+          description: The unique identifier of educationGradingScheme
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationGradingScheme
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignmentSettings/gradingSchemes/$count':
+    get:
+      tags:
+        - education.educationClass
+      summary: Get the number of the resource
+      operationId: education.class.assignmentSetting.gradingScheme_GetCount
       parameters:
         - name: educationClass-id
           in: path
@@ -8379,6 +8766,7 @@ paths:
                 - webUrl
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -8396,6 +8784,7 @@ paths:
                 - '*'
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -8483,6 +8872,7 @@ paths:
                 - webUrl
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -8500,6 +8890,7 @@ paths:
                 - '*'
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -8975,12 +9366,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/me/assignments/{educationAssignment-id}/gradingScheme':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get gradingScheme from education
+      operationId: education.me.assignment_GetGradingScheme
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - grades
+                - hidePointsDuringGrading
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/education/me/assignments/{educationAssignment-id}/microsoft.graph.activate':
     post:
       tags:
         - education.Actions
       summary: Invoke action activate
-      description: Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
+      description: Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0
@@ -12196,6 +12639,7 @@ paths:
                 - webUrl
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -12272,6 +12716,7 @@ paths:
                 - '*'
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -13294,6 +13739,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - cloudPCs
                 - contactFolders
                 - contacts
@@ -13374,6 +13820,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - cloudPCs
                 - contactFolders
                 - contacts
@@ -13901,6 +14348,9 @@ paths:
                 - description
                 - displayName
                 - isMemberManagementRestricted
+                - membershipRule
+                - membershipRuleProcessingState
+                - membershipType
                 - visibility
                 - extensions
                 - members
@@ -15920,11 +16370,11 @@ paths:
     patch:
       tags:
         - education.educationUser
-      summary: Update educationUser properties
-      description: Update the properties of an educationuser object.
+      summary: Update relatedContacts
+      description: Update the relatedContact collection of an educationUser object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationuser-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/relatedcontact-update?view=graph-rest-1.0
       operationId: education_UpdateUser
       parameters:
         - name: educationUser-id
@@ -16101,6 +16551,7 @@ paths:
                 - webUrl
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -16118,6 +16569,7 @@ paths:
                 - '*'
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -16222,6 +16674,7 @@ paths:
                 - webUrl
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -16239,6 +16692,7 @@ paths:
                 - '*'
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -16802,12 +17256,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/gradingScheme':
+    get:
+      tags:
+        - education.educationUser
+      summary: Get gradingScheme from education
+      operationId: education.user.assignment_GetGradingScheme
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - grades
+                - hidePointsDuringGrading
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.activate':
     post:
       tags:
         - education.Actions
       summary: Invoke action activate
-      description: Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
+      description: Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0
@@ -20559,6 +21073,7 @@ paths:
                 - webUrl
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -20635,6 +21150,7 @@ paths:
                 - '*'
                 - categories
                 - gradingCategory
+                - gradingScheme
                 - resources
                 - rubric
                 - submissions
@@ -21786,6 +22302,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - cloudPCs
                 - contactFolders
                 - contacts
@@ -21866,6 +22383,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - cloudPCs
                 - contactFolders
                 - contacts
@@ -22573,6 +23091,8 @@ components:
               x-ms-navigationProperty: true
             gradingCategory:
               $ref: '#/components/schemas/microsoft.graph.educationGradingCategory'
+            gradingScheme:
+              $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
             resources:
               type: array
               items:
@@ -22604,6 +23124,22 @@ components:
               type: integer
               description: The weight of the category; an integer between 0 and 100.
               format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.educationGradingScheme:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: educationGradingScheme
+          type: object
+          properties:
+            displayName:
+              type: string
+            grades:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.educationGradingSchemeGrade'
+            hidePointsDuringGrading:
+              type: boolean
           additionalProperties:
             type: object
     microsoft.graph.educationAssignmentResource:
@@ -22795,11 +23331,18 @@ components:
               type: boolean
               description: 'Indicates whether turn-in celebration animation will be shown. If true, the animation won''t be shown. The default value is false.'
               nullable: true
+            defaultGradingScheme:
+              $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
             gradingCategories:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.educationGradingCategory'
               description: 'When set, enables users to weight assignments differently when computing a class average grade.'
+              x-ms-navigationProperty: true
+            gradingSchemes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23875,6 +24418,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
               x-ms-navigationProperty: true
+            cloudClipboard:
+              $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
             cloudPCs:
               type: array
               items:
@@ -24184,6 +24729,18 @@ components:
               type: boolean
               description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don''t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can''t be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.'
               nullable: true
+            membershipRule:
+              type: string
+              description: 'Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.'
+              nullable: true
+            membershipRuleProcessingState:
+              type: string
+              description: 'Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.'
+              nullable: true
+            membershipType:
+              type: string
+              description: 'Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.'
+              nullable: true
             visibility:
               type: string
               description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
@@ -24455,6 +25012,21 @@ components:
         - unknownFutureValue
         - inactive
       type: string
+    microsoft.graph.educationGradingSchemeGrade:
+      title: educationGradingSchemeGrade
+      type: object
+      properties:
+        defaultPercentage:
+          type: number
+          format: float
+          nullable: true
+        displayName:
+          type: string
+        minPercentage:
+          type: number
+          format: float
+      additionalProperties:
+        type: object
     microsoft.graph.educationResource:
       title: educationResource
       type: object
@@ -26621,6 +27193,19 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudClipboardRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardRoot
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPC:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -28196,6 +28781,10 @@ components:
             joinUrl:
               type: string
               nullable: true
+            meetingTemplateId:
+              type: string
+              description: The ID of the meeting template.
+              nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             recording:
@@ -28647,6 +29236,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            windows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -28657,11 +29251,11 @@ components:
           properties:
             locale:
               type: string
-              description: Represents the chosen locale of a user in Microsoft Teams.
+              description: The chosen locale of a user in Microsoft Teams.
               nullable: true
             region:
               type: string
-              description: Represents the region of the user in Microsoft Teams.
+              description: The region of the user in Microsoft Teams.
               nullable: true
             associatedTeams:
               type: array
@@ -29038,6 +29632,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.educationGradingSchemeCollectionResponse:
+      title: Collection of educationGradingScheme
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.educationGradingScheme'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.serviceProvisioningErrorCollectionResponse:
       title: Collection of microsoft.graph.serviceProvisioningError
       type: object
@@ -29162,6 +29769,11 @@ components:
         - text
         - html
       type: string
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
     microsoft.graph.rubricCriterion:
       title: rubricCriterion
       type: object
@@ -29170,11 +29782,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.educationItemBody'
       additionalProperties:
         type: object
-    ReferenceNumeric:
-      enum:
-        - '-INF'
-        - INF
-        - NaN
     microsoft.graph.MembershipRuleProcessingStatusDetails:
       title: MembershipRuleProcessingStatusDetails
       enum:
@@ -30750,6 +31357,14 @@ components:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
               nullable: true
+            isCrossLocationShiftRequestApprovalRequired:
+              type: boolean
+              description: Indicates whether approval is required by a manager of this schedule for cross location shift requests.
+              nullable: true
+            isCrossLocationShiftsEnabled:
+              type: boolean
+              description: Indicates whether the cross-location marketplace feature is enabled for this schedule.
+              nullable: true
             offerShiftRequestsEnabled:
               type: boolean
               description: Indicates whether offer shift requests are enabled for the schedule.
@@ -30790,7 +31405,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The Ids for the workforce integrations associated with this schedule.
+              description: The IDs for the workforce integrations associated with this schedule.
             dayNotes:
               type: array
               items:
@@ -31557,6 +32172,7 @@ components:
             subject:
               type: string
               description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.homeRealmDiscoveryPolicy:
@@ -32146,6 +32762,31 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcConnectionSettings:
@@ -36269,6 +36910,27 @@ components:
               description: Availability of the user to be scheduled for work and its recurrence pattern.
           additionalProperties:
             type: object
+    microsoft.graph.windowsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSetting
+          type: object
+          properties:
+            payloadType:
+              type: string
+              nullable: true
+            settingType:
+              $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
+            windowsDeviceId:
+              type: string
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.associatedTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -38363,6 +39025,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardDefinition'
+              description: Dashboard cards specified in the Teams app manifest.
               x-ms-navigationProperty: true
             outlineIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
@@ -38512,7 +39175,7 @@ components:
           properties:
             code:
               type: string
-              description: The code for the schedulingGroup to represent an external identifier.
+              description: 'The code for the schedulingGroup to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.'
               nullable: true
             displayName:
               type: string
@@ -38626,7 +39289,7 @@ components:
           properties:
             code:
               type: string
-              description: The code of the timeOffReason to represent an external identifier.
+              description: 'The code of the timeOffReason to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.'
               nullable: true
             displayName:
               type: string
@@ -38886,11 +39549,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -39311,6 +39974,16 @@ components:
           type: string
           description: Url for showing tab contents outside of Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudClipboardItemPayload:
+      title: cloudClipboardItemPayload
+      type: object
+      properties:
+        content:
+          type: string
+        formatName:
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcHealthCheckItem:
@@ -41524,6 +42197,7 @@ components:
         - unknownFutureValue
         - formCompletion
         - approvalCompletion
+        - completionInHostedApp
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -42009,6 +42683,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsSettingType:
+      title: windowsSettingType
+      enum:
+        - roaming
+        - backup
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsSettingInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSettingInstance
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payload:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -42520,6 +43224,9 @@ components:
         - stream
         - powerPoint
         - office
+        - loki
+        - loop
+        - other
         - unknownFutureValue
       type: string
     microsoft.graph.retentionLabelSettings:
@@ -43259,14 +43966,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSize'
             description:
               type: string
+              description: The description for the card. Required.
               nullable: true
             displayName:
               type: string
+              description: The name of the card. Required.
               nullable: true
             icon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardIcon'
             pickerGroupId:
               type: string
+              description: ID for the group in the card picker. Required.
               nullable: true
           additionalProperties:
             type: object
@@ -45376,13 +46086,9 @@ components:
               description: Email address of the presenter.
               nullable: true
             identity:
-              $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+              $ref: '#/components/schemas/microsoft.graph.identity'
             presenterDetails:
               $ref: '#/components/schemas/microsoft.graph.virtualEventPresenterDetails'
-            profilePhoto:
-              type: string
-              format: base64url
-              nullable: true
             sessions:
               type: array
               items:
@@ -45500,6 +46206,11 @@ components:
         - liveStream
         - presentation
         - screenRecording
+        - story
+        - profile
+        - chat
+        - note
+        - comment
         - unknownFutureValue
       type: string
     microsoft.graph.security.behaviorDuringRetentionPeriod:
@@ -45811,9 +46522,11 @@ components:
       properties:
         iconUrl:
           type: string
+          description: 'The icon for the card, displayed in the toolbox and card bar, is represented as a URL. The preferred size for raster images is 28x28 pixels. If this property has a value, the officeFabricIconFontName property is ignored.'
           nullable: true
         officeUIFabricIconName:
           type: string
+          description: 'The friendly name of the Office UI Fabric/Fluent UI icon for the card that is used when the iconUrl property isn''t specified. For example, ''officeUIFabricIconName'': ''Search''.'
           nullable: true
       additionalProperties:
         type: object
@@ -47485,6 +48198,11 @@ components:
           type: string
           description: The presenter's personal website URL.
           nullable: true
+        photo:
+          type: string
+          description: The content stream of the presenter's photo.
+          format: base64url
+          nullable: true
         twitterProfileWebUrl:
           type: string
           description: The presenter's Twitter profile URL.
@@ -47812,6 +48530,7 @@ components:
       properties:
         botId:
           type: string
+          description: The ID (usually a GUID) of the bot associated with the specific teamsAppDefinition. This is a unique app ID for the bot as registered with the Bot Framework.
           nullable: true
       additionalProperties:
         type: object
@@ -48784,6 +49503,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.educationGradingCategoryCollectionResponse'
+    microsoft.graph.educationGradingSchemeCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.educationGradingSchemeCollectionResponse'
     microsoft.graph.serviceProvisioningErrorCollectionResponse:
       description: Retrieved collection
       content:
