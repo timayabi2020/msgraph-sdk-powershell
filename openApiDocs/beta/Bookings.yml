@@ -353,6 +353,8 @@ paths:
                 - invoiceStatus desc
                 - invoiceUrl
                 - invoiceUrl desc
+                - isCustomerAllowedToManageBooking
+                - isCustomerAllowedToManageBooking desc
                 - isLocationOnline
                 - isLocationOnline desc
                 - joinWebUrl
@@ -423,6 +425,7 @@ paths:
                 - invoiceId
                 - invoiceStatus
                 - invoiceUrl
+                - isCustomerAllowedToManageBooking
                 - isLocationOnline
                 - joinWebUrl
                 - lastUpdatedDateTime
@@ -557,6 +560,7 @@ paths:
                 - invoiceId
                 - invoiceStatus
                 - invoiceUrl
+                - isCustomerAllowedToManageBooking
                 - isLocationOnline
                 - joinWebUrl
                 - lastUpdatedDateTime
@@ -840,6 +844,8 @@ paths:
                 - invoiceStatus desc
                 - invoiceUrl
                 - invoiceUrl desc
+                - isCustomerAllowedToManageBooking
+                - isCustomerAllowedToManageBooking desc
                 - isLocationOnline
                 - isLocationOnline desc
                 - joinWebUrl
@@ -910,6 +916,7 @@ paths:
                 - invoiceId
                 - invoiceStatus
                 - invoiceUrl
+                - isCustomerAllowedToManageBooking
                 - isLocationOnline
                 - joinWebUrl
                 - lastUpdatedDateTime
@@ -1053,6 +1060,7 @@ paths:
                 - invoiceId
                 - invoiceStatus
                 - invoiceUrl
+                - isCustomerAllowedToManageBooking
                 - isLocationOnline
                 - joinWebUrl
                 - lastUpdatedDateTime
@@ -1986,6 +1994,8 @@ paths:
                 - description desc
                 - isAnonymousJoinEnabled
                 - isAnonymousJoinEnabled desc
+                - isCustomerAllowedToManageBooking
+                - isCustomerAllowedToManageBooking desc
                 - isHiddenFromCustomers
                 - isHiddenFromCustomers desc
                 - isLocationOnline
@@ -2033,6 +2043,7 @@ paths:
                 - defaultReminders
                 - description
                 - isAnonymousJoinEnabled
+                - isCustomerAllowedToManageBooking
                 - isHiddenFromCustomers
                 - isLocationOnline
                 - languageTag
@@ -2151,6 +2162,7 @@ paths:
                 - defaultReminders
                 - description
                 - isAnonymousJoinEnabled
+                - isCustomerAllowedToManageBooking
                 - isHiddenFromCustomers
                 - isLocationOnline
                 - languageTag
@@ -3244,6 +3256,8 @@ paths:
                 - invoiceStatus desc
                 - invoiceUrl
                 - invoiceUrl desc
+                - isCustomerAllowedToManageBooking
+                - isCustomerAllowedToManageBooking desc
                 - isLocationOnline
                 - isLocationOnline desc
                 - joinWebUrl
@@ -3314,6 +3328,7 @@ paths:
                 - invoiceId
                 - invoiceStatus
                 - invoiceUrl
+                - isCustomerAllowedToManageBooking
                 - isLocationOnline
                 - joinWebUrl
                 - lastUpdatedDateTime
@@ -3448,6 +3463,7 @@ paths:
                 - invoiceId
                 - invoiceStatus
                 - invoiceUrl
+                - isCustomerAllowedToManageBooking
                 - isLocationOnline
                 - joinWebUrl
                 - lastUpdatedDateTime
@@ -3731,6 +3747,8 @@ paths:
                 - invoiceStatus desc
                 - invoiceUrl
                 - invoiceUrl desc
+                - isCustomerAllowedToManageBooking
+                - isCustomerAllowedToManageBooking desc
                 - isLocationOnline
                 - isLocationOnline desc
                 - joinWebUrl
@@ -3801,6 +3819,7 @@ paths:
                 - invoiceId
                 - invoiceStatus
                 - invoiceUrl
+                - isCustomerAllowedToManageBooking
                 - isLocationOnline
                 - joinWebUrl
                 - lastUpdatedDateTime
@@ -3944,6 +3963,7 @@ paths:
                 - invoiceId
                 - invoiceStatus
                 - invoiceUrl
+                - isCustomerAllowedToManageBooking
                 - isLocationOnline
                 - joinWebUrl
                 - lastUpdatedDateTime
@@ -4877,6 +4897,8 @@ paths:
                 - description desc
                 - isAnonymousJoinEnabled
                 - isAnonymousJoinEnabled desc
+                - isCustomerAllowedToManageBooking
+                - isCustomerAllowedToManageBooking desc
                 - isHiddenFromCustomers
                 - isHiddenFromCustomers desc
                 - isLocationOnline
@@ -4924,6 +4946,7 @@ paths:
                 - defaultReminders
                 - description
                 - isAnonymousJoinEnabled
+                - isCustomerAllowedToManageBooking
                 - isHiddenFromCustomers
                 - isLocationOnline
                 - languageTag
@@ -5042,6 +5065,7 @@ paths:
                 - defaultReminders
                 - description
                 - isAnonymousJoinEnabled
+                - isCustomerAllowedToManageBooking
                 - isHiddenFromCustomers
                 - isLocationOnline
                 - languageTag
@@ -8156,8 +8180,6 @@ paths:
                 - identity desc
                 - presenterDetails
                 - presenterDetails desc
-                - profilePhoto
-                - profilePhoto desc
               type: string
         - name: $select
           in: query
@@ -8173,7 +8195,6 @@ paths:
                 - email
                 - identity
                 - presenterDetails
-                - profilePhoto
                 - sessions
               type: string
         - name: $expand
@@ -8267,7 +8288,6 @@ paths:
                 - email
                 - identity
                 - presenterDetails
-                - profilePhoto
                 - sessions
               type: string
         - name: $expand
@@ -8360,76 +8380,6 @@ paths:
           style: simple
           schema:
             type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}/profilePhoto':
-    get:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Get profilePhoto for the navigation property presenters from solutions
-      operationId: solution.virtualEvent.event_GetPresentersProfilePhoto
-      parameters:
-        - name: virtualEvent-id
-          in: path
-          description: The unique identifier of virtualEvent
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEvent
-        - name: virtualEventPresenter-id
-          in: path
-          description: The unique identifier of virtualEventPresenter
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventPresenter
-      responses:
-        2XX:
-          description: Retrieved media content
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Update profilePhoto for the navigation property presenters in solutions
-      operationId: solution.virtualEvent.event_SetPresentersProfilePhoto
-      parameters:
-        - name: virtualEvent-id
-          in: path
-          description: The unique identifier of virtualEvent
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEvent
-        - name: virtualEventPresenter-id
-          in: path
-          description: The unique identifier of virtualEventPresenter
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventPresenter
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
       responses:
         2XX:
           description: Success
@@ -9911,8 +9861,6 @@ paths:
                 - identity desc
                 - presenterDetails
                 - presenterDetails desc
-                - profilePhoto
-                - profilePhoto desc
               type: string
         - name: $select
           in: query
@@ -9928,7 +9876,6 @@ paths:
                 - email
                 - identity
                 - presenterDetails
-                - profilePhoto
                 - sessions
               type: string
         - name: $expand
@@ -9998,7 +9945,6 @@ paths:
                 - email
                 - identity
                 - presenterDetails
-                - profilePhoto
                 - sessions
               type: string
         - name: $expand
@@ -10021,92 +9967,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/presenters/{virtualEventPresenter-id}/profilePhoto':
-    get:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Get profilePhoto for the navigation property presenters from solutions
-      operationId: solution.virtualEvent.event.session_GetPresentersProfilePhoto
-      parameters:
-        - name: virtualEvent-id
-          in: path
-          description: The unique identifier of virtualEvent
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEvent
-        - name: virtualEventSession-id
-          in: path
-          description: The unique identifier of virtualEventSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventSession
-        - name: virtualEventPresenter-id
-          in: path
-          description: The unique identifier of virtualEventPresenter
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventPresenter
-      responses:
-        2XX:
-          description: Retrieved media content
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Update profilePhoto for the navigation property presenters in solutions
-      operationId: solution.virtualEvent.event.session_SetPresentersProfilePhoto
-      parameters:
-        - name: virtualEvent-id
-          in: path
-          description: The unique identifier of virtualEvent
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEvent
-        - name: virtualEventSession-id
-          in: path
-          description: The unique identifier of virtualEventSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventSession
-        - name: virtualEventPresenter-id
-          in: path
-          description: The unique identifier of virtualEventPresenter
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventPresenter
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
-      responses:
-        2XX:
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10816,8 +10676,6 @@ paths:
                 - identity desc
                 - presenterDetails
                 - presenterDetails desc
-                - profilePhoto
-                - profilePhoto desc
               type: string
         - name: $select
           in: query
@@ -10833,7 +10691,6 @@ paths:
                 - email
                 - identity
                 - presenterDetails
-                - profilePhoto
                 - sessions
               type: string
         - name: $expand
@@ -10927,7 +10784,6 @@ paths:
                 - email
                 - identity
                 - presenterDetails
-                - profilePhoto
                 - sessions
               type: string
         - name: $expand
@@ -11020,76 +10876,6 @@ paths:
           style: simple
           schema:
             type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}/profilePhoto':
-    get:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Get profilePhoto for the navigation property presenters from solutions
-      operationId: solution.virtualEvent.townhall_GetPresentersProfilePhoto
-      parameters:
-        - name: virtualEventTownhall-id
-          in: path
-          description: The unique identifier of virtualEventTownhall
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventTownhall
-        - name: virtualEventPresenter-id
-          in: path
-          description: The unique identifier of virtualEventPresenter
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventPresenter
-      responses:
-        2XX:
-          description: Retrieved media content
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Update profilePhoto for the navigation property presenters in solutions
-      operationId: solution.virtualEvent.townhall_SetPresentersProfilePhoto
-      parameters:
-        - name: virtualEventTownhall-id
-          in: path
-          description: The unique identifier of virtualEventTownhall
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventTownhall
-        - name: virtualEventPresenter-id
-          in: path
-          description: The unique identifier of virtualEventPresenter
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventPresenter
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
       responses:
         2XX:
           description: Success
@@ -12571,8 +12357,6 @@ paths:
                 - identity desc
                 - presenterDetails
                 - presenterDetails desc
-                - profilePhoto
-                - profilePhoto desc
               type: string
         - name: $select
           in: query
@@ -12588,7 +12372,6 @@ paths:
                 - email
                 - identity
                 - presenterDetails
-                - profilePhoto
                 - sessions
               type: string
         - name: $expand
@@ -12658,7 +12441,6 @@ paths:
                 - email
                 - identity
                 - presenterDetails
-                - profilePhoto
                 - sessions
               type: string
         - name: $expand
@@ -12681,92 +12463,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/presenters/{virtualEventPresenter-id}/profilePhoto':
-    get:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Get profilePhoto for the navigation property presenters from solutions
-      operationId: solution.virtualEvent.townhall.session_GetPresentersProfilePhoto
-      parameters:
-        - name: virtualEventTownhall-id
-          in: path
-          description: The unique identifier of virtualEventTownhall
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventTownhall
-        - name: virtualEventSession-id
-          in: path
-          description: The unique identifier of virtualEventSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventSession
-        - name: virtualEventPresenter-id
-          in: path
-          description: The unique identifier of virtualEventPresenter
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventPresenter
-      responses:
-        2XX:
-          description: Retrieved media content
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Update profilePhoto for the navigation property presenters in solutions
-      operationId: solution.virtualEvent.townhall.session_SetPresentersProfilePhoto
-      parameters:
-        - name: virtualEventTownhall-id
-          in: path
-          description: The unique identifier of virtualEventTownhall
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventTownhall
-        - name: virtualEventSession-id
-          in: path
-          description: The unique identifier of virtualEventSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventSession
-        - name: virtualEventPresenter-id
-          in: path
-          description: The unique identifier of virtualEventPresenter
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventPresenter
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
-      responses:
-        2XX:
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13719,8 +13415,6 @@ paths:
                 - identity desc
                 - presenterDetails
                 - presenterDetails desc
-                - profilePhoto
-                - profilePhoto desc
               type: string
         - name: $select
           in: query
@@ -13736,7 +13430,6 @@ paths:
                 - email
                 - identity
                 - presenterDetails
-                - profilePhoto
                 - sessions
               type: string
         - name: $expand
@@ -13830,7 +13523,6 @@ paths:
                 - email
                 - identity
                 - presenterDetails
-                - profilePhoto
                 - sessions
               type: string
         - name: $expand
@@ -13923,76 +13615,6 @@ paths:
           style: simple
           schema:
             type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}/profilePhoto':
-    get:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Get profilePhoto for the navigation property presenters from solutions
-      operationId: solution.virtualEvent.webinar_GetPresentersProfilePhoto
-      parameters:
-        - name: virtualEventWebinar-id
-          in: path
-          description: The unique identifier of virtualEventWebinar
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventWebinar
-        - name: virtualEventPresenter-id
-          in: path
-          description: The unique identifier of virtualEventPresenter
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventPresenter
-      responses:
-        2XX:
-          description: Retrieved media content
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Update profilePhoto for the navigation property presenters in solutions
-      operationId: solution.virtualEvent.webinar_SetPresentersProfilePhoto
-      parameters:
-        - name: virtualEventWebinar-id
-          in: path
-          description: The unique identifier of virtualEventWebinar
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventWebinar
-        - name: virtualEventPresenter-id
-          in: path
-          description: The unique identifier of virtualEventPresenter
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventPresenter
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
       responses:
         2XX:
           description: Success
@@ -16199,8 +15821,6 @@ paths:
                 - identity desc
                 - presenterDetails
                 - presenterDetails desc
-                - profilePhoto
-                - profilePhoto desc
               type: string
         - name: $select
           in: query
@@ -16216,7 +15836,6 @@ paths:
                 - email
                 - identity
                 - presenterDetails
-                - profilePhoto
                 - sessions
               type: string
         - name: $expand
@@ -16286,7 +15905,6 @@ paths:
                 - email
                 - identity
                 - presenterDetails
-                - profilePhoto
                 - sessions
               type: string
         - name: $expand
@@ -16309,92 +15927,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/presenters/{virtualEventPresenter-id}/profilePhoto':
-    get:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Get profilePhoto for the navigation property presenters from solutions
-      operationId: solution.virtualEvent.webinar.session_GetPresentersProfilePhoto
-      parameters:
-        - name: virtualEventWebinar-id
-          in: path
-          description: The unique identifier of virtualEventWebinar
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventWebinar
-        - name: virtualEventSession-id
-          in: path
-          description: The unique identifier of virtualEventSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventSession
-        - name: virtualEventPresenter-id
-          in: path
-          description: The unique identifier of virtualEventPresenter
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventPresenter
-      responses:
-        2XX:
-          description: Retrieved media content
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Update profilePhoto for the navigation property presenters in solutions
-      operationId: solution.virtualEvent.webinar.session_SetPresentersProfilePhoto
-      parameters:
-        - name: virtualEventWebinar-id
-          in: path
-          description: The unique identifier of virtualEventWebinar
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventWebinar
-        - name: virtualEventSession-id
-          in: path
-          description: The unique identifier of virtualEventSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventSession
-        - name: virtualEventPresenter-id
-          in: path
-          description: The unique identifier of virtualEventPresenter
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventPresenter
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
-      responses:
-        2XX:
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17252,6 +16784,9 @@ components:
               type: string
               description: The URL of the invoice in Microsoft Bookings.
               nullable: true
+            isCustomerAllowedToManageBooking:
+              type: boolean
+              nullable: true
             isLocationOnline:
               type: boolean
               description: True indicates that the appointment will be held online. Default value is false.
@@ -17466,6 +17001,9 @@ components:
             isAnonymousJoinEnabled:
               type: boolean
               description: Indicates if an anonymousJoinWebUrl(webrtcUrl) is generated for the appointment booked for this service. The default value is false.
+            isCustomerAllowedToManageBooking:
+              type: boolean
+              nullable: true
             isHiddenFromCustomers:
               type: boolean
               description: True means this service isn't available to customers for booking.
@@ -17893,13 +17431,9 @@ components:
               description: Email address of the presenter.
               nullable: true
             identity:
-              $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+              $ref: '#/components/schemas/microsoft.graph.identity'
             presenterDetails:
               $ref: '#/components/schemas/microsoft.graph.virtualEventPresenterDetails'
-            profilePhoto:
-              type: string
-              format: base64url
-              nullable: true
             sessions:
               type: array
               items:
@@ -18059,7 +17593,7 @@ components:
             invitedAttendees:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+                $ref: '#/components/schemas/microsoft.graph.identity'
             isInviteOnly:
               type: boolean
               nullable: true
@@ -18205,6 +17739,13 @@ components:
         allowStaffSelection:
           type: boolean
           description: True if to allow customers to choose a specific person for the booking.
+        customAvailabilities:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingsAvailabilityWindow'
+          description: collection of custom availabilities for a given time range.
+        generalAvailability:
+          $ref: '#/components/schemas/microsoft.graph.bookingsAvailability'
         isMeetingInviteToCustomersEnabled:
           type: boolean
           description: Indicates if the meeting invite is sent to the customers. The default value is false
@@ -18738,18 +18279,20 @@ components:
         - canceled
         - unknownFutureValue
       type: string
-    microsoft.graph.communicationsUserIdentity:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identity'
-        - title: communicationsUserIdentity
-          type: object
-          properties:
-            tenantId:
-              type: string
-              description: The user's tenant ID.
-              nullable: true
-          additionalProperties:
-            type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.virtualEventPresenterDetails:
       title: virtualEventPresenterDetails
       type: object
@@ -18771,6 +18314,11 @@ components:
         personalSiteWebUrl:
           type: string
           description: The presenter's personal website URL.
+          nullable: true
+        photo:
+          type: string
+          description: The content stream of the presenter's photo.
+          format: base64url
           nullable: true
         twitterProfileWebUrl:
           type: string
@@ -18889,20 +18437,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.virtualEventRegistrationQuestionAnswer:
       title: virtualEventRegistrationQuestionAnswer
       type: object
@@ -18948,6 +18482,18 @@ components:
         - organization
         - unknownFutureValue
       type: string
+    microsoft.graph.communicationsUserIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: communicationsUserIdentity
+          type: object
+          properties:
+            tenantId:
+              type: string
+              description: The user's tenant ID.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.virtualEventRegistrationConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -19261,6 +18807,39 @@ components:
           format: time
       additionalProperties:
         type: object
+    microsoft.graph.bookingsAvailabilityWindow:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.bookingsAvailability'
+        - title: bookingsAvailabilityWindow
+          type: object
+          properties:
+            endDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Allow customers to end date of availability window.
+              format: date
+              nullable: true
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Allow customers to start date of availability window.
+              format: date
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.bookingsAvailability:
+      title: bookingsAvailability
+      type: object
+      properties:
+        availabilityType:
+          $ref: '#/components/schemas/microsoft.graph.bookingsServiceAvailabilityType'
+        businessHours:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingWorkHours'
+          description: The hours of operation in a week. This is set to null if the availability type is not customWeeklyHours
+      additionalProperties:
+        type: object
     microsoft.graph.outlookGeoCoordinates:
       title: outlookGeoCoordinates
       type: object
@@ -19433,6 +19012,7 @@ components:
         - unknownFutureValue
         - formCompletion
         - approvalCompletion
+        - completionInHostedApp
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -19669,6 +19249,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.bookingsServiceAvailabilityType:
+      title: bookingsServiceAvailabilityType
+      enum:
+        - bookWhenStaffAreFree
+        - notBookable
+        - customWeeklyHours
+        - unknownFutureValue
+      type: string
     microsoft.graph.plannerTaskPropertyRule:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerPropertyRule'

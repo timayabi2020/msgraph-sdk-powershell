@@ -842,6 +842,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -902,6 +903,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -3881,6 +3883,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -3941,6 +3944,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -4326,6 +4330,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -4386,6 +4391,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -4991,6 +4997,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -5051,6 +5058,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -6312,6 +6320,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -6372,6 +6381,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -9568,11 +9578,11 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: 'driveItem: lockOrUnlockRecord'
-      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
+      summary: 'driveItem: setRetentionLabel'
+      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
       operationId: drive.item_UpdateRetentionLabel
       parameters:
         - name: drive-id
@@ -10957,6 +10967,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -11017,6 +11028,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -14199,6 +14211,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -14259,6 +14272,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -15070,6 +15084,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -15130,6 +15145,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -16391,6 +16407,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -16451,6 +16468,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -17699,6 +17717,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -17759,6 +17778,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -21042,6 +21062,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -21102,6 +21123,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -21447,6 +21469,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -21507,6 +21530,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -22040,6 +22064,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -22100,6 +22125,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -23193,6 +23219,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -23253,6 +23280,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -26097,11 +26125,11 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: 'driveItem: lockOrUnlockRecord'
-      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
+      summary: 'driveItem: setRetentionLabel'
+      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
       operationId: drive.root_UpdateRetentionLabel
       parameters:
         - name: drive-id
@@ -28583,6 +28611,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -28643,6 +28672,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -31966,6 +31996,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -32026,6 +32057,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -32451,6 +32483,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -32511,6 +32544,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -33188,6 +33222,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -33248,6 +33283,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -34628,6 +34664,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -34688,6 +34725,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -36010,11 +36048,11 @@ paths:
     patch:
       tags:
         - groups.drive
-      summary: 'driveItem: lockOrUnlockRecord'
-      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
+      summary: 'driveItem: setRetentionLabel'
+      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
       operationId: group.drive.item_UpdateRetentionLabel
       parameters:
         - name: group-id
@@ -37509,6 +37547,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -37569,6 +37608,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -40660,6 +40700,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -40720,6 +40761,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -41627,6 +41669,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -41687,6 +41730,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -43067,6 +43111,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -43127,6 +43172,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -44092,6 +44138,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -44152,6 +44199,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -47217,6 +47265,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -47277,6 +47326,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -47662,6 +47712,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -47722,6 +47773,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -48327,6 +48379,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -48387,6 +48440,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -49607,6 +49661,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -49667,6 +49722,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -50829,11 +50885,11 @@ paths:
     patch:
       tags:
         - groups.drive
-      summary: 'driveItem: lockOrUnlockRecord'
-      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
+      summary: 'driveItem: setRetentionLabel'
+      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
       operationId: group.drive.root_UpdateRetentionLabel
       parameters:
         - name: group-id
@@ -52852,6 +52908,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -52912,6 +52969,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -53851,6 +53909,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -53911,6 +53970,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -57093,6 +57153,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -57153,6 +57214,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -57964,6 +58026,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -58024,6 +58087,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -59285,6 +59349,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -59345,6 +59410,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -60571,6 +60637,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -60631,6 +60698,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -61791,6 +61859,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -61851,6 +61920,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -62944,6 +63014,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -63004,6 +63075,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -65465,6 +65537,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -65525,6 +65598,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -68848,6 +68922,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -68908,6 +68983,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -69333,6 +69409,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -69393,6 +69470,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -70070,6 +70148,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -70130,6 +70209,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -71510,6 +71590,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -71570,6 +71651,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -72892,11 +72974,11 @@ paths:
     patch:
       tags:
         - users.drive
-      summary: 'driveItem: lockOrUnlockRecord'
-      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
+      summary: 'driveItem: setRetentionLabel'
+      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
       operationId: user.drive.item_UpdateRetentionLabel
       parameters:
         - name: user-id
@@ -74391,6 +74473,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -74451,6 +74534,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -77542,6 +77626,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -77602,6 +77687,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -78509,6 +78595,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -78569,6 +78656,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -79949,6 +80037,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -80009,6 +80098,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -80974,6 +81064,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -81034,6 +81125,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -84099,6 +84191,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -84159,6 +84252,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -84544,6 +84638,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -84604,6 +84699,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -85209,6 +85305,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -85269,6 +85366,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -86489,6 +86587,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -86549,6 +86648,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - contactFolders
                 - contacts
                 - createdObjects
@@ -87711,11 +87811,11 @@ paths:
     patch:
       tags:
         - users.drive
-      summary: 'driveItem: lockOrUnlockRecord'
-      description: 'Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.'
+      summary: 'driveItem: setRetentionLabel'
+      description: 'Apply (set) a retention label on a driveItem (files and folders). Retention labels don''t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator''s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
       operationId: user.drive.root_UpdateRetentionLabel
       parameters:
         - name: user-id
@@ -89890,6 +89990,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
               x-ms-navigationProperty: true
+            cloudClipboard:
+              $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
             contactFolders:
               type: array
               items:
@@ -90374,13 +90476,17 @@ components:
           type: string
           description: Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.
           nullable: true
+        driveItemSource:
+          $ref: '#/components/schemas/microsoft.graph.driveItemSource'
         fileSize:
           type: integer
-          description: Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
+          description: Provides an expected file size to perform a quota check before uploading. Only on OneDrive Personal.
           format: int64
           nullable: true
         fileSystemInfo:
           $ref: '#/components/schemas/microsoft.graph.fileSystemInfo'
+        mediaSource:
+          $ref: '#/components/schemas/microsoft.graph.mediaSource'
         name:
           type: string
           description: The name of the item (filename and extension). Read-write.
@@ -92493,6 +92599,19 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudClipboardRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardRoot
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.contactFolder:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -92883,16 +93002,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
-              description: 'Information about the service plans assigned with the license. Read-only, Not nullable'
+              description: Information about the service plans assigned with the license. Read-only. Not nullable.
             skuId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
               format: uuid
               nullable: true
             skuPartNumber:
               type: string
-              description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
+              description: 'Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -93527,7 +93646,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting end time in UTC.
+              description: The meeting end time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             externalId:
@@ -93541,7 +93660,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC.
+              description: The meeting start time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             recordings:
@@ -93776,6 +93895,11 @@ components:
               description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            windows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -94052,6 +94176,26 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
           additionalProperties:
             type: object
+    microsoft.graph.driveItemSource:
+      title: driveItemSource
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.driveItemSourceApplication'
+        externalId:
+          type: string
+          description: The external identifier for the drive item from the source.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.mediaSource:
+      title: mediaSource
+      type: object
+      properties:
+        contentCategory:
+          $ref: '#/components/schemas/microsoft.graph.mediaSourceContentCategory'
+      additionalProperties:
+        type: object
     microsoft.graph.sensitivityLabelAssignment:
       title: sensitivityLabelAssignment
       type: object
@@ -95957,6 +96101,31 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
           additionalProperties:
             type: object
     microsoft.graph.physicalAddress:
@@ -98370,6 +98539,27 @@ components:
               description: Availability of the user to be scheduled for work and its recurrence pattern.
           additionalProperties:
             type: object
+    microsoft.graph.windowsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSetting
+          type: object
+          properties:
+            payloadType:
+              type: string
+              nullable: true
+            settingType:
+              $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
+            windowsDeviceId:
+              type: string
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.associatedTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -98466,6 +98656,35 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.driveItemSourceApplication:
+      title: driveItemSourceApplication
+      enum:
+        - teams
+        - yammer
+        - sharePoint
+        - oneDrive
+        - stream
+        - powerPoint
+        - office
+        - loki
+        - loop
+        - other
+        - unknownFutureValue
+      type: string
+    microsoft.graph.mediaSourceContentCategory:
+      title: mediaSourceContentCategory
+      enum:
+        - meeting
+        - liveStream
+        - presentation
+        - screenRecording
+        - story
+        - profile
+        - chat
+        - note
+        - comment
+        - unknownFutureValue
+      type: string
     microsoft.graph.security.behaviorDuringRetentionPeriod:
       title: behaviorDuringRetentionPeriod
       enum:
@@ -99047,9 +99266,17 @@ components:
               type: boolean
               description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
               nullable: true
+            manufacturer:
+              type: string
+              description: Manufacturer of the device. Read-only.
+              nullable: true
             mdmAppId:
               type: string
               description: 'Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).'
+              nullable: true
+            model:
+              type: string
+              description: Model of the device. Read-only.
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -99579,6 +99806,16 @@ components:
           type: string
           description: Url for showing tab contents outside of Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudClipboardItemPayload:
+      title: cloudClipboardItemPayload
+      type: object
+      properties:
+        content:
+          type: string
+        formatName:
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.courseStatus:
@@ -101304,6 +101541,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsSettingType:
+      title: windowsSettingType
+      enum:
+        - roaming
+        - backup
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsSettingInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSettingInstance
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payload:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

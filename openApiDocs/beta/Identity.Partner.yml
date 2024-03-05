@@ -1670,7 +1670,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipCustomerParticipant'
             displayName:
               type: string
-              description: The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
+              description: The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and can't be changed by the customer. Maximum length is 50 characters.
             duration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string

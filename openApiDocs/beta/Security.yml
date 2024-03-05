@@ -40,6 +40,7 @@ paths:
                 - ipSecurityProfiles
                 - labels
                 - providerTenantSettings
+                - rules
                 - secureScoreControlProfiles
                 - secureScores
                 - securityActions
@@ -77,6 +78,7 @@ paths:
                 - ipSecurityProfiles
                 - labels
                 - providerTenantSettings
+                - rules
                 - secureScoreControlProfiles
                 - secureScores
                 - securityActions
@@ -4483,7 +4485,11 @@ paths:
     get:
       tags:
         - security.auditCoreRoot
-      summary: Get queries from security
+      summary: List auditLogQueries
+      description: Get a list of auditLogQuery objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-auditcoreroot-list-auditlogqueries?view=graph-rest-1.0
       operationId: security.auditLog_ListQuery
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4578,7 +4584,11 @@ paths:
     post:
       tags:
         - security.auditCoreRoot
-      summary: Create new navigation property to queries for security
+      summary: Create auditLogQuery
+      description: Create a new auditLogQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-auditcoreroot-post-auditlogqueries?view=graph-rest-1.0
       operationId: security.auditLog_CreateQuery
       requestBody:
         description: New navigation property
@@ -4601,7 +4611,11 @@ paths:
     get:
       tags:
         - security.auditCoreRoot
-      summary: Get queries from security
+      summary: Get auditLogQuery
+      description: Read the properties and relationships of an auditLogQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-auditlogquery-get?view=graph-rest-1.0
       operationId: security.auditLog_GetQuery
       parameters:
         - name: auditLogQuery-id
@@ -4721,8 +4735,11 @@ paths:
     get:
       tags:
         - security.auditCoreRoot
-      summary: Get records from security
-      description: An individual audit log record.
+      summary: List auditLogRecords
+      description: Get a list of the auditLogRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-auditlogquery-list-records?view=graph-rest-1.0
       operationId: security.auditLog.query_ListRecord
       parameters:
         - name: auditLogQuery-id
@@ -19511,6 +19528,337 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /security/rules:
+    get:
+      tags:
+        - security.rulesRoot
+      summary: Get rules from security
+      operationId: security_GetRule
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - detectionRules
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - detectionRules
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.rulesRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.rulesRoot
+      summary: Update the navigation property rules in security
+      operationId: security_UpdateRule
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.rulesRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.rulesRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.rulesRoot
+      summary: Delete navigation property rules for security
+      operationId: security_DeleteRule
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/rules/detectionRules:
+    get:
+      tags:
+        - security.rulesRoot
+      summary: List detectionRules
+      description: "Get a list of custom detection rules.\nWith custom detections, you can proactively monitor for and respond to various events and system states, including suspected breach activity and misconfigured assets in their organization network.\nCustom detection rules, which are written in Kusto query language (KQL), automatically trigger alerts and response actions once there are events matching their KQL queries."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-detectionrule-list?view=graph-rest-1.0
+      operationId: security.rule_ListDetectionRule
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - displayName
+                - displayName desc
+                - isEnabled
+                - isEnabled desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - detectionAction
+                - detectionAction desc
+                - detectorId
+                - detectorId desc
+                - lastRunDetails
+                - lastRunDetails desc
+                - queryCondition
+                - queryCondition desc
+                - schedule
+                - schedule desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - displayName
+                - isEnabled
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - detectionAction
+                - detectorId
+                - lastRunDetails
+                - queryCondition
+                - schedule
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.detectionRuleCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.rulesRoot
+      summary: Create new navigation property to detectionRules for security
+      operationId: security.rule_CreateDetectionRule
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.detectionRule'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.detectionRule'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/rules/detectionRules/{detectionRule-id}':
+    get:
+      tags:
+        - security.rulesRoot
+      summary: Get detectionRules from security
+      operationId: security.rule_GetDetectionRule
+      parameters:
+        - name: detectionRule-id
+          in: path
+          description: The unique identifier of detectionRule
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: detectionRule
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - displayName
+                - isEnabled
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - detectionAction
+                - detectorId
+                - lastRunDetails
+                - queryCondition
+                - schedule
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.detectionRule'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.rulesRoot
+      summary: Update the navigation property detectionRules in security
+      operationId: security.rule_UpdateDetectionRule
+      parameters:
+        - name: detectionRule-id
+          in: path
+          description: The unique identifier of detectionRule
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: detectionRule
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.detectionRule'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.detectionRule'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.rulesRoot
+      summary: Delete navigation property detectionRules for security
+      operationId: security.rule_DeleteDetectionRule
+      parameters:
+        - name: detectionRule-id
+          in: path
+          description: The unique identifier of detectionRule
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: detectionRule
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/rules/detectionRules/$count:
+    get:
+      tags:
+        - security.rulesRoot
+      summary: Get the number of the resource
+      operationId: security.rule.detectionRule_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/secureScoreControlProfiles:
     get:
       tags:
@@ -20943,6 +21291,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - cloudPCs
                 - contactFolders
                 - contacts
@@ -21023,6 +21372,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - cloudPCs
                 - contactFolders
                 - contacts
@@ -21220,6 +21570,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - cloudPCs
                 - contactFolders
                 - contacts
@@ -21300,6 +21651,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - cloudPCs
                 - contactFolders
                 - contacts
@@ -21914,6 +22266,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - cloudPCs
                 - contactFolders
                 - contacts
@@ -21994,6 +22347,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - cloudPCs
                 - contactFolders
                 - contacts
@@ -22191,6 +22545,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - cloudPCs
                 - contactFolders
                 - contacts
@@ -22271,6 +22626,7 @@ paths:
                 - calendars
                 - calendarView
                 - chats
+                - cloudClipboard
                 - cloudPCs
                 - contactFolders
                 - contacts
@@ -35227,6 +35583,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.providerTenantSetting'
               x-ms-navigationProperty: true
+            rules:
+              $ref: '#/components/schemas/microsoft.graph.security.rulesRoot'
             secureScoreControlProfiles:
               type: array
               items:
@@ -35473,10 +35831,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.dictionary'
             alertPolicyId:
               type: string
+              description: 'The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.'
               nullable: true
             alertWebUrl:
               type: string
-              description: URL for the alert page in the Microsoft 365 Defender portal.
+              description: URL for the Microsoft 365 Defender portal alert page.
               nullable: true
             assignedTo:
               type: string
@@ -35550,6 +35909,7 @@ components:
               description: 'The attack techniques, as aligned with the MITRE ATT&CK framework.'
             productName:
               type: string
+              description: The name of the product which published this alert.
               nullable: true
             providerAlertId:
               type: string
@@ -35576,7 +35936,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The system tags associated with the alert
+              description: The system tags associated with the alert.
             tenantId:
               type: string
               description: The Microsoft Entra tenant the alert was created in.
@@ -37803,7 +38163,7 @@ components:
               description: The collection of custom tags that are associated with an incident.
             description:
               type: string
-              description: A rich text string describing the incident
+              description: Description of the incident.
               nullable: true
             determination:
               $ref: '#/components/schemas/microsoft.graph.security.alertDetermination'
@@ -37817,6 +38177,7 @@ components:
               nullable: true
             lastModifiedBy:
               type: string
+              description: The identity that last modified the incident.
               nullable: true
             lastUpdateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -38386,6 +38747,39 @@ components:
             vendor:
               type: string
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.rulesRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: rulesRoot
+          type: object
+          properties:
+            detectionRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.detectionRule'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.detectionRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.security.protectionRule'
+        - title: detectionRule
+          type: object
+          properties:
+            detectionAction:
+              $ref: '#/components/schemas/microsoft.graph.security.detectionAction'
+            detectorId:
+              type: string
+              description: The ID of the detector that triggered the alert. Also see the 'detectorId' field in microsoft.graph.security.alert.
+              nullable: true
+            lastRunDetails:
+              $ref: '#/components/schemas/microsoft.graph.security.runDetails'
+            queryCondition:
+              $ref: '#/components/schemas/microsoft.graph.security.queryCondition'
+            schedule:
+              $ref: '#/components/schemas/microsoft.graph.security.ruleSchedule'
           additionalProperties:
             type: object
     microsoft.graph.secureScoreControlProfile:
@@ -39141,6 +39535,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
               x-ms-navigationProperty: true
+            cloudClipboard:
+              $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
             cloudPCs:
               type: array
               items:
@@ -44318,6 +44714,101 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.protectionRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: protectionRule
+          type: object
+          properties:
+            createdBy:
+              type: string
+              description: Name of the user or application that created the rule.
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of rule creation.
+              format: date-time
+            displayName:
+              type: string
+              description: Name of the rule.
+            isEnabled:
+              type: boolean
+              description: Whether rule is turned on for the tenant.
+            lastModifiedBy:
+              type: string
+              description: Name of the user or application who last updated the rule.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of when the rule was last updated.
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.security.detectionAction:
+      title: detectionAction
+      type: object
+      properties:
+        alertTemplate:
+          $ref: '#/components/schemas/microsoft.graph.security.alertTemplate'
+        organizationalScope:
+          $ref: '#/components/schemas/microsoft.graph.security.organizationalScope'
+        responseActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.responseAction'
+          description: Actions taken on impacted assets as set in the custom detection rule.
+      additionalProperties:
+        type: object
+    microsoft.graph.security.runDetails:
+      title: runDetails
+      type: object
+      properties:
+        errorCode:
+          $ref: '#/components/schemas/microsoft.graph.security.huntingRuleErrorCode'
+        failureReason:
+          type: string
+          description: Reason for failure when the custom detection last ran and failed. See the table below.
+          nullable: true
+        lastRunDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Timestamp when the custom detection was last run.
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.security.huntingRuleRunStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.security.queryCondition:
+      title: queryCondition
+      type: object
+      properties:
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Timestamp of when the query in the custom detection rule was last updated.
+          format: date-time
+          nullable: true
+        queryText:
+          type: string
+          description: Contents of the query.
+      additionalProperties:
+        type: object
+    microsoft.graph.security.ruleSchedule:
+      title: ruleSchedule
+      type: object
+      properties:
+        nextRunDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Timestamp of the custom detection rule's next scheduled run.
+          format: date-time
+          nullable: true
+        period:
+          type: string
+          description: 'How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. ''0'' signifies the rule is run continuously.'
+      additionalProperties:
+        type: object
     microsoft.graph.complianceInformation:
       title: complianceInformation
       type: object
@@ -44437,11 +44928,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -44859,7 +45350,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -45530,6 +46021,19 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudClipboardRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardRoot
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPC:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -46160,16 +46664,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
-              description: 'Information about the service plans assigned with the license. Read-only, Not nullable'
+              description: Information about the service plans assigned with the license. Read-only. Not nullable.
             skuId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
               format: uuid
               nullable: true
             skuPartNumber:
               type: string
-              description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
+              description: 'Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -47063,7 +47567,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting end time in UTC.
+              description: The meeting end time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             externalId:
@@ -47076,6 +47580,10 @@ components:
             joinUrl:
               type: string
               nullable: true
+            meetingTemplateId:
+              type: string
+              description: The ID of the meeting template.
+              nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             recording:
@@ -47085,7 +47593,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC.
+              description: The meeting start time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             meetingAttendanceReport:
@@ -47517,6 +48025,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            windows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -47527,11 +48040,11 @@ components:
           properties:
             locale:
               type: string
-              description: Represents the chosen locale of a user in Microsoft Teams.
+              description: The chosen locale of a user in Microsoft Teams.
               nullable: true
             region:
               type: string
-              description: Represents the region of the user in Microsoft Teams.
+              description: The region of the user in Microsoft Teams.
               nullable: true
             associatedTeams:
               type: array
@@ -48036,6 +48549,14 @@ components:
               type: boolean
               description: Indicates whether the schedule is enabled for the team. Required.
               nullable: true
+            isCrossLocationShiftRequestApprovalRequired:
+              type: boolean
+              description: Indicates whether approval is required by a manager of this schedule for cross location shift requests.
+              nullable: true
+            isCrossLocationShiftsEnabled:
+              type: boolean
+              description: Indicates whether the cross-location marketplace feature is enabled for this schedule.
+              nullable: true
             offerShiftRequestsEnabled:
               type: boolean
               description: Indicates whether offer shift requests are enabled for the schedule.
@@ -48076,7 +48597,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The Ids for the workforce integrations associated with this schedule.
+              description: The IDs for the workforce integrations associated with this schedule.
             dayNotes:
               type: array
               items:
@@ -48117,6 +48638,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftsRoleDefinition'
+              description: The definitions of the roles in the schedule.
               x-ms-navigationProperty: true
             swapShiftsChangeRequests:
               type: array
@@ -49396,6 +49918,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.providerTenantSetting'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.detectionRuleCollectionResponse:
+      title: Collection of detectionRule
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.detectionRule'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -52015,6 +52550,80 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.security.alertTemplate:
+      title: alertTemplate
+      type: object
+      properties:
+        category:
+          type: string
+          description: Category assigned to the alert triggered by the custom detection rule.
+        description:
+          type: string
+          description: Description of the alert triggered by the custom detection rule.
+        impactedAssets:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.impactedAsset'
+          description: Which asset or assets were impacted based on the alert triggered by the custom detection rule.
+        mitreTechniques:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: MITRE technique assigned to the alert triggered by the custom detection rule.
+        recommendedActions:
+          type: string
+          description: Recommended actions to mitigate the threat related to the alert triggered by the custom detection rule.
+          nullable: true
+        severity:
+          $ref: '#/components/schemas/microsoft.graph.security.alertSeverity'
+        title:
+          type: string
+          description: Name of the alert triggered by the custom detection rule.
+      additionalProperties:
+        type: object
+    microsoft.graph.security.organizationalScope:
+      title: organizationalScope
+      type: object
+      properties:
+        scopeNames:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of groups to which the custom detection rule applies.
+        scopeType:
+          $ref: '#/components/schemas/microsoft.graph.security.scopeType'
+      additionalProperties:
+        type: object
+    microsoft.graph.security.responseAction:
+      title: responseAction
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.security.huntingRuleErrorCode:
+      title: huntingRuleErrorCode
+      enum:
+        - queryExecutionFailed
+        - queryExecutionThrottling
+        - queryExceededResultSize
+        - queryLimitsExceeded
+        - queryTimeout
+        - alertCreationFailed
+        - alertReportNotFound
+        - partialRowsFailed
+        - unknownFutureValue
+        - noImpactedEntity
+      type: string
+    microsoft.graph.security.huntingRuleRunStatus:
+      title: huntingRuleRunStatus
+      enum:
+        - running
+        - completed
+        - failed
+        - partiallyFailed
+        - unknownFutureValue
+      type: string
     microsoft.graph.certificationControl:
       title: certificationControl
       type: object
@@ -52549,6 +53158,7 @@ components:
             subject:
               type: string
               description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.homeRealmDiscoveryPolicy:
@@ -53108,6 +53718,31 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcConnectionSettings:
@@ -57094,6 +57729,27 @@ components:
               description: Availability of the user to be scheduled for work and its recurrence pattern.
           additionalProperties:
             type: object
+    microsoft.graph.windowsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSetting
+          type: object
+          properties:
+            payloadType:
+              type: string
+              nullable: true
+            settingType:
+              $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
+            windowsDeviceId:
+              type: string
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.associatedTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -57382,6 +58038,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardDefinition'
+              description: Dashboard cards specified in the Teams app manifest.
               x-ms-navigationProperty: true
             outlineIcon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppIcon'
@@ -57523,7 +58180,7 @@ components:
           properties:
             code:
               type: string
-              description: The code for the schedulingGroup to represent an external identifier.
+              description: 'The code for the schedulingGroup to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.'
               nullable: true
             displayName:
               type: string
@@ -57580,12 +58237,15 @@ components:
           properties:
             description:
               type: string
+              description: The description of the role.
             displayName:
               type: string
+              description: The display name of the role.
             shiftsRolePermissions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftsRolePermission'
+              description: The collection of role permissions within the role.
           additionalProperties:
             type: object
     microsoft.graph.swapShiftsChangeRequest:
@@ -57637,7 +58297,7 @@ components:
           properties:
             code:
               type: string
-              description: The code of the timeOffReason to represent an external identifier.
+              description: 'The code of the timeOffReason to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.'
               nullable: true
             displayName:
               type: string
@@ -59301,11 +59961,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -59621,6 +60281,17 @@ components:
             nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.impactedAsset:
+      title: impactedAsset
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.security.scopeType:
+      title: scopeType
+      enum:
+        - deviceGroup
+        - unknownFutureValue
+      type: string
     microsoft.graph.printerBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -60187,6 +60858,16 @@ components:
           type: string
           description: Url for showing tab contents outside of Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudClipboardItemPayload:
+      title: cloudClipboardItemPayload
+      type: object
+      properties:
+        content:
+          type: string
+        formatName:
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.cloudPcHealthCheckItem:
@@ -62244,6 +62925,7 @@ components:
         - unknownFutureValue
         - formCompletion
         - approvalCompletion
+        - completionInHostedApp
       type: string
       x-ms-enum-flags:
         isFlags: true
@@ -62661,6 +63343,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsSettingType:
+      title: windowsSettingType
+      enum:
+        - roaming
+        - backup
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsSettingInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSettingInstance
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            payload:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -62981,14 +63693,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardSize'
             description:
               type: string
+              description: The description for the card. Required.
               nullable: true
             displayName:
               type: string
+              description: The name of the card. Required.
               nullable: true
             icon:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDashboardCardIcon'
             pickerGroupId:
               type: string
+              description: ID for the group in the card picker. Required.
               nullable: true
           additionalProperties:
             type: object
@@ -63119,6 +63834,7 @@ components:
           type: array
           items:
             type: string
+          description: The permissions that are allowed for a role. Permissions that aren't in this collection are disabled.
       additionalProperties:
         type: object
     microsoft.graph.timeCardBreak:
@@ -63679,6 +64395,9 @@ components:
         - stream
         - powerPoint
         - office
+        - loki
+        - loop
+        - other
         - unknownFutureValue
       type: string
     microsoft.graph.retentionLabelSettings:
@@ -66046,13 +66765,9 @@ components:
               description: Email address of the presenter.
               nullable: true
             identity:
-              $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+              $ref: '#/components/schemas/microsoft.graph.identity'
             presenterDetails:
               $ref: '#/components/schemas/microsoft.graph.virtualEventPresenterDetails'
-            profilePhoto:
-              type: string
-              format: base64url
-              nullable: true
             sessions:
               type: array
               items:
@@ -66175,9 +66890,11 @@ components:
       properties:
         iconUrl:
           type: string
+          description: 'The icon for the card, displayed in the toolbox and card bar, is represented as a URL. The preferred size for raster images is 28x28 pixels. If this property has a value, the officeFabricIconFontName property is ignored.'
           nullable: true
         officeUIFabricIconName:
           type: string
+          description: 'The friendly name of the Office UI Fabric/Fluent UI icon for the card that is used when the iconUrl property isn''t specified. For example, ''officeUIFabricIconName'': ''Search''.'
           nullable: true
       additionalProperties:
         type: object
@@ -66255,6 +66972,11 @@ components:
         - liveStream
         - presentation
         - screenRecording
+        - story
+        - profile
+        - chat
+        - note
+        - comment
         - unknownFutureValue
       type: string
     microsoft.graph.workbookCommentReply:
@@ -68085,6 +68807,11 @@ components:
           type: string
           description: The presenter's personal website URL.
           nullable: true
+        photo:
+          type: string
+          description: The content stream of the presenter's photo.
+          format: base64url
+          nullable: true
         twitterProfileWebUrl:
           type: string
           description: The presenter's Twitter profile URL.
@@ -68111,6 +68838,7 @@ components:
       properties:
         botId:
           type: string
+          description: The ID (usually a GUID) of the bot associated with the specific teamsAppDefinition. This is a unique app ID for the bot as registered with the Bot Framework.
           nullable: true
       additionalProperties:
         type: object
@@ -69618,6 +70346,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.providerTenantSettingCollectionResponse'
+    microsoft.graph.security.detectionRuleCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.detectionRuleCollectionResponse'
     microsoft.graph.secureScoreControlProfileCollectionResponse:
       description: Retrieved collection
       content:

@@ -4520,11 +4520,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get namedLocation
-      description: Retrieve the properties and relationships of a namedLocation object.
+      summary: Get ipNamedLocation
+      description: Retrieve the properties and relationships of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -4575,11 +4575,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update countryNamedLocation
-      description: Update the properties of a countryNamedLocation object.
+      summary: Update ipNamedlocation
+      description: Update the properties of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -4610,11 +4610,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete ipNamedLocation
-      description: Delete an ipNamedLocation object.
+      summary: Delete namedLocation
+      description: Delete a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -6748,11 +6748,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: Get history
-      description: Read the properties and relationships of a riskyUserHistoryItem object.
+      summary: List history
+      description: Get the riskyUserHistoryItems from the history navigation property.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
       operationId: identityProtection.riskyUser_ListHistory
       parameters:
         - name: riskyUser-id
@@ -9724,6 +9724,7 @@ paths:
                 - conditionalAccessPolicies
                 - crossTenantAccessPolicy
                 - defaultAppManagementPolicy
+                - deviceRegistrationPolicy
                 - featureRolloutPolicies
                 - homeRealmDiscoveryPolicies
                 - identitySecurityDefaultsEnforcementPolicy
@@ -9755,6 +9756,7 @@ paths:
                 - conditionalAccessPolicies
                 - crossTenantAccessPolicy
                 - defaultAppManagementPolicy
+                - deviceRegistrationPolicy
                 - featureRolloutPolicies
                 - homeRealmDiscoveryPolicies
                 - identitySecurityDefaultsEnforcementPolicy
@@ -13075,6 +13077,42 @@ paths:
       responses:
         2XX:
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/deviceRegistrationPolicy:
+    get:
+      tags:
+        - policies.deviceRegistrationPolicy
+      summary: Get deviceRegistrationPolicy from policies
+      operationId: policy_GetDeviceRegistrationPolicy
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - azureADJoin
+                - azureADRegistration
+                - description
+                - displayName
+                - localAdminPassword
+                - multiFactorAuthConfiguration
+                - userDeviceQuota
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21062,6 +21100,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
             defaultAppManagementPolicy:
               $ref: '#/components/schemas/microsoft.graph.tenantAppManagementPolicy'
+            deviceRegistrationPolicy:
+              $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
             featureRolloutPolicies:
               type: array
               items:
@@ -21399,6 +21439,33 @@ components:
               description: Denotes whether the policy is enabled. Default value is false.
             servicePrincipalRestrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
+          additionalProperties:
+            type: object
+    microsoft.graph.deviceRegistrationPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceRegistrationPolicy
+          type: object
+          properties:
+            azureADJoin:
+              $ref: '#/components/schemas/microsoft.graph.azureADJoinPolicy'
+            azureADRegistration:
+              $ref: '#/components/schemas/microsoft.graph.azureADRegistrationPolicy'
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            localAdminPassword:
+              $ref: '#/components/schemas/microsoft.graph.localAdminPasswordSettings'
+            multiFactorAuthConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.multiFactorAuthConfiguration'
+            userDeviceQuota:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
           additionalProperties:
             type: object
     microsoft.graph.featureRolloutPolicy:
@@ -25026,6 +25093,44 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.azureADJoinPolicy:
+      title: azureADJoinPolicy
+      type: object
+      properties:
+        allowedToJoin:
+          $ref: '#/components/schemas/microsoft.graph.deviceRegistrationMembership'
+        isAdminConfigurable:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.azureADRegistrationPolicy:
+      title: azureADRegistrationPolicy
+      type: object
+      properties:
+        allowedToRegister:
+          $ref: '#/components/schemas/microsoft.graph.deviceRegistrationMembership'
+        isAdminConfigurable:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.localAdminPasswordSettings:
+      title: localAdminPasswordSettings
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.multiFactorAuthConfiguration:
+      title: multiFactorAuthConfiguration
+      enum:
+        - notRequired
+        - required
+        - unknownFutureValue
+      type: string
     microsoft.graph.stagedFeatureName:
       title: stagedFeatureName
       enum:
@@ -29998,6 +30103,11 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyTarget'
           description: 'Specifies whether to target users, groups, or applications with this rule.'
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceRegistrationMembership:
+      title: deviceRegistrationMembership
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.unifiedRoleManagementPolicyRuleTargetOperations:
