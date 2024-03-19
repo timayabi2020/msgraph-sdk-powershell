@@ -32,8 +32,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -92,57 +90,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - assignedTo
-                - assignedTo desc
-                - closedDateTime
-                - closedDateTime desc
-                - contentQuery
-                - contentQuery desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - dataSubject
-                - dataSubject desc
-                - dataSubjectType
-                - dataSubjectType desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - externalId
-                - externalId desc
-                - history
-                - history desc
-                - includeAllVersions
-                - includeAllVersions desc
-                - includeAuthoredContent
-                - includeAuthoredContent desc
-                - insight
-                - insight desc
-                - internalDueDateTime
-                - internalDueDateTime desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - mailboxLocations
-                - mailboxLocations desc
-                - pauseAfterEstimate
-                - pauseAfterEstimate desc
-                - regulations
-                - regulations desc
-                - siteLocations
-                - siteLocations desc
-                - stages
-                - stages desc
-                - status
-                - status desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -153,36 +100,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignedTo
-                - closedDateTime
-                - contentQuery
-                - createdBy
-                - createdDateTime
-                - dataSubject
-                - dataSubjectType
-                - description
-                - displayName
-                - externalId
-                - history
-                - includeAllVersions
-                - includeAuthoredContent
-                - insight
-                - internalDueDateTime
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - mailboxLocations
-                - pauseAfterEstimate
-                - regulations
-                - siteLocations
-                - stages
-                - status
-                - type
-                - approvers
-                - collaborators
-                - notes
-                - team
               type: string
         - name: $expand
           in: query
@@ -193,12 +110,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - approvers
-                - collaborators
-                - notes
-                - team
               type: string
       responses:
         2XX:
@@ -207,8 +118,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-pageable:
@@ -242,8 +153,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-docs-operation-type: operation
@@ -275,36 +186,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignedTo
-                - closedDateTime
-                - contentQuery
-                - createdBy
-                - createdDateTime
-                - dataSubject
-                - dataSubjectType
-                - description
-                - displayName
-                - externalId
-                - history
-                - includeAllVersions
-                - includeAuthoredContent
-                - insight
-                - internalDueDateTime
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - mailboxLocations
-                - pauseAfterEstimate
-                - regulations
-                - siteLocations
-                - stages
-                - status
-                - type
-                - approvers
-                - collaborators
-                - notes
-                - team
               type: string
         - name: $expand
           in: query
@@ -315,12 +196,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - approvers
-                - collaborators
-                - notes
-                - team
               type: string
       responses:
         2XX:
@@ -333,8 +208,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-docs-operation-type: operation
@@ -374,8 +249,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-docs-operation-type: operation
@@ -406,8 +281,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-docs-operation-type: operation
@@ -441,165 +316,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - aboutMe
-                - aboutMe desc
-                - accountEnabled
-                - accountEnabled desc
-                - ageGroup
-                - ageGroup desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - authorizationInfo
-                - authorizationInfo desc
-                - birthday
-                - birthday desc
-                - businessPhones
-                - businessPhones desc
-                - city
-                - city desc
-                - companyName
-                - companyName desc
-                - consentProvidedForMinor
-                - consentProvidedForMinor desc
-                - country
-                - country desc
-                - createdDateTime
-                - createdDateTime desc
-                - creationType
-                - creationType desc
-                - customSecurityAttributes
-                - customSecurityAttributes desc
-                - department
-                - department desc
-                - deviceEnrollmentLimit
-                - deviceEnrollmentLimit desc
-                - displayName
-                - displayName desc
-                - employeeHireDate
-                - employeeHireDate desc
-                - employeeId
-                - employeeId desc
-                - employeeLeaveDateTime
-                - employeeLeaveDateTime desc
-                - employeeOrgData
-                - employeeOrgData desc
-                - employeeType
-                - employeeType desc
-                - externalUserState
-                - externalUserState desc
-                - externalUserStateChangeDateTime
-                - externalUserStateChangeDateTime desc
-                - faxNumber
-                - faxNumber desc
-                - givenName
-                - givenName desc
-                - hireDate
-                - hireDate desc
-                - identities
-                - identities desc
-                - imAddresses
-                - imAddresses desc
-                - interests
-                - interests desc
-                - isResourceAccount
-                - isResourceAccount desc
-                - jobTitle
-                - jobTitle desc
-                - lastPasswordChangeDateTime
-                - lastPasswordChangeDateTime desc
-                - legalAgeGroupClassification
-                - legalAgeGroupClassification desc
-                - licenseAssignmentStates
-                - licenseAssignmentStates desc
-                - mail
-                - mail desc
-                - mailboxSettings
-                - mailboxSettings desc
-                - mailNickname
-                - mailNickname desc
-                - mobilePhone
-                - mobilePhone desc
-                - mySite
-                - mySite desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesDistinguishedName
-                - onPremisesDistinguishedName desc
-                - onPremisesDomainName
-                - onPremisesDomainName desc
-                - onPremisesExtensionAttributes
-                - onPremisesExtensionAttributes desc
-                - onPremisesImmutableId
-                - onPremisesImmutableId desc
-                - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
-                - onPremisesProvisioningErrors
-                - onPremisesProvisioningErrors desc
-                - onPremisesSamAccountName
-                - onPremisesSamAccountName desc
-                - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
-                - onPremisesUserPrincipalName
-                - onPremisesUserPrincipalName desc
-                - otherMails
-                - otherMails desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - pastProjects
-                - pastProjects desc
-                - postalCode
-                - postalCode desc
-                - preferredDataLocation
-                - preferredDataLocation desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - preferredName
-                - preferredName desc
-                - print
-                - print desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - proxyAddresses
-                - proxyAddresses desc
-                - responsibilities
-                - responsibilities desc
-                - schools
-                - schools desc
-                - securityIdentifier
-                - securityIdentifier desc
-                - serviceProvisioningErrors
-                - serviceProvisioningErrors desc
-                - showInAddressList
-                - showInAddressList desc
-                - signInActivity
-                - signInActivity desc
-                - signInSessionsValidFromDateTime
-                - signInSessionsValidFromDateTime desc
-                - skills
-                - skills desc
-                - state
-                - state desc
-                - streetAddress
-                - streetAddress desc
-                - surname
-                - surname desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
         - name: $select
           in: query
@@ -610,134 +326,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - aboutMe
-                - accountEnabled
-                - ageGroup
-                - assignedLicenses
-                - assignedPlans
-                - authorizationInfo
-                - birthday
-                - businessPhones
-                - city
-                - companyName
-                - consentProvidedForMinor
-                - country
-                - createdDateTime
-                - creationType
-                - customSecurityAttributes
-                - department
-                - deviceEnrollmentLimit
-                - displayName
-                - employeeHireDate
-                - employeeId
-                - employeeLeaveDateTime
-                - employeeOrgData
-                - employeeType
-                - externalUserState
-                - externalUserStateChangeDateTime
-                - faxNumber
-                - givenName
-                - hireDate
-                - identities
-                - imAddresses
-                - interests
-                - isResourceAccount
-                - jobTitle
-                - lastPasswordChangeDateTime
-                - legalAgeGroupClassification
-                - licenseAssignmentStates
-                - mail
-                - mailboxSettings
-                - mailNickname
-                - mobilePhone
-                - mySite
-                - officeLocation
-                - onPremisesDistinguishedName
-                - onPremisesDomainName
-                - onPremisesExtensionAttributes
-                - onPremisesImmutableId
-                - onPremisesLastSyncDateTime
-                - onPremisesProvisioningErrors
-                - onPremisesSamAccountName
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - onPremisesUserPrincipalName
-                - otherMails
-                - passwordPolicies
-                - passwordProfile
-                - pastProjects
-                - postalCode
-                - preferredDataLocation
-                - preferredLanguage
-                - preferredName
-                - print
-                - provisionedPlans
-                - proxyAddresses
-                - responsibilities
-                - schools
-                - securityIdentifier
-                - serviceProvisioningErrors
-                - showInAddressList
-                - signInActivity
-                - signInSessionsValidFromDateTime
-                - skills
-                - state
-                - streetAddress
-                - surname
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -748,56 +336,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
       responses:
         2XX:
@@ -806,8 +344,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-pageable:
@@ -847,134 +385,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - aboutMe
-                - accountEnabled
-                - ageGroup
-                - assignedLicenses
-                - assignedPlans
-                - authorizationInfo
-                - birthday
-                - businessPhones
-                - city
-                - companyName
-                - consentProvidedForMinor
-                - country
-                - createdDateTime
-                - creationType
-                - customSecurityAttributes
-                - department
-                - deviceEnrollmentLimit
-                - displayName
-                - employeeHireDate
-                - employeeId
-                - employeeLeaveDateTime
-                - employeeOrgData
-                - employeeType
-                - externalUserState
-                - externalUserStateChangeDateTime
-                - faxNumber
-                - givenName
-                - hireDate
-                - identities
-                - imAddresses
-                - interests
-                - isResourceAccount
-                - jobTitle
-                - lastPasswordChangeDateTime
-                - legalAgeGroupClassification
-                - licenseAssignmentStates
-                - mail
-                - mailboxSettings
-                - mailNickname
-                - mobilePhone
-                - mySite
-                - officeLocation
-                - onPremisesDistinguishedName
-                - onPremisesDomainName
-                - onPremisesExtensionAttributes
-                - onPremisesImmutableId
-                - onPremisesLastSyncDateTime
-                - onPremisesProvisioningErrors
-                - onPremisesSamAccountName
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - onPremisesUserPrincipalName
-                - otherMails
-                - passwordPolicies
-                - passwordProfile
-                - pastProjects
-                - postalCode
-                - preferredDataLocation
-                - preferredLanguage
-                - preferredName
-                - print
-                - provisionedPlans
-                - proxyAddresses
-                - responsibilities
-                - schools
-                - securityIdentifier
-                - serviceProvisioningErrors
-                - showInAddressList
-                - signInActivity
-                - signInSessionsValidFromDateTime
-                - skills
-                - state
-                - streetAddress
-                - surname
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -985,56 +395,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
       responses:
         2XX:
@@ -1047,8 +407,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-docs-operation-type: operation
@@ -1085,16 +445,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - archiveFolder
-                - automaticRepliesSetting
-                - dateFormat
-                - delegateMeetingMessageDeliveryOptions
-                - language
-                - timeFormat
-                - timeZone
-                - userPurpose
-                - workingHours
               type: string
         - name: $expand
           in: query
@@ -1105,8 +455,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1119,8 +467,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
     patch:
@@ -1163,8 +511,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
   '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/approvers/{user-id}/serviceProvisioningErrors':
@@ -1205,13 +553,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - createdDateTime desc
-                - isResolved
-                - isResolved desc
-                - serviceInstance
-                - serviceInstance desc
               type: string
         - name: $select
           in: query
@@ -1222,10 +563,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - isResolved
-                - serviceInstance
               type: string
         - name: $expand
           in: query
@@ -1236,8 +573,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1246,8 +581,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-pageable:
@@ -1285,8 +620,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
   '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/approvers/$count':
@@ -1313,8 +648,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
   '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators':
@@ -1347,165 +682,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - aboutMe
-                - aboutMe desc
-                - accountEnabled
-                - accountEnabled desc
-                - ageGroup
-                - ageGroup desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - authorizationInfo
-                - authorizationInfo desc
-                - birthday
-                - birthday desc
-                - businessPhones
-                - businessPhones desc
-                - city
-                - city desc
-                - companyName
-                - companyName desc
-                - consentProvidedForMinor
-                - consentProvidedForMinor desc
-                - country
-                - country desc
-                - createdDateTime
-                - createdDateTime desc
-                - creationType
-                - creationType desc
-                - customSecurityAttributes
-                - customSecurityAttributes desc
-                - department
-                - department desc
-                - deviceEnrollmentLimit
-                - deviceEnrollmentLimit desc
-                - displayName
-                - displayName desc
-                - employeeHireDate
-                - employeeHireDate desc
-                - employeeId
-                - employeeId desc
-                - employeeLeaveDateTime
-                - employeeLeaveDateTime desc
-                - employeeOrgData
-                - employeeOrgData desc
-                - employeeType
-                - employeeType desc
-                - externalUserState
-                - externalUserState desc
-                - externalUserStateChangeDateTime
-                - externalUserStateChangeDateTime desc
-                - faxNumber
-                - faxNumber desc
-                - givenName
-                - givenName desc
-                - hireDate
-                - hireDate desc
-                - identities
-                - identities desc
-                - imAddresses
-                - imAddresses desc
-                - interests
-                - interests desc
-                - isResourceAccount
-                - isResourceAccount desc
-                - jobTitle
-                - jobTitle desc
-                - lastPasswordChangeDateTime
-                - lastPasswordChangeDateTime desc
-                - legalAgeGroupClassification
-                - legalAgeGroupClassification desc
-                - licenseAssignmentStates
-                - licenseAssignmentStates desc
-                - mail
-                - mail desc
-                - mailboxSettings
-                - mailboxSettings desc
-                - mailNickname
-                - mailNickname desc
-                - mobilePhone
-                - mobilePhone desc
-                - mySite
-                - mySite desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesDistinguishedName
-                - onPremisesDistinguishedName desc
-                - onPremisesDomainName
-                - onPremisesDomainName desc
-                - onPremisesExtensionAttributes
-                - onPremisesExtensionAttributes desc
-                - onPremisesImmutableId
-                - onPremisesImmutableId desc
-                - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
-                - onPremisesProvisioningErrors
-                - onPremisesProvisioningErrors desc
-                - onPremisesSamAccountName
-                - onPremisesSamAccountName desc
-                - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
-                - onPremisesUserPrincipalName
-                - onPremisesUserPrincipalName desc
-                - otherMails
-                - otherMails desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - pastProjects
-                - pastProjects desc
-                - postalCode
-                - postalCode desc
-                - preferredDataLocation
-                - preferredDataLocation desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - preferredName
-                - preferredName desc
-                - print
-                - print desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - proxyAddresses
-                - proxyAddresses desc
-                - responsibilities
-                - responsibilities desc
-                - schools
-                - schools desc
-                - securityIdentifier
-                - securityIdentifier desc
-                - serviceProvisioningErrors
-                - serviceProvisioningErrors desc
-                - showInAddressList
-                - showInAddressList desc
-                - signInActivity
-                - signInActivity desc
-                - signInSessionsValidFromDateTime
-                - signInSessionsValidFromDateTime desc
-                - skills
-                - skills desc
-                - state
-                - state desc
-                - streetAddress
-                - streetAddress desc
-                - surname
-                - surname desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
         - name: $select
           in: query
@@ -1516,134 +692,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - aboutMe
-                - accountEnabled
-                - ageGroup
-                - assignedLicenses
-                - assignedPlans
-                - authorizationInfo
-                - birthday
-                - businessPhones
-                - city
-                - companyName
-                - consentProvidedForMinor
-                - country
-                - createdDateTime
-                - creationType
-                - customSecurityAttributes
-                - department
-                - deviceEnrollmentLimit
-                - displayName
-                - employeeHireDate
-                - employeeId
-                - employeeLeaveDateTime
-                - employeeOrgData
-                - employeeType
-                - externalUserState
-                - externalUserStateChangeDateTime
-                - faxNumber
-                - givenName
-                - hireDate
-                - identities
-                - imAddresses
-                - interests
-                - isResourceAccount
-                - jobTitle
-                - lastPasswordChangeDateTime
-                - legalAgeGroupClassification
-                - licenseAssignmentStates
-                - mail
-                - mailboxSettings
-                - mailNickname
-                - mobilePhone
-                - mySite
-                - officeLocation
-                - onPremisesDistinguishedName
-                - onPremisesDomainName
-                - onPremisesExtensionAttributes
-                - onPremisesImmutableId
-                - onPremisesLastSyncDateTime
-                - onPremisesProvisioningErrors
-                - onPremisesSamAccountName
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - onPremisesUserPrincipalName
-                - otherMails
-                - passwordPolicies
-                - passwordProfile
-                - pastProjects
-                - postalCode
-                - preferredDataLocation
-                - preferredLanguage
-                - preferredName
-                - print
-                - provisionedPlans
-                - proxyAddresses
-                - responsibilities
-                - schools
-                - securityIdentifier
-                - serviceProvisioningErrors
-                - showInAddressList
-                - signInActivity
-                - signInSessionsValidFromDateTime
-                - skills
-                - state
-                - streetAddress
-                - surname
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -1654,56 +702,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
       responses:
         2XX:
@@ -1712,8 +710,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-pageable:
@@ -1753,134 +751,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - aboutMe
-                - accountEnabled
-                - ageGroup
-                - assignedLicenses
-                - assignedPlans
-                - authorizationInfo
-                - birthday
-                - businessPhones
-                - city
-                - companyName
-                - consentProvidedForMinor
-                - country
-                - createdDateTime
-                - creationType
-                - customSecurityAttributes
-                - department
-                - deviceEnrollmentLimit
-                - displayName
-                - employeeHireDate
-                - employeeId
-                - employeeLeaveDateTime
-                - employeeOrgData
-                - employeeType
-                - externalUserState
-                - externalUserStateChangeDateTime
-                - faxNumber
-                - givenName
-                - hireDate
-                - identities
-                - imAddresses
-                - interests
-                - isResourceAccount
-                - jobTitle
-                - lastPasswordChangeDateTime
-                - legalAgeGroupClassification
-                - licenseAssignmentStates
-                - mail
-                - mailboxSettings
-                - mailNickname
-                - mobilePhone
-                - mySite
-                - officeLocation
-                - onPremisesDistinguishedName
-                - onPremisesDomainName
-                - onPremisesExtensionAttributes
-                - onPremisesImmutableId
-                - onPremisesLastSyncDateTime
-                - onPremisesProvisioningErrors
-                - onPremisesSamAccountName
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - onPremisesUserPrincipalName
-                - otherMails
-                - passwordPolicies
-                - passwordProfile
-                - pastProjects
-                - postalCode
-                - preferredDataLocation
-                - preferredLanguage
-                - preferredName
-                - print
-                - provisionedPlans
-                - proxyAddresses
-                - responsibilities
-                - schools
-                - securityIdentifier
-                - serviceProvisioningErrors
-                - showInAddressList
-                - signInActivity
-                - signInSessionsValidFromDateTime
-                - skills
-                - state
-                - streetAddress
-                - surname
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -1891,56 +761,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
       responses:
         2XX:
@@ -1953,8 +773,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-docs-operation-type: operation
@@ -1991,16 +811,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - archiveFolder
-                - automaticRepliesSetting
-                - dateFormat
-                - delegateMeetingMessageDeliveryOptions
-                - language
-                - timeFormat
-                - timeZone
-                - userPurpose
-                - workingHours
               type: string
         - name: $expand
           in: query
@@ -2011,8 +821,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2025,8 +833,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
     patch:
@@ -2069,8 +877,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
   '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/{user-id}/serviceProvisioningErrors':
@@ -2111,13 +919,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - createdDateTime desc
-                - isResolved
-                - isResolved desc
-                - serviceInstance
-                - serviceInstance desc
               type: string
         - name: $select
           in: query
@@ -2128,10 +929,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - isResolved
-                - serviceInstance
               type: string
         - name: $expand
           in: query
@@ -2142,8 +939,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2152,8 +947,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-pageable:
@@ -2191,8 +986,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
   '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/$count':
@@ -2219,8 +1014,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
   '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/notes':
@@ -2256,15 +1051,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - author
-                - author desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
               type: string
         - name: $select
           in: query
@@ -2275,11 +1061,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - author
-                - content
-                - createdDateTime
               type: string
         - name: $expand
           in: query
@@ -2290,8 +1071,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2300,8 +1079,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-pageable:
@@ -2344,8 +1123,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-docs-operation-type: operation
@@ -2382,11 +1161,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - author
-                - content
-                - createdDateTime
               type: string
         - name: $expand
           in: query
@@ -2397,8 +1171,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2411,8 +1183,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-docs-operation-type: operation
@@ -2456,8 +1228,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-docs-operation-type: operation
@@ -2496,8 +1268,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-docs-operation-type: operation
@@ -2525,8 +1297,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
   '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/team':
@@ -2554,36 +1326,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classification
-                - createdDateTime
-                - description
-                - displayName
-                - funSettings
-                - guestSettings
-                - internalId
-                - isArchived
-                - memberSettings
-                - messagingSettings
-                - specialization
-                - summary
-                - tenantId
-                - visibility
-                - webUrl
-                - allChannels
-                - channels
-                - group
-                - incomingChannels
-                - installedApps
-                - members
-                - operations
-                - permissionGrants
-                - photo
-                - primaryChannel
-                - schedule
-                - tags
-                - template
               type: string
         - name: $expand
           in: query
@@ -2594,21 +1336,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - allChannels
-                - channels
-                - group
-                - incomingChannels
-                - installedApps
-                - members
-                - operations
-                - permissionGrants
-                - photo
-                - primaryChannel
-                - schedule
-                - tags
-                - template
               type: string
       responses:
         2XX:
@@ -2621,8 +1348,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
       x-ms-docs-operation-type: operation
@@ -2642,8 +1369,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2025-03-20T00:00:00.0000000+00:00'
-        date: '2022-03-22T00:00:00.0000000+00:00'
+        removalDate: '2025-03-20'
+        date: '2022-03-22'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
 components:
@@ -3152,6 +1879,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
               x-ms-navigationProperty: true
+            cloudClipboard:
+              $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
             contactFolders:
               type: array
               items:
@@ -3762,7 +2491,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.<br>For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
+          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.  For guests from other Microsoft Entra organizations, this is the domain of the federated organization, for example contoso.com. For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -3902,15 +2631,15 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: true if the user must change her password on the next login; otherwise false.
+          description: true if the user must change their password on the next sign-in; otherwise false.
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
-          description: 'If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
+          description: 'If true, at next sign-in, the user must perform a multifactor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multifactor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next sign-in. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -4377,21 +3106,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isAllDay:
               type: boolean
+              description: 'Set to true if the event lasts all day. If true, regardless of whether it''s a single-day or multi-day event, start and end time must be set to midnight and be in the same time zone.'
               nullable: true
             isCancelled:
               type: boolean
+              description: Set to true if the event has been canceled.
               nullable: true
             isDraft:
               type: boolean
+              description: 'Set to true if the user has updated the meeting in Outlook but has not sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.'
               nullable: true
             isOnlineMeeting:
               type: boolean
+              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
               nullable: true
             isOrganizer:
               type: boolean
+              description: Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.
               nullable: true
             isReminderOn:
               type: boolean
+              description: Set to true if an alert is set to remind the user of the event.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.location'
@@ -4399,25 +3134,30 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.location'
+              description: 'The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.'
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
             onlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             onlineMeetingUrl:
               type: string
+              description: 'A URL for an online meeting. The property is set only when an organizer specifies in Outlook that an event is an online meeting such as Skype. Read-only.To access the URL to join an online meeting, use joinUrl which is exposed via the onlineMeeting property of the event. The onlineMeetingUrl property will be deprecated in the future.'
               nullable: true
             organizer:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             originalEndTimeZone:
               type: string
+              description: The end time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
               nullable: true
             originalStart:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property is not returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             originalStartTimeZone:
               type: string
+              description: The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
               nullable: true
             recurrence:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
@@ -4425,10 +3165,12 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
             responseRequested:
               type: boolean
+              description: 'Default is true, which represents the organizer would like an invitee to send a response to the event.'
               nullable: true
             responseStatus:
               $ref: '#/components/schemas/microsoft.graph.responseStatus'
@@ -4436,6 +3178,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivity'
             seriesMasterId:
               type: string
+              description: 'The ID for the recurring series master item, if this event is part of a recurring series.'
               nullable: true
             showAs:
               $ref: '#/components/schemas/microsoft.graph.freeBusyStatus'
@@ -4443,14 +3186,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             subject:
               type: string
+              description: The text of the event's subject line.
               nullable: true
             transactionId:
               type: string
+              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.eventType'
             webLink:
               type: string
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -4503,7 +3249,7 @@ components:
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Date and time at which the chat was renamed or list of members were last changed. Read-only.
+              description: Date and time at which the chat was renamed or the list of members was last changed. Read-only.
               format: date-time
               nullable: true
             onlineMeetingInfo:
@@ -4559,6 +3305,20 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the chat. Nullable.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardRoot
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
+              description: Represents a collection of Cloud Clipboard items.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -4678,55 +3438,72 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The contact's instant messaging (IM) addresses.
             initials:
               type: string
+              description: The contact's initials.
               nullable: true
             jobTitle:
               type: string
+              description: The contact’s job title.
               nullable: true
             manager:
               type: string
+              description: The name of the contact's manager.
               nullable: true
             middleName:
               type: string
+              description: The contact's middle name.
               nullable: true
             mobilePhone:
               type: string
+              description: The contact's mobile phone number.
               nullable: true
             nickName:
               type: string
+              description: The contact's nickname.
               nullable: true
             officeLocation:
               type: string
+              description: The location of the contact's office.
               nullable: true
             otherAddress:
               $ref: '#/components/schemas/microsoft.graph.physicalAddress'
             parentFolderId:
               type: string
+              description: The ID of the contact's parent folder.
               nullable: true
             personalNotes:
               type: string
+              description: The user's notes about the contact.
               nullable: true
             profession:
               type: string
+              description: The contact's profession.
               nullable: true
             spouseName:
               type: string
+              description: The name of the contact's spouse/partner.
               nullable: true
             surname:
               type: string
+              description: The contact's surname.
               nullable: true
             title:
               type: string
+              description: The contact's title.
               nullable: true
             yomiCompanyName:
               type: string
+              description: The phonetic Japanese company name of the contact.
               nullable: true
             yomiGivenName:
               type: string
+              description: The phonetic Japanese given name (first name) of the contact.
               nullable: true
             yomiSurname:
               type: string
+              description: The phonetic Japanese surname (last name)  of the contact.
               nullable: true
             extensions:
               type: array
@@ -4905,6 +3682,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
               description: The collection of long-running operations on the site.
               x-ms-navigationProperty: true
+            pages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              x-ms-navigationProperty: true
             permissions:
               type: array
               items:
@@ -4977,16 +3759,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
-              description: 'Information about the service plans assigned with the license. Read-only, Not nullable'
+              description: Information about the service plans assigned with the license. Read-only. Not nullable.
             skuId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
               format: uuid
               nullable: true
             skuPartNumber:
               type: string
-              description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
+              description: 'Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -5458,51 +4240,64 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
+              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
             internetMessageId:
               type: string
+              description: The message ID in the format specified by RFC2822.
               nullable: true
             isDeliveryReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             isDraft:
               type: boolean
+              description: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
               nullable: true
             isRead:
               type: boolean
+              description: Indicates whether the message has been read.
               nullable: true
             isReadReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             parentFolderId:
               type: string
+              description: The unique identifier for the message's parent mailFolder.
               nullable: true
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             replyTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: The email addresses to use when replying.
             sender:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             subject:
               type: string
+              description: The subject of the message.
               nullable: true
             toRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The To: recipients for the message.'
             uniqueBody:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             webLink:
               type: string
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -5621,7 +4416,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting end time in UTC.
+              description: The meeting end time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             externalId:
@@ -5635,7 +4430,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC.
+              description: The meeting start time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             recordings:
@@ -5870,6 +4665,11 @@ components:
               description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            windows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -7708,6 +6508,35 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
           additionalProperties:
             type: object
+    microsoft.graph.cloudClipboardItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Set by the server. DateTime in UTC when the object was created on the server.
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Set by the server. DateTime in UTC when the object expires and after that the object is no longer available. The default and also maximum TTL is 12 hours after the creation, but it might change for performance optimization.'
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Set by the server if not provided in the client's request. DateTime in UTC when the object was modified by the client.
+              format: date-time
+              nullable: true
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
+              description: A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.
+          additionalProperties:
+            type: object
     microsoft.graph.physicalAddress:
       title: physicalAddress
       type: object
@@ -8282,6 +7111,21 @@ components:
             type:
               type: string
               description: The type of the operation.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.baseSitePage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: baseSitePage
+          type: object
+          properties:
+            pageLayout:
+              $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
+            publishingState:
+              $ref: '#/components/schemas/microsoft.graph.publicationFacet'
+            title:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -10009,6 +8853,30 @@ components:
               description: Availability of the user to be scheduled for work and its recurrence pattern.
           additionalProperties:
             type: object
+    microsoft.graph.windowsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSetting
+          type: object
+          properties:
+            payloadType:
+              type: string
+              description: The type of setting payloads contained in the instances navigation property.
+              nullable: true
+            settingType:
+              $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
+            windowsDeviceId:
+              type: string
+              description: A unique identifier for the device the setting might belong to if it is of the settingType backup.
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              description: A collection of setting values for a given windowsSetting.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.associatedTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -10877,6 +9745,9 @@ components:
               type: string
               description: 'Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.'
               nullable: true
+            enrollmentType:
+              type: string
+              nullable: true
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
@@ -10885,9 +9756,23 @@ components:
               type: boolean
               description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
               nullable: true
+            isRooted:
+              type: boolean
+              nullable: true
+            managementType:
+              type: string
+              nullable: true
+            manufacturer:
+              type: string
+              description: Manufacturer of the device. Read-only.
+              nullable: true
             mdmAppId:
               type: string
               description: 'Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).'
+              nullable: true
+            model:
+              type: string
+              description: Model of the device. Read-only.
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -11344,6 +10229,18 @@ components:
           type: string
           description: Url for showing tab contents outside of Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudClipboardItemPayload:
+      title: cloudClipboardItemPayload
+      type: object
+      properties:
+        content:
+          type: string
+          description: The formatName version of the value of a cloud clipboard encoded in base64.
+        formatName:
+          type: string
+          description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
     microsoft.graph.itemReference:
@@ -11934,14 +10831,14 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
+              description: 'Required. Indicates the type of change in the subscribed resource that raises a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated, or soft deleted. Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
-              description: 'Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.'
+              description: 'Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.'
               nullable: true
             encryptionCertificate:
               type: string
@@ -11954,7 +10851,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.'
               format: date-time
             includeResourceData:
               type: boolean
@@ -11970,18 +10867,18 @@ components:
               nullable: true
             notificationQueryOptions:
               type: string
-              description: 'Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.'
+              description: 'Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.'
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property is included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
-              description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
+              description: Optional. The app ID that the subscription service can use to generate the validation token. The value allows the client to validate the authenticity of the notification received.
               nullable: true
             resource:
               type: string
-              description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+              description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
           additionalProperties:
             type: object
     microsoft.graph.thumbnailSet:
@@ -12491,6 +11388,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.pageLayoutType:
+      title: pageLayoutType
+      enum:
+        - microsoftReserved
+        - article
+        - home
+        - unknownFutureValue
+      type: string
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -13893,6 +12798,40 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsSettingType:
+      title: windowsSettingType
+      enum:
+        - roaming
+        - backup
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsSettingInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSettingInstance
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Set by the server. Represents the dateTime in UTC when the object was created on the server.
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Set by the server. The object expires at the specified dateTime in UTC, making it unavailable after that time.'
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Set by the server if not provided in the request from the Windows client device. Refers to the user's Windows device that modified the object at the specified dateTime in UTC.
+              format: date-time
+              nullable: true
+            payload:
+              type: string
+              description: Base64-encoded JSON setting value.
+          additionalProperties:
+            type: object
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16120,11 +15059,11 @@ components:
               format: date-time
             displayName:
               type: string
-              description: Field indicating the title of checklistItem.
+              description: Indicates the title of the checklistItem.
               nullable: true
             isChecked:
               type: boolean
-              description: State indicating whether the item is checked off or not.
+              description: State that indicates whether the item is checked off or not.
               nullable: true
           additionalProperties:
             type: object
