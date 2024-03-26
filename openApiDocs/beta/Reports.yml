@@ -10070,7 +10070,7 @@ paths:
       tags:
         - reports.Actions
       summary: Invoke action export
-      description: Export the unbilled Azure usage data for a specific billing period and a given currency.
+      description: Export unbilled Azure usage data for a specific billing period and currency.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/partners-billing-unbilledusage-export?view=graph-rest-1.0
@@ -13808,12 +13808,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicy'
-              description: 'A list of conditional access policies that are triggered by the corresponding sign-in activity. Apps need additional Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.'
+              description: 'A list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.'
             appliedEventListeners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedAuthenticationEventListener'
-              description: 'Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, which were triggered by the corresponding events in the sign-in event.'
+              description: 'Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, which the corresponding events in the sign-in event triggered.'
             appTokenProtectionStatus:
               $ref: '#/components/schemas/microsoft.graph.tokenProtectionStatus'
             authenticationAppDeviceDetails:
@@ -13876,7 +13876,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
             correlationId:
               type: string
-              description: The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
+              description: The identifier the client sends when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -14573,7 +14573,7 @@ components:
       properties:
         content:
           type: string
-          description: Report content; details vary by report type.
+          description: The http content that has the data
           format: base64url
           nullable: true
       additionalProperties:
@@ -15772,6 +15772,7 @@ components:
               type: string
               description: The date of the user insight.
               format: date
+              nullable: true
             os:
               type: string
               description: The platform for the device that the customers used. Supports $filter (eq).
@@ -15825,6 +15826,7 @@ components:
               type: string
               description: The date of the user insight.
               format: date
+              nullable: true
             mfaMethod:
               type: string
               description: The MFA authentication method used by the customers. Supports $filter (eq).
@@ -15854,6 +15856,7 @@ components:
               type: string
               description: The date of the user insight.
               format: date
+              nullable: true
             os:
               type: string
               description: The device plaform that the customers used. Supports $filter (eq).
@@ -16018,6 +16021,7 @@ components:
               type: string
               description: The date of the user insight.
               format: date
+              nullable: true
             requestCount:
               type: integer
               description: Number of requests to the tenant. Supports $filter (eq).
@@ -16039,11 +16043,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -16579,6 +16583,9 @@ components:
         - adminConfirmedServicePrincipalCompromised
         - adminDismissedAllRiskForServicePrincipal
         - m365DAdminDismissedDetection
+        - userChangedPasswordOnPremises
+        - adminDismissedRiskForSignIn
+        - adminConfirmedAccountSafe
       type: string
     microsoft.graph.riskLevel:
       title: riskLevel
