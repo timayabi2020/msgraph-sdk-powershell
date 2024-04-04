@@ -2442,6 +2442,51 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/invitedBy':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get invitedBy from users
+      operationId: user_GetInvitedGraphBPre
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/licenseDetails':
     get:
       tags:
@@ -4000,8 +4045,8 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List Outlook categories
-      description: Get all the categories that have been defined for the user.
+      summary: List masterCategories
+      description: Get all the categories that have been defined for a user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
@@ -4133,8 +4178,8 @@ paths:
     patch:
       tags:
         - users.outlookUser
-      summary: Update Outlook category
-      description: "Update the writable property, color, of the specified outlookCategory object. You can't modify the displayName property\nonce you have created the category."
+      summary: Update outlookCategory
+      description: 'Update the writable property, color, of the specified outlookCategory object. You can''t modify the displayName property once you have created the category.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0
@@ -14092,7 +14137,7 @@ components:
               nullable: true
             userType:
               type: string
-              description: 'A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
+              description: 'A String value that can be used to classify user types in your directory. The possible values are Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
               nullable: true
             activities:
               type: array
@@ -14237,6 +14282,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.informationProtection'
             insights:
               $ref: '#/components/schemas/microsoft.graph.itemInsights'
+            invitedBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
             joinedGroups:
               type: array
               items:
@@ -16035,7 +16082,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.servicePrincipalLockConfiguration'
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg (default), AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).'
               nullable: true
             spa:
               $ref: '#/components/schemas/microsoft.graph.spaApplication'
@@ -18093,7 +18140,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+              description: The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
               x-ms-navigationProperty: true
             informationProtection:
               $ref: '#/components/schemas/microsoft.graph.informationProtection'
@@ -18101,7 +18148,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseItem'
-              description: Used to address any item contained in this site. This collection cannot be enumerated.
+              description: Used to address any item contained in this site. This collection can't be enumerated.
               x-ms-navigationProperty: true
             lists:
               type: array
@@ -18121,7 +18168,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
-              description: The collection of pages in the baseSitePages list in this site.
+              description: The collection of pages in the baseSitePages list on this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -19107,7 +19154,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-              description: Indicates collection of App Log Upload Request.
+              description: The collection property of AppLogUploadRequest.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23077,10 +23124,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -23266,6 +23313,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.bundle'
             content:
               type: string
+              format: base64url
+              nullable: true
+            contentStream:
+              type: string
+              description: 'The content stream, if the item represents a file.'
               format: base64url
               nullable: true
             cTag:
@@ -23631,7 +23683,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+              description: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
             description:
               type: string
               description: The descriptive text for the item.
@@ -23666,7 +23718,7 @@ components:
               nullable: true
             propagateChanges:
               type: boolean
-              description: 'If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.'
+              description: 'If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.'
               nullable: true
             readOnly:
               type: boolean
@@ -23688,7 +23740,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnLink'
-              description: The collection of columns that are required by this content type
+              description: The collection of columns that are required by this content type.
               x-ms-navigationProperty: true
             columnPositions:
               type: array
@@ -23700,7 +23752,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of column definitions for this contentType.
+              description: The collection of column definitions for this content type.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -24151,13 +24203,14 @@ components:
               nullable: true
             displayName:
               type: string
-              description: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
+              description: Channel name as it appears to the user in Microsoft Teams. The maximum length is 50 characters.
             email:
               type: string
               description: The email address for sending messages to the channel. Read-only.
               nullable: true
             isArchived:
               type: boolean
+              description: Indicates whether the channel is archived. Read-only.
               nullable: true
             isFavoriteByDefault:
               type: boolean
@@ -24175,7 +24228,7 @@ components:
               nullable: true
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              description: 'A hyperlink to the channel in Microsoft Teams. This URL is supplied when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
               nullable: true
             filesFolder:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
@@ -27195,7 +27248,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
             bucketId:
               type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
               nullable: true
             checklistItemCount:
               maximum: 2147483647
@@ -27241,10 +27294,12 @@ components:
               nullable: true
             isOnMyDay:
               type: boolean
+              description: 'A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.'
               nullable: true
             isOnMyDayLastModifiedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: Read-only. The date on which task is added to or removed from MyDay.
               format: date
               nullable: true
             orderHint:
@@ -27268,7 +27323,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
+              description: 'The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''. Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
               format: int32
               nullable: true
             recurrence:
@@ -28597,14 +28652,15 @@ components:
           properties:
             externalIp:
               type: string
-              description: The external IP address as detected by the the connector server. Read-only.
+              description: The external IP address as detected by the connector server. Read-only.
             machineName:
               type: string
-              description: The machine name the connector is installed and running on.
+              description: The name of the computer on which the connector is installed and runs on.
             status:
               $ref: '#/components/schemas/microsoft.graph.connectorStatus'
             version:
               type: string
+              description: The version of the connector.
             memberOf:
               type: array
               items:
@@ -35155,7 +35211,7 @@ components:
               description: Items within the document set that are captured as part of this version.
             shouldCaptureMinorVersion:
               type: boolean
-              description: 'If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.'
+              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
               nullable: true
           additionalProperties:
             type: object
