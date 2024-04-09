@@ -408,7 +408,7 @@ paths:
       tags:
         - groups.group
       summary: Upsert group
-      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Note: To create a team, first create a group then add a team to it, see create team."
+      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
@@ -483,7 +483,7 @@ paths:
       tags:
         - groups.group
       summary: Upsert group
-      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Note: To create a team, first create a group then add a team to it, see create team."
+      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
@@ -9341,11 +9341,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create conversation
-      description: Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
+      summary: Create openTypeExtension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -36146,11 +36146,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversation thread
-      description: Delete a thread object.
+      summary: Delete conversationThread
+      description: Delete conversationThread.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -40335,7 +40335,7 @@ paths:
       tags:
         - groups.group
       summary: Upsert group
-      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Note: To create a team, first create a group then add a team to it, see create team."
+      description: "Create a new group object if it doesn't exist, or update the properties of an existing group object.\nYou can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
@@ -52342,11 +52342,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
