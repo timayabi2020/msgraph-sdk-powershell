@@ -15786,10 +15786,10 @@ paths:
       tags:
         - organization.organization
       summary: List organizations
-      description: List properties and relationships of the organization objects.
+      description: Retrieve a list of organization objects. There's only one organization object in the collection.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
       operationId: organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15863,10 +15863,10 @@ paths:
       tags:
         - organization.organization
       summary: Get organization
-      description: Read properties and relationships of the organization object.
+      description: 'Get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-get?view=graph-rest-1.0
       operationId: organization_GetOrganization
       parameters:
         - name: organization-id
@@ -15911,10 +15911,10 @@ paths:
       tags:
         - organization.organization
       summary: Update organization
-      description: 'Update the properties of the currently authenticated organization. In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.  The ID is also known as the tenantId of the organization.'
+      description: Update the properties of a organization object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-update?view=graph-rest-1.0
       operationId: organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -19958,6 +19958,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -20221,6 +20222,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
               nullable: true
             isCompliant:
               type: boolean
@@ -20232,9 +20234,11 @@ components:
               nullable: true
             isRooted:
               type: boolean
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             managementType:
               type: string
+              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string
@@ -20828,6 +20832,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to an application and used as an alternate key. Immutable. Read-only.
               nullable: true
             verifiedPublisher:
               $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
@@ -22730,6 +22735,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -23160,6 +23166,11 @@ components:
               type: string
               description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
+              readOnly: true
+            enrollmentProfileName:
+              type: string
+              description: 'Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.'
+              nullable: true
               readOnly: true
             ethernetMacAddress:
               type: string
@@ -23820,6 +23831,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: The chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: The region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -24355,7 +24374,7 @@ components:
               description: 'The URL of the external identity provider, which must match the issuer claim of the external token being exchanged. The combination of the values of issuer and subject must be unique within the app. It has a limit of 600 characters. Required.'
             name:
               type: string
-              description: 'The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it''s created. Required. Not nullable. Supports $filter (eq).'
+              description: 'The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it''s created. Alternate key. Required. Not nullable. Supports $filter (eq).'
             subject:
               type: string
               description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format; each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique within the app. It has a limit of 600 characters. Supports $filter (eq).'
@@ -27181,6 +27200,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
           additionalProperties:
             type: object

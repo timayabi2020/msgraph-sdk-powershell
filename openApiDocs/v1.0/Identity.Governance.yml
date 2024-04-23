@@ -7069,11 +7069,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Get accessPackage
-      description: Retrieve the properties and relationships of an accessPackage object.
+      summary: List resourceRoleScopes
+      description: Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackage-list-resourcerolescopes?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement_GetAccessPackage
       parameters:
         - name: accessPackage-id
@@ -14599,11 +14599,11 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentWorkflowExtension
-      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
+      summary: Delete accessPackageAssignmentRequestWorkflowExtension
+      description: 'Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-delete?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_DeleteCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -24157,11 +24157,11 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentWorkflowExtension
-      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
+      summary: Delete accessPackageAssignmentRequestWorkflowExtension
+      description: 'Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-delete?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_DeleteCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -56243,11 +56243,11 @@ paths:
     get:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: List files (terms of use agreement files)
-      description: Retrieve all files related to an agreement. This includes the default file and all localized files.
+      summary: Get agreement
+      description: Retrieve the properties and relationships of an agreement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0
       operationId: identityGovernance.termsGraphOPreUse_GetAgreement
       parameters:
         - name: agreement-id
@@ -69689,6 +69689,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -72382,6 +72383,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -72812,6 +72814,11 @@ components:
               type: string
               description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
+              readOnly: true
+            enrollmentProfileName:
+              type: string
+              description: 'Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.'
+              nullable: true
               readOnly: true
             ethernetMacAddress:
               type: string
@@ -73488,6 +73495,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: The chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: The region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -76600,6 +76615,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
           additionalProperties:
             type: object
@@ -79186,6 +79202,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
               nullable: true
             isCompliant:
               type: boolean
@@ -79197,9 +79214,11 @@ components:
               nullable: true
             isRooted:
               type: boolean
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             managementType:
               type: string
+              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string

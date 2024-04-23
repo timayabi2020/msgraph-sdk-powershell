@@ -3964,7 +3964,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create plannerPlan
-      description: Use this API to create a new plannerPlan.
+      description: Create a new plannerPlan object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-post-plans?view=graph-rest-1.0

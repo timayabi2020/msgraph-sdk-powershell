@@ -3497,6 +3497,184 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/drives/{drive-id}/list/items/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: user.drive.list.item_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of listItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/drives/{drive-id}/list/items/microsoft.graph.delta(token=''{token}'')':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: user.drive.list.item_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: token
+          in: path
+          description: 'Usage: token=''{token}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of listItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/drives/{drive-id}/microsoft.graph.recent()':
     get:
       tags:
@@ -5228,6 +5406,31 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/licenseDetails/microsoft.graph.getTeamsLicensingDetails()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getTeamsLicensingDetails
+      operationId: user.licenseDetail_getTeamsLicensingDetail
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsLicensingDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/microsoft.graph.delta()':
     get:
       tags:
@@ -7382,6 +7585,48 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: The collection of column definitions for this content type.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.listItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: listItem
+          type: object
+          properties:
+            contentType:
+              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            sharepointIds:
+              $ref: '#/components/schemas/microsoft.graph.sharepointIds'
+            analytics:
+              $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
+            documentSetVersions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentSetVersion'
+              description: Version information for a document set version created by a user.
+              x-ms-navigationProperty: true
+            driveItem:
+              $ref: '#/components/schemas/microsoft.graph.driveItem'
+            fields:
+              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+              description: The list of previous versions of the list item.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsLicensingDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsLicensingDetails
+          type: object
+          properties:
+            hasTeamsLicense:
+              type: boolean
+              description: Indicates whether the user has a valid license to use Microsoft Teams.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.message:
@@ -9632,36 +9877,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
           additionalProperties:
             type: object
-    microsoft.graph.listItem:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.baseItem'
-        - title: listItem
-          type: object
-          properties:
-            contentType:
-              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
-            sharepointIds:
-              $ref: '#/components/schemas/microsoft.graph.sharepointIds'
-            analytics:
-              $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
-            documentSetVersions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.documentSetVersion'
-              description: Version information for a document set version created by a user.
-              x-ms-navigationProperty: true
-            driveItem:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-            fields:
-              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
-            versions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-              description: The list of previous versions of the list item.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.permission:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10088,6 +10303,66 @@ components:
               $ref: '#/components/schemas/microsoft.graph.columnValidation'
             sourceColumn:
               $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.contentTypeInfo:
+      title: contentTypeInfo
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the content type.
+          nullable: true
+        name:
+          type: string
+          description: The name of the content type.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.documentSetVersion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+        - title: documentSetVersion
+          type: object
+          properties:
+            comment:
+              type: string
+              description: Comment about the captured version.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when this version was created.
+              format: date-time
+              nullable: true
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.documentSetVersionItem'
+              description: Items within the document set that are captured as part of this version.
+            shouldCaptureMinorVersion:
+              type: boolean
+              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.fieldValueSet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: fieldValueSet
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.listItemVersion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItemVersion'
+        - title: listItemVersion
+          type: object
+          properties:
+            fields:
+              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
           additionalProperties:
             type: object
     microsoft.graph.followupFlag:
@@ -11105,6 +11380,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -11464,6 +11740,11 @@ components:
               type: string
               description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
+              readOnly: true
+            enrollmentProfileName:
+              type: string
+              description: 'Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.'
+              nullable: true
               readOnly: true
             ethernetMacAddress:
               type: string
@@ -11986,6 +12267,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: The chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: The region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -12525,66 +12814,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.contentTypeInfo:
-      title: contentTypeInfo
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID of the content type.
-          nullable: true
-        name:
-          type: string
-          description: The name of the content type.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.documentSetVersion:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-        - title: documentSetVersion
-          type: object
-          properties:
-            comment:
-              type: string
-              description: Comment about the captured version.
-              nullable: true
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time when this version was created.
-              format: date-time
-              nullable: true
-            items:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.documentSetVersionItem'
-              description: Items within the document set that are captured as part of this version.
-            shouldCaptureMinorVersion:
-              type: boolean
-              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.fieldValueSet:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: fieldValueSet
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.listItemVersion:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.baseItemVersion'
-        - title: listItemVersion
-          type: object
-          properties:
-            fields:
-              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -13176,6 +13405,24 @@ components:
         formula:
           type: string
           description: 'The formula to validate column value. For examples, see Examples of common formulas in lists.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.documentSetVersionItem:
+      title: documentSetVersionItem
+      type: object
+      properties:
+        itemId:
+          type: string
+          description: The unique identifier for the item.
+          nullable: true
+        title:
+          type: string
+          description: The title of the item.
+          nullable: true
+        versionId:
+          type: string
+          description: The version ID of the item.
           nullable: true
       additionalProperties:
         type: object
@@ -14074,6 +14321,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
           additionalProperties:
             type: object
@@ -14548,6 +14796,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -16479,24 +16728,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
           additionalProperties:
             type: object
-    microsoft.graph.documentSetVersionItem:
-      title: documentSetVersionItem
-      type: object
-      properties:
-        itemId:
-          type: string
-          description: The unique identifier for the item.
-          nullable: true
-        title:
-          type: string
-          description: The title of the item.
-          nullable: true
-        versionId:
-          type: string
-          description: The version ID of the item.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -17016,6 +17247,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
               nullable: true
             isCompliant:
               type: boolean
@@ -17027,9 +17259,11 @@ components:
               nullable: true
             isRooted:
               type: boolean
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             managementType:
               type: string
+              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string

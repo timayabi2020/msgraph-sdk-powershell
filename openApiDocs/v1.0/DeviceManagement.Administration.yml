@@ -2022,11 +2022,11 @@ paths:
     get:
       tags:
         - deviceManagement.roleDefinition
-      summary: List roleDefinitions
-      description: List properties and relationships of the roleDefinition objects.
+      summary: List deviceAndAppManagementRoleDefinitions
+      description: List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-list?view=graph-rest-1.0
       operationId: deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2151,11 +2151,11 @@ paths:
     patch:
       tags:
         - deviceManagement.roleDefinition
-      summary: Update roleDefinition
-      description: Update the properties of a roleDefinition object.
+      summary: Update deviceAndAppManagementRoleDefinition
+      description: Update the properties of a deviceAndAppManagementRoleDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -9347,6 +9347,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -9777,6 +9778,11 @@ components:
               type: string
               description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
+              readOnly: true
+            enrollmentProfileName:
+              type: string
+              description: 'Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.'
+              nullable: true
               readOnly: true
             ethernetMacAddress:
               type: string
@@ -10453,6 +10459,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: The chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: The region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -12621,6 +12635,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
           additionalProperties:
             type: object
@@ -13142,6 +13157,7 @@ components:
               nullable: true
             uniqueName:
               type: string
+              description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -15454,6 +15470,7 @@ components:
               nullable: true
             enrollmentType:
               type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
               nullable: true
             isCompliant:
               type: boolean
@@ -15465,9 +15482,11 @@ components:
               nullable: true
             isRooted:
               type: boolean
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
               nullable: true
             managementType:
               type: string
+              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
             manufacturer:
               type: string
