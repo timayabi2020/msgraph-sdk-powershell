@@ -5424,7 +5424,7 @@ paths:
       description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7332,7 +7332,7 @@ paths:
       description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11713,6 +11713,10 @@ components:
             extractHardwareHash:
               type: boolean
               description: HardwareHash Extraction for the profile
+            hardwareHashExtractionEnabled:
+              type: boolean
+              description: 'Indicates whether the profile supports the extraction of hardware hash values and registration of the device into Windows Autopilot. When TRUE, indicates if hardware extraction and Windows Autopilot registration will happen on the next successful check-in. When FALSE, hardware hash extraction and Windows Autopilot registration will not happen. Default value is FALSE. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
+              nullable: true
             language:
               type: string
               description: Language configured on the device
@@ -11722,12 +11726,22 @@ components:
               type: string
               description: Profile last modified time
               format: date-time
+            locale:
+              type: string
+              description: 'The locale (language) to be used when configuring the device. E.g. en-US. The default value is os-default. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
+              nullable: true
             managementServiceAppId:
               type: string
               description: AzureAD management app ID used during client device-based enrollment discovery
               nullable: true
+            outOfBoxExperienceSetting:
+              $ref: '#/components/schemas/microsoft.graph.outOfBoxExperienceSetting'
             outOfBoxExperienceSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfBoxExperienceSettings'
+            preprovisioningAllowed:
+              type: boolean
+              description: 'Indicates whether the user is allowed to use Windows Autopilot for pre-provisioned deployment mode during Out of Box experience (OOBE). When TRUE, indicates that Windows Autopilot for pre-provisioned deployment mode for OOBE is allowed to be used. When false, Windows Autopilot for pre-provisioned deployment mode for OOBE is not allowed. The default is FALSE.'
+              nullable: true
             roleScopeTagIds:
               type: array
               items:
@@ -13024,6 +13038,29 @@ components:
       additionalProperties:
         type: object
       description: Enrollment status screen setting
+    microsoft.graph.outOfBoxExperienceSetting:
+      title: outOfBoxExperienceSetting
+      type: object
+      properties:
+        deviceUsageType:
+          $ref: '#/components/schemas/microsoft.graph.windowsDeviceUsageType'
+        escapeLinkHidden:
+          type: boolean
+          description: 'When TRUE, the link that allows user to start over with a different account on company sign-in is hidden. When false, the link that allows user to start over with a different account on company sign-in is available. Default value is FALSE.'
+        eulaHidden:
+          type: boolean
+          description: 'When TRUE, EULA is hidden to the end user during OOBE. When FALSE, EULA is shown to the end user during OOBE. Default value is FALSE.'
+        keyboardSelectionPageSkipped:
+          type: boolean
+          description: 'When TRUE, the keyboard selection page is hidden to the end user during OOBE if Language and Region are set. When FALSE, the keyboard selection page is skipped during OOBE.'
+        privacySettingsHidden:
+          type: boolean
+          description: 'When TRUE, privacy settings is hidden to the end user during OOBE. When FALSE, privacy settings is shown to the end user during OOBE. Default value is FALSE.'
+        userType:
+          $ref: '#/components/schemas/microsoft.graph.windowsUserType'
+      additionalProperties:
+        type: object
+      description: 'The Windows Autopilot Deployment Profile settings used by the device for the out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
     microsoft.graph.outOfBoxExperienceSettings:
       title: outOfBoxExperienceSettings
       type: object
@@ -13046,7 +13083,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.windowsUserType'
       additionalProperties:
         type: object
-      description: Out of box experience setting
+      description: 'The Windows Autopilot Deployment Profile settings used by the Autopilot device for out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported. Read-Only. Starting from May 2024 this property will no longer be supported and will be marked as deprecated. Use outOfBoxExperienceSetting instead.'
     microsoft.graph.windowsAutopilotProfileAssignmentDetailedStatus:
       title: windowsAutopilotProfileAssignmentDetailedStatus
       enum:
@@ -14246,11 +14283,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
           nullable: true
       additionalProperties:
         type: object
