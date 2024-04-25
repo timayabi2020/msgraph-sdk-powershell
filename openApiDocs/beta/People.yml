@@ -30,10 +30,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - settings
-                - activityStatistics
               type: string
         - name: $expand
           in: query
@@ -44,9 +40,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activityStatistics
               type: string
       responses:
         2XX:
@@ -145,19 +138,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activity
-                - activity desc
-                - duration
-                - duration desc
-                - endDate
-                - endDate desc
-                - startDate
-                - startDate desc
-                - timeZoneUsed
-                - timeZoneUsed desc
               type: string
         - name: $select
           in: query
@@ -168,13 +148,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - duration
-                - endDate
-                - startDate
-                - timeZoneUsed
               type: string
         - name: $expand
           in: query
@@ -185,8 +158,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -261,13 +232,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - duration
-                - endDate
-                - startDate
-                - timeZoneUsed
               type: string
         - name: $expand
           in: query
@@ -278,8 +242,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -390,11 +352,8 @@ paths:
     get:
       tags:
         - users.person
-      summary: List people
-      description: 'Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user''s communication and collaboration patterns, and business relationships.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
+      summary: Get people from users
+      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.'
       operationId: user_ListPerson
       parameters:
         - name: user-id
@@ -419,49 +378,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - birthday
-                - birthday desc
-                - companyName
-                - companyName desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - emailAddresses
-                - emailAddresses desc
-                - givenName
-                - givenName desc
-                - isFavorite
-                - isFavorite desc
-                - mailboxType
-                - mailboxType desc
-                - officeLocation
-                - officeLocation desc
-                - personNotes
-                - personNotes desc
-                - personType
-                - personType desc
-                - phones
-                - phones desc
-                - postalAddresses
-                - postalAddresses desc
-                - profession
-                - profession desc
-                - sources
-                - sources desc
-                - surname
-                - surname desc
-                - title
-                - title desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - websites
-                - websites desc
-                - yomiCompany
-                - yomiCompany desc
               type: string
         - name: $select
           in: query
@@ -472,28 +388,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - birthday
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - givenName
-                - isFavorite
-                - mailboxType
-                - officeLocation
-                - personNotes
-                - personType
-                - phones
-                - postalAddresses
-                - profession
-                - sources
-                - surname
-                - title
-                - userPrincipalName
-                - websites
-                - yomiCompany
               type: string
       responses:
         2XX:
@@ -537,28 +431,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - birthday
-                - companyName
-                - department
-                - displayName
-                - emailAddresses
-                - givenName
-                - isFavorite
-                - mailboxType
-                - officeLocation
-                - personNotes
-                - personType
-                - phones
-                - postalAddresses
-                - profession
-                - sources
-                - surname
-                - title
-                - userPrincipalName
-                - websites
-                - yomiCompany
               type: string
       responses:
         2XX:
@@ -596,11 +468,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get profile
-      description: 'Retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-get?view=graph-rest-1.0
+      summary: Get profile from users
+      description: Represents properties that are descriptive of a user in a tenant.
       operationId: user_GetProfile
       parameters:
         - name: user-id
@@ -620,27 +489,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - account
-                - addresses
-                - anniversaries
-                - awards
-                - certifications
-                - educationalActivities
-                - emails
-                - interests
-                - languages
-                - names
-                - notes
-                - patents
-                - phones
-                - positions
-                - projects
-                - publications
-                - skills
-                - webAccounts
-                - websites
               type: string
         - name: $expand
           in: query
@@ -651,27 +499,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - account
-                - addresses
-                - anniversaries
-                - awards
-                - certifications
-                - educationalActivities
-                - emails
-                - interests
-                - languages
-                - names
-                - notes
-                - patents
-                - phones
-                - positions
-                - projects
-                - publications
-                - skills
-                - webAccounts
-                - websites
               type: string
       responses:
         2XX:
@@ -717,11 +544,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete profile
-      description: Deletes a profile object from a user's account.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-delete?view=graph-rest-1.0
+      summary: Delete navigation property profile for users
       operationId: user_DeleteProfile
       parameters:
         - name: user-id
@@ -748,11 +571,7 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List accounts
-      description: Retrieves properties related to the user's accounts from the profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-1.0
+      summary: Get account from users
       operationId: user.profile_ListAccount
       parameters:
         - name: user-id
@@ -777,33 +596,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - ageGroup
-                - ageGroup desc
-                - countryCode
-                - countryCode desc
-                - preferredLanguageTag
-                - preferredLanguageTag desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -814,20 +606,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - ageGroup
-                - countryCode
-                - preferredLanguageTag
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -838,8 +616,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -853,11 +629,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create account
-      description: Create a new userAccountInformation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-accounts?view=graph-rest-1.0
+      summary: Create new navigation property to account for users
       operationId: user.profile_CreateAccount
       parameters:
         - name: user-id
@@ -889,11 +661,7 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get userAccountInformation
-      description: Retrieve the properties and relationships of an userAccountInformation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/useraccountinformation-get?view=graph-rest-1.0
+      summary: Get account from users
       operationId: user.profile_GetAccount
       parameters:
         - name: user-id
@@ -921,20 +689,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - ageGroup
-                - countryCode
-                - preferredLanguageTag
-                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -945,8 +699,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -961,11 +713,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update useraccountinformation
-      description: Update the properties of an userAccountInformation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/useraccountinformation-update?view=graph-rest-1.0
+      summary: Update the navigation property account in users
       operationId: user.profile_UpdateAccount
       parameters:
         - name: user-id
@@ -1004,11 +752,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete userAccountInformation
-      description: Delete an userAccountInformation object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/useraccountinformation-delete?view=graph-rest-1.0
+      summary: Delete navigation property account for users
       operationId: user.profile_DeleteAccount
       parameters:
         - name: user-id
@@ -1065,11 +809,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List addresses
-      description: Get the itemAddress resources from the addresses navigation property.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-1.0
+      summary: Get addresses from users
+      description: Represents details of addresses associated with the user.
       operationId: user.profile_ListAddress
       parameters:
         - name: user-id
@@ -1094,31 +835,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - detail
-                - detail desc
-                - displayName
-                - displayName desc
-                - geoCoordinates
-                - geoCoordinates desc
               type: string
         - name: $select
           in: query
@@ -1129,19 +845,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - detail
-                - displayName
-                - geoCoordinates
               type: string
         - name: $expand
           in: query
@@ -1152,8 +855,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1167,11 +868,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create addresses
-      description: Create a new itemAddress object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-addresses?view=graph-rest-1.0
+      summary: Create new navigation property to addresses for users
       operationId: user.profile_CreateAddress
       parameters:
         - name: user-id
@@ -1203,11 +900,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get itemAddress
-      description: Read the properties and relationships of an itemAddress object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itemaddress-get?view=graph-rest-1.0
+      summary: Get addresses from users
+      description: Represents details of addresses associated with the user.
       operationId: user.profile_GetAddress
       parameters:
         - name: user-id
@@ -1235,19 +929,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - detail
-                - displayName
-                - geoCoordinates
               type: string
         - name: $expand
           in: query
@@ -1258,8 +939,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1274,11 +953,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update itemAddress
-      description: Update the properties of an itemAddress object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itemaddress-update?view=graph-rest-1.0
+      summary: Update the navigation property addresses in users
       operationId: user.profile_UpdateAddress
       parameters:
         - name: user-id
@@ -1317,11 +992,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete itemAddress
-      description: Deletes an itemAddress object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itemaddress-delete?view=graph-rest-1.0
+      summary: Delete navigation property addresses for users
       operationId: user.profile_DeleteAddress
       parameters:
         - name: user-id
@@ -1378,11 +1049,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List anniversaries
-      description: Retrieve a list of personAnniversary objects for the given user from their profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-1.0
+      summary: Get anniversaries from users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: user.profile_ListAnniversary
       parameters:
         - name: user-id
@@ -1407,31 +1075,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - date
-                - date desc
-                - displayName
-                - displayName desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -1442,19 +1085,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - date
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -1465,8 +1095,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1480,11 +1108,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personAnniversary
-      description: Use this API to create a new personAnniversary object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-anniversaries?view=graph-rest-1.0
+      summary: Create new navigation property to anniversaries for users
       operationId: user.profile_CreateAnniversary
       parameters:
         - name: user-id
@@ -1516,11 +1140,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get personAnniversary
-      description: Retrieve the properties and relationships of a personAnniversary object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personanniversary-get?view=graph-rest-1.0
+      summary: Get anniversaries from users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: user.profile_GetAnniversary
       parameters:
         - name: user-id
@@ -1548,19 +1169,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - date
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -1571,8 +1179,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1587,11 +1193,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update personAnniversary
-      description: Update the properties of a personAnniversary object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personanniversary-update?view=graph-rest-1.0
+      summary: Update the navigation property anniversaries in users
       operationId: user.profile_UpdateAnniversary
       parameters:
         - name: user-id
@@ -1630,11 +1232,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete personAnniversary
-      description: Delete a personAnniversary object from the user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personanniversary-delete?view=graph-rest-1.0
+      summary: Delete navigation property anniversaries for users
       operationId: user.profile_DeleteAnniversary
       parameters:
         - name: user-id
@@ -1691,11 +1289,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List awards
-      description: Retrieve a list of personAward objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-awards?view=graph-rest-1.0
+      summary: Get awards from users
+      description: Represents the details of awards or honors associated with a person.
       operationId: user.profile_ListAward
       parameters:
         - name: user-id
@@ -1720,37 +1315,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - issuedDate
-                - issuedDate desc
-                - issuingAuthority
-                - issuingAuthority desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -1761,22 +1325,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - displayName
-                - issuedDate
-                - issuingAuthority
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -1787,8 +1335,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1802,11 +1348,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personAward
-      description: Create a new personAward object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-awards?view=graph-rest-1.0
+      summary: Create new navigation property to awards for users
       operationId: user.profile_CreateAward
       parameters:
         - name: user-id
@@ -1838,11 +1380,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get personAward
-      description: Read the properties and relationships of a personAward object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personaward-get?view=graph-rest-1.0
+      summary: Get awards from users
+      description: Represents the details of awards or honors associated with a person.
       operationId: user.profile_GetAward
       parameters:
         - name: user-id
@@ -1870,22 +1409,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - displayName
-                - issuedDate
-                - issuingAuthority
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -1896,8 +1419,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1912,11 +1433,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update personAward
-      description: Update the properties of a personAward object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personaward-update?view=graph-rest-1.0
+      summary: Update the navigation property awards in users
       operationId: user.profile_UpdateAward
       parameters:
         - name: user-id
@@ -1955,11 +1472,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete personAward
-      description: Deletes a personAward object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personaward-delete?view=graph-rest-1.0
+      summary: Delete navigation property awards for users
       operationId: user.profile_DeleteAward
       parameters:
         - name: user-id
@@ -2016,11 +1529,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List certifications
-      description: Retrieve a list of personCertification objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-1.0
+      summary: Get certifications from users
+      description: Represents the details of certifications associated with a person.
       operationId: user.profile_ListCertification
       parameters:
         - name: user-id
@@ -2045,45 +1555,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - certificationId
-                - certificationId desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - endDate
-                - endDate desc
-                - issuedDate
-                - issuedDate desc
-                - issuingAuthority
-                - issuingAuthority desc
-                - issuingCompany
-                - issuingCompany desc
-                - startDate
-                - startDate desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -2094,26 +1565,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - certificationId
-                - description
-                - displayName
-                - endDate
-                - issuedDate
-                - issuingAuthority
-                - issuingCompany
-                - startDate
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -2124,8 +1575,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2139,11 +1588,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personCertification
-      description: Create a new personCertification object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-certifications?view=graph-rest-1.0
+      summary: Create new navigation property to certifications for users
       operationId: user.profile_CreateCertification
       parameters:
         - name: user-id
@@ -2175,11 +1620,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get personCertification
-      description: Read the properties and relationships of a personCertification object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personcertification-get?view=graph-rest-1.0
+      summary: Get certifications from users
+      description: Represents the details of certifications associated with a person.
       operationId: user.profile_GetCertification
       parameters:
         - name: user-id
@@ -2207,26 +1649,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - certificationId
-                - description
-                - displayName
-                - endDate
-                - issuedDate
-                - issuingAuthority
-                - issuingCompany
-                - startDate
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -2237,8 +1659,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2253,11 +1673,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update personCertification
-      description: Update the properties of a personCertification object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personcertification-update?view=graph-rest-1.0
+      summary: Update the navigation property certifications in users
       operationId: user.profile_UpdateCertification
       parameters:
         - name: user-id
@@ -2296,11 +1712,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete personCertification
-      description: Deletes a personCertification object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personcertification-delete?view=graph-rest-1.0
+      summary: Delete navigation property certifications for users
       operationId: user.profile_DeleteCertification
       parameters:
         - name: user-id
@@ -2357,11 +1769,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List educationalActivities
-      description: Retrieve a list of educationalActivity objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-1.0
+      summary: Get educationalActivities from users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: user.profile_ListEducationalActivity
       parameters:
         - name: user-id
@@ -2386,35 +1795,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - completionMonthYear
-                - completionMonthYear desc
-                - endMonthYear
-                - endMonthYear desc
-                - institution
-                - institution desc
-                - program
-                - program desc
-                - startMonthYear
-                - startMonthYear desc
               type: string
         - name: $select
           in: query
@@ -2425,21 +1805,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - completionMonthYear
-                - endMonthYear
-                - institution
-                - program
-                - startMonthYear
               type: string
         - name: $expand
           in: query
@@ -2450,8 +1815,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2465,11 +1828,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create educationalActivity
-      description: Create a new educationalActivity in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-educationalactivities?view=graph-rest-1.0
+      summary: Create new navigation property to educationalActivities for users
       operationId: user.profile_CreateEducationalActivity
       parameters:
         - name: user-id
@@ -2501,11 +1860,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get educationalActivity
-      description: Retrieve the properties and relationships of an educationalActivity object from a users profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationalactivity-get?view=graph-rest-1.0
+      summary: Get educationalActivities from users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: user.profile_GetEducationalActivity
       parameters:
         - name: user-id
@@ -2533,21 +1889,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - completionMonthYear
-                - endMonthYear
-                - institution
-                - program
-                - startMonthYear
               type: string
         - name: $expand
           in: query
@@ -2558,8 +1899,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2574,11 +1913,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update educationalactivity
-      description: Update the properties of an educationalActivity object within a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationalactivity-update?view=graph-rest-1.0
+      summary: Update the navigation property educationalActivities in users
       operationId: user.profile_UpdateEducationalActivity
       parameters:
         - name: user-id
@@ -2617,11 +1952,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete educationalActivity
-      description: Delete an educationalActivity object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/educationalactivity-delete?view=graph-rest-1.0
+      summary: Delete navigation property educationalActivities for users
       operationId: user.profile_DeleteEducationalActivity
       parameters:
         - name: user-id
@@ -2678,11 +2009,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get itemEmail
-      description: Retrieve the properties and relationships of an itemEmail object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-emails?view=graph-rest-1.0
+      summary: Get emails from users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: user.profile_ListEmail
       parameters:
         - name: user-id
@@ -2707,31 +2035,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - address
-                - address desc
-                - displayName
-                - displayName desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -2742,19 +2045,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - address
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -2765,8 +2055,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2780,11 +2068,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create itemEmail
-      description: Create a new itemEmail object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-emails?view=graph-rest-1.0
+      summary: Create new navigation property to emails for users
       operationId: user.profile_CreateEmail
       parameters:
         - name: user-id
@@ -2816,11 +2100,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get itemEmail
-      description: Retrieve the properties and relationships of an itemEmail object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itememail-get?view=graph-rest-1.0
+      summary: Get emails from users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: user.profile_GetEmail
       parameters:
         - name: user-id
@@ -2848,19 +2129,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - address
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -2871,8 +2139,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2887,11 +2153,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update itememail
-      description: Update the properties of an itemEmail object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itememail-update?view=graph-rest-1.0
+      summary: Update the navigation property emails in users
       operationId: user.profile_UpdateEmail
       parameters:
         - name: user-id
@@ -2930,11 +2192,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete itemEmail
-      description: Delete an itemEmail object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itememail-delete?view=graph-rest-1.0
+      summary: Delete navigation property emails for users
       operationId: user.profile_DeleteEmail
       parameters:
         - name: user-id
@@ -2991,11 +2249,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List interests
-      description: Retrieve a list of personInterest objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-interests?view=graph-rest-1.0
+      summary: Get interests from users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: user.profile_ListInterest
       parameters:
         - name: user-id
@@ -3020,37 +2275,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - categories
-                - categories desc
-                - collaborationTags
-                - collaborationTags desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -3061,22 +2285,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - collaborationTags
-                - description
-                - displayName
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -3087,8 +2295,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3102,11 +2308,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personInterest
-      description: Create a new personInterest.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-interests?view=graph-rest-1.0
+      summary: Create new navigation property to interests for users
       operationId: user.profile_CreateInterest
       parameters:
         - name: user-id
@@ -3138,11 +2340,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get personInterest
-      description: Retrieve the properties and relationships of a personInterest object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personinterest-get?view=graph-rest-1.0
+      summary: Get interests from users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: user.profile_GetInterest
       parameters:
         - name: user-id
@@ -3170,22 +2369,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - collaborationTags
-                - description
-                - displayName
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -3196,8 +2379,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3212,11 +2393,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update personinterest
-      description: Update the properties of a personInterest object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personinterest-update?view=graph-rest-1.0
+      summary: Update the navigation property interests in users
       operationId: user.profile_UpdateInterest
       parameters:
         - name: user-id
@@ -3255,11 +2432,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete personInterest
-      description: Deletes a personInterest object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personinterest-delete?view=graph-rest-1.0
+      summary: Delete navigation property interests for users
       operationId: user.profile_DeleteInterest
       parameters:
         - name: user-id
@@ -3316,11 +2489,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List languages
-      description: Retrieve a list of languageProficiency objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-languages?view=graph-rest-1.0
+      summary: Get languages from users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: user.profile_ListLanguage
       parameters:
         - name: user-id
@@ -3345,39 +2515,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - displayName
-                - displayName desc
-                - proficiency
-                - proficiency desc
-                - reading
-                - reading desc
-                - spoken
-                - spoken desc
-                - tag
-                - tag desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - written
-                - written desc
               type: string
         - name: $select
           in: query
@@ -3388,23 +2525,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - displayName
-                - proficiency
-                - reading
-                - spoken
-                - tag
-                - thumbnailUrl
-                - written
               type: string
         - name: $expand
           in: query
@@ -3415,8 +2535,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3430,11 +2548,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create languageProficiency
-      description: Use this API to create a new languageProficiency object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-languages?view=graph-rest-1.0
+      summary: Create new navigation property to languages for users
       operationId: user.profile_CreateLanguage
       parameters:
         - name: user-id
@@ -3466,11 +2580,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get languageProficiency
-      description: Retrieve the properties and relationships of a languageProficiency object within a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-1.0
+      summary: Get languages from users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: user.profile_GetLanguage
       parameters:
         - name: user-id
@@ -3498,23 +2609,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - displayName
-                - proficiency
-                - reading
-                - spoken
-                - tag
-                - thumbnailUrl
-                - written
               type: string
         - name: $expand
           in: query
@@ -3525,8 +2619,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3541,11 +2633,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update languageProficiency
-      description: Update the properties of a languageProficiency object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/languageproficiency-update?view=graph-rest-1.0
+      summary: Update the navigation property languages in users
       operationId: user.profile_UpdateLanguage
       parameters:
         - name: user-id
@@ -3584,11 +2672,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete languageProficiency
-      description: Delete a languageProficiency object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/languageproficiency-delete?view=graph-rest-1.0
+      summary: Delete navigation property languages for users
       operationId: user.profile_DeleteLanguage
       parameters:
         - name: user-id
@@ -3645,11 +2729,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List names
-      description: Retrieve a list of personName objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-names?view=graph-rest-1.0
+      summary: Get names from users
+      description: Represents the names a user has added to their profile.
       operationId: user.profile_ListName
       parameters:
         - name: user-id
@@ -3674,47 +2755,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - displayName
-                - displayName desc
-                - first
-                - first desc
-                - initials
-                - initials desc
-                - languageTag
-                - languageTag desc
-                - last
-                - last desc
-                - maiden
-                - maiden desc
-                - middle
-                - middle desc
-                - nickname
-                - nickname desc
-                - pronunciation
-                - pronunciation desc
-                - suffix
-                - suffix desc
-                - title
-                - title desc
               type: string
         - name: $select
           in: query
@@ -3725,27 +2765,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - displayName
-                - first
-                - initials
-                - languageTag
-                - last
-                - maiden
-                - middle
-                - nickname
-                - pronunciation
-                - suffix
-                - title
               type: string
         - name: $expand
           in: query
@@ -3756,8 +2775,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3771,11 +2788,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personName
-      description: Use this API to create a new personName object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-names?view=graph-rest-1.0
+      summary: Create new navigation property to names for users
       operationId: user.profile_CreateName
       parameters:
         - name: user-id
@@ -3807,11 +2820,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get personName
-      description: Retrieve the properties and relationships of a personName object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personname-get?view=graph-rest-1.0
+      summary: Get names from users
+      description: Represents the names a user has added to their profile.
       operationId: user.profile_GetName
       parameters:
         - name: user-id
@@ -3839,27 +2849,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - displayName
-                - first
-                - initials
-                - languageTag
-                - last
-                - maiden
-                - middle
-                - nickname
-                - pronunciation
-                - suffix
-                - title
               type: string
         - name: $expand
           in: query
@@ -3870,8 +2859,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3886,11 +2873,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update personname
-      description: Update the properties of a personName object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personname-update?view=graph-rest-1.0
+      summary: Update the navigation property names in users
       operationId: user.profile_UpdateName
       parameters:
         - name: user-id
@@ -3929,11 +2912,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete personName
-      description: Delete a personName object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personname-delete?view=graph-rest-1.0
+      summary: Delete navigation property names for users
       operationId: user.profile_DeleteName
       parameters:
         - name: user-id
@@ -3990,11 +2969,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List notes
-      description: Retrieve a list of personAnnotation objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-notes?view=graph-rest-1.0
+      summary: Get notes from users
+      description: Represents notes that a user has added to their profile.
       operationId: user.profile_ListNote
       parameters:
         - name: user-id
@@ -4019,31 +2995,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - detail
-                - detail desc
-                - displayName
-                - displayName desc
-                - thumbnailUrl
-                - thumbnailUrl desc
               type: string
         - name: $select
           in: query
@@ -4054,19 +3005,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - detail
-                - displayName
-                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -4077,8 +3015,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4092,11 +3028,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personAnnotation
-      description: Create a new personAnnotation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-notes?view=graph-rest-1.0
+      summary: Create new navigation property to notes for users
       operationId: user.profile_CreateNote
       parameters:
         - name: user-id
@@ -4128,11 +3060,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get personAnnotation
-      description: Read the properties and relationships of a personAnnotation object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personannotation-get?view=graph-rest-1.0
+      summary: Get notes from users
+      description: Represents notes that a user has added to their profile.
       operationId: user.profile_GetNote
       parameters:
         - name: user-id
@@ -4160,19 +3089,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - detail
-                - displayName
-                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -4183,8 +3099,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4199,11 +3113,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update personAnnotation
-      description: Update the properties of a personAnnotation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personannotation-update?view=graph-rest-1.0
+      summary: Update the navigation property notes in users
       operationId: user.profile_UpdateNote
       parameters:
         - name: user-id
@@ -4242,11 +3152,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete personAnnotation
-      description: Deletes a personAnnotation object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personannotation-delete?view=graph-rest-1.0
+      summary: Delete navigation property notes for users
       operationId: user.profile_DeleteNote
       parameters:
         - name: user-id
@@ -4303,11 +3209,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List patents
-      description: Retrieve a list of itemPatent objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-patents?view=graph-rest-1.0
+      summary: Get patents from users
+      description: Represents patents that a user has added to their profile.
       operationId: user.profile_ListPatent
       parameters:
         - name: user-id
@@ -4332,39 +3235,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isPending
-                - isPending desc
-                - issuedDate
-                - issuedDate desc
-                - issuingAuthority
-                - issuingAuthority desc
-                - number
-                - number desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -4375,23 +3245,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - displayName
-                - isPending
-                - issuedDate
-                - issuingAuthority
-                - number
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -4402,8 +3255,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4417,11 +3268,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create itemPatent
-      description: Create a new itemPatent object within a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-patents?view=graph-rest-1.0
+      summary: Create new navigation property to patents for users
       operationId: user.profile_CreatePatent
       parameters:
         - name: user-id
@@ -4453,11 +3300,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get itemPatent
-      description: Read the properties and relationships of an itemPatent object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itempatent-get?view=graph-rest-1.0
+      summary: Get patents from users
+      description: Represents patents that a user has added to their profile.
       operationId: user.profile_GetPatent
       parameters:
         - name: user-id
@@ -4485,23 +3329,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - displayName
-                - isPending
-                - issuedDate
-                - issuingAuthority
-                - number
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -4512,8 +3339,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4528,11 +3353,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update itemPatent
-      description: Update the properties of an itemPatent object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itempatent-update?view=graph-rest-1.0
+      summary: Update the navigation property patents in users
       operationId: user.profile_UpdatePatent
       parameters:
         - name: user-id
@@ -4571,11 +3392,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete itemPatent
-      description: Deletes an itemPatent object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itempatent-delete?view=graph-rest-1.0
+      summary: Delete navigation property patents for users
       operationId: user.profile_DeletePatent
       parameters:
         - name: user-id
@@ -4632,11 +3449,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List phones
-      description: Retrieve a list of itemPhone objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-phones?view=graph-rest-1.0
+      summary: Get phones from users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: user.profile_ListPhone
       parameters:
         - name: user-id
@@ -4661,31 +3475,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - displayName
-                - displayName desc
-                - number
-                - number desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -4696,19 +3485,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - displayName
-                - number
-                - type
               type: string
         - name: $expand
           in: query
@@ -4719,8 +3495,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4734,11 +3508,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create itemPhoneNumber
-      description: Use this API to create a new itemPhone object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-phones?view=graph-rest-1.0
+      summary: Create new navigation property to phones for users
       operationId: user.profile_CreatePhone
       parameters:
         - name: user-id
@@ -4770,11 +3540,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get itemPhoneNumber
-      description: Retrieve the properties and relationships of an itemPhone object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itemphone-get?view=graph-rest-1.0
+      summary: Get phones from users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: user.profile_GetPhone
       parameters:
         - name: user-id
@@ -4802,19 +3569,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - displayName
-                - number
-                - type
               type: string
         - name: $expand
           in: query
@@ -4825,8 +3579,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4841,11 +3593,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update itemphonenumber
-      description: Update the properties of an itemPhone object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itemphone-update?view=graph-rest-1.0
+      summary: Update the navigation property phones in users
       operationId: user.profile_UpdatePhone
       parameters:
         - name: user-id
@@ -4884,11 +3632,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete itemPhoneNumber
-      description: Delete an itemPhone object from the user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itemphone-delete?view=graph-rest-1.0
+      summary: Delete navigation property phones for users
       operationId: user.profile_DeletePhone
       parameters:
         - name: user-id
@@ -4945,11 +3689,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List positions
-      description: Retrieve a list of workPosition objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-positions?view=graph-rest-1.0
+      summary: Get positions from users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: user.profile_ListPosition
       parameters:
         - name: user-id
@@ -4974,35 +3715,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - categories
-                - categories desc
-                - colleagues
-                - colleagues desc
-                - detail
-                - detail desc
-                - isCurrent
-                - isCurrent desc
-                - manager
-                - manager desc
               type: string
         - name: $select
           in: query
@@ -5013,21 +3725,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - colleagues
-                - detail
-                - isCurrent
-                - manager
               type: string
         - name: $expand
           in: query
@@ -5038,8 +3735,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5053,11 +3748,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create workPosition
-      description: Use this API to create a new workPosition in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-positions?view=graph-rest-1.0
+      summary: Create new navigation property to positions for users
       operationId: user.profile_CreatePosition
       parameters:
         - name: user-id
@@ -5089,11 +3780,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get workPosition
-      description: Retrieve the properties and relationships of a workPosition object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/workposition-get?view=graph-rest-1.0
+      summary: Get positions from users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: user.profile_GetPosition
       parameters:
         - name: user-id
@@ -5121,21 +3809,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - colleagues
-                - detail
-                - isCurrent
-                - manager
               type: string
         - name: $expand
           in: query
@@ -5146,8 +3819,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5162,11 +3833,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update workPosition
-      description: Update the properties of a workPosition object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/workposition-update?view=graph-rest-1.0
+      summary: Update the navigation property positions in users
       operationId: user.profile_UpdatePosition
       parameters:
         - name: user-id
@@ -5205,11 +3872,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete workPosition
-      description: Delete a specific workPosition object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/workposition-delete?view=graph-rest-1.0
+      summary: Delete navigation property positions for users
       operationId: user.profile_DeletePosition
       parameters:
         - name: user-id
@@ -5266,11 +3929,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List projects
-      description: Retrieve a list of projectParticipation objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-projects?view=graph-rest-1.0
+      summary: Get projects from users
+      description: Represents detailed information about projects associated with a user.
       operationId: user.profile_ListProject
       parameters:
         - name: user-id
@@ -5295,41 +3955,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - categories
-                - categories desc
-                - client
-                - client desc
-                - collaborationTags
-                - collaborationTags desc
-                - colleagues
-                - colleagues desc
-                - detail
-                - detail desc
-                - displayName
-                - displayName desc
-                - sponsors
-                - sponsors desc
-                - thumbnailUrl
-                - thumbnailUrl desc
               type: string
         - name: $select
           in: query
@@ -5340,24 +3965,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - client
-                - collaborationTags
-                - colleagues
-                - detail
-                - displayName
-                - sponsors
-                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -5368,8 +3975,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5383,11 +3988,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create projectParticipation
-      description: Use this API to create a new projectParticipation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-projects?view=graph-rest-1.0
+      summary: Create new navigation property to projects for users
       operationId: user.profile_CreateProject
       parameters:
         - name: user-id
@@ -5419,11 +4020,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get projectParticipation
-      description: Retrieve the properties and relationships of a projectParticipation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectparticipation-get?view=graph-rest-1.0
+      summary: Get projects from users
+      description: Represents detailed information about projects associated with a user.
       operationId: user.profile_GetProject
       parameters:
         - name: user-id
@@ -5451,24 +4049,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - client
-                - collaborationTags
-                - colleagues
-                - detail
-                - displayName
-                - sponsors
-                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -5479,8 +4059,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5495,11 +4073,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update projectparticipation
-      description: Update the properties of a projectParticipation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectparticipation-update?view=graph-rest-1.0
+      summary: Update the navigation property projects in users
       operationId: user.profile_UpdateProject
       parameters:
         - name: user-id
@@ -5538,11 +4112,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete projectParticipation
-      description: Delete a projectParticipation object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectparticipation-delete?view=graph-rest-1.0
+      summary: Delete navigation property projects for users
       operationId: user.profile_DeleteProject
       parameters:
         - name: user-id
@@ -5599,11 +4169,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List publications
-      description: Retrieve a list of itemPublication objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-publications?view=graph-rest-1.0
+      summary: Get publications from users
+      description: Represents details of any publications a user has added to their profile.
       operationId: user.profile_ListPublication
       parameters:
         - name: user-id
@@ -5628,37 +4195,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - publishedDate
-                - publishedDate desc
-                - publisher
-                - publisher desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -5669,22 +4205,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - displayName
-                - publishedDate
-                - publisher
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -5695,8 +4215,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5710,11 +4228,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create itemPublication
-      description: Create a new itemPublication object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-publications?view=graph-rest-1.0
+      summary: Create new navigation property to publications for users
       operationId: user.profile_CreatePublication
       parameters:
         - name: user-id
@@ -5746,11 +4260,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get itemPublication
-      description: Read the properties and relationships of an itemPublication object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itempublication-get?view=graph-rest-1.0
+      summary: Get publications from users
+      description: Represents details of any publications a user has added to their profile.
       operationId: user.profile_GetPublication
       parameters:
         - name: user-id
@@ -5778,22 +4289,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - displayName
-                - publishedDate
-                - publisher
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -5804,8 +4299,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5820,11 +4313,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update itemPublication
-      description: Update the properties of an itemPublication object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itempublication-update?view=graph-rest-1.0
+      summary: Update the navigation property publications in users
       operationId: user.profile_UpdatePublication
       parameters:
         - name: user-id
@@ -5863,11 +4352,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete itemPublication
-      description: Deletes an itemPublication object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/itempublication-delete?view=graph-rest-1.0
+      summary: Delete navigation property publications for users
       operationId: user.profile_DeletePublication
       parameters:
         - name: user-id
@@ -5924,11 +4409,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List skills
-      description: Retrieve a list of skillProficiency objects in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-skills?view=graph-rest-1.0
+      summary: Get skills from users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: user.profile_ListSkill
       parameters:
         - name: user-id
@@ -5953,37 +4435,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - categories
-                - categories desc
-                - collaborationTags
-                - collaborationTags desc
-                - displayName
-                - displayName desc
-                - proficiency
-                - proficiency desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -5994,22 +4445,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - collaborationTags
-                - displayName
-                - proficiency
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -6020,8 +4455,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6035,11 +4468,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create skillProficiency
-      description: Use this API to create a new skillProficiency object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-skills?view=graph-rest-1.0
+      summary: Create new navigation property to skills for users
       operationId: user.profile_CreateSkill
       parameters:
         - name: user-id
@@ -6071,11 +4500,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get skillProficiency
-      description: Retrieve the properties and relationships of a skillproficiency object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/skillproficiency-get?view=graph-rest-1.0
+      summary: Get skills from users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: user.profile_GetSkill
       parameters:
         - name: user-id
@@ -6103,22 +4529,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - collaborationTags
-                - displayName
-                - proficiency
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -6129,8 +4539,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6145,11 +4553,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update skillproficiency
-      description: Update the properties of a skillProficiency object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/skillproficiency-update?view=graph-rest-1.0
+      summary: Update the navigation property skills in users
       operationId: user.profile_UpdateSkill
       parameters:
         - name: user-id
@@ -6188,11 +4592,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete skillProficiency
-      description: Delete a skillProficiency object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/skillproficiency-delete?view=graph-rest-1.0
+      summary: Delete navigation property skills for users
       operationId: user.profile_DeleteSkill
       parameters:
         - name: user-id
@@ -6249,11 +4649,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List webAccounts
-      description: Retrieve a list of webAccounts objects from the user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-1.0
+      summary: Get webAccounts from users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: user.profile_ListWebAccount
       parameters:
         - name: user-id
@@ -6278,37 +4675,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - description
-                - description desc
-                - service
-                - service desc
-                - statusMessage
-                - statusMessage desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - userId
-                - userId desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -6319,22 +4685,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - service
-                - statusMessage
-                - thumbnailUrl
-                - userId
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -6345,8 +4695,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6360,11 +4708,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create webAccount
-      description: Create a new webAccount object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-webaccounts?view=graph-rest-1.0
+      summary: Create new navigation property to webAccounts for users
       operationId: user.profile_CreateWebAccount
       parameters:
         - name: user-id
@@ -6396,11 +4740,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get webAccount
-      description: Retrieve the properties and relationships of a webAccount object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/webaccount-get?view=graph-rest-1.0
+      summary: Get webAccounts from users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: user.profile_GetWebAccount
       parameters:
         - name: user-id
@@ -6428,22 +4769,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - description
-                - service
-                - statusMessage
-                - thumbnailUrl
-                - userId
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -6454,8 +4779,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6470,11 +4793,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update webAccount
-      description: Update the properties of a webAccount object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/webaccount-update?view=graph-rest-1.0
+      summary: Update the navigation property webAccounts in users
       operationId: user.profile_UpdateWebAccount
       parameters:
         - name: user-id
@@ -6513,11 +4832,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete webAccount
-      description: Delete a webAccount object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/webaccount-delete?view=graph-rest-1.0
+      summary: Delete navigation property webAccounts for users
       operationId: user.profile_DeleteWebAccount
       parameters:
         - name: user-id
@@ -6574,11 +4889,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List websites
-      description: Retrieve a list of personWebsite objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-list-websites?view=graph-rest-1.0
+      summary: Get websites from users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: user.profile_ListWebsite
       parameters:
         - name: user-id
@@ -6603,35 +4915,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedAudiences
-                - allowedAudiences desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - inference
-                - inference desc
-                - isSearchable
-                - isSearchable desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - source
-                - source desc
-                - categories
-                - categories desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - thumbnailUrl
-                - thumbnailUrl desc
-                - webUrl
-                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -6642,21 +4925,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - description
-                - displayName
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -6667,8 +4935,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6682,11 +4948,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personWebsite
-      description: Create a new personWebsite object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profile-post-websites?view=graph-rest-1.0
+      summary: Create new navigation property to websites for users
       operationId: user.profile_CreateWebsite
       parameters:
         - name: user-id
@@ -6718,11 +4980,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get personWebsite
-      description: Retrieve the properties and relationships of a personWebsite object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personwebsite-get?view=graph-rest-1.0
+      summary: Get websites from users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: user.profile_GetWebsite
       parameters:
         - name: user-id
@@ -6750,21 +5009,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedAudiences
-                - createdBy
-                - createdDateTime
-                - inference
-                - isSearchable
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - source
-                - categories
-                - description
-                - displayName
-                - thumbnailUrl
-                - webUrl
               type: string
         - name: $expand
           in: query
@@ -6775,8 +5019,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6791,11 +5033,7 @@ paths:
     patch:
       tags:
         - users.profile
-      summary: Update personwebsite
-      description: Update the properties of personWebsite object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personwebsite-update?view=graph-rest-1.0
+      summary: Update the navigation property websites in users
       operationId: user.profile_UpdateWebsite
       parameters:
         - name: user-id
@@ -6834,11 +5072,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete personWebsite
-      description: Deletes a personWebsite object from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/personwebsite-delete?view=graph-rest-1.0
+      summary: Delete navigation property websites for users
       operationId: user.profile_DeleteWebsite
       parameters:
         - name: user-id
@@ -8646,11 +6880,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

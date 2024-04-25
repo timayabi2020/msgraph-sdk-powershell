@@ -22,11 +22,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - callRecords
-                - calls
-                - onlineMeetings
-                - presences
               type: string
         - name: $expand
           in: query
@@ -37,12 +32,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - callRecords
-                - calls
-                - onlineMeetings
-                - presences
               type: string
       responses:
         2XX:
@@ -80,11 +69,7 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: List callRecords
-      description: Get the list of callRecord objects and their properties. The results can be optionally filtered using the $filter query parameter on the startDateTime and participant id properties. Note that the listed call records don't include expandable relationships such as sessions and participants_v2. You can expand these relationships using Get callRecord for a specific record.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/callrecords-cloudcommunications-list-callrecords?view=graph-rest-1.0
+      summary: Get callRecords from communications
       operationId: communication_ListCallRecord
       parameters:
         - $ref: '#/components/parameters/top'
@@ -101,27 +86,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - endDateTime
-                - endDateTime desc
-                - joinWebUrl
-                - joinWebUrl desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - modalities
-                - modalities desc
-                - organizer
-                - organizer desc
-                - participants
-                - participants desc
-                - startDateTime
-                - startDateTime desc
-                - type
-                - type desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -132,20 +96,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - endDateTime
-                - joinWebUrl
-                - lastModifiedDateTime
-                - modalities
-                - organizer
-                - participants
-                - startDateTime
-                - type
-                - version
-                - organizer_v2
-                - participants_v2
-                - sessions
               type: string
         - name: $expand
           in: query
@@ -156,11 +106,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - organizer_v2
-                - participants_v2
-                - sessions
               type: string
       responses:
         2XX:
@@ -197,11 +142,7 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: Get callRecord
-      description: 'Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/callrecords-callrecord-get?view=graph-rest-1.0
+      summary: Get callRecords from communications
       operationId: communication_GetCallRecord
       parameters:
         - name: callRecord-id
@@ -221,20 +162,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - endDateTime
-                - joinWebUrl
-                - lastModifiedDateTime
-                - modalities
-                - organizer
-                - participants
-                - startDateTime
-                - type
-                - version
-                - organizer_v2
-                - participants_v2
-                - sessions
               type: string
         - name: $expand
           in: query
@@ -245,11 +172,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - organizer_v2
-                - participants_v2
-                - sessions
               type: string
       responses:
         2XX:
@@ -343,9 +265,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - identity
               type: string
         - name: $expand
           in: query
@@ -356,8 +275,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -430,11 +347,8 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: List participants_v2
-      description: Get the list of participant objects associated with a callRecord.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/callrecords-callrecord-list-participants_v2?view=graph-rest-1.0
+      summary: Get participants_v2 from communications
+      description: List of distinct participants in the call.
       operationId: communication.callRecord_ListParticipants_v2
       parameters:
         - name: callRecord-id
@@ -459,11 +373,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - identity
-                - identity desc
               type: string
         - name: $select
           in: query
@@ -474,9 +383,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - identity
               type: string
         - name: $expand
           in: query
@@ -487,8 +393,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -563,9 +467,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - identity
               type: string
         - name: $expand
           in: query
@@ -576,8 +477,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -688,11 +587,8 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: List sessions
-      description: Retrieve the list of sessions associated with a callRecord object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/callrecords-callrecord-list-sessions?view=graph-rest-1.0
+      summary: Get sessions from communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communication.callRecord_ListSession
       parameters:
         - name: callRecord-id
@@ -717,23 +613,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - callee
-                - callee desc
-                - caller
-                - caller desc
-                - endDateTime
-                - endDateTime desc
-                - failureInfo
-                - failureInfo desc
-                - isTest
-                - isTest desc
-                - modalities
-                - modalities desc
-                - startDateTime
-                - startDateTime desc
               type: string
         - name: $select
           in: query
@@ -744,16 +623,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - callee
-                - caller
-                - endDateTime
-                - failureInfo
-                - isTest
-                - modalities
-                - startDateTime
-                - segments
               type: string
         - name: $expand
           in: query
@@ -764,9 +633,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - segments
               type: string
       responses:
         2XX:
@@ -841,16 +707,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - callee
-                - caller
-                - endDateTime
-                - failureInfo
-                - isTest
-                - modalities
-                - startDateTime
-                - segments
               type: string
         - name: $expand
           in: query
@@ -861,9 +717,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - segments
               type: string
       responses:
         2XX:
@@ -986,21 +839,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - callee
-                - callee desc
-                - caller
-                - caller desc
-                - endDateTime
-                - endDateTime desc
-                - failureInfo
-                - failureInfo desc
-                - media
-                - media desc
-                - startDateTime
-                - startDateTime desc
               type: string
         - name: $select
           in: query
@@ -1011,14 +849,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - callee
-                - caller
-                - endDateTime
-                - failureInfo
-                - media
-                - startDateTime
               type: string
         - name: $expand
           in: query
@@ -1029,8 +859,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1121,14 +949,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - callee
-                - caller
-                - endDateTime
-                - failureInfo
-                - media
-                - startDateTime
               type: string
         - name: $expand
           in: query
@@ -1139,8 +959,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1476,8 +1294,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get call
-      description: Retrieve the properties and relationships of a call object.
+      summary: Get calls from communications
       operationId: communication_ListCall
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1494,61 +1311,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activeModalities
-                - activeModalities desc
-                - answeredBy
-                - answeredBy desc
-                - callbackUri
-                - callbackUri desc
-                - callChainId
-                - callChainId desc
-                - callOptions
-                - callOptions desc
-                - callRoutes
-                - callRoutes desc
-                - chatInfo
-                - chatInfo desc
-                - direction
-                - direction desc
-                - incomingContext
-                - incomingContext desc
-                - mediaConfig
-                - mediaConfig desc
-                - mediaState
-                - mediaState desc
-                - meetingCapability
-                - meetingCapability desc
-                - meetingInfo
-                - meetingInfo desc
-                - myParticipantId
-                - myParticipantId desc
-                - requestedModalities
-                - requestedModalities desc
-                - resultInfo
-                - resultInfo desc
-                - ringingTimeoutInSeconds
-                - ringingTimeoutInSeconds desc
-                - routingPolicies
-                - routingPolicies desc
-                - source
-                - source desc
-                - state
-                - state desc
-                - subject
-                - subject desc
-                - targets
-                - targets desc
-                - tenantId
-                - tenantId desc
-                - terminationReason
-                - terminationReason desc
-                - toneInfo
-                - toneInfo desc
-                - transcription
-                - transcription desc
               type: string
         - name: $select
           in: query
@@ -1559,38 +1321,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeModalities
-                - answeredBy
-                - callbackUri
-                - callChainId
-                - callOptions
-                - callRoutes
-                - chatInfo
-                - direction
-                - incomingContext
-                - mediaConfig
-                - mediaState
-                - meetingCapability
-                - meetingInfo
-                - myParticipantId
-                - requestedModalities
-                - resultInfo
-                - ringingTimeoutInSeconds
-                - routingPolicies
-                - source
-                - state
-                - subject
-                - targets
-                - tenantId
-                - terminationReason
-                - toneInfo
-                - transcription
-                - audioRoutingGroups
-                - contentSharingSessions
-                - operations
-                - participants
               type: string
         - name: $expand
           in: query
@@ -1601,12 +1331,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - audioRoutingGroups
-                - contentSharingSessions
-                - operations
-                - participants
               type: string
       responses:
         2XX:
@@ -1620,11 +1344,7 @@ paths:
     post:
       tags:
         - communications.call
-      summary: Create call
-      description: 'Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0
+      summary: Create new navigation property to calls for communications
       operationId: communication_CreateCall
       requestBody:
         description: New navigation property
@@ -1647,11 +1367,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get call
-      description: Retrieve the properties and relationships of a call object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-get?view=graph-rest-1.0
+      summary: Get calls from communications
       operationId: communication_GetCall
       parameters:
         - name: call-id
@@ -1671,38 +1387,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activeModalities
-                - answeredBy
-                - callbackUri
-                - callChainId
-                - callOptions
-                - callRoutes
-                - chatInfo
-                - direction
-                - incomingContext
-                - mediaConfig
-                - mediaState
-                - meetingCapability
-                - meetingInfo
-                - myParticipantId
-                - requestedModalities
-                - resultInfo
-                - ringingTimeoutInSeconds
-                - routingPolicies
-                - source
-                - state
-                - subject
-                - targets
-                - tenantId
-                - terminationReason
-                - toneInfo
-                - transcription
-                - audioRoutingGroups
-                - contentSharingSessions
-                - operations
-                - participants
               type: string
         - name: $expand
           in: query
@@ -1713,12 +1397,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - audioRoutingGroups
-                - contentSharingSessions
-                - operations
-                - participants
               type: string
       responses:
         2XX:
@@ -1764,11 +1442,7 @@ paths:
     delete:
       tags:
         - communications.call
-      summary: Delete call
-      description: 'Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-delete?view=graph-rest-1.0
+      summary: Delete navigation property calls for communications
       operationId: communication_DeleteCall
       parameters:
         - name: call-id
@@ -1795,11 +1469,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: List audio routing groups
-      description: Retrieve a list of audioRoutingGroup objects.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-1.0
+      summary: Get audioRoutingGroups from communications
       operationId: communication.call_ListAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1824,15 +1494,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - receivers
-                - receivers desc
-                - routingMode
-                - routingMode desc
-                - sources
-                - sources desc
               type: string
         - name: $select
           in: query
@@ -1843,11 +1504,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - receivers
-                - routingMode
-                - sources
               type: string
         - name: $expand
           in: query
@@ -1858,8 +1514,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1873,11 +1527,7 @@ paths:
     post:
       tags:
         - communications.call
-      summary: Create audio routing group
-      description: Create a new audioRoutingGroup.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-1.0
+      summary: Create new navigation property to audioRoutingGroups for communications
       operationId: communication.call_CreateAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1909,11 +1559,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get audio routing group
-      description: Retrieve the properties and relationships of an audioRoutingGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/audioroutinggroup-get?view=graph-rest-1.0
+      summary: Get audioRoutingGroups from communications
       operationId: communication.call_GetAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1941,11 +1587,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - receivers
-                - routingMode
-                - sources
               type: string
         - name: $expand
           in: query
@@ -1956,8 +1597,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1972,11 +1611,7 @@ paths:
     patch:
       tags:
         - communications.call
-      summary: Update audio routing group
-      description: Modify sources and receivers of an audioRoutingGroup.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/audioroutinggroup-update?view=graph-rest-1.0
+      summary: Update the navigation property audioRoutingGroups in communications
       operationId: communication.call_UpdateAudioRoutingGroup
       parameters:
         - name: call-id
@@ -2015,11 +1650,7 @@ paths:
     delete:
       tags:
         - communications.call
-      summary: Delete audio routing group
-      description: Delete the specified audioRoutingGroup.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/audioroutinggroup-delete?view=graph-rest-1.0
+      summary: Delete navigation property audioRoutingGroups for communications
       operationId: communication.call_DeleteAudioRoutingGroup
       parameters:
         - name: call-id
@@ -2076,11 +1707,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: List contentSharingSessions
-      description: Retrieve a list of contentSharingSession objects in a call.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-1.0
+      summary: Get contentSharingSessions from communications
       operationId: communication.call_ListContentSharingSession
       parameters:
         - name: call-id
@@ -2105,9 +1732,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -2118,8 +1742,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2130,8 +1752,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2177,11 +1797,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get contentSharingSession
-      description: Retrieve the properties of a contentSharingSession object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/contentsharingsession-get?view=graph-rest-1.0
+      summary: Get contentSharingSessions from communications
       operationId: communication.call_GetContentSharingSession
       parameters:
         - name: call-id
@@ -2209,8 +1825,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2221,8 +1835,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2337,7 +1949,7 @@ paths:
       description: 'Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-beta
       operationId: communication.call_addLargeGalleryView
       parameters:
         - name: call-id
@@ -2379,7 +1991,7 @@ paths:
       description: 'Enable a bot to answer an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification contains the chatInfo and meetingInfo parameters. The bot is expected to answer, reject or redirect the call before the call times out. The current timeout value is 15 seconds. The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-answer?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-answer?view=graph-rest-beta
       operationId: communication.call_answer
       parameters:
         - name: call-id
@@ -2430,7 +2042,7 @@ paths:
       description: 'Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The cancelMediaProcessing method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a ubscribeToTone operation because it operates independent of any operation queue.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-beta
       operationId: communication.call_cancelMediaProcessing
       parameters:
         - name: call-id
@@ -2472,7 +2084,7 @@ paths:
       description: Allow applications to share screen content with the participants of a group call.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-beta
       operationId: communication.call_changeScreenSharingRole
       parameters:
         - name: call-id
@@ -2506,10 +2118,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action keepAlive
-      description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that does not receive this request within 45 minutes is considered inactive and will subsequently end. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that has already ended will result in a 404 Not-Found error. The resources related to the call should be cleaned up on the application side.'
+      description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that doesn''t receive this request within 45 minutes is considered inactive and ends. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that ended results in a 404 Not Found error. The resources related to the call should be cleaned up on the application side.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-keepalive?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-keepalive?view=graph-rest-beta
       operationId: communication.call_keepAlive
       parameters:
         - name: call-id
@@ -2531,10 +2143,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
-      description: 'Allows the application to mute itself. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more details about how to handle mute operations, see muteParticipantOperation'
+      description: 'Allows the application to mute itself. This is a server mute, meaning that the server drops all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-mute?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-mute?view=graph-rest-beta
       operationId: communication.call_mute
       parameters:
         - name: call-id
@@ -2576,7 +2188,7 @@ paths:
       description: 'Play a prompt in the call. For more information about how to handle operations, see commsOperation'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-playprompt?view=graph-rest-beta
       operationId: communication.call_playPrompt
       parameters:
         - name: call-id
@@ -2700,10 +2312,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action recordResponse
-      description: 'Record a short audio response from the caller. A bot can use this to capture a voice response from a caller after they are prompted for a response. For more information about how to handle operations, see commsOperation This action isn''t intended to record the entire call. The maximum length of recording is 2 minutes. The recording isn''t saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that''s given in the completed notification.'
+      description: 'Record a short audio response from the caller. A bot can use this API to capture a voice response from a caller after they''re prompted for a response. For more information about how to handle operations, see commsOperation. This action isn''t intended to record the entire call. The maximum length of recording is 2 minutes.The Cloud Communications Platform doesn''t save the recording permanently and discards it shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value provided in the completed notification.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-record?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-record?view=graph-rest-beta
       operationId: communication.call_recordResponse
       parameters:
         - name: call-id
@@ -2781,10 +2393,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action redirect
-      description: Redirect an incoming call that hasn't been answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
+      description: Redirect an incoming call that wasn't answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-redirect?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-redirect?view=graph-rest-beta
       operationId: communication.call_redirect
       parameters:
         - name: call-id
@@ -2839,10 +2451,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action reject
-      description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API does not end existing calls that have already been answered. Use delete call to end a call.'
+      description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification contains the chatInfo and meetingInfo parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API doesn''t end existing calls that have already been answered. Use delete call to end a call.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-reject?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-reject?view=graph-rest-beta
       operationId: communication.call_reject
       parameters:
         - name: call-id
@@ -2927,10 +2539,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action subscribeToTone
-      description: Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a 'Dialpad'.
+      description: Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a dialpad. This action is supported only for calls that are initiated with serviceHostedMediaConfig.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-beta
       operationId: communication.call_subscribeToTone
       parameters:
         - name: call-id
@@ -2972,7 +2584,7 @@ paths:
       description: 'Transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-transfer?view=graph-rest-beta
       operationId: communication.call_transfer
       parameters:
         - name: call-id
@@ -3011,7 +2623,7 @@ paths:
       description: 'Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-unmute?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-unmute?view=graph-rest-beta
       operationId: communication.call_unmute
       parameters:
         - name: call-id
@@ -3053,7 +2665,7 @@ paths:
       description: Update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-beta
       operationId: communication.call_updateRecordingStatus
       parameters:
         - name: call-id
@@ -3093,8 +2705,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get addLargeGalleryViewOperation
-      description: Get the status of an operation that adds the large gallery view to a call.
+      summary: Get operations from communications
       operationId: communication.call_ListOperation
       parameters:
         - name: call-id
@@ -3119,15 +2730,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - clientContext
-                - clientContext desc
-                - resultInfo
-                - resultInfo desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -3138,11 +2740,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientContext
-                - resultInfo
-                - status
               type: string
         - name: $expand
           in: query
@@ -3153,8 +2750,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3200,11 +2795,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get addLargeGalleryViewOperation
-      description: Get the status of an operation that adds the large gallery view to a call.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/addlargegalleryviewoperation-get?view=graph-rest-1.0
+      summary: Get operations from communications
       operationId: communication.call_GetOperation
       parameters:
         - name: call-id
@@ -3232,11 +2823,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - clientContext
-                - resultInfo
-                - status
               type: string
         - name: $expand
           in: query
@@ -3247,8 +2833,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3359,11 +2943,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: List participants
-      description: Retrieve a list of participant objects in the call.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0
+      summary: Get participants from communications
       operationId: communication.call_ListParticipant
       parameters:
         - name: call-id
@@ -3388,31 +2968,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - info
-                - info desc
-                - isIdentityAnonymized
-                - isIdentityAnonymized desc
-                - isInLobby
-                - isInLobby desc
-                - isMuted
-                - isMuted desc
-                - mediaStreams
-                - mediaStreams desc
-                - metadata
-                - metadata desc
-                - preferredDisplayName
-                - preferredDisplayName desc
-                - recordingInfo
-                - recordingInfo desc
-                - removedState
-                - removedState desc
-                - restrictedExperience
-                - restrictedExperience desc
-                - rosterSequenceNumber
-                - rosterSequenceNumber desc
               type: string
         - name: $select
           in: query
@@ -3423,19 +2978,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - info
-                - isIdentityAnonymized
-                - isInLobby
-                - isMuted
-                - mediaStreams
-                - metadata
-                - preferredDisplayName
-                - recordingInfo
-                - removedState
-                - restrictedExperience
-                - rosterSequenceNumber
               type: string
         - name: $expand
           in: query
@@ -3446,8 +2988,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3493,11 +3033,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get participant
-      description: Retrieve the properties and relationships of a participant object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-get?view=graph-rest-1.0
+      summary: Get participants from communications
       operationId: communication.call_GetParticipant
       parameters:
         - name: call-id
@@ -3525,19 +3061,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - info
-                - isIdentityAnonymized
-                - isInLobby
-                - isMuted
-                - mediaStreams
-                - metadata
-                - preferredDisplayName
-                - recordingInfo
-                - removedState
-                - restrictedExperience
-                - rosterSequenceNumber
               type: string
         - name: $expand
           in: query
@@ -3548,8 +3071,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3603,11 +3124,7 @@ paths:
     delete:
       tags:
         - communications.call
-      summary: Delete participant
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+      summary: Delete navigation property participants for communications
       operationId: communication.call_DeleteParticipant
       parameters:
         - name: call-id
@@ -3646,7 +3163,7 @@ paths:
       description: 'Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-mute?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-mute?view=graph-rest-beta
       operationId: communication.call.participant_mute
       parameters:
         - name: call-id
@@ -3696,7 +3213,7 @@ paths:
       description: Put a participant on hold and play music in the background.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-beta
       operationId: communication.call.participant_startHoldMusic
       parameters:
         - name: call-id
@@ -3748,7 +3265,7 @@ paths:
       description: Reincorporate a participant previously put on hold to the call.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-beta
       operationId: communication.call.participant_stopHoldMusic
       parameters:
         - name: call-id
@@ -3820,7 +3337,7 @@ paths:
       description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-beta
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -3866,7 +3383,7 @@ paths:
       description: Mute all participants in the call.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-muteall?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-muteall?view=graph-rest-beta
       operationId: communication.call.participant_muteAll
       parameters:
         - name: call-id
@@ -3927,7 +3444,7 @@ paths:
       description: 'Log video teleconferencing device quality data. The Cloud Video Interop (CVI) bot represents video teleconferencing (VTC) devices and acts as a back-to-back agent for a VTC device in a conference call. Because a CVI bot is in the middle of the VTC and Microsoft Teams infrastructure as a VTC proxy, it has two media legs. One media leg is between the CVI bot and Teams infrastructure, such as Teams conference server or a Teams client. The other media leg is between the CVI bot and the VTC device.  The third-party partners own the VTC media leg and the Teams infrastructure cannot access the quality data of the third-party call leg.  This method is only for the CVI partners to provide their media quality data.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/call-logteleconferencedevicequality?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/call-logteleconferencedevicequality?view=graph-rest-beta
       operationId: communication.call_logTeleconferenceDeviceQuality
       requestBody:
         description: Action parameters
@@ -3955,7 +3472,7 @@ paths:
       description: Get the presence information for multiple users.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-beta
       operationId: communication_getPresencesGraphBPreUserId
       requestBody:
         description: Action parameters
@@ -3999,11 +3516,7 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get onlineMeeting
-      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) and Teams live event recordings (deprecated) are online meeting artifacts. For details, see Online meeting artifacts and permissions. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
+      summary: Get onlineMeetings from communications
       operationId: communication_ListOnlineMeeting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4020,81 +3533,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableCamera desc
-                - allowAttendeeToEnableMic
-                - allowAttendeeToEnableMic desc
-                - allowedPresenters
-                - allowedPresenters desc
-                - allowMeetingChat
-                - allowMeetingChat desc
-                - allowParticipantsToChangeName
-                - allowParticipantsToChangeName desc
-                - allowRecording
-                - allowRecording desc
-                - allowTeamworkReactions
-                - allowTeamworkReactions desc
-                - allowTranscription
-                - allowTranscription desc
-                - anonymizeIdentityForRoles
-                - anonymizeIdentityForRoles desc
-                - audioConferencing
-                - audioConferencing desc
-                - chatInfo
-                - chatInfo desc
-                - chatRestrictions
-                - chatRestrictions desc
-                - isEndToEndEncryptionEnabled
-                - isEndToEndEncryptionEnabled desc
-                - isEntryExitAnnounced
-                - isEntryExitAnnounced desc
-                - joinInformation
-                - joinInformation desc
-                - joinMeetingIdSettings
-                - joinMeetingIdSettings desc
-                - joinWebUrl
-                - joinWebUrl desc
-                - lobbyBypassSettings
-                - lobbyBypassSettings desc
-                - recordAutomatically
-                - recordAutomatically desc
-                - shareMeetingChatHistoryDefault
-                - shareMeetingChatHistoryDefault desc
-                - subject
-                - subject desc
-                - videoTeleconferenceId
-                - videoTeleconferenceId desc
-                - watermarkProtection
-                - watermarkProtection desc
-                - alternativeRecording
-                - alternativeRecording desc
-                - attendeeReport
-                - attendeeReport desc
-                - broadcastRecording
-                - broadcastRecording desc
-                - broadcastSettings
-                - broadcastSettings desc
-                - capabilities
-                - capabilities desc
-                - creationDateTime
-                - creationDateTime desc
-                - endDateTime
-                - endDateTime desc
-                - externalId
-                - externalId desc
-                - isBroadcast
-                - isBroadcast desc
-                - joinUrl
-                - joinUrl desc
-                - participants
-                - participants desc
-                - recording
-                - recording desc
-                - startDateTime
-                - startDateTime desc
               type: string
         - name: $select
           in: query
@@ -4105,49 +3543,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowRecording
-                - allowTeamworkReactions
-                - allowTranscription
-                - anonymizeIdentityForRoles
-                - audioConferencing
-                - chatInfo
-                - chatRestrictions
-                - isEndToEndEncryptionEnabled
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - alternativeRecording
-                - attendeeReport
-                - broadcastRecording
-                - broadcastSettings
-                - capabilities
-                - creationDateTime
-                - endDateTime
-                - externalId
-                - isBroadcast
-                - joinUrl
-                - participants
-                - recording
-                - startDateTime
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
         - name: $expand
           in: query
@@ -4158,13 +3553,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
       responses:
         2XX:
@@ -4221,49 +3609,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowRecording
-                - allowTeamworkReactions
-                - allowTranscription
-                - anonymizeIdentityForRoles
-                - audioConferencing
-                - chatInfo
-                - chatRestrictions
-                - isEndToEndEncryptionEnabled
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - alternativeRecording
-                - attendeeReport
-                - broadcastRecording
-                - broadcastSettings
-                - capabilities
-                - creationDateTime
-                - endDateTime
-                - externalId
-                - isBroadcast
-                - joinUrl
-                - participants
-                - recording
-                - startDateTime
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
         - name: $expand
           in: query
@@ -4274,13 +3619,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
       responses:
         2XX:
@@ -4354,9 +3692,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from communications
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communication_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: onlineMeeting-id
@@ -4436,15 +3771,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - meetingEndDateTime
-                - meetingEndDateTime desc
-                - meetingStartDateTime
-                - meetingStartDateTime desc
-                - totalParticipantCount
-                - totalParticipantCount desc
               type: string
         - name: $select
           in: query
@@ -4455,12 +3781,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -4471,9 +3791,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -4548,12 +3865,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -4564,9 +3875,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -4655,11 +3963,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+      summary: Get attendanceRecords from communications
+      description: List of attendance records of an attendance report. Read-only.
       operationId: communication.onlineMeeting.attendanceReport_ListAttendanceRecord
       parameters:
         - name: onlineMeeting-id
@@ -4692,21 +3997,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - attendanceIntervals
-                - attendanceIntervals desc
-                - emailAddress
-                - emailAddress desc
-                - identity
-                - identity desc
-                - registrantId
-                - registrantId desc
-                - role
-                - role desc
-                - totalAttendanceInSeconds
-                - totalAttendanceInSeconds desc
               type: string
         - name: $select
           in: query
@@ -4717,14 +4007,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -4735,8 +4017,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4827,14 +4107,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -4845,8 +4117,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5004,9 +4274,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from communications
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communication_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -5061,9 +4328,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get broadcastRecording for the navigation property onlineMeetings from communications
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communication_GetOnlineMeetingsBroadcastRecording
       parameters:
         - name: onlineMeeting-id
@@ -5117,11 +4381,7 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
+      summary: Get meetingAttendanceReport from communications
       operationId: communication.onlineMeeting_GetMeetingAttendanceReport
       parameters:
         - name: onlineMeeting-id
@@ -5141,12 +4401,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -5157,9 +4411,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -5232,11 +4483,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+      summary: Get attendanceRecords from communications
+      description: List of attendance records of an attendance report. Read-only.
       operationId: communication.onlineMeeting.meetingAttendanceReport_ListAttendanceRecord
       parameters:
         - name: onlineMeeting-id
@@ -5261,21 +4509,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - attendanceIntervals
-                - attendanceIntervals desc
-                - emailAddress
-                - emailAddress desc
-                - identity
-                - identity desc
-                - registrantId
-                - registrantId desc
-                - role
-                - role desc
-                - totalAttendanceInSeconds
-                - totalAttendanceInSeconds desc
               type: string
         - name: $select
           in: query
@@ -5286,14 +4519,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -5304,8 +4529,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5380,14 +4603,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -5398,8 +4613,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5511,6 +4724,10 @@ paths:
       tags:
         - communications.Functions
       summary: Invoke function getVirtualAppointmentJoinWebUrl
+      description: 'Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
       operationId: communication.onlineMeeting_getVirtualAppointmentJoinWebUrl
       parameters:
         - name: onlineMeeting-id
@@ -5545,7 +4762,7 @@ paths:
       description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta
       operationId: communication.onlineMeeting_sendVirtualAppointmentReminderSm
       parameters:
         - name: onlineMeeting-id
@@ -5586,7 +4803,7 @@ paths:
       description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
       operationId: communication.onlineMeeting_sendVirtualAppointmentSm
       parameters:
         - name: onlineMeeting-id
@@ -5624,9 +4841,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from communications
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communication_GetOnlineMeetingsRecording
       parameters:
         - name: onlineMeeting-id
@@ -5680,8 +4894,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      summary: Get recordings from communications
+      description: The recordings of an online meeting. Read-only.
       operationId: communication.onlineMeeting_ListRecording
       parameters:
         - name: onlineMeeting-id
@@ -5706,21 +4920,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - recordingContentUrl
-                - recordingContentUrl desc
               type: string
         - name: $select
           in: query
@@ -5731,14 +4930,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -5749,8 +4940,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5796,11 +4985,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
+      summary: Get recordings from communications
+      description: The recordings of an online meeting. Read-only.
       operationId: communication.onlineMeeting_GetRecording
       parameters:
         - name: onlineMeeting-id
@@ -5828,14 +5014,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -5846,8 +5024,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6059,14 +5235,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - recordingContentUrl
               type: string
         - name: $orderby
           in: query
@@ -6077,21 +5245,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - recordingContentUrl
-                - recordingContentUrl desc
               type: string
         - name: $expand
           in: query
@@ -6102,8 +5255,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6136,11 +5287,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+      summary: Get registration from communications
+      description: The registration that is enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: communication.onlineMeeting_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -6160,18 +5308,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedRegistrant
-                - description
-                - endDateTime
-                - registrationPageViewCount
-                - registrationPageWebUrl
-                - speakers
-                - startDateTime
-                - subject
-                - registrants
-                - customQuestions
               type: string
         - name: $expand
           in: query
@@ -6182,10 +5318,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - registrants
-                - customQuestions
               type: string
       responses:
         2XX:
@@ -6200,11 +5332,7 @@ paths:
     patch:
       tags:
         - communications.onlineMeeting
-      summary: Update meetingRegistration
-      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
+      summary: Update the navigation property registration in communications
       operationId: communication.onlineMeeting_UpdateRegistration
       parameters:
         - name: onlineMeeting-id
@@ -6235,11 +5363,7 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+      summary: Delete navigation property registration for communications
       operationId: communication.onlineMeeting_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -6266,11 +5390,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get customRegistrationQuestion
-      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
+      summary: Get customQuestions from communications
+      description: Custom registration questions.
       operationId: communication.onlineMeeting.registration_ListCustomQuestion
       parameters:
         - name: onlineMeeting-id
@@ -6295,17 +5416,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - answerInputType
-                - answerInputType desc
-                - answerOptions
-                - answerOptions desc
-                - displayName
-                - displayName desc
-                - isRequired
-                - isRequired desc
               type: string
         - name: $select
           in: query
@@ -6316,12 +5426,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - answerInputType
-                - answerOptions
-                - displayName
-                - isRequired
               type: string
         - name: $expand
           in: query
@@ -6332,8 +5436,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6347,11 +5449,7 @@ paths:
     post:
       tags:
         - communications.onlineMeeting
-      summary: Create meetingRegistrationQuestion
-      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
+      summary: Create new navigation property to customQuestions for communications
       operationId: communication.onlineMeeting.registration_CreateCustomQuestion
       parameters:
         - name: onlineMeeting-id
@@ -6383,11 +5481,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get customRegistrationQuestion
-      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
+      summary: Get customQuestions from communications
+      description: Custom registration questions.
       operationId: communication.onlineMeeting.registration_GetCustomQuestion
       parameters:
         - name: onlineMeeting-id
@@ -6415,12 +5510,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - answerInputType
-                - answerOptions
-                - displayName
-                - isRequired
               type: string
         - name: $expand
           in: query
@@ -6431,8 +5520,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6447,11 +5534,7 @@ paths:
     patch:
       tags:
         - communications.onlineMeeting
-      summary: Update meetingRegistrationQuestion
-      description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
+      summary: Update the navigation property customQuestions in communications
       operationId: communication.onlineMeeting.registration_UpdateCustomQuestion
       parameters:
         - name: onlineMeeting-id
@@ -6490,11 +5573,7 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete meetingRegistrationQuestion
-      description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
+      summary: Delete navigation property customQuestions for communications
       operationId: communication.onlineMeeting.registration_DeleteCustomQuestion
       parameters:
         - name: onlineMeeting-id
@@ -6577,11 +5656,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - joinWebUrl
-                - joinWebUrl desc
               type: string
         - name: $select
           in: query
@@ -6592,9 +5666,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - joinWebUrl
               type: string
         - name: $expand
           in: query
@@ -6605,8 +5676,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6681,9 +5750,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - joinWebUrl
               type: string
         - name: $expand
           in: query
@@ -6694,8 +5760,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6806,11 +5870,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: List transcripts
-      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API doesn''t support getting call transcripts from channel meetings. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
+      summary: Get transcripts from communications
+      description: The transcripts of an online meeting. Read-only.
       operationId: communication.onlineMeeting_ListTranscript
       parameters:
         - name: onlineMeeting-id
@@ -6835,23 +5896,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - metadataContent
-                - metadataContent desc
-                - transcriptContentUrl
-                - transcriptContentUrl desc
               type: string
         - name: $select
           in: query
@@ -6862,15 +5906,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - metadataContent
-                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -6881,8 +5916,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6928,11 +5961,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
+      summary: Get transcripts from communications
+      description: The transcripts of an online meeting. Read-only.
       operationId: communication.onlineMeeting_GetTranscript
       parameters:
         - name: onlineMeeting-id
@@ -6960,15 +5990,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - metadataContent
-                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -6979,8 +6000,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7071,9 +6090,6 @@ paths:
         - communications.onlineMeeting
       summary: Get content for the navigation property transcripts from communications
       description: The content of the transcript. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetTranscriptsContent
       parameters:
         - name: onlineMeeting-id
@@ -7150,9 +6166,6 @@ paths:
         - communications.onlineMeeting
       summary: Get metadataContent for the navigation property transcripts from communications
       description: The time-aligned metadata of the utterances in the transcript. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetTranscriptsMetadataContent
       parameters:
         - name: onlineMeeting-id
@@ -7270,15 +6283,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - metadataContent
-                - transcriptContentUrl
               type: string
         - name: $orderby
           in: query
@@ -7289,23 +6293,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - metadataContent
-                - metadataContent desc
-                - transcriptContentUrl
-                - transcriptContentUrl desc
               type: string
         - name: $expand
           in: query
@@ -7316,8 +6303,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7370,49 +6355,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowRecording
-                - allowTeamworkReactions
-                - allowTranscription
-                - anonymizeIdentityForRoles
-                - audioConferencing
-                - chatInfo
-                - chatRestrictions
-                - isEndToEndEncryptionEnabled
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - alternativeRecording
-                - attendeeReport
-                - broadcastRecording
-                - broadcastSettings
-                - capabilities
-                - creationDateTime
-                - endDateTime
-                - externalId
-                - isBroadcast
-                - joinUrl
-                - participants
-                - recording
-                - startDateTime
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
         - name: $expand
           in: query
@@ -7423,13 +6365,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
       responses:
         2XX:
@@ -7503,6 +6438,10 @@ paths:
       tags:
         - communications.Functions
       summary: Invoke function getVirtualAppointmentJoinWebUrl
+      description: 'Get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
       operationId: communication.onlineMeeting.joinWebUrl_getVirtualAppointmentJoinWebUrl
       parameters:
         - name: joinWebUrl
@@ -7537,7 +6476,7 @@ paths:
       description: Send an SMS reminder to external attendees for a Teams Virtual Appointment. This feature requires Teams Premium and attendees must have a valid United States phone number to receive SMS notifications.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta
       operationId: communication.onlineMeeting.joinWebUrl_sendVirtualAppointmentReminderSm
       parameters:
         - name: joinWebUrl
@@ -7578,7 +6517,7 @@ paths:
       description: 'Send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
       operationId: communication.onlineMeeting.joinWebUrl_sendVirtualAppointmentSm
       parameters:
         - name: joinWebUrl
@@ -7633,7 +6572,7 @@ paths:
       description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta
       operationId: communication.onlineMeeting_createOrGet
       requestBody:
         description: Action parameters
@@ -7695,14 +6634,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - recordingContentUrl
               type: string
         - name: $orderby
           in: query
@@ -7713,21 +6644,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - recordingContentUrl
-                - recordingContentUrl desc
               type: string
         - name: $expand
           in: query
@@ -7738,8 +6654,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7770,6 +6684,10 @@ paths:
       tags:
         - communications.Functions
       summary: Invoke function getAllTranscripts
+      description: 'Get all transcripts from scheduled onlineMeeting instances for which the specified user is the organizer. This API currently doesn''t support getting call transcripts from channel meetings. You can apply the delta function on getAllTranscripts to synchronize and get callTranscript resources as they are added for onlineMeeting instances organized by the specified user. Delta query supports both full synchronization that gets all the transcripts for online meetings organized by the user, and incremental synchronization that gets transcripts that have been added since the last synchronization. Typically, you would do an initial full synchronization, and then get incremental changes to that transcript view periodically. Find more information in the delta query documentation. For additional examples, see callTranscript: delta. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-getalltranscripts?view=graph-rest-beta
       operationId: communication.onlineMeeting_getAllTranscript
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7786,15 +6704,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - metadataContent
-                - transcriptContentUrl
               type: string
         - name: $orderby
           in: query
@@ -7805,23 +6714,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - metadataContent
-                - metadataContent desc
-                - transcriptContentUrl
-                - transcriptContentUrl desc
               type: string
         - name: $expand
           in: query
@@ -7832,8 +6724,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7863,8 +6753,7 @@ paths:
     get:
       tags:
         - communications.presence
-      summary: Get presence
-      description: Get a user's presence information.
+      summary: Get presences from communications
       operationId: communication_ListPresence
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7881,17 +6770,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activity
-                - activity desc
-                - availability
-                - availability desc
-                - outOfOfficeSettings
-                - outOfOfficeSettings desc
-                - statusMessage
-                - statusMessage desc
               type: string
         - name: $select
           in: query
@@ -7902,12 +6780,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - availability
-                - outOfOfficeSettings
-                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -7918,8 +6790,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7956,11 +6826,7 @@ paths:
     get:
       tags:
         - communications.presence
-      summary: Get presence
-      description: Get a user's presence information.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+      summary: Get presences from communications
       operationId: communication_GetPresence
       parameters:
         - name: presence-id
@@ -7980,12 +6846,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - availability
-                - outOfOfficeSettings
-                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -7996,8 +6856,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -8074,7 +6932,7 @@ paths:
       description: 'Clear a presence session of an application for a user. If it is the user''s only presence session, a successful clearPresence changes the user''s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-beta
       operationId: communication.presence_clearPresence
       parameters:
         - name: presence-id
@@ -8112,7 +6970,7 @@ paths:
       description: Clear the preferred availability and activity status for a user.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-beta
       operationId: communication.presence_clearUserPreferredPresence
       parameters:
         - name: presence-id
@@ -8137,7 +6995,7 @@ paths:
       description: Set the availability and activity status in a presence session of an application for a user.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-beta
       operationId: communication.presence_setPresence
       parameters:
         - name: presence-id
@@ -8184,7 +7042,7 @@ paths:
       description: Set a presence status message for a user. An optional expiration date and time can be supplied.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta
       operationId: communication.presence_setStatusMessage
       parameters:
         - name: presence-id
@@ -8221,7 +7079,7 @@ paths:
       description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence is the preferred presence. Preferred presence takes effect only when there is at least one presence session of the user. Otherwise, the user''s presence stays as Offline. A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.  Read more about presence sessions and their time-out and expiration. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-beta
       operationId: communication.presence_setUserPreferredPresence
       parameters:
         - name: presence-id
@@ -8275,11 +7133,8 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get onlineMeeting
-      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) and Teams live event recordings (deprecated) are online meeting artifacts. For details, see Online meeting artifacts and permissions. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
+      summary: Get onlineMeetings from users
+      description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
       operationId: user_ListOnlineMeeting
       parameters:
         - name: user-id
@@ -8304,81 +7159,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableCamera desc
-                - allowAttendeeToEnableMic
-                - allowAttendeeToEnableMic desc
-                - allowedPresenters
-                - allowedPresenters desc
-                - allowMeetingChat
-                - allowMeetingChat desc
-                - allowParticipantsToChangeName
-                - allowParticipantsToChangeName desc
-                - allowRecording
-                - allowRecording desc
-                - allowTeamworkReactions
-                - allowTeamworkReactions desc
-                - allowTranscription
-                - allowTranscription desc
-                - anonymizeIdentityForRoles
-                - anonymizeIdentityForRoles desc
-                - audioConferencing
-                - audioConferencing desc
-                - chatInfo
-                - chatInfo desc
-                - chatRestrictions
-                - chatRestrictions desc
-                - isEndToEndEncryptionEnabled
-                - isEndToEndEncryptionEnabled desc
-                - isEntryExitAnnounced
-                - isEntryExitAnnounced desc
-                - joinInformation
-                - joinInformation desc
-                - joinMeetingIdSettings
-                - joinMeetingIdSettings desc
-                - joinWebUrl
-                - joinWebUrl desc
-                - lobbyBypassSettings
-                - lobbyBypassSettings desc
-                - recordAutomatically
-                - recordAutomatically desc
-                - shareMeetingChatHistoryDefault
-                - shareMeetingChatHistoryDefault desc
-                - subject
-                - subject desc
-                - videoTeleconferenceId
-                - videoTeleconferenceId desc
-                - watermarkProtection
-                - watermarkProtection desc
-                - alternativeRecording
-                - alternativeRecording desc
-                - attendeeReport
-                - attendeeReport desc
-                - broadcastRecording
-                - broadcastRecording desc
-                - broadcastSettings
-                - broadcastSettings desc
-                - capabilities
-                - capabilities desc
-                - creationDateTime
-                - creationDateTime desc
-                - endDateTime
-                - endDateTime desc
-                - externalId
-                - externalId desc
-                - isBroadcast
-                - isBroadcast desc
-                - joinUrl
-                - joinUrl desc
-                - participants
-                - participants desc
-                - recording
-                - recording desc
-                - startDateTime
-                - startDateTime desc
               type: string
         - name: $select
           in: query
@@ -8389,49 +7169,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowRecording
-                - allowTeamworkReactions
-                - allowTranscription
-                - anonymizeIdentityForRoles
-                - audioConferencing
-                - chatInfo
-                - chatRestrictions
-                - isEndToEndEncryptionEnabled
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - alternativeRecording
-                - attendeeReport
-                - broadcastRecording
-                - broadcastSettings
-                - capabilities
-                - creationDateTime
-                - endDateTime
-                - externalId
-                - isBroadcast
-                - joinUrl
-                - participants
-                - recording
-                - startDateTime
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
         - name: $expand
           in: query
@@ -8442,13 +7179,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
       responses:
         2XX:
@@ -8462,11 +7192,7 @@ paths:
     post:
       tags:
         - users.onlineMeeting
-      summary: Create onlineMeeting
-      description: Create an online meeting on behalf of a user.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-1.0
+      summary: Create new navigation property to onlineMeetings for users
       operationId: user_CreateOnlineMeeting
       parameters:
         - name: user-id
@@ -8527,49 +7253,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowRecording
-                - allowTeamworkReactions
-                - allowTranscription
-                - anonymizeIdentityForRoles
-                - audioConferencing
-                - chatInfo
-                - chatRestrictions
-                - isEndToEndEncryptionEnabled
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - alternativeRecording
-                - attendeeReport
-                - broadcastRecording
-                - broadcastSettings
-                - capabilities
-                - creationDateTime
-                - endDateTime
-                - externalId
-                - isBroadcast
-                - joinUrl
-                - participants
-                - recording
-                - startDateTime
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
         - name: $expand
           in: query
@@ -8580,13 +7263,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
       responses:
         2XX:
@@ -8601,11 +7277,7 @@ paths:
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update onlineMeeting
-      description: Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0
+      summary: Update the navigation property onlineMeetings in users
       operationId: user_UpdateOnlineMeeting
       parameters:
         - name: user-id
@@ -8644,11 +7316,7 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete onlineMeeting
-      description: Delete an onlineMeeting object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0
+      summary: Delete navigation property onlineMeetings for users
       operationId: user_DeleteOnlineMeeting
       parameters:
         - name: user-id
@@ -8684,9 +7352,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from users
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: user_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
@@ -8790,15 +7455,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - meetingEndDateTime
-                - meetingEndDateTime desc
-                - meetingStartDateTime
-                - meetingStartDateTime desc
-                - totalParticipantCount
-                - totalParticipantCount desc
               type: string
         - name: $select
           in: query
@@ -8809,12 +7465,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -8825,9 +7475,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -8918,12 +7565,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -8934,9 +7575,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -9041,11 +7679,8 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+      summary: Get attendanceRecords from users
+      description: List of attendance records of an attendance report. Read-only.
       operationId: user.onlineMeeting.attendanceReport_ListAttendanceRecord
       parameters:
         - name: user-id
@@ -9086,21 +7721,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - attendanceIntervals
-                - attendanceIntervals desc
-                - emailAddress
-                - emailAddress desc
-                - identity
-                - identity desc
-                - registrantId
-                - registrantId desc
-                - role
-                - role desc
-                - totalAttendanceInSeconds
-                - totalAttendanceInSeconds desc
               type: string
         - name: $select
           in: query
@@ -9111,14 +7731,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -9129,8 +7741,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9237,14 +7847,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -9255,8 +7857,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9446,9 +8046,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: user_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -9519,9 +8116,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get broadcastRecording for the navigation property onlineMeetings from users
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: user_GetOnlineMeetingsBroadcastRecording
       parameters:
         - name: user-id
@@ -9591,11 +8185,7 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
+      summary: Get meetingAttendanceReport from users
       operationId: user.onlineMeeting_GetMeetingAttendanceReport
       parameters:
         - name: user-id
@@ -9623,12 +8213,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - meetingEndDateTime
-                - meetingStartDateTime
-                - totalParticipantCount
-                - attendanceRecords
               type: string
         - name: $expand
           in: query
@@ -9639,9 +8223,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceRecords
               type: string
       responses:
         2XX:
@@ -9730,11 +8311,8 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+      summary: Get attendanceRecords from users
+      description: List of attendance records of an attendance report. Read-only.
       operationId: user.onlineMeeting.meetingAttendanceReport_ListAttendanceRecord
       parameters:
         - name: user-id
@@ -9767,21 +8345,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - attendanceIntervals
-                - attendanceIntervals desc
-                - emailAddress
-                - emailAddress desc
-                - identity
-                - identity desc
-                - registrantId
-                - registrantId desc
-                - role
-                - role desc
-                - totalAttendanceInSeconds
-                - totalAttendanceInSeconds desc
               type: string
         - name: $select
           in: query
@@ -9792,14 +8355,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -9810,8 +8365,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9902,14 +8455,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - attendanceIntervals
-                - emailAddress
-                - identity
-                - registrantId
-                - role
-                - totalAttendanceInSeconds
               type: string
         - name: $expand
           in: query
@@ -9920,8 +8465,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10057,9 +8600,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from users
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: user_GetOnlineMeetingsRecording
       parameters:
         - name: user-id
@@ -10129,8 +8669,8 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      summary: Get recordings from users
+      description: The recordings of an online meeting. Read-only.
       operationId: user.onlineMeeting_ListRecording
       parameters:
         - name: user-id
@@ -10163,21 +8703,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - recordingContentUrl
-                - recordingContentUrl desc
               type: string
         - name: $select
           in: query
@@ -10188,14 +8713,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -10206,8 +8723,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10261,11 +8776,8 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
+      summary: Get recordings from users
+      description: The recordings of an online meeting. Read-only.
       operationId: user.onlineMeeting_GetRecording
       parameters:
         - name: user-id
@@ -10301,14 +8813,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -10319,8 +8823,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10547,11 +9049,8 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+      summary: Get registration from users
+      description: The registration that is enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: user.onlineMeeting_GetRegistration
       parameters:
         - name: user-id
@@ -10579,18 +9078,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedRegistrant
-                - description
-                - endDateTime
-                - registrationPageViewCount
-                - registrationPageWebUrl
-                - speakers
-                - startDateTime
-                - subject
-                - registrants
-                - customQuestions
               type: string
         - name: $expand
           in: query
@@ -10601,10 +9088,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - registrants
-                - customQuestions
               type: string
       responses:
         2XX:
@@ -10619,11 +9102,7 @@ paths:
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update meetingRegistration
-      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
+      summary: Update the navigation property registration in users
       operationId: user.onlineMeeting_UpdateRegistration
       parameters:
         - name: user-id
@@ -10662,11 +9141,7 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+      summary: Delete navigation property registration for users
       operationId: user.onlineMeeting_DeleteRegistration
       parameters:
         - name: user-id
@@ -10701,11 +9176,8 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get customRegistrationQuestion
-      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
+      summary: Get customQuestions from users
+      description: Custom registration questions.
       operationId: user.onlineMeeting.registration_ListCustomQuestion
       parameters:
         - name: user-id
@@ -10738,17 +9210,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - answerInputType
-                - answerInputType desc
-                - answerOptions
-                - answerOptions desc
-                - displayName
-                - displayName desc
-                - isRequired
-                - isRequired desc
               type: string
         - name: $select
           in: query
@@ -10759,12 +9220,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - answerInputType
-                - answerOptions
-                - displayName
-                - isRequired
               type: string
         - name: $expand
           in: query
@@ -10775,8 +9230,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10790,11 +9243,7 @@ paths:
     post:
       tags:
         - users.onlineMeeting
-      summary: Create meetingRegistrationQuestion
-      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
+      summary: Create new navigation property to customQuestions for users
       operationId: user.onlineMeeting.registration_CreateCustomQuestion
       parameters:
         - name: user-id
@@ -10834,11 +9283,8 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get customRegistrationQuestion
-      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
+      summary: Get customQuestions from users
+      description: Custom registration questions.
       operationId: user.onlineMeeting.registration_GetCustomQuestion
       parameters:
         - name: user-id
@@ -10874,12 +9320,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - answerInputType
-                - answerOptions
-                - displayName
-                - isRequired
               type: string
         - name: $expand
           in: query
@@ -10890,8 +9330,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10906,11 +9344,7 @@ paths:
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update meetingRegistrationQuestion
-      description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
+      summary: Update the navigation property customQuestions in users
       operationId: user.onlineMeeting.registration_UpdateCustomQuestion
       parameters:
         - name: user-id
@@ -10957,11 +9391,7 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete meetingRegistrationQuestion
-      description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
+      summary: Delete navigation property customQuestions for users
       operationId: user.onlineMeeting.registration_DeleteCustomQuestion
       parameters:
         - name: user-id
@@ -11068,11 +9498,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - joinWebUrl
-                - joinWebUrl desc
               type: string
         - name: $select
           in: query
@@ -11083,9 +9508,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - joinWebUrl
               type: string
         - name: $expand
           in: query
@@ -11096,8 +9518,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11188,9 +9608,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - joinWebUrl
               type: string
         - name: $expand
           in: query
@@ -11201,8 +9618,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11337,11 +9752,8 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: List transcripts
-      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API doesn''t support getting call transcripts from channel meetings. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
+      summary: Get transcripts from users
+      description: The transcripts of an online meeting. Read-only.
       operationId: user.onlineMeeting_ListTranscript
       parameters:
         - name: user-id
@@ -11374,23 +9786,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - content
-                - content desc
-                - createdDateTime
-                - createdDateTime desc
-                - meetingId
-                - meetingId desc
-                - meetingOrganizer
-                - meetingOrganizer desc
-                - meetingOrganizerId
-                - meetingOrganizerId desc
-                - metadataContent
-                - metadataContent desc
-                - transcriptContentUrl
-                - transcriptContentUrl desc
               type: string
         - name: $select
           in: query
@@ -11401,15 +9796,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - metadataContent
-                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -11420,8 +9806,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11475,11 +9859,8 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
+      summary: Get transcripts from users
+      description: The transcripts of an online meeting. Read-only.
       operationId: user.onlineMeeting_GetTranscript
       parameters:
         - name: user-id
@@ -11515,15 +9896,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - content
-                - createdDateTime
-                - meetingId
-                - meetingOrganizer
-                - meetingOrganizerId
-                - metadataContent
-                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -11534,8 +9906,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11642,9 +10012,6 @@ paths:
         - users.onlineMeeting
       summary: Get content for the navigation property transcripts from users
       description: The content of the transcript. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetTranscriptsContent
       parameters:
         - name: user-id
@@ -11737,9 +10104,6 @@ paths:
         - users.onlineMeeting
       summary: Get metadataContent for the navigation property transcripts from users
       description: The time-aligned metadata of the utterances in the transcript. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetTranscriptsMetadataContent
       parameters:
         - name: user-id
@@ -11885,49 +10249,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowAttendeeToEnableCamera
-                - allowAttendeeToEnableMic
-                - allowedPresenters
-                - allowMeetingChat
-                - allowParticipantsToChangeName
-                - allowRecording
-                - allowTeamworkReactions
-                - allowTranscription
-                - anonymizeIdentityForRoles
-                - audioConferencing
-                - chatInfo
-                - chatRestrictions
-                - isEndToEndEncryptionEnabled
-                - isEntryExitAnnounced
-                - joinInformation
-                - joinMeetingIdSettings
-                - joinWebUrl
-                - lobbyBypassSettings
-                - recordAutomatically
-                - shareMeetingChatHistoryDefault
-                - subject
-                - videoTeleconferenceId
-                - watermarkProtection
-                - alternativeRecording
-                - attendeeReport
-                - broadcastRecording
-                - broadcastSettings
-                - capabilities
-                - creationDateTime
-                - endDateTime
-                - externalId
-                - isBroadcast
-                - joinUrl
-                - participants
-                - recording
-                - startDateTime
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
         - name: $expand
           in: query
@@ -11938,13 +10259,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attendanceReports
-                - meetingAttendanceReport
-                - recordings
-                - registration
-                - transcripts
               type: string
       responses:
         2XX:
@@ -11959,11 +10273,7 @@ paths:
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update onlineMeeting
-      description: Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0
+      summary: Update the navigation property onlineMeetings in users
       operationId: user.onlineMeeting_UpdateGraphBPreJoinWebUrl
       parameters:
         - name: user-id
@@ -12002,11 +10312,7 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete onlineMeeting
-      description: Delete an onlineMeeting object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0
+      summary: Delete navigation property onlineMeetings for users
       operationId: user.onlineMeeting_DeleteGraphBPreJoinWebUrl
       parameters:
         - name: user-id
@@ -12063,11 +10369,7 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence
-      description: Get a user's presence information.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+      summary: Get presence from users
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -12087,12 +10389,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activity
-                - availability
-                - outOfOfficeSettings
-                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -12103,8 +10399,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -12429,89 +10723,71 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.callRecords.smsLogRow:
-      title: smsLogRow
-      type: object
-      properties:
-        callCharge:
-          type: number
-          description: Amount of money or cost of the SMS that is charged.
-          format: decimal
-          nullable: true
-        currency:
-          type: string
-          description: 'Currency used to calculate the cost of the call. For details, see ISO 4217.'
-          nullable: true
-        destinationContext:
-          type: string
-          description: Indicates whether the SMS was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
-          nullable: true
-        destinationName:
-          type: string
-          description: Country or region of a phone number that received the SMS.
-          nullable: true
-        destinationNumber:
-          type: string
-          description: 'Partially obfuscated phone number that received the SMS. For details, see E.164.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier (GUID) for the SMS.
-          nullable: true
-        licenseCapability:
-          type: string
-          description: The license used for the SMS.
-          nullable: true
-        otherPartyCountryCode:
-          type: string
-          description: 'For an outbound SMS, the country code of the receiver; otherwise (inbound SMS) the country code of the sender. For details, see ISO 3166-1 alpha-2.'
-          nullable: true
-        sentDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The date and time when the SMS was sent.
-          format: date-time
-          nullable: true
-        smsId:
-          type: string
-          description: SMS identifier. Not guaranteed to be unique.
-          nullable: true
-        smsType:
-          type: string
-          description: Type of SMS such as outbound or inbound.
-          nullable: true
-        smsUnits:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Number of SMS units sent/received.
-          format: int32
-          nullable: true
-        sourceNumber:
-          type: string
-          description: 'Partially obfuscated phone number that sent the SMS. For details, see E.164.'
-          nullable: true
-        tenantCountryCode:
-          type: string
-          description: 'Country code of the tenant. For details, see ISO 3166-1 alpha-2.'
-          nullable: true
-        userCountryCode:
-          type: string
-          description: 'Country code of the user. For details, see ISO 3166-1 alpha-2.'
-          nullable: true
-        userDisplayName:
-          type: string
-          description: Display name of the user.
-          nullable: true
-        userId:
-          type: string
-          description: The unique identifier (GUID) of the user in Microsoft Entra ID.
-          nullable: true
-        userPrincipalName:
-          type: string
-          description: 'The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
-          nullable: true
-      additionalProperties:
-        type: object
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.callRecords.callLogRow'
+        - title: smsLogRow
+          type: object
+          properties:
+            callCharge:
+              type: number
+              description: Amount of money or cost of the SMS that is charged.
+              format: decimal
+              nullable: true
+            currency:
+              type: string
+              description: 'Currency used to calculate the cost of the call. For details, see ISO 4217.'
+              nullable: true
+            destinationContext:
+              type: string
+              description: Indicates whether the SMS was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
+              nullable: true
+            destinationName:
+              type: string
+              description: Country or region of a phone number that received the SMS.
+              nullable: true
+            destinationNumber:
+              type: string
+              description: 'Partially obfuscated phone number that received the SMS. For details, see E.164.'
+              nullable: true
+            licenseCapability:
+              type: string
+              description: The license used for the SMS.
+              nullable: true
+            sentDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the SMS was sent.
+              format: date-time
+              nullable: true
+            smsId:
+              type: string
+              description: SMS identifier. Not guaranteed to be unique.
+              nullable: true
+            smsType:
+              type: string
+              description: Type of SMS such as outbound or inbound.
+              nullable: true
+            smsUnits:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of SMS units sent/received.
+              format: int32
+              nullable: true
+            sourceNumber:
+              type: string
+              description: 'Partially obfuscated phone number that sent the SMS. For details, see E.164.'
+              nullable: true
+            tenantCountryCode:
+              type: string
+              description: 'Country code of the tenant. For details, see ISO 3166-1 alpha-2.'
+              nullable: true
+            userCountryCode:
+              type: string
+              description: 'Country code of the user. For details, see ISO 3166-1 alpha-2.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.call:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13064,7 +11340,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting end time in UTC.
+              description: The meeting end time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             externalId:
@@ -13077,6 +11353,10 @@ components:
             joinUrl:
               type: string
               nullable: true
+            meetingTemplateId:
+              type: string
+              description: The ID of the meeting template.
+              nullable: true
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
             recording:
@@ -13086,7 +11366,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC.
+              description: The meeting start time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             meetingAttendanceReport:
@@ -13186,9 +11466,11 @@ components:
       properties:
         phoneNumber:
           type: string
+          description: The phone number of the external attendee. Required.
           nullable: true
         timeZone:
           type: string
+          description: The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
           nullable: true
       additionalProperties:
         type: object
@@ -13457,8 +11739,13 @@ components:
         - title: participantBase
           type: object
           properties:
+            administrativeUnitInfos:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecords.administrativeUnitInfo'
+              description: List of administrativeUnitInfo of the call participant.
             identity:
-              $ref: '#/components/schemas/microsoft.graph.callRecords.userIdentity'
+              $ref: '#/components/schemas/microsoft.graph.communicationsIdentitySet'
           additionalProperties:
             type: object
     microsoft.graph.callRecords.endpoint:
@@ -13511,6 +11798,31 @@ components:
         - unblocked
         - unknownFutureValue
       type: string
+    microsoft.graph.callRecords.callLogRow:
+      title: callLogRow
+      type: object
+      properties:
+        administrativeUnitInfos:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.administrativeUnitInfo'
+        id:
+          type: string
+          nullable: true
+        otherPartyCountryCode:
+          type: string
+          nullable: true
+        userDisplayName:
+          type: string
+          nullable: true
+        userId:
+          type: string
+          nullable: true
+        userPrincipalName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.callOptions:
       title: callOptions
       type: object
@@ -14055,11 +12367,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -14372,15 +12684,38 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.callRecords.userIdentity:
+    microsoft.graph.callRecords.administrativeUnitInfo:
+      title: administrativeUnitInfo
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the administrative unit.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.communicationsIdentitySet:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identity'
-        - title: userIdentity
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: communicationsIdentitySet
           type: object
           properties:
-            userPrincipalName:
-              type: string
-              nullable: true
+            applicationInstance:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            assertedIdentity:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            azureCommunicationServicesUser:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            encrypted:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            endpointType:
+              $ref: '#/components/schemas/microsoft.graph.endpointType'
+            guest:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            onPremises:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            phone:
+              $ref: '#/components/schemas/microsoft.graph.identity'
           additionalProperties:
             type: object
     microsoft.graph.callRecords.userAgent:
@@ -14659,7 +12994,7 @@ components:
         averageAudioNetworkJitter:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
+          description: 'Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
           format: duration
           nullable: true
         averageBandwidthEstimate:
@@ -14676,7 +13011,7 @@ components:
         averageJitter:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
+          description: 'Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
           format: duration
           nullable: true
         averagePacketLossRate:
@@ -14697,7 +13032,7 @@ components:
         averageRoundTripTime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Average network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
+          description: 'Average network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
           format: duration
           nullable: true
         averageVideoFrameLossPercentage:
@@ -14712,7 +13047,7 @@ components:
           nullable: true
         averageVideoPacketLossRate:
           type: number
-          description: 'Average fraction of packets lost, as specified in [RFC 3550][], computed over the duration of the session.'
+          description: 'Average fraction of packets lost, as specified in RFC 3550, computed over the duration of the session.'
           format: float
           nullable: true
         endDateTime:
@@ -14738,13 +13073,13 @@ components:
         maxAudioNetworkJitter:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in [ISO 8601][] format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
+          description: 'Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in ISO 8601 format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
           format: duration
           nullable: true
         maxJitter:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Maximum jitter for the stream computed as specified in RFC 3550, denoted in [ISO 8601][] format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
+          description: 'Maximum jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
           format: duration
           nullable: true
         maxPacketLossRate:
@@ -14760,7 +13095,7 @@ components:
         maxRoundTripTime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
+          description: 'Maximum network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as ''PT1S'', where ''P'' is the duration designator, ''T'' is the time designator, and ''S'' is the second designator.'
           format: duration
           nullable: true
         packetUtilization:
@@ -14921,6 +13256,7 @@ components:
       properties:
         allowTextOnly:
           type: boolean
+          description: Indicates whether only text is allowed in the meeting chat. Optional.
           nullable: true
       additionalProperties:
         type: object
@@ -15074,7 +13410,7 @@ components:
         roundTripTime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.'
+          description: 'The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in ISO 8601 format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.'
           format: duration
           nullable: true
       additionalProperties:

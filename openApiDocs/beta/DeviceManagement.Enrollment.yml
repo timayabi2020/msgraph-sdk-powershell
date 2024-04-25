@@ -28,51 +28,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountId
-                - accountId desc
-                - configureWifi
-                - configureWifi desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - enrolledDeviceCount
-                - enrolledDeviceCount desc
-                - enrollmentMode
-                - enrollmentMode desc
-                - enrollmentTokenType
-                - enrollmentTokenType desc
-                - enrollmentTokenUsageCount
-                - enrollmentTokenUsageCount desc
-                - isTeamsDeviceProfile
-                - isTeamsDeviceProfile desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - qrCodeContent
-                - qrCodeContent desc
-                - qrCodeImage
-                - qrCodeImage desc
-                - roleScopeTagIds
-                - roleScopeTagIds desc
-                - tokenCreationDateTime
-                - tokenCreationDateTime desc
-                - tokenExpirationDateTime
-                - tokenExpirationDateTime desc
-                - tokenValue
-                - tokenValue desc
-                - wifiHidden
-                - wifiHidden desc
-                - wifiPassword
-                - wifiPassword desc
-                - wifiSecurityType
-                - wifiSecurityType desc
-                - wifiSsid
-                - wifiSsid desc
               type: string
         - name: $select
           in: query
@@ -83,29 +38,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountId
-                - configureWifi
-                - createdDateTime
-                - description
-                - displayName
-                - enrolledDeviceCount
-                - enrollmentMode
-                - enrollmentTokenType
-                - enrollmentTokenUsageCount
-                - isTeamsDeviceProfile
-                - lastModifiedDateTime
-                - qrCodeContent
-                - qrCodeImage
-                - roleScopeTagIds
-                - tokenCreationDateTime
-                - tokenExpirationDateTime
-                - tokenValue
-                - wifiHidden
-                - wifiPassword
-                - wifiSecurityType
-                - wifiSsid
               type: string
         - name: $expand
           in: query
@@ -116,8 +48,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -175,29 +105,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountId
-                - configureWifi
-                - createdDateTime
-                - description
-                - displayName
-                - enrolledDeviceCount
-                - enrollmentMode
-                - enrollmentTokenType
-                - enrollmentTokenUsageCount
-                - isTeamsDeviceProfile
-                - lastModifiedDateTime
-                - qrCodeContent
-                - qrCodeImage
-                - roleScopeTagIds
-                - tokenCreationDateTime
-                - tokenExpirationDateTime
-                - tokenValue
-                - wifiHidden
-                - wifiPassword
-                - wifiSecurityType
-                - wifiSsid
               type: string
         - name: $expand
           in: query
@@ -208,8 +115,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -314,29 +219,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountId
-                - accountId desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - enrolledDeviceCount
-                - enrolledDeviceCount desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - qrCodeContent
-                - qrCodeContent desc
-                - qrCodeImage
-                - qrCodeImage desc
-                - tokenExpirationDateTime
-                - tokenExpirationDateTime desc
-                - tokenValue
-                - tokenValue desc
               type: string
         - name: $select
           in: query
@@ -347,18 +229,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountId
-                - createdDateTime
-                - description
-                - displayName
-                - enrolledDeviceCount
-                - lastModifiedDateTime
-                - qrCodeContent
-                - qrCodeImage
-                - tokenExpirationDateTime
-                - tokenValue
               type: string
         - name: $expand
           in: query
@@ -369,8 +239,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -428,18 +296,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountId
-                - createdDateTime
-                - description
-                - displayName
-                - enrolledDeviceCount
-                - lastModifiedDateTime
-                - qrCodeContent
-                - qrCodeImage
-                - tokenExpirationDateTime
-                - tokenValue
               type: string
         - name: $expand
           in: query
@@ -450,8 +306,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -556,25 +410,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - availableEnrollmentTypeOptions
-                - availableEnrollmentTypeOptions desc
-                - createdDateTime
-                - createdDateTime desc
-                - defaultEnrollmentType
-                - defaultEnrollmentType desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - platform
-                - platform desc
-                - priority
-                - priority desc
               type: string
         - name: $select
           in: query
@@ -585,17 +420,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - availableEnrollmentTypeOptions
-                - createdDateTime
-                - defaultEnrollmentType
-                - description
-                - displayName
-                - lastModifiedDateTime
-                - platform
-                - priority
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -606,9 +430,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -666,17 +487,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - availableEnrollmentTypeOptions
-                - createdDateTime
-                - defaultEnrollmentType
-                - description
-                - displayName
-                - lastModifiedDateTime
-                - platform
-                - priority
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -687,9 +497,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -788,11 +595,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - target
-                - target desc
               type: string
         - name: $select
           in: query
@@ -803,9 +605,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -816,8 +615,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -892,9 +689,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -905,8 +699,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1049,61 +841,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - accountSetupDuration
-                - accountSetupDuration desc
-                - accountSetupStatus
-                - accountSetupStatus desc
-                - deploymentDuration
-                - deploymentDuration desc
-                - deploymentEndDateTime
-                - deploymentEndDateTime desc
-                - deploymentStartDateTime
-                - deploymentStartDateTime desc
-                - deploymentState
-                - deploymentState desc
-                - deploymentTotalDuration
-                - deploymentTotalDuration desc
-                - deviceId
-                - deviceId desc
-                - devicePreparationDuration
-                - devicePreparationDuration desc
-                - deviceRegisteredDateTime
-                - deviceRegisteredDateTime desc
-                - deviceSerialNumber
-                - deviceSerialNumber desc
-                - deviceSetupDuration
-                - deviceSetupDuration desc
-                - deviceSetupStatus
-                - deviceSetupStatus desc
-                - enrollmentFailureDetails
-                - enrollmentFailureDetails desc
-                - enrollmentStartDateTime
-                - enrollmentStartDateTime desc
-                - enrollmentState
-                - enrollmentState desc
-                - enrollmentType
-                - enrollmentType desc
-                - eventDateTime
-                - eventDateTime desc
-                - managedDeviceName
-                - managedDeviceName desc
-                - osVersion
-                - osVersion desc
-                - targetedAppCount
-                - targetedAppCount desc
-                - targetedPolicyCount
-                - targetedPolicyCount desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - windows10EnrollmentCompletionPageConfigurationDisplayName
-                - windows10EnrollmentCompletionPageConfigurationDisplayName desc
-                - windows10EnrollmentCompletionPageConfigurationId
-                - windows10EnrollmentCompletionPageConfigurationId desc
-                - windowsAutopilotDeploymentProfileDisplayName
-                - windowsAutopilotDeploymentProfileDisplayName desc
               type: string
         - name: $select
           in: query
@@ -1114,35 +851,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountSetupDuration
-                - accountSetupStatus
-                - deploymentDuration
-                - deploymentEndDateTime
-                - deploymentStartDateTime
-                - deploymentState
-                - deploymentTotalDuration
-                - deviceId
-                - devicePreparationDuration
-                - deviceRegisteredDateTime
-                - deviceSerialNumber
-                - deviceSetupDuration
-                - deviceSetupStatus
-                - enrollmentFailureDetails
-                - enrollmentStartDateTime
-                - enrollmentState
-                - enrollmentType
-                - eventDateTime
-                - managedDeviceName
-                - osVersion
-                - targetedAppCount
-                - targetedPolicyCount
-                - userPrincipalName
-                - windows10EnrollmentCompletionPageConfigurationDisplayName
-                - windows10EnrollmentCompletionPageConfigurationId
-                - windowsAutopilotDeploymentProfileDisplayName
-                - policyStatusDetails
               type: string
         - name: $expand
           in: query
@@ -1153,9 +861,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - policyStatusDetails
               type: string
       responses:
         2XX:
@@ -1213,35 +918,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - accountSetupDuration
-                - accountSetupStatus
-                - deploymentDuration
-                - deploymentEndDateTime
-                - deploymentStartDateTime
-                - deploymentState
-                - deploymentTotalDuration
-                - deviceId
-                - devicePreparationDuration
-                - deviceRegisteredDateTime
-                - deviceSerialNumber
-                - deviceSetupDuration
-                - deviceSetupStatus
-                - enrollmentFailureDetails
-                - enrollmentStartDateTime
-                - enrollmentState
-                - enrollmentType
-                - eventDateTime
-                - managedDeviceName
-                - osVersion
-                - targetedAppCount
-                - targetedPolicyCount
-                - userPrincipalName
-                - windows10EnrollmentCompletionPageConfigurationDisplayName
-                - windows10EnrollmentCompletionPageConfigurationId
-                - windowsAutopilotDeploymentProfileDisplayName
-                - policyStatusDetails
               type: string
         - name: $expand
           in: query
@@ -1252,9 +928,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - policyStatusDetails
               type: string
       responses:
         2XX:
@@ -1353,21 +1026,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - complianceStatus
-                - complianceStatus desc
-                - displayName
-                - displayName desc
-                - errorCode
-                - errorCode desc
-                - lastReportedDateTime
-                - lastReportedDateTime desc
-                - policyType
-                - policyType desc
-                - trackedOnEnrollmentStatus
-                - trackedOnEnrollmentStatus desc
               type: string
         - name: $select
           in: query
@@ -1378,14 +1036,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - complianceStatus
-                - displayName
-                - errorCode
-                - lastReportedDateTime
-                - policyType
-                - trackedOnEnrollmentStatus
               type: string
         - name: $expand
           in: query
@@ -1396,8 +1046,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1472,14 +1120,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - complianceStatus
-                - displayName
-                - errorCode
-                - lastReportedDateTime
-                - policyType
-                - trackedOnEnrollmentStatus
               type: string
         - name: $expand
           in: query
@@ -1490,8 +1130,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1629,12 +1267,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - enabled
-                - excludedGroups
-                - includedGroups
-                - overrideDefaultRule
               type: string
         - name: $expand
           in: query
@@ -1645,8 +1277,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1720,33 +1350,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appleIdentifier
-                - appleIdentifier desc
-                - dataSharingConsentGranted
-                - dataSharingConsentGranted desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - lastSuccessfulSyncDateTime
-                - lastSuccessfulSyncDateTime desc
-                - lastSyncErrorCode
-                - lastSyncErrorCode desc
-                - lastSyncTriggeredDateTime
-                - lastSyncTriggeredDateTime desc
-                - roleScopeTagIds
-                - roleScopeTagIds desc
-                - shareTokenWithSchoolDataSyncService
-                - shareTokenWithSchoolDataSyncService desc
-                - syncedDeviceCount
-                - syncedDeviceCount desc
-                - tokenExpirationDateTime
-                - tokenExpirationDateTime desc
-                - tokenName
-                - tokenName desc
-                - tokenType
-                - tokenType desc
               type: string
         - name: $select
           in: query
@@ -1757,24 +1360,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appleIdentifier
-                - dataSharingConsentGranted
-                - lastModifiedDateTime
-                - lastSuccessfulSyncDateTime
-                - lastSyncErrorCode
-                - lastSyncTriggeredDateTime
-                - roleScopeTagIds
-                - shareTokenWithSchoolDataSyncService
-                - syncedDeviceCount
-                - tokenExpirationDateTime
-                - tokenName
-                - tokenType
-                - defaultIosEnrollmentProfile
-                - defaultMacOsEnrollmentProfile
-                - enrollmentProfiles
-                - importedAppleDeviceIdentities
               type: string
         - name: $expand
           in: query
@@ -1785,12 +1370,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - defaultIosEnrollmentProfile
-                - defaultMacOsEnrollmentProfile
-                - enrollmentProfiles
-                - importedAppleDeviceIdentities
               type: string
       responses:
         2XX:
@@ -1848,24 +1427,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appleIdentifier
-                - dataSharingConsentGranted
-                - lastModifiedDateTime
-                - lastSuccessfulSyncDateTime
-                - lastSyncErrorCode
-                - lastSyncTriggeredDateTime
-                - roleScopeTagIds
-                - shareTokenWithSchoolDataSyncService
-                - syncedDeviceCount
-                - tokenExpirationDateTime
-                - tokenName
-                - tokenType
-                - defaultIosEnrollmentProfile
-                - defaultMacOsEnrollmentProfile
-                - enrollmentProfiles
-                - importedAppleDeviceIdentities
               type: string
         - name: $expand
           in: query
@@ -1876,12 +1437,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - defaultIosEnrollmentProfile
-                - defaultMacOsEnrollmentProfile
-                - enrollmentProfiles
-                - importedAppleDeviceIdentities
               type: string
       responses:
         2XX:
@@ -1975,65 +1530,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configurationEndpointUrl
-                - description
-                - displayName
-                - enableAuthenticationViaCompanyPortal
-                - requireCompanyPortalOnSetupAssistantEnrolledDevices
-                - requiresUserAuthentication
-                - appleIdDisabled
-                - applePayDisabled
-                - configurationWebUrl
-                - deviceNameTemplate
-                - diagnosticsDisabled
-                - displayToneSetupDisabled
-                - enabledSkipKeys
-                - enrollmentTimeAzureAdGroupIds
-                - isDefault
-                - isMandatory
-                - locationDisabled
-                - privacyPaneDisabled
-                - profileRemovalDisabled
-                - restoreBlocked
-                - screenTimeScreenDisabled
-                - siriDisabled
-                - supervisedModeEnabled
-                - supportDepartment
-                - supportPhoneNumber
-                - termsAndConditionsDisabled
-                - touchIdDisabled
-                - waitForDeviceConfiguredConfirmation
-                - appearanceScreenDisabled
-                - awaitDeviceConfiguredConfirmation
-                - carrierActivationUrl
-                - companyPortalVppTokenId
-                - deviceToDeviceMigrationDisabled
-                - enableSharedIPad
-                - enableSingleAppEnrollmentMode
-                - expressLanguageScreenDisabled
-                - forceTemporarySession
-                - homeButtonScreenDisabled
-                - iMessageAndFaceTimeScreenDisabled
-                - iTunesPairingMode
-                - managementCertificates
-                - onBoardingScreenDisabled
-                - passCodeDisabled
-                - passcodeLockGracePeriodInSeconds
-                - preferredLanguageScreenDisabled
-                - restoreCompletedScreenDisabled
-                - restoreFromAndroidDisabled
-                - sharedIPadMaximumUserCount
-                - simSetupScreenDisabled
-                - softwareUpdateScreenDisabled
-                - temporarySessionTimeoutInSeconds
-                - updateCompleteScreenDisabled
-                - userlessSharedAadModeEnabled
-                - userSessionTimeoutInSeconds
-                - watchMigrationScreenDisabled
-                - welcomeScreenDisabled
-                - zoomDisabled
               type: string
         - name: $expand
           in: query
@@ -2044,8 +1540,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2082,57 +1576,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configurationEndpointUrl
-                - description
-                - displayName
-                - enableAuthenticationViaCompanyPortal
-                - requireCompanyPortalOnSetupAssistantEnrolledDevices
-                - requiresUserAuthentication
-                - appleIdDisabled
-                - applePayDisabled
-                - configurationWebUrl
-                - deviceNameTemplate
-                - diagnosticsDisabled
-                - displayToneSetupDisabled
-                - enabledSkipKeys
-                - enrollmentTimeAzureAdGroupIds
-                - isDefault
-                - isMandatory
-                - locationDisabled
-                - privacyPaneDisabled
-                - profileRemovalDisabled
-                - restoreBlocked
-                - screenTimeScreenDisabled
-                - siriDisabled
-                - supervisedModeEnabled
-                - supportDepartment
-                - supportPhoneNumber
-                - termsAndConditionsDisabled
-                - touchIdDisabled
-                - waitForDeviceConfiguredConfirmation
-                - accessibilityScreenDisabled
-                - adminAccountFullName
-                - adminAccountPassword
-                - adminAccountUserName
-                - autoAdvanceSetupEnabled
-                - autoUnlockWithWatchDisabled
-                - chooseYourLockScreenDisabled
-                - dontAutoPopulatePrimaryAccountInfo
-                - enableRestrictEditing
-                - fileVaultDisabled
-                - hideAdminAccount
-                - iCloudDiagnosticsDisabled
-                - iCloudStorageDisabled
-                - passCodeDisabled
-                - primaryAccountFullName
-                - primaryAccountUserName
-                - registrationDisabled
-                - requestRequiresNetworkTether
-                - setPrimarySetupAccountAsRegularUser
-                - skipPrimarySetupAccountCreation
-                - zoomDisabled
               type: string
         - name: $expand
           in: query
@@ -2143,8 +1586,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2186,21 +1627,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - configurationEndpointUrl
-                - configurationEndpointUrl desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - enableAuthenticationViaCompanyPortal
-                - enableAuthenticationViaCompanyPortal desc
-                - requireCompanyPortalOnSetupAssistantEnrolledDevices
-                - requireCompanyPortalOnSetupAssistantEnrolledDevices desc
-                - requiresUserAuthentication
-                - requiresUserAuthentication desc
               type: string
         - name: $select
           in: query
@@ -2211,14 +1637,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configurationEndpointUrl
-                - description
-                - displayName
-                - enableAuthenticationViaCompanyPortal
-                - requireCompanyPortalOnSetupAssistantEnrolledDevices
-                - requiresUserAuthentication
               type: string
         - name: $expand
           in: query
@@ -2229,8 +1647,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2305,14 +1721,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configurationEndpointUrl
-                - description
-                - displayName
-                - enableAuthenticationViaCompanyPortal
-                - requireCompanyPortalOnSetupAssistantEnrolledDevices
-                - requiresUserAuthentication
               type: string
         - name: $expand
           in: query
@@ -2323,8 +1731,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2461,31 +1867,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - discoverySource
-                - discoverySource desc
-                - enrollmentState
-                - enrollmentState desc
-                - isDeleted
-                - isDeleted desc
-                - isSupervised
-                - isSupervised desc
-                - lastContactedDateTime
-                - lastContactedDateTime desc
-                - platform
-                - platform desc
-                - requestedEnrollmentProfileAssignmentDateTime
-                - requestedEnrollmentProfileAssignmentDateTime desc
-                - requestedEnrollmentProfileId
-                - requestedEnrollmentProfileId desc
-                - serialNumber
-                - serialNumber desc
               type: string
         - name: $select
           in: query
@@ -2496,19 +1877,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - discoverySource
-                - enrollmentState
-                - isDeleted
-                - isSupervised
-                - lastContactedDateTime
-                - platform
-                - requestedEnrollmentProfileAssignmentDateTime
-                - requestedEnrollmentProfileId
-                - serialNumber
               type: string
         - name: $expand
           in: query
@@ -2519,8 +1887,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2595,19 +1961,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - discoverySource
-                - enrollmentState
-                - isDeleted
-                - isSupervised
-                - lastContactedDateTime
-                - platform
-                - requestedEnrollmentProfileAssignmentDateTime
-                - requestedEnrollmentProfileId
-                - serialNumber
               type: string
         - name: $expand
           in: query
@@ -2618,8 +1971,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2762,25 +2113,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - deviceEnrollmentConfigurationType
-                - deviceEnrollmentConfigurationType desc
-                - displayName
-                - displayName desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - priority
-                - priority desc
-                - roleScopeTagIds
-                - roleScopeTagIds desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -2791,17 +2123,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceEnrollmentConfigurationType
-                - displayName
-                - lastModifiedDateTime
-                - priority
-                - roleScopeTagIds
-                - version
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -2812,9 +2133,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -2872,17 +2190,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceEnrollmentConfigurationType
-                - displayName
-                - lastModifiedDateTime
-                - priority
-                - roleScopeTagIds
-                - version
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -2893,9 +2200,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -2994,15 +2298,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - source
-                - source desc
-                - sourceId
-                - sourceId desc
-                - target
-                - target desc
               type: string
         - name: $select
           in: query
@@ -3013,11 +2308,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - source
-                - sourceId
-                - target
               type: string
         - name: $expand
           in: query
@@ -3028,8 +2318,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3104,11 +2392,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - source
-                - sourceId
-                - target
               type: string
         - name: $expand
           in: query
@@ -3119,8 +2402,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3263,25 +2544,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - enrollmentState
-                - enrollmentState desc
-                - importedDeviceIdentifier
-                - importedDeviceIdentifier desc
-                - importedDeviceIdentityType
-                - importedDeviceIdentityType desc
-                - lastContactedDateTime
-                - lastContactedDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - platform
-                - platform desc
               type: string
         - name: $select
           in: query
@@ -3292,16 +2554,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - enrollmentState
-                - importedDeviceIdentifier
-                - importedDeviceIdentityType
-                - lastContactedDateTime
-                - lastModifiedDateTime
-                - platform
               type: string
         - name: $expand
           in: query
@@ -3312,8 +2564,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3371,16 +2621,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - enrollmentState
-                - importedDeviceIdentifier
-                - importedDeviceIdentityType
-                - lastContactedDateTime
-                - lastModifiedDateTime
-                - platform
               type: string
         - name: $expand
           in: query
@@ -3391,8 +2631,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3497,23 +2735,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - assignedUserPrincipalName
-                - assignedUserPrincipalName desc
-                - groupTag
-                - groupTag desc
-                - hardwareIdentifier
-                - hardwareIdentifier desc
-                - importId
-                - importId desc
-                - productKey
-                - productKey desc
-                - serialNumber
-                - serialNumber desc
-                - state
-                - state desc
               type: string
         - name: $select
           in: query
@@ -3524,15 +2745,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignedUserPrincipalName
-                - groupTag
-                - hardwareIdentifier
-                - importId
-                - productKey
-                - serialNumber
-                - state
               type: string
         - name: $expand
           in: query
@@ -3543,8 +2755,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3602,15 +2812,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - assignedUserPrincipalName
-                - groupTag
-                - hardwareIdentifier
-                - importId
-                - productKey
-                - serialNumber
-                - state
               type: string
         - name: $expand
           in: query
@@ -3621,8 +2822,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3727,27 +2926,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - autoPilotProfileAssigned
-                - autoPilotProfileAssigned desc
-                - autoPilotRegistered
-                - autoPilotRegistered desc
-                - azureAdJoinType
-                - azureAdJoinType desc
-                - azureAdRegistered
-                - azureAdRegistered desc
-                - deviceName
-                - deviceName desc
-                - managedBy
-                - managedBy desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - serialNumber
-                - serialNumber desc
               type: string
         - name: $select
           in: query
@@ -3758,17 +2936,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - autoPilotProfileAssigned
-                - autoPilotRegistered
-                - azureAdJoinType
-                - azureAdRegistered
-                - deviceName
-                - managedBy
-                - manufacturer
-                - model
-                - serialNumber
               type: string
         - name: $expand
           in: query
@@ -3779,8 +2946,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3838,17 +3003,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - autoPilotProfileAssigned
-                - autoPilotRegistered
-                - azureAdJoinType
-                - azureAdRegistered
-                - deviceName
-                - managedBy
-                - manufacturer
-                - model
-                - serialNumber
               type: string
         - name: $expand
           in: query
@@ -3859,8 +3013,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3965,35 +3117,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - deviceNameTemplate
-                - deviceNameTemplate desc
-                - deviceType
-                - deviceType desc
-                - displayName
-                - displayName desc
-                - enableWhiteGlove
-                - enableWhiteGlove desc
-                - enrollmentStatusScreenSettings
-                - enrollmentStatusScreenSettings desc
-                - extractHardwareHash
-                - extractHardwareHash desc
-                - language
-                - language desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - managementServiceAppId
-                - managementServiceAppId desc
-                - outOfBoxExperienceSettings
-                - outOfBoxExperienceSettings desc
-                - roleScopeTagIds
-                - roleScopeTagIds desc
               type: string
         - name: $select
           in: query
@@ -4004,23 +3127,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceNameTemplate
-                - deviceType
-                - displayName
-                - enableWhiteGlove
-                - enrollmentStatusScreenSettings
-                - extractHardwareHash
-                - language
-                - lastModifiedDateTime
-                - managementServiceAppId
-                - outOfBoxExperienceSettings
-                - roleScopeTagIds
-                - assignedDevices
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -4031,10 +3137,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedDevices
-                - assignments
               type: string
       responses:
         2XX:
@@ -4092,23 +3194,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceNameTemplate
-                - deviceType
-                - displayName
-                - enableWhiteGlove
-                - enrollmentStatusScreenSettings
-                - extractHardwareHash
-                - language
-                - lastModifiedDateTime
-                - managementServiceAppId
-                - outOfBoxExperienceSettings
-                - roleScopeTagIds
-                - assignedDevices
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -4119,10 +3204,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedDevices
-                - assignments
               type: string
       responses:
         2XX:
@@ -4221,61 +3302,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - addressableUserName
-                - addressableUserName desc
-                - azureActiveDirectoryDeviceId
-                - azureActiveDirectoryDeviceId desc
-                - azureAdDeviceId
-                - azureAdDeviceId desc
-                - deploymentProfileAssignedDateTime
-                - deploymentProfileAssignedDateTime desc
-                - deploymentProfileAssignmentDetailedStatus
-                - deploymentProfileAssignmentDetailedStatus desc
-                - deploymentProfileAssignmentStatus
-                - deploymentProfileAssignmentStatus desc
-                - deviceAccountPassword
-                - deviceAccountPassword desc
-                - deviceAccountUpn
-                - deviceAccountUpn desc
-                - deviceFriendlyName
-                - deviceFriendlyName desc
-                - displayName
-                - displayName desc
-                - enrollmentState
-                - enrollmentState desc
-                - groupTag
-                - groupTag desc
-                - lastContactedDateTime
-                - lastContactedDateTime desc
-                - managedDeviceId
-                - managedDeviceId desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - productKey
-                - productKey desc
-                - purchaseOrderIdentifier
-                - purchaseOrderIdentifier desc
-                - remediationState
-                - remediationState desc
-                - remediationStateLastModifiedDateTime
-                - remediationStateLastModifiedDateTime desc
-                - resourceName
-                - resourceName desc
-                - serialNumber
-                - serialNumber desc
-                - skuNumber
-                - skuNumber desc
-                - systemFamily
-                - systemFamily desc
-                - userlessEnrollmentStatus
-                - userlessEnrollmentStatus desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -4286,36 +3312,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addressableUserName
-                - azureActiveDirectoryDeviceId
-                - azureAdDeviceId
-                - deploymentProfileAssignedDateTime
-                - deploymentProfileAssignmentDetailedStatus
-                - deploymentProfileAssignmentStatus
-                - deviceAccountPassword
-                - deviceAccountUpn
-                - deviceFriendlyName
-                - displayName
-                - enrollmentState
-                - groupTag
-                - lastContactedDateTime
-                - managedDeviceId
-                - manufacturer
-                - model
-                - productKey
-                - purchaseOrderIdentifier
-                - remediationState
-                - remediationStateLastModifiedDateTime
-                - resourceName
-                - serialNumber
-                - skuNumber
-                - systemFamily
-                - userlessEnrollmentStatus
-                - userPrincipalName
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
         - name: $expand
           in: query
@@ -4326,10 +3322,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
       responses:
         2XX:
@@ -4404,36 +3396,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addressableUserName
-                - azureActiveDirectoryDeviceId
-                - azureAdDeviceId
-                - deploymentProfileAssignedDateTime
-                - deploymentProfileAssignmentDetailedStatus
-                - deploymentProfileAssignmentStatus
-                - deviceAccountPassword
-                - deviceAccountUpn
-                - deviceFriendlyName
-                - displayName
-                - enrollmentState
-                - groupTag
-                - lastContactedDateTime
-                - managedDeviceId
-                - manufacturer
-                - model
-                - productKey
-                - purchaseOrderIdentifier
-                - remediationState
-                - remediationStateLastModifiedDateTime
-                - resourceName
-                - serialNumber
-                - skuNumber
-                - systemFamily
-                - userlessEnrollmentStatus
-                - userPrincipalName
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
         - name: $expand
           in: query
@@ -4444,10 +3406,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
       responses:
         2XX:
@@ -4565,23 +3523,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceNameTemplate
-                - deviceType
-                - displayName
-                - enableWhiteGlove
-                - enrollmentStatusScreenSettings
-                - extractHardwareHash
-                - language
-                - lastModifiedDateTime
-                - managementServiceAppId
-                - outOfBoxExperienceSettings
-                - roleScopeTagIds
-                - assignedDevices
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -4592,10 +3533,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedDevices
-                - assignments
               type: string
       responses:
         2XX:
@@ -4640,23 +3577,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceNameTemplate
-                - deviceType
-                - displayName
-                - enableWhiteGlove
-                - enrollmentStatusScreenSettings
-                - extractHardwareHash
-                - language
-                - lastModifiedDateTime
-                - managementServiceAppId
-                - outOfBoxExperienceSettings
-                - roleScopeTagIds
-                - assignedDevices
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -4667,10 +3587,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedDevices
-                - assignments
               type: string
       responses:
         2XX:
@@ -4734,15 +3650,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - source
-                - source desc
-                - sourceId
-                - sourceId desc
-                - target
-                - target desc
               type: string
         - name: $select
           in: query
@@ -4753,11 +3660,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - source
-                - sourceId
-                - target
               type: string
         - name: $expand
           in: query
@@ -4768,8 +3670,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4844,11 +3744,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - source
-                - sourceId
-                - target
               type: string
         - name: $expand
           in: query
@@ -4859,8 +3754,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5003,61 +3896,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - addressableUserName
-                - addressableUserName desc
-                - azureActiveDirectoryDeviceId
-                - azureActiveDirectoryDeviceId desc
-                - azureAdDeviceId
-                - azureAdDeviceId desc
-                - deploymentProfileAssignedDateTime
-                - deploymentProfileAssignedDateTime desc
-                - deploymentProfileAssignmentDetailedStatus
-                - deploymentProfileAssignmentDetailedStatus desc
-                - deploymentProfileAssignmentStatus
-                - deploymentProfileAssignmentStatus desc
-                - deviceAccountPassword
-                - deviceAccountPassword desc
-                - deviceAccountUpn
-                - deviceAccountUpn desc
-                - deviceFriendlyName
-                - deviceFriendlyName desc
-                - displayName
-                - displayName desc
-                - enrollmentState
-                - enrollmentState desc
-                - groupTag
-                - groupTag desc
-                - lastContactedDateTime
-                - lastContactedDateTime desc
-                - managedDeviceId
-                - managedDeviceId desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - productKey
-                - productKey desc
-                - purchaseOrderIdentifier
-                - purchaseOrderIdentifier desc
-                - remediationState
-                - remediationState desc
-                - remediationStateLastModifiedDateTime
-                - remediationStateLastModifiedDateTime desc
-                - resourceName
-                - resourceName desc
-                - serialNumber
-                - serialNumber desc
-                - skuNumber
-                - skuNumber desc
-                - systemFamily
-                - systemFamily desc
-                - userlessEnrollmentStatus
-                - userlessEnrollmentStatus desc
-                - userPrincipalName
-                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -5068,36 +3906,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addressableUserName
-                - azureActiveDirectoryDeviceId
-                - azureAdDeviceId
-                - deploymentProfileAssignedDateTime
-                - deploymentProfileAssignmentDetailedStatus
-                - deploymentProfileAssignmentStatus
-                - deviceAccountPassword
-                - deviceAccountUpn
-                - deviceFriendlyName
-                - displayName
-                - enrollmentState
-                - groupTag
-                - lastContactedDateTime
-                - managedDeviceId
-                - manufacturer
-                - model
-                - productKey
-                - purchaseOrderIdentifier
-                - remediationState
-                - remediationStateLastModifiedDateTime
-                - resourceName
-                - serialNumber
-                - skuNumber
-                - systemFamily
-                - userlessEnrollmentStatus
-                - userPrincipalName
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
         - name: $expand
           in: query
@@ -5108,10 +3916,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
       responses:
         2XX:
@@ -5169,36 +3973,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - addressableUserName
-                - azureActiveDirectoryDeviceId
-                - azureAdDeviceId
-                - deploymentProfileAssignedDateTime
-                - deploymentProfileAssignmentDetailedStatus
-                - deploymentProfileAssignmentStatus
-                - deviceAccountPassword
-                - deviceAccountUpn
-                - deviceFriendlyName
-                - displayName
-                - enrollmentState
-                - groupTag
-                - lastContactedDateTime
-                - managedDeviceId
-                - manufacturer
-                - model
-                - productKey
-                - purchaseOrderIdentifier
-                - remediationState
-                - remediationStateLastModifiedDateTime
-                - resourceName
-                - serialNumber
-                - skuNumber
-                - systemFamily
-                - userlessEnrollmentStatus
-                - userPrincipalName
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
         - name: $expand
           in: query
@@ -5209,10 +3983,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - deploymentProfile
-                - intendedDeploymentProfile
               type: string
       responses:
         2XX:
@@ -5306,23 +4076,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceNameTemplate
-                - deviceType
-                - displayName
-                - enableWhiteGlove
-                - enrollmentStatusScreenSettings
-                - extractHardwareHash
-                - language
-                - lastModifiedDateTime
-                - managementServiceAppId
-                - outOfBoxExperienceSettings
-                - roleScopeTagIds
-                - assignedDevices
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -5333,10 +4086,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedDevices
-                - assignments
               type: string
       responses:
         2XX:
@@ -5373,23 +4122,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - description
-                - deviceNameTemplate
-                - deviceType
-                - displayName
-                - enableWhiteGlove
-                - enrollmentStatusScreenSettings
-                - extractHardwareHash
-                - language
-                - lastModifiedDateTime
-                - managementServiceAppId
-                - outOfBoxExperienceSettings
-                - roleScopeTagIds
-                - assignedDevices
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -5400,10 +4132,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignedDevices
-                - assignments
               type: string
       responses:
         2XX:
@@ -5446,11 +4174,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - lastManualSyncTriggerDateTime
-                - lastSyncDateTime
-                - syncStatus
               type: string
         - name: $expand
           in: query
@@ -5461,8 +4184,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5536,29 +4257,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - deployableContentDisplayName
-                - deployableContentDisplayName desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - endOfSupportDate
-                - endOfSupportDate desc
-                - featureUpdateVersion
-                - featureUpdateVersion desc
-                - installLatestWindows10OnWindows11IneligibleDevice
-                - installLatestWindows10OnWindows11IneligibleDevice desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - roleScopeTagIds
-                - roleScopeTagIds desc
-                - rolloutSettings
-                - rolloutSettings desc
               type: string
         - name: $select
           in: query
@@ -5569,19 +4267,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - deployableContentDisplayName
-                - description
-                - displayName
-                - endOfSupportDate
-                - featureUpdateVersion
-                - installLatestWindows10OnWindows11IneligibleDevice
-                - lastModifiedDateTime
-                - roleScopeTagIds
-                - rolloutSettings
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -5592,9 +4277,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -5652,19 +4334,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - deployableContentDisplayName
-                - description
-                - displayName
-                - endOfSupportDate
-                - featureUpdateVersion
-                - installLatestWindows10OnWindows11IneligibleDevice
-                - lastModifiedDateTime
-                - roleScopeTagIds
-                - rolloutSettings
-                - assignments
               type: string
         - name: $expand
           in: query
@@ -5675,9 +4344,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - assignments
               type: string
       responses:
         2XX:
@@ -5776,11 +4442,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - target
-                - target desc
               type: string
         - name: $select
           in: query
@@ -5791,9 +4452,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -5804,8 +4462,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5880,9 +4536,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - target
               type: string
         - name: $expand
           in: query
@@ -5893,8 +4546,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6031,13 +4682,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - cloudPC
-                - deviceManagement
-                - directory
-                - enterpriseApps
-                - entitlementManagement
-                - exchange
               type: string
         - name: $expand
           in: query
@@ -6048,14 +4692,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - cloudPC
-                - deviceManagement
-                - directory
-                - enterpriseApps
-                - entitlementManagement
-                - exchange
               type: string
       responses:
         2XX:
@@ -6105,11 +4741,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - resourceNamespaces
-                - roleAssignments
-                - roleDefinitions
               type: string
         - name: $expand
           in: query
@@ -6120,11 +4751,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceNamespaces
-                - roleAssignments
-                - roleDefinitions
               type: string
       responses:
         2XX:
@@ -6197,11 +4823,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - name
-                - name desc
               type: string
         - name: $select
           in: query
@@ -6212,10 +4833,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - resourceActions
               type: string
         - name: $expand
           in: query
@@ -6226,9 +4843,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceActions
               type: string
       responses:
         2XX:
@@ -6285,10 +4899,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - resourceActions
               type: string
         - name: $expand
           in: query
@@ -6299,9 +4909,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceActions
               type: string
       responses:
         2XX:
@@ -6374,11 +4981,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespace_ListResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6403,23 +5007,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - actionVerb
-                - actionVerb desc
-                - authenticationContextId
-                - authenticationContextId desc
-                - description
-                - description desc
-                - isAuthenticationContextSettable
-                - isAuthenticationContextSettable desc
-                - isPrivileged
-                - isPrivileged desc
-                - name
-                - name desc
-                - resourceScopeId
-                - resourceScopeId desc
               type: string
         - name: $select
           in: query
@@ -6430,17 +5017,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actionVerb
-                - authenticationContextId
-                - description
-                - isAuthenticationContextSettable
-                - isPrivileged
-                - name
-                - resourceScopeId
-                - authenticationContext
-                - resourceScope
               type: string
         - name: $expand
           in: query
@@ -6451,10 +5027,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationContext
-                - resourceScope
               type: string
       responses:
         2XX:
@@ -6500,11 +5072,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRbacResourceAction
-      description: Read the properties and relationships of an unifiedRbacResourceAction object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespace_GetResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6532,17 +5101,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actionVerb
-                - authenticationContextId
-                - description
-                - isAuthenticationContextSettable
-                - isPrivileged
-                - name
-                - resourceScopeId
-                - authenticationContext
-                - resourceScope
               type: string
         - name: $expand
           in: query
@@ -6553,10 +5111,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationContext
-                - resourceScope
               type: string
       responses:
         2XX:
@@ -6673,11 +5227,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isAvailable
               type: string
         - name: $expand
           in: query
@@ -6688,8 +5237,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6733,11 +5280,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - scope
-                - type
               type: string
         - name: $expand
           in: query
@@ -6748,8 +5290,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6874,11 +5414,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.cloudPC_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6895,23 +5431,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appScopeIds
-                - appScopeIds desc
-                - condition
-                - condition desc
-                - description
-                - description desc
-                - directoryScopeIds
-                - directoryScopeIds desc
-                - displayName
-                - displayName desc
-                - principalIds
-                - principalIds desc
-                - roleDefinitionId
-                - roleDefinitionId desc
               type: string
         - name: $select
           in: query
@@ -6922,19 +5441,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeIds
-                - condition
-                - description
-                - directoryScopeIds
-                - displayName
-                - principalIds
-                - roleDefinitionId
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -6945,12 +5451,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -6964,11 +5464,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create unifiedRoleAssignmentMultiple
-      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.cloudPC_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -6991,11 +5487,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.cloudPC_GetRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7015,19 +5507,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeIds
-                - condition
-                - description
-                - directoryScopeIds
-                - displayName
-                - principalIds
-                - roleDefinitionId
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -7038,12 +5517,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -7058,11 +5531,7 @@ paths:
     patch:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Update unifiedRoleAssignmentMultiple
-      description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-1.0
+      summary: Update the navigation property roleAssignments in roleManagement
       operationId: roleManagement.cloudPC_UpdateRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7093,11 +5562,7 @@ paths:
     delete:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Delete unifiedRoleAssignmentMultiple
-      description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleAssignments for roleManagement
       operationId: roleManagement.cloudPC_DeleteRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7150,13 +5615,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -7167,10 +5625,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -7181,8 +5635,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7257,10 +5709,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -7271,8 +5719,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7409,11 +5855,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -7424,9 +5865,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -7437,8 +5875,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7482,9 +5918,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -7495,8 +5928,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7560,11 +5991,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -7575,9 +6001,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -7588,8 +6011,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7633,9 +6054,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -7646,8 +6064,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -7706,19 +6122,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -7729,9 +6132,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -7761,11 +6161,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra ID) \n- entitlement management (Microsoft Entra ID)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.cloudPC_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7782,29 +6178,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedPrincipalTypes
-                - allowedPrincipalTypes desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-                - isEnabled
-                - isEnabled desc
-                - isPrivileged
-                - isPrivileged desc
-                - resourceScopes
-                - resourceScopes desc
-                - rolePermissions
-                - rolePermissions desc
-                - templateId
-                - templateId desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -7815,19 +6188,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -7838,9 +6198,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -7854,11 +6211,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.cloudPC_CreateRoleDefinition
       requestBody:
         description: New navigation property
@@ -7881,11 +6234,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.cloudPC_GetRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -7905,19 +6254,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -7928,9 +6264,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -7945,11 +6278,7 @@ paths:
     patch:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Update unifiedRoleDefinition
-      description: "Update the properties of a unifiedRoleDefinition object for an RBAC provider. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
+      summary: Update the navigation property roleDefinitions in roleManagement
       operationId: roleManagement.cloudPC_UpdateRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -7980,11 +6309,7 @@ paths:
     delete:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Delete unifiedRoleDefinition
-      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleDefinitions for roleManagement
       operationId: roleManagement.cloudPC_DeleteRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -8037,29 +6362,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedPrincipalTypes
-                - allowedPrincipalTypes desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-                - isEnabled
-                - isEnabled desc
-                - isPrivileged
-                - isPrivileged desc
-                - resourceScopes
-                - resourceScopes desc
-                - rolePermissions
-                - rolePermissions desc
-                - templateId
-                - templateId desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -8070,19 +6372,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -8093,9 +6382,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -8170,19 +6456,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -8193,9 +6466,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -8333,11 +6603,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - resourceNamespaces
-                - roleAssignments
-                - roleDefinitions
               type: string
         - name: $expand
           in: query
@@ -8348,11 +6613,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceNamespaces
-                - roleAssignments
-                - roleDefinitions
               type: string
       responses:
         2XX:
@@ -8425,11 +6685,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - name
-                - name desc
               type: string
         - name: $select
           in: query
@@ -8440,10 +6695,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - resourceActions
               type: string
         - name: $expand
           in: query
@@ -8454,9 +6705,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceActions
               type: string
       responses:
         2XX:
@@ -8513,10 +6761,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - resourceActions
               type: string
         - name: $expand
           in: query
@@ -8527,9 +6771,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceActions
               type: string
       responses:
         2XX:
@@ -8602,11 +6843,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespace_ListResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -8631,23 +6869,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - actionVerb
-                - actionVerb desc
-                - authenticationContextId
-                - authenticationContextId desc
-                - description
-                - description desc
-                - isAuthenticationContextSettable
-                - isAuthenticationContextSettable desc
-                - isPrivileged
-                - isPrivileged desc
-                - name
-                - name desc
-                - resourceScopeId
-                - resourceScopeId desc
               type: string
         - name: $select
           in: query
@@ -8658,17 +6879,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actionVerb
-                - authenticationContextId
-                - description
-                - isAuthenticationContextSettable
-                - isPrivileged
-                - name
-                - resourceScopeId
-                - authenticationContext
-                - resourceScope
               type: string
         - name: $expand
           in: query
@@ -8679,10 +6889,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationContext
-                - resourceScope
               type: string
       responses:
         2XX:
@@ -8728,11 +6934,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRbacResourceAction
-      description: Read the properties and relationships of an unifiedRbacResourceAction object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespace_GetResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -8760,17 +6963,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actionVerb
-                - authenticationContextId
-                - description
-                - isAuthenticationContextSettable
-                - isPrivileged
-                - name
-                - resourceScopeId
-                - authenticationContext
-                - resourceScope
               type: string
         - name: $expand
           in: query
@@ -8781,10 +6973,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationContext
-                - resourceScope
               type: string
       responses:
         2XX:
@@ -8901,11 +7089,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isAvailable
               type: string
         - name: $expand
           in: query
@@ -8916,8 +7099,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -8961,11 +7142,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - scope
-                - type
               type: string
         - name: $expand
           in: query
@@ -8976,8 +7152,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9102,11 +7276,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9123,23 +7293,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appScopeIds
-                - appScopeIds desc
-                - condition
-                - condition desc
-                - description
-                - description desc
-                - directoryScopeIds
-                - directoryScopeIds desc
-                - displayName
-                - displayName desc
-                - principalIds
-                - principalIds desc
-                - roleDefinitionId
-                - roleDefinitionId desc
               type: string
         - name: $select
           in: query
@@ -9150,19 +7303,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeIds
-                - condition
-                - description
-                - directoryScopeIds
-                - displayName
-                - principalIds
-                - roleDefinitionId
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -9173,12 +7313,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -9192,11 +7326,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create unifiedRoleAssignmentMultiple
-      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.deviceManagement_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -9219,11 +7349,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.deviceManagement_GetRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -9243,19 +7369,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeIds
-                - condition
-                - description
-                - directoryScopeIds
-                - displayName
-                - principalIds
-                - roleDefinitionId
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -9266,12 +7379,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScopes
-                - directoryScopes
-                - principals
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -9286,11 +7393,7 @@ paths:
     patch:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Update unifiedRoleAssignmentMultiple
-      description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-1.0
+      summary: Update the navigation property roleAssignments in roleManagement
       operationId: roleManagement.deviceManagement_UpdateRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -9321,11 +7424,7 @@ paths:
     delete:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Delete unifiedRoleAssignmentMultiple
-      description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleAssignments for roleManagement
       operationId: roleManagement.deviceManagement_DeleteRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -9378,13 +7477,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -9395,10 +7487,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -9409,8 +7497,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9485,10 +7571,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -9499,8 +7581,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9637,11 +7717,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -9652,9 +7727,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -9665,8 +7737,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9710,9 +7780,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -9723,8 +7790,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9788,11 +7853,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
               type: string
         - name: $select
           in: query
@@ -9803,9 +7863,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -9816,8 +7873,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9861,9 +7916,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -9874,8 +7926,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -9934,19 +7984,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -9957,9 +7994,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -9989,11 +8023,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra ID) \n- entitlement management (Microsoft Entra ID)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10010,29 +8040,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedPrincipalTypes
-                - allowedPrincipalTypes desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-                - isEnabled
-                - isEnabled desc
-                - isPrivileged
-                - isPrivileged desc
-                - resourceScopes
-                - resourceScopes desc
-                - rolePermissions
-                - rolePermissions desc
-                - templateId
-                - templateId desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -10043,19 +8050,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -10066,9 +8060,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -10082,11 +8073,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.deviceManagement_CreateRoleDefinition
       requestBody:
         description: New navigation property
@@ -10109,11 +8096,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.deviceManagement_GetRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -10133,19 +8116,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -10156,9 +8126,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -10173,11 +8140,7 @@ paths:
     patch:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Update unifiedRoleDefinition
-      description: "Update the properties of a unifiedRoleDefinition object for an RBAC provider. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
+      summary: Update the navigation property roleDefinitions in roleManagement
       operationId: roleManagement.deviceManagement_UpdateRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -10208,11 +8171,7 @@ paths:
     delete:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Delete unifiedRoleDefinition
-      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) "
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleDefinitions for roleManagement
       operationId: roleManagement.deviceManagement_DeleteRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -10265,29 +8224,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedPrincipalTypes
-                - allowedPrincipalTypes desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-                - isEnabled
-                - isEnabled desc
-                - isPrivileged
-                - isPrivileged desc
-                - resourceScopes
-                - resourceScopes desc
-                - rolePermissions
-                - rolePermissions desc
-                - templateId
-                - templateId desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -10298,19 +8234,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -10321,9 +8244,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -10398,19 +8318,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -10421,9 +8328,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -10560,13 +8464,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - customAppScopes
-                - resourceNamespaces
-                - roleAssignments
-                - roleDefinitions
-                - transitiveRoleAssignments
               type: string
         - name: $expand
           in: query
@@ -10577,13 +8474,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - customAppScopes
-                - resourceNamespaces
-                - roleAssignments
-                - roleDefinitions
-                - transitiveRoleAssignments
               type: string
       responses:
         2XX:
@@ -10639,11 +8529,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: List customAppScopes
-      description: Get a list of customAppScope objects for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacapplication-list-customappscopes?view=graph-rest-1.0
+      summary: Get customAppScopes from roleManagement
+      description: Workload-specific scope object that represents the resources for which the principal has been granted access.
       operationId: roleManagement.exchange_ListCustomAppScope
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10660,15 +8547,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - type
-                - type desc
-                - customAttributes
-                - customAttributes desc
               type: string
         - name: $select
           in: query
@@ -10679,11 +8557,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
-                - customAttributes
               type: string
         - name: $expand
           in: query
@@ -10694,8 +8567,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10709,11 +8580,7 @@ paths:
     post:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Create customAppScope
-      description: Create a new customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacapplication-post-customappscope?view=graph-rest-1.0
+      summary: Create new navigation property to customAppScopes for roleManagement
       operationId: roleManagement.exchange_CreateCustomAppScope
       requestBody:
         description: New navigation property
@@ -10736,11 +8603,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Get customAppScope
-      description: Get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customappscope-get?view=graph-rest-1.0
+      summary: Get customAppScopes from roleManagement
+      description: Workload-specific scope object that represents the resources for which the principal has been granted access.
       operationId: roleManagement.exchange_GetCustomAppScope
       parameters:
         - name: customAppScope-id
@@ -10760,11 +8624,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
-                - customAttributes
               type: string
         - name: $expand
           in: query
@@ -10775,8 +8634,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -10791,11 +8648,7 @@ paths:
     patch:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Update customAppScope
-      description: Update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customappscope-update?view=graph-rest-1.0
+      summary: Update the navigation property customAppScopes in roleManagement
       operationId: roleManagement.exchange_UpdateCustomAppScope
       parameters:
         - name: customAppScope-id
@@ -10826,11 +8679,7 @@ paths:
     delete:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Delete customAppScope
-      description: Delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customappscope-delete?view=graph-rest-1.0
+      summary: Delete navigation property customAppScopes for roleManagement
       operationId: roleManagement.exchange_DeleteCustomAppScope
       parameters:
         - name: customAppScope-id
@@ -10889,11 +8738,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - name
-                - name desc
               type: string
         - name: $select
           in: query
@@ -10904,10 +8748,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - resourceActions
               type: string
         - name: $expand
           in: query
@@ -10918,9 +8758,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceActions
               type: string
       responses:
         2XX:
@@ -10978,10 +8815,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - name
-                - resourceActions
               type: string
         - name: $expand
           in: query
@@ -10992,9 +8825,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - resourceActions
               type: string
       responses:
         2XX:
@@ -11067,11 +8897,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
       operationId: roleManagement.exchange.resourceNamespace_ListResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -11096,23 +8923,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - actionVerb
-                - actionVerb desc
-                - authenticationContextId
-                - authenticationContextId desc
-                - description
-                - description desc
-                - isAuthenticationContextSettable
-                - isAuthenticationContextSettable desc
-                - isPrivileged
-                - isPrivileged desc
-                - name
-                - name desc
-                - resourceScopeId
-                - resourceScopeId desc
               type: string
         - name: $select
           in: query
@@ -11123,17 +8933,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actionVerb
-                - authenticationContextId
-                - description
-                - isAuthenticationContextSettable
-                - isPrivileged
-                - name
-                - resourceScopeId
-                - authenticationContext
-                - resourceScope
               type: string
         - name: $expand
           in: query
@@ -11144,10 +8943,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationContext
-                - resourceScope
               type: string
       responses:
         2XX:
@@ -11193,11 +8988,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Get unifiedRbacResourceAction
-      description: Read the properties and relationships of an unifiedRbacResourceAction object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal is allowed to perform.
       operationId: roleManagement.exchange.resourceNamespace_GetResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -11225,17 +9017,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actionVerb
-                - authenticationContextId
-                - description
-                - isAuthenticationContextSettable
-                - isPrivileged
-                - name
-                - resourceScopeId
-                - authenticationContext
-                - resourceScope
               type: string
         - name: $expand
           in: query
@@ -11246,10 +9027,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authenticationContext
-                - resourceScope
               type: string
       responses:
         2XX:
@@ -11366,11 +9143,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - isAvailable
               type: string
         - name: $expand
           in: query
@@ -11381,8 +9153,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11426,11 +9196,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - scope
-                - type
               type: string
         - name: $expand
           in: query
@@ -11441,8 +9206,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11567,11 +9330,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.exchange_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11588,23 +9348,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appScopeId
-                - appScopeId desc
-                - condition
-                - condition desc
-                - directoryScopeId
-                - directoryScopeId desc
-                - principalId
-                - principalId desc
-                - principalOrganizationId
-                - principalOrganizationId desc
-                - resourceScope
-                - resourceScope desc
-                - roleDefinitionId
-                - roleDefinitionId desc
               type: string
         - name: $select
           in: query
@@ -11615,19 +9358,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeId
-                - condition
-                - directoryScopeId
-                - principalId
-                - principalOrganizationId
-                - resourceScope
-                - roleDefinitionId
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -11638,12 +9368,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -11657,11 +9381,7 @@ paths:
     post:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Create unifiedRoleAssignment
-      description: Create a new unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.exchange_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -11684,11 +9404,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Get unifiedRoleAssignment
-      description: Retrieve the properties and relationships of a unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.exchange_GetRoleAssignment
       parameters:
         - name: unifiedRoleAssignment-id
@@ -11708,19 +9425,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeId
-                - condition
-                - directoryScopeId
-                - principalId
-                - principalOrganizationId
-                - resourceScope
-                - roleDefinitionId
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -11731,12 +9435,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -11782,11 +9480,7 @@ paths:
     delete:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Delete unifiedRoleAssignment
-      description: Delete a unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroleassignment-delete?view=graph-rest-1.0
+      summary: Delete navigation property roleAssignments for roleManagement
       operationId: roleManagement.exchange_DeleteRoleAssignment
       parameters:
         - name: unifiedRoleAssignment-id
@@ -11834,10 +9528,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -11848,8 +9538,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11943,9 +9631,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -11956,8 +9641,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -11994,9 +9677,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -12007,8 +9687,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -12045,19 +9723,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -12068,9 +9733,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -12100,11 +9762,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra ID) \n- entitlement management (Microsoft Entra ID)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
+      description: The roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.exchange_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12121,29 +9780,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedPrincipalTypes
-                - allowedPrincipalTypes desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-                - isEnabled
-                - isEnabled desc
-                - isPrivileged
-                - isPrivileged desc
-                - resourceScopes
-                - resourceScopes desc
-                - rolePermissions
-                - rolePermissions desc
-                - templateId
-                - templateId desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -12154,19 +9790,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -12177,9 +9800,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -12216,11 +9836,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
+      description: The roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.exchange_GetRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -12240,19 +9857,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -12263,9 +9867,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -12364,29 +9965,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - allowedPrincipalTypes
-                - allowedPrincipalTypes desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - isBuiltIn
-                - isBuiltIn desc
-                - isEnabled
-                - isEnabled desc
-                - isPrivileged
-                - isPrivileged desc
-                - resourceScopes
-                - resourceScopes desc
-                - rolePermissions
-                - rolePermissions desc
-                - templateId
-                - templateId desc
-                - version
-                - version desc
               type: string
         - name: $select
           in: query
@@ -12397,19 +9975,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -12420,9 +9985,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -12497,19 +10059,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -12520,9 +10069,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -12665,23 +10211,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appScopeId
-                - appScopeId desc
-                - condition
-                - condition desc
-                - directoryScopeId
-                - directoryScopeId desc
-                - principalId
-                - principalId desc
-                - principalOrganizationId
-                - principalOrganizationId desc
-                - resourceScope
-                - resourceScope desc
-                - roleDefinitionId
-                - roleDefinitionId desc
               type: string
         - name: $select
           in: query
@@ -12692,19 +10221,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeId
-                - condition
-                - directoryScopeId
-                - principalId
-                - principalOrganizationId
-                - resourceScope
-                - roleDefinitionId
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -12715,12 +10231,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -12778,19 +10288,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appScopeId
-                - condition
-                - directoryScopeId
-                - principalId
-                - principalOrganizationId
-                - resourceScope
-                - roleDefinitionId
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
         - name: $expand
           in: query
@@ -12801,12 +10298,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - appScope
-                - directoryScope
-                - principal
-                - roleDefinition
               type: string
       responses:
         2XX:
@@ -12900,10 +10391,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - type
               type: string
         - name: $expand
           in: query
@@ -12914,8 +10401,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13009,9 +10494,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -13022,8 +10504,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13060,9 +10540,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
               type: string
         - name: $expand
           in: query
@@ -13073,8 +10550,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -13111,19 +10586,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - allowedPrincipalTypes
-                - description
-                - displayName
-                - isBuiltIn
-                - isEnabled
-                - isPrivileged
-                - resourceScopes
-                - rolePermissions
-                - templateId
-                - version
-                - inheritsPermissionsFrom
               type: string
         - name: $expand
           in: query
@@ -13134,9 +10596,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - inheritsPermissionsFrom
               type: string
       responses:
         2XX:
@@ -14118,6 +11577,10 @@ components:
             extractHardwareHash:
               type: boolean
               description: HardwareHash Extraction for the profile
+            hardwareHashExtractionEnabled:
+              type: boolean
+              description: 'Indicates whether the profile supports the extraction of hardware hash values and registration of the device into Windows Autopilot. When TRUE, indicates if hardware extraction and Windows Autopilot registration will happen on the next successful check-in. When FALSE, hardware hash extraction and Windows Autopilot registration will not happen. Default value is FALSE. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
+              nullable: true
             language:
               type: string
               description: Language configured on the device
@@ -14127,12 +11590,22 @@ components:
               type: string
               description: Profile last modified time
               format: date-time
+            locale:
+              type: string
+              description: 'The locale (language) to be used when configuring the device. E.g. en-US. The default value is os-default. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
+              nullable: true
             managementServiceAppId:
               type: string
-              description: AzureAD management app ID used during client device-based enrollment discovery
+              description: 'The Entra management service App ID which gets used during client device-based enrollment discovery. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
               nullable: true
+            outOfBoxExperienceSetting:
+              $ref: '#/components/schemas/microsoft.graph.outOfBoxExperienceSetting'
             outOfBoxExperienceSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfBoxExperienceSettings'
+            preprovisioningAllowed:
+              type: boolean
+              description: 'Indicates whether the user is allowed to use Windows Autopilot for pre-provisioned deployment mode during Out of Box experience (OOBE). When TRUE, indicates that Windows Autopilot for pre-provisioned deployment mode for OOBE is allowed to be used. When false, Windows Autopilot for pre-provisioned deployment mode for OOBE is not allowed. The default is FALSE.'
+              nullable: true
             roleScopeTagIds:
               type: array
               items:
@@ -14883,6 +12356,7 @@ components:
         - androidMobileApplicationManagement
         - iOSMobileApplicationManagement
         - unknownFutureValue
+        - windowsMobileApplicationManagement
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -14928,6 +12402,9 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use
             name: unknownFutureValue
+          - value: windowsMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for Windows devices.
+            name: windowsMobileApplicationManagement
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -15320,6 +12797,7 @@ components:
         - unknown
         - imei
         - serialNumber
+        - manufacturerModelSerial
       type: string
       x-ms-enum:
         name: importedDeviceIdentityType
@@ -15334,6 +12812,9 @@ components:
           - value: serialNumber
             description: Device Identity is of type serial number.
             name: serialNumber
+          - value: manufacturerModelSerial
+            description: Device Identity is of type manufacturer + model + serial number semi-colon delimited tuple with enforced order.
+            name: manufacturerModelSerial
     microsoft.graph.importedWindowsAutopilotDeviceIdentityState:
       title: importedWindowsAutopilotDeviceIdentityState
       type: object
@@ -15421,6 +12902,29 @@ components:
       additionalProperties:
         type: object
       description: Enrollment status screen setting
+    microsoft.graph.outOfBoxExperienceSetting:
+      title: outOfBoxExperienceSetting
+      type: object
+      properties:
+        deviceUsageType:
+          $ref: '#/components/schemas/microsoft.graph.windowsDeviceUsageType'
+        escapeLinkHidden:
+          type: boolean
+          description: 'When TRUE, the link that allows user to start over with a different account on company sign-in is hidden. When false, the link that allows user to start over with a different account on company sign-in is available. Default value is FALSE.'
+        eulaHidden:
+          type: boolean
+          description: 'When TRUE, EULA is hidden to the end user during OOBE. When FALSE, EULA is shown to the end user during OOBE. Default value is FALSE.'
+        keyboardSelectionPageSkipped:
+          type: boolean
+          description: 'When TRUE, the keyboard selection page is hidden to the end user during OOBE if Language and Region are set. When FALSE, the keyboard selection page is skipped during OOBE.'
+        privacySettingsHidden:
+          type: boolean
+          description: 'When TRUE, privacy settings is hidden to the end user during OOBE. When FALSE, privacy settings is shown to the end user during OOBE. Default value is FALSE.'
+        userType:
+          $ref: '#/components/schemas/microsoft.graph.windowsUserType'
+      additionalProperties:
+        type: object
+      description: 'The Windows Autopilot Deployment Profile settings used by the device for the out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.'
     microsoft.graph.outOfBoxExperienceSettings:
       title: outOfBoxExperienceSettings
       type: object
@@ -15443,7 +12947,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.windowsUserType'
       additionalProperties:
         type: object
-      description: Out of box experience setting
+      description: 'The Windows Autopilot Deployment Profile settings used by the Autopilot device for out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported. Read-Only. Starting from May 2024 this property will no longer be supported and will be marked as deprecated. Use outOfBoxExperienceSetting instead.'
     microsoft.graph.windowsAutopilotProfileAssignmentDetailedStatus:
       title: windowsAutopilotProfileAssignmentDetailedStatus
       enum:
@@ -16197,7 +13701,7 @@ components:
           properties:
             assignmentType:
               type: string
-              description: 'Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).'
+              description: 'The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).'
               nullable: true
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -16207,11 +13711,11 @@ components:
               nullable: true
             memberType:
               type: string
-              description: 'How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
+              description: 'How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
               nullable: true
             roleAssignmentOriginId:
               type: string
-              description: The identifier of the role assignment in Azure AD.
+              description: The identifier of the role assignment in Microsoft Entra ID.
               nullable: true
             roleAssignmentScheduleId:
               type: string
@@ -16291,11 +13795,11 @@ components:
           properties:
             assignmentType:
               type: string
-              description: 'Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).'
+              description: 'The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).'
               nullable: true
             memberType:
               type: string
-              description: 'How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
+              description: 'How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).'
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
@@ -16643,11 +14147,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: 'Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn''t included in the response.'
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

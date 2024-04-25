@@ -31,9 +31,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - overrides
               type: string
       responses:
         2XX:
@@ -80,11 +77,8 @@ paths:
     get:
       tags:
         - users.inferenceClassification
-      summary: List overrides
-      description: 'Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0
+      summary: Get overrides from users
+      description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: user.inferenceClassification_ListOverride
       parameters:
         - name: user-id
@@ -108,13 +102,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - classifyAs
-                - classifyAs desc
-                - senderEmailAddress
-                - senderEmailAddress desc
               type: string
         - name: $select
           in: query
@@ -125,10 +112,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classifyAs
-                - senderEmailAddress
               type: string
       responses:
         2XX:
@@ -142,11 +125,7 @@ paths:
     post:
       tags:
         - users.inferenceClassification
-      summary: Create inferenceClassificationOverride
-      description: "Create an override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classified\nas specified in the override. Note"
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0
+      summary: Create new navigation property to overrides for users
       operationId: user.inferenceClassification_CreateOverride
       parameters:
         - name: user-id
@@ -207,10 +186,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - classifyAs
-                - senderEmailAddress
               type: string
       responses:
         2XX:
@@ -225,11 +200,7 @@ paths:
     patch:
       tags:
         - users.inferenceClassification
-      summary: Update inferenceclassificationoverride
-      description: "Change the classifyAs field of an override as specified. You cannot use PATCH to change any other fields in an inferenceClassificationOverride instance. If an override exists for a sender and the sender changes his/her display name, you can use POST to force an update to the name field in the existing override. If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/inferenceclassificationoverride-update?view=graph-rest-1.0
+      summary: Update the navigation property overrides in users
       operationId: user.inferenceClassification_UpdateOverride
       parameters:
         - name: user-id
@@ -268,11 +239,7 @@ paths:
     delete:
       tags:
         - users.inferenceClassification
-      summary: Delete inferenceClassificationOverride
-      description: Delete an override specified by its ID.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/inferenceclassificationoverride-delete?view=graph-rest-1.0
+      summary: Delete navigation property overrides for users
       operationId: user.inferenceClassification_DeleteOverride
       parameters:
         - name: user-id
@@ -330,9 +297,6 @@ paths:
         - users.mailFolder
       summary: Get mailFolders from users
       description: The user's mail folders. Read-only. Nullable.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-1.0
       operationId: user_ListMailFolder
       parameters:
         - name: user-id
@@ -363,21 +327,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - childFolderCount
-                - childFolderCount desc
-                - displayName
-                - displayName desc
-                - isHidden
-                - isHidden desc
-                - parentFolderId
-                - parentFolderId desc
-                - totalItemCount
-                - totalItemCount desc
-                - unreadItemCount
-                - unreadItemCount desc
               type: string
         - name: $select
           in: query
@@ -388,19 +337,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - childFolderCount
-                - displayName
-                - isHidden
-                - parentFolderId
-                - totalItemCount
-                - unreadItemCount
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -411,13 +347,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -431,11 +360,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create MailFolder
-      description: 'Use this API to create a new mail folder in the root folder of the user''s mailbox. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-1.0
+      summary: Create new navigation property to mailFolders for users
       operationId: user_CreateMailFolder
       parameters:
         - name: user-id
@@ -469,9 +394,6 @@ paths:
         - users.mailFolder
       summary: Get mailFolders from users
       description: The user's mail folders. Read-only. Nullable.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-get?view=graph-rest-1.0
       operationId: user_GetMailFolder
       parameters:
         - name: user-id
@@ -506,19 +428,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - childFolderCount
-                - displayName
-                - isHidden
-                - parentFolderId
-                - totalItemCount
-                - unreadItemCount
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -529,13 +438,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -550,11 +452,7 @@ paths:
     patch:
       tags:
         - users.mailFolder
-      summary: Update mailSearchFolder
-      description: Update the writable properties of a mailSearchFolder object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailsearchfolder-update?view=graph-rest-1.0
+      summary: Update the navigation property mailFolders in users
       operationId: user_UpdateMailFolder
       parameters:
         - name: user-id
@@ -593,11 +491,7 @@ paths:
     delete:
       tags:
         - users.mailFolder
-      summary: Delete mailFolder
-      description: 'Delete the specified mailFolder. The folder can be a mailSearchFolder. You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-delete?view=graph-rest-1.0
+      summary: Delete navigation property mailFolders for users
       operationId: user_DeleteMailFolder
       parameters:
         - name: user-id
@@ -634,9 +528,6 @@ paths:
         - users.mailFolder
       summary: Get childFolders from users
       description: The collection of child folders in the mailFolder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0
       operationId: user.mailFolder_ListChildFolder
       parameters:
         - name: user-id
@@ -675,21 +566,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - childFolderCount
-                - childFolderCount desc
-                - displayName
-                - displayName desc
-                - isHidden
-                - isHidden desc
-                - parentFolderId
-                - parentFolderId desc
-                - totalItemCount
-                - totalItemCount desc
-                - unreadItemCount
-                - unreadItemCount desc
               type: string
         - name: $select
           in: query
@@ -700,19 +576,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - childFolderCount
-                - displayName
-                - isHidden
-                - parentFolderId
-                - totalItemCount
-                - unreadItemCount
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -723,13 +586,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -743,11 +599,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create child folder
-      description: 'Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
+      summary: Create new navigation property to childFolders for users
       operationId: user.mailFolder_CreateChildFolder
       parameters:
         - name: user-id
@@ -831,19 +683,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - childFolderCount
-                - displayName
-                - isHidden
-                - parentFolderId
-                - totalItemCount
-                - unreadItemCount
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -854,13 +693,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -965,11 +797,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List rules
-      description: Get all the messageRule objects defined for the user's inbox.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
+      summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: user.mailFolder.childFolder_ListMessageRule
       parameters:
         - name: user-id
@@ -1009,25 +838,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - actions
-                - actions desc
-                - conditions
-                - conditions desc
-                - displayName
-                - displayName desc
-                - exceptions
-                - exceptions desc
-                - hasError
-                - hasError desc
-                - isEnabled
-                - isEnabled desc
-                - isReadOnly
-                - isReadOnly desc
-                - sequence
-                - sequence desc
               type: string
         - name: $select
           in: query
@@ -1038,16 +848,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actions
-                - conditions
-                - displayName
-                - exceptions
-                - hasError
-                - isEnabled
-                - isReadOnly
-                - sequence
               type: string
       responses:
         2XX:
@@ -1061,11 +861,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create rule
-      description: Create a messageRule object by specifying a set of conditions and actions. Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
+      summary: Create new navigation property to messageRules for users
       operationId: user.mailFolder.childFolder_CreateMessageRule
       parameters:
         - name: user-id
@@ -1113,11 +909,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get rule
-      description: Get the properties and relationships of a messageRule object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/messagerule-get?view=graph-rest-1.0
+      summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: user.mailFolder.childFolder_GetMessageRule
       parameters:
         - name: user-id
@@ -1161,16 +954,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actions
-                - conditions
-                - displayName
-                - exceptions
-                - hasError
-                - isEnabled
-                - isReadOnly
-                - sequence
               type: string
       responses:
         2XX:
@@ -1185,11 +968,7 @@ paths:
     patch:
       tags:
         - users.mailFolder
-      summary: Update rule
-      description: Change writable properties on a messageRule object and save the changes.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/messagerule-update?view=graph-rest-1.0
+      summary: Update the navigation property messageRules in users
       operationId: user.mailFolder.childFolder_UpdateMessageRule
       parameters:
         - name: user-id
@@ -1244,11 +1023,7 @@ paths:
     delete:
       tags:
         - users.mailFolder
-      summary: Delete messageRule
-      description: Delete the specified messageRule object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/messagerule-delete?view=graph-rest-1.0
+      summary: Delete navigation property messageRules for users
       operationId: user.mailFolder.childFolder_DeleteMessageRule
       parameters:
         - name: user-id
@@ -1336,11 +1111,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List messages
-      description: 'Get all the messages in the specified user''s mailbox, or those messages in a specified folder in the mailbox.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
+      summary: Get messages from users
+      description: The collection of messages in the mailFolder.
       operationId: user.mailFolder.childFolder_ListMessage
       parameters:
         - name: user-id
@@ -1381,69 +1153,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - categories
-                - categories desc
-                - changeKey
-                - changeKey desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - bccRecipients
-                - bccRecipients desc
-                - body
-                - body desc
-                - bodyPreview
-                - bodyPreview desc
-                - ccRecipients
-                - ccRecipients desc
-                - conversationId
-                - conversationId desc
-                - conversationIndex
-                - conversationIndex desc
-                - flag
-                - flag desc
-                - from
-                - from desc
-                - hasAttachments
-                - hasAttachments desc
-                - importance
-                - importance desc
-                - inferenceClassification
-                - inferenceClassification desc
-                - internetMessageHeaders
-                - internetMessageHeaders desc
-                - internetMessageId
-                - internetMessageId desc
-                - isDeliveryReceiptRequested
-                - isDeliveryReceiptRequested desc
-                - isDraft
-                - isDraft desc
-                - isRead
-                - isRead desc
-                - isReadReceiptRequested
-                - isReadReceiptRequested desc
-                - parentFolderId
-                - parentFolderId desc
-                - receivedDateTime
-                - receivedDateTime desc
-                - replyTo
-                - replyTo desc
-                - sender
-                - sender desc
-                - sentDateTime
-                - sentDateTime desc
-                - subject
-                - subject desc
-                - toRecipients
-                - toRecipients desc
-                - uniqueBody
-                - uniqueBody desc
-                - webLink
-                - webLink desc
               type: string
         - name: $select
           in: query
@@ -1454,42 +1163,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - bccRecipients
-                - body
-                - bodyPreview
-                - ccRecipients
-                - conversationId
-                - conversationIndex
-                - flag
-                - from
-                - hasAttachments
-                - importance
-                - inferenceClassification
-                - internetMessageHeaders
-                - internetMessageId
-                - isDeliveryReceiptRequested
-                - isDraft
-                - isRead
-                - isReadReceiptRequested
-                - parentFolderId
-                - receivedDateTime
-                - replyTo
-                - sender
-                - sentDateTime
-                - subject
-                - toRecipients
-                - uniqueBody
-                - webLink
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -1500,12 +1173,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -1519,11 +1186,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create message in a mailfolder
-      description: Use this API to create a new Message in a mailfolder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for users
       operationId: user.mailFolder.childFolder_CreateMessage
       parameters:
         - name: user-id
@@ -1616,42 +1279,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - bccRecipients
-                - body
-                - bodyPreview
-                - ccRecipients
-                - conversationId
-                - conversationIndex
-                - flag
-                - from
-                - hasAttachments
-                - importance
-                - inferenceClassification
-                - internetMessageHeaders
-                - internetMessageId
-                - isDeliveryReceiptRequested
-                - isDraft
-                - isRead
-                - isReadReceiptRequested
-                - parentFolderId
-                - receivedDateTime
-                - replyTo
-                - sender
-                - sentDateTime
-                - subject
-                - toRecipients
-                - uniqueBody
-                - webLink
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -1662,12 +1289,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -1789,9 +1410,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder_GetMessagesContent
       parameters:
         - name: user-id
@@ -1900,11 +1518,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to a message.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: user.mailFolder.childFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -1950,19 +1565,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - contentType
-                - contentType desc
-                - isInline
-                - isInline desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -1973,13 +1575,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - isInline
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -1990,8 +1585,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2005,11 +1598,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Add attachment
-      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or you can\nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.mailFolder.childFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -2065,11 +1654,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get attachment
-      description: 'Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: user.mailFolder.childFolder.message_GetAttachment
       parameters:
         - name: user-id
@@ -2121,13 +1707,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - isInline
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -2138,8 +1717,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2258,8 +1835,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+      summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: user.mailFolder.childFolder.message_ListExtension
       parameters:
         - name: user-id
@@ -2307,9 +1884,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -2320,8 +1894,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2332,8 +1904,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2347,11 +1917,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.mailFolder.childFolder.message_CreateExtension
       parameters:
         - name: user-id
@@ -2407,11 +1973,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+      summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: user.mailFolder.childFolder.message_GetExtension
       parameters:
         - name: user-id
@@ -2463,8 +2026,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -2475,8 +2036,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2554,11 +2113,7 @@ paths:
     delete:
       tags:
         - users.mailFolder
-      summary: Delete open extension
-      description: 'Delete an open extension (openTypeExtension object) from the specified instance of a resource.  For the list of resources that support open extensions, see the table in the Permissions section.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-delete?view=graph-rest-1.0
+      summary: Delete navigation property extensions for users
       operationId: user.mailFolder.childFolder.message_DeleteExtension
       parameters:
         - name: user-id
@@ -2729,11 +2284,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List rules
-      description: Get all the messageRule objects defined for the user's inbox.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
+      summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: user.mailFolder_ListMessageRule
       parameters:
         - name: user-id
@@ -2765,25 +2317,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - actions
-                - actions desc
-                - conditions
-                - conditions desc
-                - displayName
-                - displayName desc
-                - exceptions
-                - exceptions desc
-                - hasError
-                - hasError desc
-                - isEnabled
-                - isEnabled desc
-                - isReadOnly
-                - isReadOnly desc
-                - sequence
-                - sequence desc
               type: string
         - name: $select
           in: query
@@ -2794,16 +2327,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actions
-                - conditions
-                - displayName
-                - exceptions
-                - hasError
-                - isEnabled
-                - isReadOnly
-                - sequence
               type: string
       responses:
         2XX:
@@ -2817,11 +2340,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create rule
-      description: Create a messageRule object by specifying a set of conditions and actions. Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
+      summary: Create new navigation property to messageRules for users
       operationId: user.mailFolder_CreateMessageRule
       parameters:
         - name: user-id
@@ -2861,11 +2380,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get rule
-      description: Get the properties and relationships of a messageRule object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/messagerule-get?view=graph-rest-1.0
+      summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: user.mailFolder_GetMessageRule
       parameters:
         - name: user-id
@@ -2901,16 +2417,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - actions
-                - conditions
-                - displayName
-                - exceptions
-                - hasError
-                - isEnabled
-                - isReadOnly
-                - sequence
               type: string
       responses:
         2XX:
@@ -2925,11 +2431,7 @@ paths:
     patch:
       tags:
         - users.mailFolder
-      summary: Update rule
-      description: Change writable properties on a messageRule object and save the changes.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/messagerule-update?view=graph-rest-1.0
+      summary: Update the navigation property messageRules in users
       operationId: user.mailFolder_UpdateMessageRule
       parameters:
         - name: user-id
@@ -2976,11 +2478,7 @@ paths:
     delete:
       tags:
         - users.mailFolder
-      summary: Delete messageRule
-      description: Delete the specified messageRule object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/messagerule-delete?view=graph-rest-1.0
+      summary: Delete navigation property messageRules for users
       operationId: user.mailFolder_DeleteMessageRule
       parameters:
         - name: user-id
@@ -3052,11 +2550,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List messages
-      description: 'Get all the messages in the specified user''s mailbox, or those messages in a specified folder in the mailbox.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
+      summary: Get messages from users
+      description: The collection of messages in the mailFolder.
       operationId: user.mailFolder_ListMessage
       parameters:
         - name: user-id
@@ -3089,69 +2584,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - categories
-                - categories desc
-                - changeKey
-                - changeKey desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - bccRecipients
-                - bccRecipients desc
-                - body
-                - body desc
-                - bodyPreview
-                - bodyPreview desc
-                - ccRecipients
-                - ccRecipients desc
-                - conversationId
-                - conversationId desc
-                - conversationIndex
-                - conversationIndex desc
-                - flag
-                - flag desc
-                - from
-                - from desc
-                - hasAttachments
-                - hasAttachments desc
-                - importance
-                - importance desc
-                - inferenceClassification
-                - inferenceClassification desc
-                - internetMessageHeaders
-                - internetMessageHeaders desc
-                - internetMessageId
-                - internetMessageId desc
-                - isDeliveryReceiptRequested
-                - isDeliveryReceiptRequested desc
-                - isDraft
-                - isDraft desc
-                - isRead
-                - isRead desc
-                - isReadReceiptRequested
-                - isReadReceiptRequested desc
-                - parentFolderId
-                - parentFolderId desc
-                - receivedDateTime
-                - receivedDateTime desc
-                - replyTo
-                - replyTo desc
-                - sender
-                - sender desc
-                - sentDateTime
-                - sentDateTime desc
-                - subject
-                - subject desc
-                - toRecipients
-                - toRecipients desc
-                - uniqueBody
-                - uniqueBody desc
-                - webLink
-                - webLink desc
               type: string
         - name: $select
           in: query
@@ -3162,42 +2594,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - bccRecipients
-                - body
-                - bodyPreview
-                - ccRecipients
-                - conversationId
-                - conversationIndex
-                - flag
-                - from
-                - hasAttachments
-                - importance
-                - inferenceClassification
-                - internetMessageHeaders
-                - internetMessageId
-                - isDeliveryReceiptRequested
-                - isDraft
-                - isRead
-                - isReadReceiptRequested
-                - parentFolderId
-                - receivedDateTime
-                - replyTo
-                - sender
-                - sentDateTime
-                - subject
-                - toRecipients
-                - uniqueBody
-                - webLink
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -3208,12 +2604,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -3227,11 +2617,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create message in a mailfolder
-      description: Use this API to create a new Message in a mailfolder.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for users
       operationId: user.mailFolder_CreateMessage
       parameters:
         - name: user-id
@@ -3308,42 +2694,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - bccRecipients
-                - body
-                - bodyPreview
-                - ccRecipients
-                - conversationId
-                - conversationIndex
-                - flag
-                - from
-                - hasAttachments
-                - importance
-                - inferenceClassification
-                - internetMessageHeaders
-                - internetMessageId
-                - isDeliveryReceiptRequested
-                - isDraft
-                - isRead
-                - isReadReceiptRequested
-                - parentFolderId
-                - receivedDateTime
-                - replyTo
-                - sender
-                - sentDateTime
-                - subject
-                - toRecipients
-                - uniqueBody
-                - webLink
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -3354,12 +2704,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -3465,9 +2809,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: user.mailFolder_GetMessagesContent
       parameters:
         - name: user-id
@@ -3560,11 +2901,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to a message.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: user.mailFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -3602,19 +2940,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - contentType
-                - contentType desc
-                - isInline
-                - isInline desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -3625,13 +2950,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - isInline
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -3642,8 +2960,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3657,11 +2973,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Add attachment
-      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or you can\nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.mailFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -3709,11 +3021,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get attachment
-      description: 'Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: user.mailFolder.message_GetAttachment
       parameters:
         - name: user-id
@@ -3757,13 +3066,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - isInline
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -3774,8 +3076,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3878,8 +3178,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+      summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: user.mailFolder.message_ListExtension
       parameters:
         - name: user-id
@@ -3919,9 +3219,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -3932,8 +3229,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -3944,8 +3239,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3959,11 +3252,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.mailFolder.message_CreateExtension
       parameters:
         - name: user-id
@@ -4011,11 +3300,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+      summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: user.mailFolder.message_GetExtension
       parameters:
         - name: user-id
@@ -4059,8 +3345,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -4071,8 +3355,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4142,11 +3424,7 @@ paths:
     delete:
       tags:
         - users.mailFolder
-      summary: Delete open extension
-      description: 'Delete an open extension (openTypeExtension object) from the specified instance of a resource.  For the list of resources that support open extensions, see the table in the Permissions section.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-delete?view=graph-rest-1.0
+      summary: Delete navigation property extensions for users
       operationId: user.mailFolder.message_DeleteExtension
       parameters:
         - name: user-id
@@ -4287,9 +3565,6 @@ paths:
         - users.message
       summary: Get messages from users
       description: The messages in a mailbox or folder. Read-only. Nullable.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user_ListMessage
       parameters:
         - name: user-id
@@ -4321,69 +3596,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - categories
-                - categories desc
-                - changeKey
-                - changeKey desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - bccRecipients
-                - bccRecipients desc
-                - body
-                - body desc
-                - bodyPreview
-                - bodyPreview desc
-                - ccRecipients
-                - ccRecipients desc
-                - conversationId
-                - conversationId desc
-                - conversationIndex
-                - conversationIndex desc
-                - flag
-                - flag desc
-                - from
-                - from desc
-                - hasAttachments
-                - hasAttachments desc
-                - importance
-                - importance desc
-                - inferenceClassification
-                - inferenceClassification desc
-                - internetMessageHeaders
-                - internetMessageHeaders desc
-                - internetMessageId
-                - internetMessageId desc
-                - isDeliveryReceiptRequested
-                - isDeliveryReceiptRequested desc
-                - isDraft
-                - isDraft desc
-                - isRead
-                - isRead desc
-                - isReadReceiptRequested
-                - isReadReceiptRequested desc
-                - parentFolderId
-                - parentFolderId desc
-                - receivedDateTime
-                - receivedDateTime desc
-                - replyTo
-                - replyTo desc
-                - sender
-                - sender desc
-                - sentDateTime
-                - sentDateTime desc
-                - subject
-                - subject desc
-                - toRecipients
-                - toRecipients desc
-                - uniqueBody
-                - uniqueBody desc
-                - webLink
-                - webLink desc
               type: string
         - name: $select
           in: query
@@ -4394,42 +3606,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - bccRecipients
-                - body
-                - bodyPreview
-                - ccRecipients
-                - conversationId
-                - conversationIndex
-                - flag
-                - from
-                - hasAttachments
-                - importance
-                - inferenceClassification
-                - internetMessageHeaders
-                - internetMessageId
-                - isDeliveryReceiptRequested
-                - isDraft
-                - isRead
-                - isReadReceiptRequested
-                - parentFolderId
-                - receivedDateTime
-                - replyTo
-                - sender
-                - sentDateTime
-                - subject
-                - toRecipients
-                - uniqueBody
-                - webLink
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -4440,12 +3616,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -4459,11 +3629,7 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create message
-      description: "Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:\n- Include an attachment to the message.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for users
       operationId: user_CreateMessage
       parameters:
         - name: user-id
@@ -4497,9 +3663,6 @@ paths:
         - users.message
       summary: Get messages from users
       description: The messages in a mailbox or folder. Read-only. Nullable.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user_GetMessage
       parameters:
         - name: user-id
@@ -4534,42 +3697,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - categories
-                - changeKey
-                - createdDateTime
-                - lastModifiedDateTime
-                - bccRecipients
-                - body
-                - bodyPreview
-                - ccRecipients
-                - conversationId
-                - conversationIndex
-                - flag
-                - from
-                - hasAttachments
-                - importance
-                - inferenceClassification
-                - internetMessageHeaders
-                - internetMessageId
-                - isDeliveryReceiptRequested
-                - isDraft
-                - isRead
-                - isReadReceiptRequested
-                - parentFolderId
-                - receivedDateTime
-                - replyTo
-                - sender
-                - sentDateTime
-                - subject
-                - toRecipients
-                - uniqueBody
-                - webLink
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -4580,12 +3707,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
               type: string
       responses:
         2XX:
@@ -4600,11 +3721,7 @@ paths:
     patch:
       tags:
         - users.message
-      summary: Update eventMessage
-      description: Update the properties of an eventMessage object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0
+      summary: Update the navigation property messages in users
       operationId: user_UpdateMessage
       parameters:
         - name: user-id
@@ -4643,11 +3760,7 @@ paths:
     delete:
       tags:
         - users.message
-      summary: Delete eventMessage
-      description: Delete eventMessage.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0
+      summary: Delete navigation property messages for users
       operationId: user_DeleteMessage
       parameters:
         - name: user-id
@@ -4683,9 +3796,6 @@ paths:
       tags:
         - users.message
       summary: Get media content for the navigation property messages from users
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user_GetMessagesContent
       parameters:
         - name: user-id
@@ -4762,11 +3872,8 @@ paths:
     get:
       tags:
         - users.message
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to a message.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: user.message_ListAttachment
       parameters:
         - name: user-id
@@ -4796,19 +3903,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - contentType
-                - contentType desc
-                - isInline
-                - isInline desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -4819,13 +3913,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - isInline
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -4836,8 +3923,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4851,11 +3936,7 @@ paths:
     post:
       tags:
         - users.message
-      summary: Add attachment
-      description: "Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. You can add an attachment to an existing message by posting to its attachments collection, or you can\nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.message_CreateAttachment
       parameters:
         - name: user-id
@@ -4895,11 +3976,8 @@ paths:
     get:
       tags:
         - users.message
-      summary: Get attachment
-      description: 'Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: user.message_GetAttachment
       parameters:
         - name: user-id
@@ -4935,13 +4013,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - isInline
-                - lastModifiedDateTime
-                - name
-                - size
               type: string
         - name: $expand
           in: query
@@ -4952,8 +4023,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5040,8 +4109,8 @@ paths:
     get:
       tags:
         - users.message
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+      summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: user.message_ListExtension
       parameters:
         - name: user-id
@@ -5073,9 +4142,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -5086,8 +4152,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -5098,8 +4162,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5113,11 +4175,7 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.message_CreateExtension
       parameters:
         - name: user-id
@@ -5157,11 +4215,8 @@ paths:
     get:
       tags:
         - users.message
-      summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+      summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: user.message_GetExtension
       parameters:
         - name: user-id
@@ -5197,8 +4252,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
               type: string
         - name: $expand
           in: query
@@ -5209,8 +4262,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5272,11 +4323,7 @@ paths:
     delete:
       tags:
         - users.message
-      summary: Delete open extension
-      description: 'Delete an open extension (openTypeExtension object) from the specified instance of a resource.  For the list of resources that support open extensions, see the table in the Permissions section.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-delete?view=graph-rest-1.0
+      summary: Delete navigation property extensions for users
       operationId: user.message_DeleteExtension
       parameters:
         - name: user-id
@@ -5549,51 +4596,64 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
+              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
             internetMessageId:
               type: string
+              description: The message ID in the format specified by RFC2822.
               nullable: true
             isDeliveryReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             isDraft:
               type: boolean
+              description: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
               nullable: true
             isRead:
               type: boolean
+              description: Indicates whether the message has been read.
               nullable: true
             isReadReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             parentFolderId:
               type: string
+              description: The unique identifier for the message's parent mailFolder.
               nullable: true
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             replyTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: The email addresses to use when replying.
             sender:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             subject:
               type: string
+              description: The subject of the message.
               nullable: true
             toRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The To: recipients for the message.'
             uniqueBody:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             webLink:
               type: string
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array

@@ -22,14 +22,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - settings
-                - connectors
-                - operations
-                - printers
-                - services
-                - shares
-                - taskDefinitions
               type: string
         - name: $expand
           in: query
@@ -40,14 +32,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - connectors
-                - operations
-                - printers
-                - services
-                - shares
-                - taskDefinitions
               type: string
       responses:
         2XX:
@@ -85,11 +69,8 @@ paths:
     get:
       tags:
         - print.printConnector
-      summary: List printConnectors
-      description: Retrieve a list of print connectors.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-list-connectors?view=graph-rest-1.0
+      summary: Get connectors from print
+      description: The list of available print connectors.
       operationId: print_ListConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -106,21 +87,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appVersion
-                - appVersion desc
-                - displayName
-                - displayName desc
-                - fullyQualifiedDomainName
-                - fullyQualifiedDomainName desc
-                - location
-                - location desc
-                - operatingSystem
-                - operatingSystem desc
-                - registeredDateTime
-                - registeredDateTime desc
               type: string
         - name: $select
           in: query
@@ -131,14 +97,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appVersion
-                - displayName
-                - fullyQualifiedDomainName
-                - location
-                - operatingSystem
-                - registeredDateTime
               type: string
         - name: $expand
           in: query
@@ -149,8 +107,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -187,11 +143,8 @@ paths:
     get:
       tags:
         - print.printConnector
-      summary: Get printConnector
-      description: Retrieve the properties and relationships of a printConnector object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printconnector-get?view=graph-rest-1.0
+      summary: Get connectors from print
+      description: The list of available print connectors.
       operationId: print_GetConnector
       parameters:
         - name: printConnector-id
@@ -211,14 +164,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appVersion
-                - displayName
-                - fullyQualifiedDomainName
-                - location
-                - operatingSystem
-                - registeredDateTime
               type: string
         - name: $expand
           in: query
@@ -229,8 +174,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -245,11 +188,7 @@ paths:
     patch:
       tags:
         - print.printConnector
-      summary: Update printConnector
-      description: Update the properties of a printConnector object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printconnector-update?view=graph-rest-1.0
+      summary: Update the navigation property connectors in print
       operationId: print_UpdateConnector
       parameters:
         - name: printConnector-id
@@ -280,11 +219,7 @@ paths:
     delete:
       tags:
         - print.printConnector
-      summary: Delete printConnector
-      description: Delete (unregister) a printConnector.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0
+      summary: Delete navigation property connectors for print
       operationId: print_DeleteConnector
       parameters:
         - name: printConnector-id
@@ -325,8 +260,8 @@ paths:
     get:
       tags:
         - print.printOperation
-      summary: Get printOperation
-      description: Retrieve the properties and relationships of a printOperation object.
+      summary: Get operations from print
+      description: The list of print long running operations.
       operationId: print_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -343,13 +278,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -360,10 +288,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - status
               type: string
         - name: $expand
           in: query
@@ -374,8 +298,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -412,11 +334,8 @@ paths:
     get:
       tags:
         - print.printOperation
-      summary: Get printOperation
-      description: Retrieve the properties and relationships of a printOperation object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printoperation-get?view=graph-rest-1.0
+      summary: Get operations from print
+      description: The list of print long running operations.
       operationId: print_GetOperation
       parameters:
         - name: printOperation-id
@@ -436,10 +355,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - status
               type: string
         - name: $expand
           in: query
@@ -450,8 +365,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -538,11 +451,8 @@ paths:
     get:
       tags:
         - print.printer
-      summary: List printers
-      description: Retrieve the list of printers that are registered in the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-list-printers?view=graph-rest-1.0
+      summary: Get printers from print
+      description: The list of printers registered in the tenant.
       operationId: print_ListPrinter
       parameters:
         - $ref: '#/components/parameters/top'
@@ -559,33 +469,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - capabilities
-                - capabilities desc
-                - defaults
-                - defaults desc
-                - displayName
-                - displayName desc
-                - isAcceptingJobs
-                - isAcceptingJobs desc
-                - location
-                - location desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - status
-                - status desc
-                - hasPhysicalDevice
-                - hasPhysicalDevice desc
-                - isShared
-                - isShared desc
-                - lastSeenDateTime
-                - lastSeenDateTime desc
-                - registeredDateTime
-                - registeredDateTime desc
               type: string
         - name: $select
           in: query
@@ -596,24 +479,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - hasPhysicalDevice
-                - isShared
-                - lastSeenDateTime
-                - registeredDateTime
-                - jobs
-                - connectors
-                - shares
-                - taskTriggers
               type: string
         - name: $expand
           in: query
@@ -624,12 +489,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - connectors
-                - shares
-                - taskTriggers
               type: string
       responses:
         2XX:
@@ -666,11 +525,8 @@ paths:
     get:
       tags:
         - print.printer
-      summary: Get printer
-      description: Retrieve the properties and relationships of a printer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-get?view=graph-rest-1.0
+      summary: Get printers from print
+      description: The list of printers registered in the tenant.
       operationId: print_GetPrinter
       parameters:
         - name: printer-id
@@ -690,24 +546,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - hasPhysicalDevice
-                - isShared
-                - lastSeenDateTime
-                - registeredDateTime
-                - jobs
-                - connectors
-                - shares
-                - taskTriggers
               type: string
         - name: $expand
           in: query
@@ -718,12 +556,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - connectors
-                - shares
-                - taskTriggers
               type: string
       responses:
         2XX:
@@ -738,11 +570,7 @@ paths:
     patch:
       tags:
         - print.printer
-      summary: Update printer
-      description: Update the properties of a printer object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-update?view=graph-rest-1.0
+      summary: Update the navigation property printers in print
       operationId: print_UpdatePrinter
       parameters:
         - name: printer-id
@@ -773,11 +601,7 @@ paths:
     delete:
       tags:
         - print.printer
-      summary: Delete printer
-      description: Delete (unregister) a printer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-delete?view=graph-rest-1.0
+      summary: Delete navigation property printers for print
       operationId: print_DeletePrinter
       parameters:
         - name: printer-id
@@ -804,11 +628,8 @@ paths:
     get:
       tags:
         - print.printer
-      summary: List printConnectors for a printer
-      description: Retrieve a list of printConnectors associated with the printer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-list-connectors?view=graph-rest-1.0
+      summary: Get connectors from print
+      description: The connectors that are associated with the printer.
       operationId: print.printer_ListConnector
       parameters:
         - name: printer-id
@@ -833,21 +654,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - appVersion
-                - appVersion desc
-                - displayName
-                - displayName desc
-                - fullyQualifiedDomainName
-                - fullyQualifiedDomainName desc
-                - location
-                - location desc
-                - operatingSystem
-                - operatingSystem desc
-                - registeredDateTime
-                - registeredDateTime desc
               type: string
         - name: $select
           in: query
@@ -858,14 +664,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appVersion
-                - displayName
-                - fullyQualifiedDomainName
-                - location
-                - operatingSystem
-                - registeredDateTime
               type: string
         - name: $expand
           in: query
@@ -876,8 +674,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -921,14 +717,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - appVersion
-                - displayName
-                - fullyQualifiedDomainName
-                - location
-                - operatingSystem
-                - registeredDateTime
               type: string
         - name: $expand
           in: query
@@ -939,8 +727,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1004,23 +790,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - configuration
-                - configuration desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - isFetchable
-                - isFetchable desc
-                - redirectedFrom
-                - redirectedFrom desc
-                - redirectedTo
-                - redirectedTo desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -1031,17 +800,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configuration
-                - createdBy
-                - createdDateTime
-                - isFetchable
-                - redirectedFrom
-                - redirectedTo
-                - status
-                - documents
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -1052,10 +810,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - documents
-                - tasks
               type: string
       responses:
         2XX:
@@ -1130,17 +884,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configuration
-                - createdBy
-                - createdDateTime
-                - isFetchable
-                - redirectedFrom
-                - redirectedTo
-                - status
-                - documents
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -1151,10 +894,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - documents
-                - tasks
               type: string
       responses:
         2XX:
@@ -1276,15 +1015,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - contentType
-                - contentType desc
-                - displayName
-                - displayName desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -1295,11 +1025,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - displayName
-                - size
               type: string
         - name: $expand
           in: query
@@ -1310,8 +1035,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1401,11 +1124,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - displayName
-                - size
               type: string
         - name: $expand
           in: query
@@ -1416,8 +1134,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1896,13 +1612,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - parentUrl
-                - parentUrl desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -1913,12 +1622,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - parentUrl
-                - status
-                - definition
-                - trigger
               type: string
         - name: $expand
           in: query
@@ -1929,10 +1632,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
-                - trigger
               type: string
       responses:
         2XX:
@@ -2023,12 +1722,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - parentUrl
-                - status
-                - definition
-                - trigger
               type: string
         - name: $expand
           in: query
@@ -2039,10 +1732,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
-                - trigger
               type: string
       responses:
         2XX:
@@ -2184,11 +1873,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - displayName
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -2199,9 +1883,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -2254,10 +1935,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - event
-                - definition
               type: string
         - name: $expand
           in: query
@@ -2268,9 +1945,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
               type: string
       responses:
         2XX:
@@ -2363,11 +2037,8 @@ paths:
     get:
       tags:
         - print.printer
-      summary: List printerShares for a printer
-      description: Retrieve a list of printer shares associated with the printer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-list-shares?view=graph-rest-1.0
+      summary: Get shares from print
+      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printer_ListShare
       parameters:
         - name: printer-id
@@ -2392,31 +2063,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - capabilities
-                - capabilities desc
-                - defaults
-                - defaults desc
-                - displayName
-                - displayName desc
-                - isAcceptingJobs
-                - isAcceptingJobs desc
-                - location
-                - location desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - status
-                - status desc
-                - allowAllUsers
-                - allowAllUsers desc
-                - createdDateTime
-                - createdDateTime desc
-                - viewPoint
-                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -2427,23 +2073,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - allowAllUsers
-                - createdDateTime
-                - viewPoint
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
         - name: $expand
           in: query
@@ -2454,12 +2083,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
       responses:
         2XX:
@@ -2503,23 +2126,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - allowAllUsers
-                - createdDateTime
-                - viewPoint
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
         - name: $expand
           in: query
@@ -2530,12 +2136,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
       responses:
         2XX:
@@ -2573,11 +2173,8 @@ paths:
     get:
       tags:
         - print.printer
-      summary: List taskTriggers
-      description: 'Retrieve a list of task triggers associated with the printer. The list of task triggers defines which tasks will be triggered as a result of events that occur during printing. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-list-tasktriggers?view=graph-rest-1.0
+      summary: Get taskTriggers from print
+      description: A list of task triggers that are associated with the printer.
       operationId: print.printer_ListTaskTrigger
       parameters:
         - name: printer-id
@@ -2602,11 +2199,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - event
-                - event desc
               type: string
         - name: $select
           in: query
@@ -2617,10 +2209,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - event
-                - definition
               type: string
         - name: $expand
           in: query
@@ -2631,9 +2219,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
               type: string
       responses:
         2XX:
@@ -2647,11 +2232,7 @@ paths:
     post:
       tags:
         - print.printer
-      summary: Create printTaskTrigger
-      description: 'Create a new task trigger on the specified printer. Currently, only one task trigger can be specified per printer, but this limit might be removed in the future. '
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-post-tasktriggers?view=graph-rest-1.0
+      summary: Create new navigation property to taskTriggers for print
       operationId: print.printer_CreateTaskTrigger
       parameters:
         - name: printer-id
@@ -2683,11 +2264,8 @@ paths:
     get:
       tags:
         - print.printer
-      summary: Get printTaskTrigger
-      description: 'Get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printtasktrigger-get?view=graph-rest-1.0
+      summary: Get taskTriggers from print
+      description: A list of task triggers that are associated with the printer.
       operationId: print.printer_GetTaskTrigger
       parameters:
         - name: printer-id
@@ -2715,10 +2293,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - event
-                - definition
               type: string
         - name: $expand
           in: query
@@ -2729,9 +2303,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
               type: string
       responses:
         2XX:
@@ -2785,11 +2356,7 @@ paths:
     delete:
       tags:
         - print.printer
-      summary: Delete printTaskTrigger
-      description: Delete the task trigger of a printer to prevent related print events from triggering tasks on the specified printer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printer-delete-tasktrigger?view=graph-rest-1.0
+      summary: Delete navigation property taskTriggers for print
       operationId: print.printer_DeleteTaskTrigger
       parameters:
         - name: printer-id
@@ -2853,11 +2420,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - displayName
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -2868,9 +2430,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -2966,11 +2525,8 @@ paths:
     get:
       tags:
         - print.printService
-      summary: List printServices
-      description: Retrieve a list of printService objects that represent the services available to your tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-list-services?view=graph-rest-1.0
+      summary: Get services from print
+      description: The list of available Universal Print service endpoints.
       operationId: print_ListService
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2987,9 +2543,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
               type: string
         - name: $select
           in: query
@@ -3000,9 +2553,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - endpoints
               type: string
         - name: $expand
           in: query
@@ -3013,9 +2563,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - endpoints
               type: string
       responses:
         2XX:
@@ -3052,11 +2599,8 @@ paths:
     get:
       tags:
         - print.printService
-      summary: Get printService
-      description: Retrieve the properties and relationships of a print service.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printservice-get?view=graph-rest-1.0
+      summary: Get services from print
+      description: The list of available Universal Print service endpoints.
       operationId: print_GetService
       parameters:
         - name: printService-id
@@ -3076,9 +2620,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - endpoints
               type: string
         - name: $expand
           in: query
@@ -3089,9 +2630,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - endpoints
               type: string
       responses:
         2XX:
@@ -3164,11 +2702,8 @@ paths:
     get:
       tags:
         - print.printService
-      summary: List endpoints
-      description: Retrieve a list of endpoints exposed by a print service.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printservice-list-endpoints?view=graph-rest-1.0
+      summary: Get endpoints from print
+      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.service_ListEndpoint
       parameters:
         - name: printService-id
@@ -3193,13 +2728,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - uri
-                - uri desc
               type: string
         - name: $select
           in: query
@@ -3210,10 +2738,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - uri
               type: string
         - name: $expand
           in: query
@@ -3224,8 +2748,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3271,11 +2793,8 @@ paths:
     get:
       tags:
         - print.printService
-      summary: Get printServiceEndpoint
-      description: Retrieve the properties and relationships of a print service endpoint.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printserviceendpoint-get?view=graph-rest-1.0
+      summary: Get endpoints from print
+      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.service_GetEndpoint
       parameters:
         - name: printService-id
@@ -3303,10 +2822,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - uri
               type: string
         - name: $expand
           in: query
@@ -3317,8 +2832,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3443,11 +2956,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List shares
-      description: Retrieve a list of printerShares.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-list-shares?view=graph-rest-1.0
+      summary: Get shares from print
+      description: The list of printer shares registered in the tenant.
       operationId: print_ListShare
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3464,31 +2974,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - capabilities
-                - capabilities desc
-                - defaults
-                - defaults desc
-                - displayName
-                - displayName desc
-                - isAcceptingJobs
-                - isAcceptingJobs desc
-                - location
-                - location desc
-                - manufacturer
-                - manufacturer desc
-                - model
-                - model desc
-                - status
-                - status desc
-                - allowAllUsers
-                - allowAllUsers desc
-                - createdDateTime
-                - createdDateTime desc
-                - viewPoint
-                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -3499,23 +2984,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - allowAllUsers
-                - createdDateTime
-                - viewPoint
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
         - name: $expand
           in: query
@@ -3526,12 +2994,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
       responses:
         2XX:
@@ -3545,11 +3007,7 @@ paths:
     post:
       tags:
         - print.printerShare
-      summary: Create printerShare
-      description: Create a new printerShare for the specified printer.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-post-shares?view=graph-rest-1.0
+      summary: Create new navigation property to shares for print
       operationId: print_CreateShare
       requestBody:
         description: New navigation property
@@ -3572,11 +3030,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: Get printerShare
-      description: Retrieve the properties and relationships of a printer share.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-get?view=graph-rest-1.0
+      summary: Get shares from print
+      description: The list of printer shares registered in the tenant.
       operationId: print_GetShare
       parameters:
         - name: printerShare-id
@@ -3596,23 +3051,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - allowAllUsers
-                - createdDateTime
-                - viewPoint
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
         - name: $expand
           in: query
@@ -3623,12 +3061,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - allowedGroups
-                - allowedUsers
-                - printer
               type: string
       responses:
         2XX:
@@ -3643,11 +3075,7 @@ paths:
     patch:
       tags:
         - print.printerShare
-      summary: Update printerShare
-      description: 'Update the properties of a printer share. This method can be used to swap printers. For example, if a physical printer device breaks, an administrator can register a new printer device and update this printerShare to point to the new printer without requiring users to take any action.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-update?view=graph-rest-1.0
+      summary: Update the navigation property shares in print
       operationId: print_UpdateShare
       parameters:
         - name: printerShare-id
@@ -3678,11 +3106,7 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete printerShare
-      description: 'Delete a printer share (unshare the associated printer). This action can''t be undone. If the printer is shared again in the future, any Windows users who had previously installed the printer needs to discover and reinstall it.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete?view=graph-rest-1.0
+      summary: Delete navigation property shares for print
       operationId: print_DeleteShare
       parameters:
         - name: printerShare-id
@@ -3709,11 +3133,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List allowedGroups
-      description: Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
+      summary: Get allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.share_ListAllowedGroup
       parameters:
         - name: printerShare-id
@@ -3738,89 +3159,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - allowExternalSenders
-                - allowExternalSenders desc
-                - assignedLabels
-                - assignedLabels desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - autoSubscribeNewMembers
-                - autoSubscribeNewMembers desc
-                - classification
-                - classification desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - groupTypes
-                - groupTypes desc
-                - hasMembersWithLicenseErrors
-                - hasMembersWithLicenseErrors desc
-                - hideFromAddressLists
-                - hideFromAddressLists desc
-                - hideFromOutlookClients
-                - hideFromOutlookClients desc
-                - isArchived
-                - isArchived desc
-                - isAssignableToRole
-                - isAssignableToRole desc
-                - isSubscribedByMail
-                - isSubscribedByMail desc
-                - licenseProcessingState
-                - licenseProcessingState desc
-                - mail
-                - mail desc
-                - mailEnabled
-                - mailEnabled desc
-                - mailNickname
-                - mailNickname desc
-                - membershipRule
-                - membershipRule desc
-                - membershipRuleProcessingState
-                - membershipRuleProcessingState desc
-                - onPremisesDomainName
-                - onPremisesDomainName desc
-                - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
-                - onPremisesNetBiosName
-                - onPremisesNetBiosName desc
-                - onPremisesProvisioningErrors
-                - onPremisesProvisioningErrors desc
-                - onPremisesSamAccountName
-                - onPremisesSamAccountName desc
-                - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
-                - preferredDataLocation
-                - preferredDataLocation desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - proxyAddresses
-                - proxyAddresses desc
-                - renewedDateTime
-                - renewedDateTime desc
-                - securityEnabled
-                - securityEnabled desc
-                - securityIdentifier
-                - securityIdentifier desc
-                - serviceProvisioningErrors
-                - serviceProvisioningErrors desc
-                - theme
-                - theme desc
-                - unseenCount
-                - unseenCount desc
-                - visibility
-                - visibility desc
               type: string
         - name: $select
           in: query
@@ -3831,75 +3169,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - allowExternalSenders
-                - assignedLabels
-                - assignedLicenses
-                - autoSubscribeNewMembers
-                - classification
-                - createdDateTime
-                - description
-                - displayName
-                - expirationDateTime
-                - groupTypes
-                - hasMembersWithLicenseErrors
-                - hideFromAddressLists
-                - hideFromOutlookClients
-                - isArchived
-                - isAssignableToRole
-                - isSubscribedByMail
-                - licenseProcessingState
-                - mail
-                - mailEnabled
-                - mailNickname
-                - membershipRule
-                - membershipRuleProcessingState
-                - onPremisesDomainName
-                - onPremisesLastSyncDateTime
-                - onPremisesNetBiosName
-                - onPremisesProvisioningErrors
-                - onPremisesSamAccountName
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - preferredDataLocation
-                - preferredLanguage
-                - proxyAddresses
-                - renewedDateTime
-                - securityEnabled
-                - securityIdentifier
-                - serviceProvisioningErrors
-                - theme
-                - unseenCount
-                - visibility
-                - acceptedSenders
-                - appRoleAssignments
-                - calendar
-                - calendarView
-                - conversations
-                - createdOnBehalfOf
-                - drive
-                - drives
-                - events
-                - extensions
-                - groupLifecyclePolicies
-                - memberOf
-                - members
-                - membersWithLicenseErrors
-                - onenote
-                - owners
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - rejectedSenders
-                - settings
-                - sites
-                - team
-                - threads
-                - transitiveMemberOf
-                - transitiveMembers
               type: string
         - name: $expand
           in: query
@@ -3910,35 +3179,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - acceptedSenders
-                - appRoleAssignments
-                - calendar
-                - calendarView
-                - conversations
-                - createdOnBehalfOf
-                - drive
-                - drives
-                - events
-                - extensions
-                - groupLifecyclePolicies
-                - memberOf
-                - members
-                - membersWithLicenseErrors
-                - onenote
-                - owners
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - rejectedSenders
-                - settings
-                - sites
-                - team
-                - threads
-                - transitiveMemberOf
-                - transitiveMembers
               type: string
       responses:
         2XX:
@@ -3953,12 +3193,8 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete allowedGroup from printerShare
-      description: Revoke the specified group's access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
-      operationId: print.share_DeleteAllowedGroupGraphBPreRef
+      summary: Delete ref of navigation property allowedGroups for print
+      operationId: print.share.allowedGroup_DeleteGroupGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -4026,13 +3262,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - createdDateTime desc
-                - isResolved
-                - isResolved desc
-                - serviceInstance
-                - serviceInstance desc
               type: string
         - name: $select
           in: query
@@ -4043,10 +3272,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - isResolved
-                - serviceInstance
               type: string
         - name: $expand
           in: query
@@ -4057,8 +3282,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4124,11 +3347,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List allowedGroups
-      description: Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
+      summary: Get ref of allowedGroups from print
+      description: The groups whose users have access to print using the printer.
       operationId: print.share_ListAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -4153,89 +3373,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - allowExternalSenders
-                - allowExternalSenders desc
-                - assignedLabels
-                - assignedLabels desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - autoSubscribeNewMembers
-                - autoSubscribeNewMembers desc
-                - classification
-                - classification desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - groupTypes
-                - groupTypes desc
-                - hasMembersWithLicenseErrors
-                - hasMembersWithLicenseErrors desc
-                - hideFromAddressLists
-                - hideFromAddressLists desc
-                - hideFromOutlookClients
-                - hideFromOutlookClients desc
-                - isArchived
-                - isArchived desc
-                - isAssignableToRole
-                - isAssignableToRole desc
-                - isSubscribedByMail
-                - isSubscribedByMail desc
-                - licenseProcessingState
-                - licenseProcessingState desc
-                - mail
-                - mail desc
-                - mailEnabled
-                - mailEnabled desc
-                - mailNickname
-                - mailNickname desc
-                - membershipRule
-                - membershipRule desc
-                - membershipRuleProcessingState
-                - membershipRuleProcessingState desc
-                - onPremisesDomainName
-                - onPremisesDomainName desc
-                - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
-                - onPremisesNetBiosName
-                - onPremisesNetBiosName desc
-                - onPremisesProvisioningErrors
-                - onPremisesProvisioningErrors desc
-                - onPremisesSamAccountName
-                - onPremisesSamAccountName desc
-                - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
-                - preferredDataLocation
-                - preferredDataLocation desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - proxyAddresses
-                - proxyAddresses desc
-                - renewedDateTime
-                - renewedDateTime desc
-                - securityEnabled
-                - securityEnabled desc
-                - securityIdentifier
-                - securityIdentifier desc
-                - serviceProvisioningErrors
-                - serviceProvisioningErrors desc
-                - theme
-                - theme desc
-                - unseenCount
-                - unseenCount desc
-                - visibility
-                - visibility desc
               type: string
       responses:
         2XX:
@@ -4249,11 +3386,7 @@ paths:
     post:
       tags:
         - print.printerShare
-      summary: Create allowedGroup for printerShare
-      description: Grant the specified group access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-post-allowedgroups?view=graph-rest-1.0
+      summary: Create new navigation property ref to allowedGroups for print
       operationId: print.share_CreateAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -4275,11 +3408,7 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete allowedGroup from printerShare
-      description: Revoke the specified group's access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
+      summary: Delete ref of navigation property allowedGroups for print
       operationId: print.share_DeleteAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -4314,11 +3443,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List allowedUsers
-      description: Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
+      summary: Get allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.share_ListAllowedUser
       parameters:
         - name: printerShare-id
@@ -4343,165 +3469,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - aboutMe
-                - aboutMe desc
-                - accountEnabled
-                - accountEnabled desc
-                - ageGroup
-                - ageGroup desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - authorizationInfo
-                - authorizationInfo desc
-                - birthday
-                - birthday desc
-                - businessPhones
-                - businessPhones desc
-                - city
-                - city desc
-                - companyName
-                - companyName desc
-                - consentProvidedForMinor
-                - consentProvidedForMinor desc
-                - country
-                - country desc
-                - createdDateTime
-                - createdDateTime desc
-                - creationType
-                - creationType desc
-                - customSecurityAttributes
-                - customSecurityAttributes desc
-                - department
-                - department desc
-                - deviceEnrollmentLimit
-                - deviceEnrollmentLimit desc
-                - displayName
-                - displayName desc
-                - employeeHireDate
-                - employeeHireDate desc
-                - employeeId
-                - employeeId desc
-                - employeeLeaveDateTime
-                - employeeLeaveDateTime desc
-                - employeeOrgData
-                - employeeOrgData desc
-                - employeeType
-                - employeeType desc
-                - externalUserState
-                - externalUserState desc
-                - externalUserStateChangeDateTime
-                - externalUserStateChangeDateTime desc
-                - faxNumber
-                - faxNumber desc
-                - givenName
-                - givenName desc
-                - hireDate
-                - hireDate desc
-                - identities
-                - identities desc
-                - imAddresses
-                - imAddresses desc
-                - interests
-                - interests desc
-                - isResourceAccount
-                - isResourceAccount desc
-                - jobTitle
-                - jobTitle desc
-                - lastPasswordChangeDateTime
-                - lastPasswordChangeDateTime desc
-                - legalAgeGroupClassification
-                - legalAgeGroupClassification desc
-                - licenseAssignmentStates
-                - licenseAssignmentStates desc
-                - mail
-                - mail desc
-                - mailboxSettings
-                - mailboxSettings desc
-                - mailNickname
-                - mailNickname desc
-                - mobilePhone
-                - mobilePhone desc
-                - mySite
-                - mySite desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesDistinguishedName
-                - onPremisesDistinguishedName desc
-                - onPremisesDomainName
-                - onPremisesDomainName desc
-                - onPremisesExtensionAttributes
-                - onPremisesExtensionAttributes desc
-                - onPremisesImmutableId
-                - onPremisesImmutableId desc
-                - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
-                - onPremisesProvisioningErrors
-                - onPremisesProvisioningErrors desc
-                - onPremisesSamAccountName
-                - onPremisesSamAccountName desc
-                - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
-                - onPremisesUserPrincipalName
-                - onPremisesUserPrincipalName desc
-                - otherMails
-                - otherMails desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - pastProjects
-                - pastProjects desc
-                - postalCode
-                - postalCode desc
-                - preferredDataLocation
-                - preferredDataLocation desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - preferredName
-                - preferredName desc
-                - print
-                - print desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - proxyAddresses
-                - proxyAddresses desc
-                - responsibilities
-                - responsibilities desc
-                - schools
-                - schools desc
-                - securityIdentifier
-                - securityIdentifier desc
-                - serviceProvisioningErrors
-                - serviceProvisioningErrors desc
-                - showInAddressList
-                - showInAddressList desc
-                - signInActivity
-                - signInActivity desc
-                - signInSessionsValidFromDateTime
-                - signInSessionsValidFromDateTime desc
-                - skills
-                - skills desc
-                - state
-                - state desc
-                - streetAddress
-                - streetAddress desc
-                - surname
-                - surname desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
         - name: $select
           in: query
@@ -4512,134 +3479,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - deletedDateTime
-                - aboutMe
-                - accountEnabled
-                - ageGroup
-                - assignedLicenses
-                - assignedPlans
-                - authorizationInfo
-                - birthday
-                - businessPhones
-                - city
-                - companyName
-                - consentProvidedForMinor
-                - country
-                - createdDateTime
-                - creationType
-                - customSecurityAttributes
-                - department
-                - deviceEnrollmentLimit
-                - displayName
-                - employeeHireDate
-                - employeeId
-                - employeeLeaveDateTime
-                - employeeOrgData
-                - employeeType
-                - externalUserState
-                - externalUserStateChangeDateTime
-                - faxNumber
-                - givenName
-                - hireDate
-                - identities
-                - imAddresses
-                - interests
-                - isResourceAccount
-                - jobTitle
-                - lastPasswordChangeDateTime
-                - legalAgeGroupClassification
-                - licenseAssignmentStates
-                - mail
-                - mailboxSettings
-                - mailNickname
-                - mobilePhone
-                - mySite
-                - officeLocation
-                - onPremisesDistinguishedName
-                - onPremisesDomainName
-                - onPremisesExtensionAttributes
-                - onPremisesImmutableId
-                - onPremisesLastSyncDateTime
-                - onPremisesProvisioningErrors
-                - onPremisesSamAccountName
-                - onPremisesSecurityIdentifier
-                - onPremisesSyncEnabled
-                - onPremisesUserPrincipalName
-                - otherMails
-                - passwordPolicies
-                - passwordProfile
-                - pastProjects
-                - postalCode
-                - preferredDataLocation
-                - preferredLanguage
-                - preferredName
-                - print
-                - provisionedPlans
-                - proxyAddresses
-                - responsibilities
-                - schools
-                - securityIdentifier
-                - serviceProvisioningErrors
-                - showInAddressList
-                - signInActivity
-                - signInSessionsValidFromDateTime
-                - skills
-                - state
-                - streetAddress
-                - surname
-                - usageLocation
-                - userPrincipalName
-                - userType
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -4650,56 +3489,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
-                - agreementAcceptances
-                - appRoleAssignments
-                - authentication
-                - calendar
-                - calendarGroups
-                - calendars
-                - calendarView
-                - chats
-                - contactFolders
-                - contacts
-                - createdObjects
-                - deviceManagementTroubleshootingEvents
-                - directReports
-                - drive
-                - drives
-                - employeeExperience
-                - events
-                - extensions
-                - followedSites
-                - inferenceClassification
-                - insights
-                - joinedTeams
-                - licenseDetails
-                - mailFolders
-                - managedAppRegistrations
-                - managedDevices
-                - manager
-                - memberOf
-                - messages
-                - oauth2PermissionGrants
-                - onenote
-                - onlineMeetings
-                - outlook
-                - ownedDevices
-                - ownedObjects
-                - people
-                - permissionGrants
-                - photo
-                - photos
-                - planner
-                - presence
-                - registeredDevices
-                - scopedRoleMemberOf
-                - settings
-                - teamwork
-                - todo
-                - transitiveMemberOf
               type: string
       responses:
         2XX:
@@ -4714,12 +3503,8 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete allowedUser from printerShare
-      description: Revoke the specified user's access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
-      operationId: print.share_DeleteAllowedUserGraphBPreRef
+      summary: Delete ref of navigation property allowedUsers for print
+      operationId: print.share.allowedUser_DeleteUserGraphBPreRef
       parameters:
         - name: printerShare-id
           in: path
@@ -4782,16 +3567,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - archiveFolder
-                - automaticRepliesSetting
-                - dateFormat
-                - delegateMeetingMessageDeliveryOptions
-                - language
-                - timeFormat
-                - timeZone
-                - userPurpose
-                - workingHours
               type: string
         - name: $expand
           in: query
@@ -4802,8 +3577,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4890,13 +3663,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - createdDateTime desc
-                - isResolved
-                - isResolved desc
-                - serviceInstance
-                - serviceInstance desc
               type: string
         - name: $select
           in: query
@@ -4907,10 +3673,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - createdDateTime
-                - isResolved
-                - serviceInstance
               type: string
         - name: $expand
           in: query
@@ -4921,8 +3683,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4988,11 +3748,8 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: List allowedUsers
-      description: Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
+      summary: Get ref of allowedUsers from print
+      description: The users who have access to print using the printer.
       operationId: print.share_ListAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -5017,165 +3774,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - aboutMe
-                - aboutMe desc
-                - accountEnabled
-                - accountEnabled desc
-                - ageGroup
-                - ageGroup desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - authorizationInfo
-                - authorizationInfo desc
-                - birthday
-                - birthday desc
-                - businessPhones
-                - businessPhones desc
-                - city
-                - city desc
-                - companyName
-                - companyName desc
-                - consentProvidedForMinor
-                - consentProvidedForMinor desc
-                - country
-                - country desc
-                - createdDateTime
-                - createdDateTime desc
-                - creationType
-                - creationType desc
-                - customSecurityAttributes
-                - customSecurityAttributes desc
-                - department
-                - department desc
-                - deviceEnrollmentLimit
-                - deviceEnrollmentLimit desc
-                - displayName
-                - displayName desc
-                - employeeHireDate
-                - employeeHireDate desc
-                - employeeId
-                - employeeId desc
-                - employeeLeaveDateTime
-                - employeeLeaveDateTime desc
-                - employeeOrgData
-                - employeeOrgData desc
-                - employeeType
-                - employeeType desc
-                - externalUserState
-                - externalUserState desc
-                - externalUserStateChangeDateTime
-                - externalUserStateChangeDateTime desc
-                - faxNumber
-                - faxNumber desc
-                - givenName
-                - givenName desc
-                - hireDate
-                - hireDate desc
-                - identities
-                - identities desc
-                - imAddresses
-                - imAddresses desc
-                - interests
-                - interests desc
-                - isResourceAccount
-                - isResourceAccount desc
-                - jobTitle
-                - jobTitle desc
-                - lastPasswordChangeDateTime
-                - lastPasswordChangeDateTime desc
-                - legalAgeGroupClassification
-                - legalAgeGroupClassification desc
-                - licenseAssignmentStates
-                - licenseAssignmentStates desc
-                - mail
-                - mail desc
-                - mailboxSettings
-                - mailboxSettings desc
-                - mailNickname
-                - mailNickname desc
-                - mobilePhone
-                - mobilePhone desc
-                - mySite
-                - mySite desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesDistinguishedName
-                - onPremisesDistinguishedName desc
-                - onPremisesDomainName
-                - onPremisesDomainName desc
-                - onPremisesExtensionAttributes
-                - onPremisesExtensionAttributes desc
-                - onPremisesImmutableId
-                - onPremisesImmutableId desc
-                - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
-                - onPremisesProvisioningErrors
-                - onPremisesProvisioningErrors desc
-                - onPremisesSamAccountName
-                - onPremisesSamAccountName desc
-                - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
-                - onPremisesUserPrincipalName
-                - onPremisesUserPrincipalName desc
-                - otherMails
-                - otherMails desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - pastProjects
-                - pastProjects desc
-                - postalCode
-                - postalCode desc
-                - preferredDataLocation
-                - preferredDataLocation desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - preferredName
-                - preferredName desc
-                - print
-                - print desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - proxyAddresses
-                - proxyAddresses desc
-                - responsibilities
-                - responsibilities desc
-                - schools
-                - schools desc
-                - securityIdentifier
-                - securityIdentifier desc
-                - serviceProvisioningErrors
-                - serviceProvisioningErrors desc
-                - showInAddressList
-                - showInAddressList desc
-                - signInActivity
-                - signInActivity desc
-                - signInSessionsValidFromDateTime
-                - signInSessionsValidFromDateTime desc
-                - skills
-                - skills desc
-                - state
-                - state desc
-                - streetAddress
-                - streetAddress desc
-                - surname
-                - surname desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
               type: string
       responses:
         2XX:
@@ -5189,11 +3787,7 @@ paths:
     post:
       tags:
         - print.printerShare
-      summary: Create allowedUser for printerShare
-      description: Grant the specified user access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-post-allowedusers?view=graph-rest-1.0
+      summary: Create new navigation property ref to allowedUsers for print
       operationId: print.share_CreateAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -5215,11 +3809,7 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete allowedUser from printerShare
-      description: Revoke the specified user's access to submit print jobs to the associated printerShare.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
+      summary: Delete ref of navigation property allowedUsers for print
       operationId: print.share_DeleteAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -5280,23 +3870,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - configuration
-                - configuration desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - isFetchable
-                - isFetchable desc
-                - redirectedFrom
-                - redirectedFrom desc
-                - redirectedTo
-                - redirectedTo desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -5307,17 +3880,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configuration
-                - createdBy
-                - createdDateTime
-                - isFetchable
-                - redirectedFrom
-                - redirectedTo
-                - status
-                - documents
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -5328,10 +3890,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - documents
-                - tasks
               type: string
       responses:
         2XX:
@@ -5406,17 +3964,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - configuration
-                - createdBy
-                - createdDateTime
-                - isFetchable
-                - redirectedFrom
-                - redirectedTo
-                - status
-                - documents
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -5427,10 +3974,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - documents
-                - tasks
               type: string
       responses:
         2XX:
@@ -5552,15 +4095,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - contentType
-                - contentType desc
-                - displayName
-                - displayName desc
-                - size
-                - size desc
               type: string
         - name: $select
           in: query
@@ -5571,11 +4105,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - displayName
-                - size
               type: string
         - name: $expand
           in: query
@@ -5586,8 +4115,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5677,11 +4204,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - contentType
-                - displayName
-                - size
               type: string
         - name: $expand
           in: query
@@ -5692,8 +4214,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -6172,13 +4692,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - parentUrl
-                - parentUrl desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -6189,12 +4702,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - parentUrl
-                - status
-                - definition
-                - trigger
               type: string
         - name: $expand
           in: query
@@ -6205,10 +4712,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
-                - trigger
               type: string
       responses:
         2XX:
@@ -6299,12 +4802,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - parentUrl
-                - status
-                - definition
-                - trigger
               type: string
         - name: $expand
           in: query
@@ -6315,10 +4812,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
-                - trigger
               type: string
       responses:
         2XX:
@@ -6460,11 +4953,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - displayName
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -6475,9 +4963,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -6530,10 +5015,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - event
-                - definition
               type: string
         - name: $expand
           in: query
@@ -6544,9 +5025,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
               type: string
       responses:
         2XX:
@@ -6635,24 +5113,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - capabilities
-                - defaults
-                - displayName
-                - isAcceptingJobs
-                - location
-                - manufacturer
-                - model
-                - status
-                - hasPhysicalDevice
-                - isShared
-                - lastSeenDateTime
-                - registeredDateTime
-                - jobs
-                - connectors
-                - shares
-                - taskTriggers
               type: string
         - name: $expand
           in: query
@@ -6663,12 +5123,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - jobs
-                - connectors
-                - shares
-                - taskTriggers
               type: string
       responses:
         2XX:
@@ -6698,11 +5152,8 @@ paths:
     get:
       tags:
         - print.printTaskDefinition
-      summary: List taskDefinitions
-      description: 'Retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-list-taskdefinitions?view=graph-rest-1.0
+      summary: Get taskDefinitions from print
+      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_ListTaskDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6719,13 +5170,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -6736,11 +5180,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - displayName
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -6751,9 +5190,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -6767,11 +5203,7 @@ paths:
     post:
       tags:
         - print.printTaskDefinition
-      summary: Create printTaskDefinition
-      description: 'Create a new task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-post-taskdefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to taskDefinitions for print
       operationId: print_CreateTaskDefinition
       requestBody:
         description: New navigation property
@@ -6794,11 +5226,8 @@ paths:
     get:
       tags:
         - print.printTaskDefinition
-      summary: Get printTaskDefinition
-      description: 'Get details about a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printtaskdefinition-get?view=graph-rest-1.0
+      summary: Get taskDefinitions from print
+      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_GetTaskDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -6818,11 +5247,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - displayName
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -6833,9 +5257,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -6850,11 +5271,7 @@ paths:
     patch:
       tags:
         - print.printTaskDefinition
-      summary: Update printTaskDefinition
-      description: 'Update a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-update-taskdefinition?view=graph-rest-1.0
+      summary: Update the navigation property taskDefinitions in print
       operationId: print_UpdateTaskDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -6885,11 +5302,7 @@ paths:
     delete:
       tags:
         - print.printTaskDefinition
-      summary: Delete printTaskDefinition
-      description: 'Delete a taskDefinition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/print-delete-taskdefinition?view=graph-rest-1.0
+      summary: Delete navigation property taskDefinitions for print
       operationId: print_DeleteTaskDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -6916,11 +5329,8 @@ paths:
     get:
       tags:
         - print.printTaskDefinition
-      summary: List tasks
-      description: 'Retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0
+      summary: Get tasks from print
+      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinition_ListTask
       parameters:
         - name: printTaskDefinition-id
@@ -6945,13 +5355,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - parentUrl
-                - parentUrl desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -6962,12 +5365,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - parentUrl
-                - status
-                - definition
-                - trigger
               type: string
         - name: $expand
           in: query
@@ -6978,10 +5375,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
-                - trigger
               type: string
       responses:
         2XX:
@@ -7027,11 +5420,8 @@ paths:
     get:
       tags:
         - print.printTaskDefinition
-      summary: Get printTask
-      description: 'Get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printtask-get?view=graph-rest-1.0
+      summary: Get tasks from print
+      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinition_GetTask
       parameters:
         - name: printTaskDefinition-id
@@ -7059,12 +5449,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - parentUrl
-                - status
-                - definition
-                - trigger
               type: string
         - name: $expand
           in: query
@@ -7075,10 +5459,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
-                - trigger
               type: string
       responses:
         2XX:
@@ -7093,11 +5473,7 @@ paths:
     patch:
       tags:
         - print.printTaskDefinition
-      summary: Update printTask
-      description: 'Update a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/printtaskdefinition-update-task?view=graph-rest-1.0
+      summary: Update the navigation property tasks in print
       operationId: print.taskDefinition_UpdateTask
       parameters:
         - name: printTaskDefinition-id
@@ -7200,11 +5576,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdBy
-                - displayName
-                - tasks
               type: string
         - name: $expand
           in: query
@@ -7215,9 +5586,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - tasks
               type: string
       responses:
         2XX:
@@ -7262,10 +5630,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - event
-                - definition
               type: string
         - name: $expand
           in: query
@@ -7276,9 +5640,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - definition
               type: string
       responses:
         2XX:
@@ -8260,7 +6621,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
             mail:
               type: string
-              description: 'The SMTP address for the group, for example, ''serviceadmins@contoso.onmicrosoft.com''. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The SMTP address for the group, for example, ''serviceadmins@contoso.com''. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mailEnabled:
               type: boolean
@@ -8342,6 +6703,10 @@ components:
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              nullable: true
+            uniqueName:
+              type: string
+              description: The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -8620,7 +6985,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It may contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.'
+              description: 'Represents the identities that can be used to sign in to this user account. Microsoft (also known as a local account), organizations, or social identity providers such as Facebook, Google, and Microsoft can provide identity and tie it to a user account. It may contain multiple items with the same signInType value. Returned only on $select.  Supports $filter (eq) with limitations.'
             imAddresses:
               type: array
               items:
@@ -8658,7 +7023,7 @@ components:
               description: State of license assignments for this user. Also indicates licenses that are directly assigned or the user has inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Changes to this property update the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, jeff@contoso.com. Changes to this property update the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailboxSettings:
               $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
@@ -8825,7 +7190,7 @@ components:
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
+              description: 'A string value that can be used to classify user types in your directory. The possible values are Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
               nullable: true
             activities:
               type: array
@@ -8872,6 +7237,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chat'
               x-ms-navigationProperty: true
+            cloudClipboard:
+              $ref: '#/components/schemas/microsoft.graph.cloudClipboardRoot'
             contactFolders:
               type: array
               items:
@@ -9040,6 +7407,12 @@ components:
               x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
+            sponsors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The users and groups responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
+              x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
@@ -9891,21 +8264,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.importance'
             isAllDay:
               type: boolean
+              description: 'Set to true if the event lasts all day. If true, regardless of whether it''s a single-day or multi-day event, start and end time must be set to midnight and be in the same time zone.'
               nullable: true
             isCancelled:
               type: boolean
+              description: Set to true if the event has been canceled.
               nullable: true
             isDraft:
               type: boolean
+              description: 'Set to true if the user has updated the meeting in Outlook but has not sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.'
               nullable: true
             isOnlineMeeting:
               type: boolean
+              description: 'True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.'
               nullable: true
             isOrganizer:
               type: boolean
+              description: Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.
               nullable: true
             isReminderOn:
               type: boolean
+              description: Set to true if an alert is set to remind the user of the event.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.location'
@@ -9913,25 +8292,30 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.location'
+              description: 'The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.'
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
             onlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             onlineMeetingUrl:
               type: string
+              description: 'A URL for an online meeting. The property is set only when an organizer specifies in Outlook that an event is an online meeting such as Skype. Read-only.To access the URL to join an online meeting, use joinUrl which is exposed via the onlineMeeting property of the event. The onlineMeetingUrl property will be deprecated in the future.'
               nullable: true
             organizer:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             originalEndTimeZone:
               type: string
+              description: The end time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
               nullable: true
             originalStart:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property is not returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             originalStartTimeZone:
               type: string
+              description: The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
               nullable: true
             recurrence:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
@@ -9939,10 +8323,12 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of minutes before the event start time that the reminder alert occurs.
               format: int32
               nullable: true
             responseRequested:
               type: boolean
+              description: 'Default is true, which represents the organizer would like an invitee to send a response to the event.'
               nullable: true
             responseStatus:
               $ref: '#/components/schemas/microsoft.graph.responseStatus'
@@ -9950,6 +8336,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.sensitivity'
             seriesMasterId:
               type: string
+              description: 'The ID for the recurring series master item, if this event is part of a recurring series.'
               nullable: true
             showAs:
               $ref: '#/components/schemas/microsoft.graph.freeBusyStatus'
@@ -9957,14 +8344,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             subject:
               type: string
+              description: The text of the event's subject line.
               nullable: true
             transactionId:
               type: string
+              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.eventType'
             webLink:
               type: string
+              description: 'The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -10055,7 +8445,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-              description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
+              description: Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
               x-ms-navigationProperty: true
             following:
               type: array
@@ -10309,6 +8699,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
               description: The collection of long-running operations on the site.
               x-ms-navigationProperty: true
+            pages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
+              x-ms-navigationProperty: true
             permissions:
               type: array
               items:
@@ -10552,15 +8948,15 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn''t federated), this property is the local default domain name for the tenant, for example contoso.com.  For guests from other Microsoft Entra organizations, this is the domain of the federated organization, for example contoso.com. For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
         issuerAssignedId:
           type: string
-          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or . 64 character limit.Supports $filter.'
+          description: 'Specifies the unique identifier assigned to the user by the issuer. 64 character limit. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress (or a custom string that starts with emailAddress like emailAddress1), issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with an alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or _  For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
         signInType:
           type: string
-          description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Other validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.'
+          description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity updates the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, are performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.'
           nullable: true
       additionalProperties:
         type: object
@@ -10668,15 +9064,15 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: true if the user must change her password on the next login; otherwise false.
+          description: true if the user must change their password on the next sign-in; otherwise false.
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
-          description: 'If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
+          description: 'If true, at next sign-in, the user must perform a multifactor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multifactor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.'
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next sign-in. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -10973,7 +9369,7 @@ components:
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Date and time at which the chat was renamed or list of members were last changed. Read-only.
+              description: Date and time at which the chat was renamed or the list of members was last changed. Read-only.
               format: date-time
               nullable: true
             onlineMeetingInfo:
@@ -11029,6 +9425,20 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the chat. Nullable.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardRoot
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItem'
+              description: Represents a collection of Cloud Clipboard items.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -11148,55 +9558,72 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The contact's instant messaging (IM) addresses.
             initials:
               type: string
+              description: The contact's initials.
               nullable: true
             jobTitle:
               type: string
+              description: The contact’s job title.
               nullable: true
             manager:
               type: string
+              description: The name of the contact's manager.
               nullable: true
             middleName:
               type: string
+              description: The contact's middle name.
               nullable: true
             mobilePhone:
               type: string
+              description: The contact's mobile phone number.
               nullable: true
             nickName:
               type: string
+              description: The contact's nickname.
               nullable: true
             officeLocation:
               type: string
+              description: The location of the contact's office.
               nullable: true
             otherAddress:
               $ref: '#/components/schemas/microsoft.graph.physicalAddress'
             parentFolderId:
               type: string
+              description: The ID of the contact's parent folder.
               nullable: true
             personalNotes:
               type: string
+              description: The user's notes about the contact.
               nullable: true
             profession:
               type: string
+              description: The contact's profession.
               nullable: true
             spouseName:
               type: string
+              description: The name of the contact's spouse/partner.
               nullable: true
             surname:
               type: string
+              description: The contact's surname.
               nullable: true
             title:
               type: string
+              description: The contact's title.
               nullable: true
             yomiCompanyName:
               type: string
+              description: The phonetic Japanese company name of the contact.
               nullable: true
             yomiGivenName:
               type: string
+              description: The phonetic Japanese given name (first name) of the contact.
               nullable: true
             yomiSurname:
               type: string
+              description: The phonetic Japanese surname (last name)  of the contact.
               nullable: true
             extensions:
               type: array
@@ -11301,16 +9728,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
-              description: 'Information about the service plans assigned with the license. Read-only, Not nullable'
+              description: Information about the service plans assigned with the license. Read-only. Not nullable.
             skuId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
               format: uuid
               nullable: true
             skuPartNumber:
               type: string
-              description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
+              description: 'Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -11544,6 +9971,11 @@ components:
               type: string
               description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
+              readOnly: true
+            enrollmentProfileName:
+              type: string
+              description: 'Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.'
+              nullable: true
               readOnly: true
             ethernetMacAddress:
               type: string
@@ -11782,51 +10214,64 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
+              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
             internetMessageId:
               type: string
+              description: The message ID in the format specified by RFC2822.
               nullable: true
             isDeliveryReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             isDraft:
               type: boolean
+              description: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
               nullable: true
             isRead:
               type: boolean
+              description: Indicates whether the message has been read.
               nullable: true
             isReadReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             parentFolderId:
               type: string
+              description: The unique identifier for the message's parent mailFolder.
               nullable: true
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             replyTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: The email addresses to use when replying.
             sender:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             subject:
               type: string
+              description: The subject of the message.
               nullable: true
             toRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The To: recipients for the message.'
             uniqueBody:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             webLink:
               type: string
+              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -11901,7 +10346,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting end time in UTC.
+              description: The meeting end time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             externalId:
@@ -11915,7 +10360,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The meeting start time in UTC.
+              description: The meeting start time in UTC. Required when you create an online meeting.
               format: date-time
               nullable: true
             recordings:
@@ -12100,6 +10545,11 @@ components:
               description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+            windows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSetting'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -12108,6 +10558,14 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            locale:
+              type: string
+              description: The chosen locale of a user in Microsoft Teams.
+              nullable: true
+            region:
+              type: string
+              description: The region of the user in Microsoft Teams.
+              nullable: true
             associatedTeams:
               type: array
               items:
@@ -13565,13 +12023,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
-              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
+              description: 'The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.'
               x-ms-navigationProperty: true
             workbook:
               $ref: '#/components/schemas/microsoft.graph.workbook'
@@ -13910,7 +12368,7 @@ components:
       properties:
         dataLocationCode:
           type: string
-          description: The geographic region code for where this site collection resides. Read-only.
+          description: The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
           nullable: true
         hostname:
           type: string
@@ -14001,7 +12459,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lookupColumn'
             name:
               type: string
-              description: 'The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.'
+              description: 'The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.'
               nullable: true
             number:
               $ref: '#/components/schemas/microsoft.graph.numberColumn'
@@ -14046,7 +12504,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+              description: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
             description:
               type: string
               description: The descriptive text for the item.
@@ -14081,7 +12539,7 @@ components:
               nullable: true
             propagateChanges:
               type: boolean
-              description: 'If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.'
+              description: 'If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.'
               nullable: true
             readOnly:
               type: boolean
@@ -14115,7 +12573,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-              description: The collection of column definitions for this contentType.
+              description: The collection of column definitions for this content type.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -14141,6 +12599,22 @@ components:
             type:
               type: string
               description: The type of the operation.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.baseSitePage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: baseSitePage
+          type: object
+          properties:
+            pageLayout:
+              $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
+            publishingState:
+              $ref: '#/components/schemas/microsoft.graph.publicationFacet'
+            title:
+              type: string
+              description: Title of the sitePage.
               nullable: true
           additionalProperties:
             type: object
@@ -15219,6 +13693,35 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudClipboardItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudClipboardItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Set by the server. DateTime in UTC when the object was created on the server.
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Set by the server. DateTime in UTC when the object expires and after that the object is no longer available. The default and also maximum TTL is 12 hours after the creation, but it might change for performance optimization.'
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Set by the server if not provided in the client's request. DateTime in UTC when the object was modified by the client.
+              format: date-time
+              nullable: true
+            payloads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudClipboardItemPayload'
+              description: A cloudClipboardItem can have multiple cloudClipboardItemPayload objects in the payloads. A window can place more than one clipboard object on the clipboard. Each one represents the same information in a different clipboard format.
           additionalProperties:
             type: object
     microsoft.graph.physicalAddress:
@@ -16700,6 +15203,30 @@ components:
               description: Availability of the user to be scheduled for work and its recurrence pattern.
           additionalProperties:
             type: object
+    microsoft.graph.windowsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSetting
+          type: object
+          properties:
+            payloadType:
+              type: string
+              description: The type of setting payloads contained in the instances navigation property.
+              nullable: true
+            settingType:
+              $ref: '#/components/schemas/microsoft.graph.windowsSettingType'
+            windowsDeviceId:
+              type: string
+              description: A unique identifier for the device the setting might belong to if it is of the settingType backup.
+              nullable: true
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsSettingInstance'
+              description: A collection of setting values for a given windowsSetting.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.associatedTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -16942,11 +15469,11 @@ components:
       properties:
         driveId:
           type: string
-          description: 'Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.'
+          description: Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.
           nullable: true
         driveType:
           type: string
-          description: 'Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.'
+          description: Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.
           nullable: true
         id:
           type: string
@@ -16962,13 +15489,13 @@ components:
           nullable: true
         shareId:
           type: string
-          description: 'A unique identifier for a shared resource that can be accessed via the [Shares][] API.'
+          description: A unique identifier for a shared resource that can be accessed via the Shares API.
           nullable: true
         sharepointIds:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
+          description: 'For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.'
           nullable: true
       additionalProperties:
         type: object
@@ -17524,14 +16051,14 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
+              description: 'Required. Indicates the type of change in the subscribed resource that raises a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated, or soft deleted. Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
-              description: 'Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.'
+              description: 'Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.'
               nullable: true
             encryptionCertificate:
               type: string
@@ -17544,7 +16071,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.'
               format: date-time
             includeResourceData:
               type: boolean
@@ -17560,18 +16087,18 @@ components:
               nullable: true
             notificationQueryOptions:
               type: string
-              description: 'Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.'
+              description: 'Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.'
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property is included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
-              description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
+              description: Optional. The app ID that the subscription service can use to generate the validation token. The value allows the client to validate the authenticity of the notification received.
               nullable: true
             resource:
               type: string
-              description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+              description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
           additionalProperties:
             type: object
     microsoft.graph.thumbnailSet:
@@ -18289,6 +16816,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.pageLayoutType:
+      title: pageLayoutType
+      enum:
+        - microsoftReserved
+        - article
+        - home
+        - unknownFutureValue
+      type: string
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -18896,6 +17431,10 @@ components:
               type: string
               description: 'Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.'
               nullable: true
+            enrollmentType:
+              type: string
+              description: 'Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.'
+              nullable: true
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
@@ -18904,9 +17443,25 @@ components:
               type: boolean
               description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
               nullable: true
+            isRooted:
+              type: boolean
+              description: true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
+              nullable: true
+            managementType:
+              type: string
+              description: 'The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
+              nullable: true
+            manufacturer:
+              type: string
+              description: Manufacturer of the device. Read-only.
+              nullable: true
             mdmAppId:
               type: string
               description: 'Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).'
+              nullable: true
+            model:
+              type: string
+              description: Model of the device. Read-only.
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -18916,6 +17471,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
+              description: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -19061,27 +17617,27 @@ components:
           nullable: true
         contentType:
           type: string
-          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework''s Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
+          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework''s Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
           nullable: true
         contentUrl:
           type: string
-          description: 'URL for the content of the attachment. Supported protocols: http, https, file and data.'
+          description: The URL for the content of the attachment.
           nullable: true
         id:
           type: string
-          description: Read-only. Unique id of the attachment.
+          description: Read-only. The unique id of the attachment.
           nullable: true
         name:
           type: string
-          description: Name of the attachment.
+          description: The name of the attachment.
           nullable: true
         teamsAppId:
           type: string
-          description: The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+          description: The ID of the Teams app that is associated with the attachment. The property is used to attribute a Teams message card to the specified app.
           nullable: true
         thumbnailUrl:
           type: string
-          description: 'URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.'
+          description: 'The URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user selects the image, the channel would open the document.'
           nullable: true
       additionalProperties:
         type: object
@@ -19202,6 +17758,18 @@ components:
           type: string
           description: Url for showing tab contents outside of Teams.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudClipboardItemPayload:
+      title: cloudClipboardItemPayload
+      type: object
+      properties:
+        content:
+          type: string
+          description: The formatName version of the value of a cloud clipboard encoded in base64.
+        formatName:
+          type: string
+          description: For a list of possible values see formatName values.
       additionalProperties:
         type: object
     microsoft.graph.courseStatus:
@@ -20291,6 +18859,40 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsSettingType:
+      title: windowsSettingType
+      enum:
+        - roaming
+        - backup
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsSettingInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsSettingInstance
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Set by the server. Represents the dateTime in UTC when the object was created on the server.
+              format: date-time
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Set by the server. The object expires at the specified dateTime in UTC, making it unavailable after that time.'
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Set by the server if not provided in the request from the Windows client device. Refers to the user's Windows device that modified the object at the specified dateTime in UTC.
+              format: date-time
+              nullable: true
+            payload:
+              type: string
+              description: Base64-encoded JSON setting value.
+          additionalProperties:
+            type: object
     microsoft.graph.teamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20441,7 +19043,7 @@ components:
       properties:
         coverImageItemId:
           type: string
-          description: 'Unique identifier of the [driveItem][] that is the cover of the album.'
+          description: Unique identifier of the driveItem that is the cover of the album.
           nullable: true
       additionalProperties:
         type: object
@@ -20522,7 +19124,7 @@ components:
               description: Items within the document set that are captured as part of this version.
             shouldCaptureMinorVersion:
               type: boolean
-              description: 'If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.'
+              description: 'If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.'
               nullable: true
           additionalProperties:
             type: object
@@ -22017,11 +20619,11 @@ components:
               format: date-time
             displayName:
               type: string
-              description: Field indicating the title of checklistItem.
+              description: Indicates the title of the checklistItem.
               nullable: true
             isChecked:
               type: boolean
-              description: State indicating whether the item is checked off or not.
+              description: State that indicates whether the item is checked off or not.
               nullable: true
           additionalProperties:
             type: object

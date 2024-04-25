@@ -22,10 +22,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - authorizationSystems
-                - connections
-                - industryData
               type: string
         - name: $expand
           in: query
@@ -36,11 +32,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - authorizationSystems
-                - connections
-                - industryData
               type: string
       responses:
         2XX:
@@ -78,11 +69,8 @@ paths:
     get:
       tags:
         - external.authorizationSystem
-      summary: List authorizationSystems
-      description: List the authorizationSystem objects onboarded to Permissions Management and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-external-list-authorizationsystems?view=graph-rest-1.0
+      summary: Get authorizationSystems from external
+      description: 'Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.'
       operationId: external_ListAuthorizationSystem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -99,15 +87,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - authorizationSystemId
-                - authorizationSystemId desc
-                - authorizationSystemName
-                - authorizationSystemName desc
-                - authorizationSystemType
-                - authorizationSystemType desc
               type: string
         - name: $select
           in: query
@@ -118,12 +97,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - authorizationSystemId
-                - authorizationSystemName
-                - authorizationSystemType
-                - dataCollectionInfo
               type: string
         - name: $expand
           in: query
@@ -134,9 +107,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - dataCollectionInfo
               type: string
       responses:
         2XX:
@@ -194,12 +164,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - authorizationSystemId
-                - authorizationSystemName
-                - authorizationSystemType
-                - dataCollectionInfo
               type: string
         - name: $expand
           in: query
@@ -210,9 +174,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - dataCollectionInfo
               type: string
       responses:
         2XX:
@@ -306,9 +267,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - entitlements
               type: string
         - name: $expand
           in: query
@@ -319,8 +277,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -407,11 +363,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: List connections
-      description: Retrieve a list of externalConnections.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
+      summary: Get connections from external
       operationId: external_ListConnection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -428,29 +380,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - activitySettings
-                - activitySettings desc
-                - complianceSettings
-                - complianceSettings desc
-                - configuration
-                - configuration desc
-                - connectorId
-                - connectorId desc
-                - description
-                - description desc
-                - enabledContentExperiences
-                - enabledContentExperiences desc
-                - ingestedItemsCount
-                - ingestedItemsCount desc
-                - name
-                - name desc
-                - searchSettings
-                - searchSettings desc
-                - state
-                - state desc
               type: string
         - name: $select
           in: query
@@ -461,23 +390,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activitySettings
-                - complianceSettings
-                - configuration
-                - connectorId
-                - description
-                - enabledContentExperiences
-                - ingestedItemsCount
-                - name
-                - searchSettings
-                - state
-                - groups
-                - items
-                - operations
-                - quota
-                - schema
               type: string
         - name: $expand
           in: query
@@ -488,13 +400,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - groups
-                - items
-                - operations
-                - quota
-                - schema
               type: string
       responses:
         2XX:
@@ -508,11 +413,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create connection
-      description: Create a new externalConnection.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
+      summary: Create new navigation property to connections for external
       operationId: external_CreateConnection
       requestBody:
         description: New navigation property
@@ -535,11 +436,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get connection
-      description: Retrieve the properties and relationships of an externalConnection.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
+      summary: Get connections from external
       operationId: external_GetConnection
       parameters:
         - name: externalConnection-id
@@ -559,23 +456,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - activitySettings
-                - complianceSettings
-                - configuration
-                - connectorId
-                - description
-                - enabledContentExperiences
-                - ingestedItemsCount
-                - name
-                - searchSettings
-                - state
-                - groups
-                - items
-                - operations
-                - quota
-                - schema
               type: string
         - name: $expand
           in: query
@@ -586,13 +466,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - groups
-                - items
-                - operations
-                - quota
-                - schema
               type: string
       responses:
         2XX:
@@ -607,11 +480,7 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update connection
-      description: Update the properties of an externalConnection.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
+      summary: Update the navigation property connections in external
       operationId: external_UpdateConnection
       parameters:
         - name: externalConnection-id
@@ -642,11 +511,7 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete externalConnection
-      description: Delete an externalConnection.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
+      summary: Delete navigation property connections for external
       operationId: external_DeleteConnection
       parameters:
         - name: externalConnection-id
@@ -698,13 +563,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -715,11 +573,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - members
               type: string
         - name: $expand
           in: query
@@ -730,9 +583,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - members
               type: string
       responses:
         2XX:
@@ -746,11 +596,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create externalGroup
-      description: Create a new externalGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
+      summary: Create new navigation property to groups for external
       operationId: external.connection_CreateGroup
       parameters:
         - name: externalConnection-id
@@ -810,11 +656,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - members
               type: string
         - name: $expand
           in: query
@@ -825,9 +666,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - members
               type: string
       responses:
         2XX:
@@ -881,11 +719,7 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete externalGroup
-      description: Delete an externalGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
+      summary: Delete navigation property groups for external
       operationId: external.connection_DeleteGroup
       parameters:
         - name: externalConnection-id
@@ -954,11 +788,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -969,9 +798,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - type
               type: string
         - name: $expand
           in: query
@@ -982,8 +808,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -997,11 +821,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create externalGroupMember
-      description: Create a new externalGroupMember object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for external
       operationId: external.connection.group_CreateMember
       parameters:
         - name: externalConnection-id
@@ -1078,9 +898,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - type
               type: string
         - name: $expand
           in: query
@@ -1091,8 +908,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1154,11 +969,7 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete externalGroupMember
-      description: Delete an externalGroupMember object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-1.0
+      summary: Delete navigation property members for external
       operationId: external.connection.group_DeleteMember
       parameters:
         - name: externalConnection-id
@@ -1253,8 +1064,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get externalItem
-      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
+      summary: Get items from external
       operationId: external.connection_ListItem
       parameters:
         - name: externalConnection-id
@@ -1279,15 +1089,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - acl
-                - acl desc
-                - content
-                - content desc
-                - properties
-                - properties desc
               type: string
         - name: $select
           in: query
@@ -1298,12 +1099,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - acl
-                - content
-                - properties
-                - activities
               type: string
         - name: $expand
           in: query
@@ -1314,9 +1109,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
               type: string
       responses:
         2XX:
@@ -1362,11 +1154,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get externalItem
-      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
+      summary: Get items from external
       operationId: external.connection_GetItem
       parameters:
         - name: externalConnection-id
@@ -1394,12 +1182,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - acl
-                - content
-                - properties
-                - activities
               type: string
         - name: $expand
           in: query
@@ -1410,9 +1192,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
               type: string
       responses:
         2XX:
@@ -1466,11 +1245,7 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete externalItem
-      description: Delete an externalitem.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
+      summary: Delete navigation property items for external
       operationId: external.connection_DeleteItem
       parameters:
         - name: externalConnection-id
@@ -1539,13 +1314,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - startDateTime
-                - startDateTime desc
-                - type
-                - type desc
               type: string
         - name: $select
           in: query
@@ -1556,11 +1324,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - startDateTime
-                - type
-                - performedBy
               type: string
         - name: $expand
           in: query
@@ -1571,9 +1334,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - performedBy
               type: string
       responses:
         2XX:
@@ -1664,11 +1424,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - startDateTime
-                - type
-                - performedBy
               type: string
         - name: $expand
           in: query
@@ -1679,9 +1434,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - performedBy
               type: string
       responses:
         2XX:
@@ -1823,9 +1575,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - type
               type: string
         - name: $expand
           in: query
@@ -1836,8 +1585,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -1991,13 +1738,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - error
-                - error desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -2008,10 +1748,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - error
-                - status
               type: string
         - name: $expand
           in: query
@@ -2022,8 +1758,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2097,10 +1831,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - error
-                - status
               type: string
         - name: $expand
           in: query
@@ -2111,8 +1841,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2223,11 +1951,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get connectionQuota
-      description: Retrieve the properties and relationships of a connectionQuota object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-1.0
+      summary: Get quota from external
       operationId: external.connection_GetQuota
       parameters:
         - name: externalConnection-id
@@ -2247,9 +1971,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - itemsRemaining
               type: string
         - name: $expand
           in: query
@@ -2260,8 +1981,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2334,11 +2053,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get schema
-      description: Retrieve the properties of a schema for an externalConnection.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
+      summary: Get schema from external
       operationId: external.connection_GetSchema
       parameters:
         - name: externalConnection-id
@@ -2358,10 +2073,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - baseType
-                - properties
               type: string
         - name: $expand
           in: query
@@ -2372,8 +2083,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2388,11 +2097,7 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update schema
-      description: Update the properties of a schema for an externalConnection.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-1.0
+      summary: Update the navigation property schema in external
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -2450,16 +2155,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - dataConnectors
-                - inboundFlows
-                - operations
-                - referenceDefinitions
-                - roleGroups
-                - runs
-                - sourceSystems
-                - years
               type: string
         - name: $expand
           in: query
@@ -2470,16 +2165,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - dataConnectors
-                - inboundFlows
-                - operations
-                - referenceDefinitions
-                - roleGroups
-                - runs
-                - sourceSystems
-                - years
               type: string
       responses:
         2XX:
@@ -2495,11 +2180,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List azureDataLakeConnectors
-      description: Get a list of the azureDataLakeConnector objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0
+      summary: Get dataConnectors from external
+      description: Set of connectors for importing data from source systems.
       operationId: external.industryData_ListDataConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2516,11 +2198,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
               type: string
         - name: $select
           in: query
@@ -2531,10 +2208,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - sourceSystem
               type: string
         - name: $expand
           in: query
@@ -2545,9 +2218,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sourceSystem
               type: string
       responses:
         2XX:
@@ -2561,11 +2231,7 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create industryDataConnector
-      description: Create a new industryDataConnector object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0
+      summary: Create new navigation property to dataConnectors for external
       operationId: external.industryData_CreateDataConnector
       requestBody:
         description: New navigation property
@@ -2588,11 +2254,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get azureDataLakeConnector
-      description: Read the properties and relationships of an azureDataLakeConnector object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0
+      summary: Get dataConnectors from external
+      description: Set of connectors for importing data from source systems.
       operationId: external.industryData_GetDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2612,10 +2275,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - sourceSystem
               type: string
         - name: $expand
           in: query
@@ -2626,9 +2285,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sourceSystem
               type: string
       responses:
         2XX:
@@ -2643,11 +2299,7 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update azureDataLakeConnector
-      description: Update the properties of an azureDataLakeConnector object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0
+      summary: Update the navigation property dataConnectors in external
       operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2678,11 +2330,7 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete azureDataLakeConnector
-      description: Delete an azureDataLakeConnector object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0
+      summary: Delete navigation property dataConnectors for external
       operationId: external.industryData_DeleteDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2713,7 +2361,7 @@ paths:
       description: Perform validations applicable for the specific instance of the data connector.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-beta
       operationId: external.industryData.dataConnector_validate
       parameters:
         - name: industryDataConnector-id
@@ -2755,11 +2403,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - userMatchingSettings
-                - vendor
               type: string
         - name: $expand
           in: query
@@ -2770,8 +2413,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -2801,11 +2442,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List inboundFileFlows
-      description: Get a list of the inboundFileFlow objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0
+      summary: Get inboundFlows from external
+      description: Set of data import flow activities to bring data into the canonical store via a connector.
       operationId: external.industryData_ListInboundFlow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2822,19 +2460,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - readinessStatus
-                - readinessStatus desc
-                - dataDomain
-                - dataDomain desc
-                - effectiveDateTime
-                - effectiveDateTime desc
-                - expirationDateTime
-                - expirationDateTime desc
               type: string
         - name: $select
           in: query
@@ -2845,15 +2470,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - readinessStatus
-                - dataDomain
-                - effectiveDateTime
-                - expirationDateTime
-                - dataConnector
-                - year
               type: string
         - name: $expand
           in: query
@@ -2864,10 +2480,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - dataConnector
-                - year
               type: string
       responses:
         2XX:
@@ -2881,11 +2493,7 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create inboundFileFlow
-      description: 'Create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0
+      summary: Create new navigation property to inboundFlows for external
       operationId: external.industryData_CreateInboundFlow
       requestBody:
         description: New navigation property
@@ -2908,11 +2516,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFileFlow
-      description: Read the properties and relationships of an inboundFileFlow object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0
+      summary: Get inboundFlows from external
+      description: Set of data import flow activities to bring data into the canonical store via a connector.
       operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2932,15 +2537,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - readinessStatus
-                - dataDomain
-                - effectiveDateTime
-                - expirationDateTime
-                - dataConnector
-                - year
               type: string
         - name: $expand
           in: query
@@ -2951,10 +2547,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - dataConnector
-                - year
               type: string
       responses:
         2XX:
@@ -2969,11 +2561,7 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundFlow
-      description: Update the properties of an inboundFlow object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0
+      summary: Update the navigation property inboundFlows in external
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -3004,11 +2592,7 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete inboundFlow
-      description: Delete an inboundFlow object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-1.0
+      summary: Delete navigation property inboundFlows for external
       operationId: external.industryData_DeleteInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -3056,10 +2640,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - sourceSystem
               type: string
         - name: $expand
           in: query
@@ -3070,9 +2650,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - sourceSystem
               type: string
       responses:
         2XX:
@@ -3109,12 +2686,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - endDate
-                - startDate
-                - year
               type: string
         - name: $expand
           in: query
@@ -3125,8 +2696,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3156,11 +2725,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List fileValidateOperations
-      description: Get a list of long-running file validation operations and their statuses.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-list?view=graph-rest-1.0
+      summary: Get operations from external
+      description: Set of ephemeral operations that the system runs currently. Read-only.
       operationId: external.industryData_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3177,19 +2743,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - lastActionDateTime
-                - lastActionDateTime desc
-                - resourceLocation
-                - resourceLocation desc
-                - status
-                - status desc
-                - statusDetail
-                - statusDetail desc
               type: string
         - name: $select
           in: query
@@ -3200,13 +2753,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - resourceLocation
-                - status
-                - statusDetail
               type: string
         - name: $expand
           in: query
@@ -3217,8 +2763,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3255,11 +2799,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get fileValidateOperations
-      description: Read the properties and relationships of a fileValidateOperation object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-get?view=graph-rest-1.0
+      summary: Get operations from external
+      description: Set of ephemeral operations that the system runs currently. Read-only.
       operationId: external.industryData_GetOperation
       parameters:
         - name: longRunningOperation-id
@@ -3279,13 +2820,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - createdDateTime
-                - lastActionDateTime
-                - resourceLocation
-                - status
-                - statusDetail
               type: string
         - name: $expand
           in: query
@@ -3296,8 +2830,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3380,15 +2912,441 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /external/industryData/outboundProvisioningFlowSets:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get outboundProvisioningFlowSets from external
+      operationId: external.industryData_ListOutboundProvisioningFlowSet
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.industryData.outboundProvisioningFlowSetCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.industryDataRoot
+      summary: Create new navigation property to outboundProvisioningFlowSets for external
+      operationId: external.industryData_CreateOutboundProvisioningFlowSet
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.outboundProvisioningFlowSet'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.outboundProvisioningFlowSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/outboundProvisioningFlowSets/{outboundProvisioningFlowSet-id}':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get outboundProvisioningFlowSets from external
+      operationId: external.industryData_GetOutboundProvisioningFlowSet
+      parameters:
+        - name: outboundProvisioningFlowSet-id
+          in: path
+          description: The unique identifier of outboundProvisioningFlowSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundProvisioningFlowSet
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.outboundProvisioningFlowSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.industryDataRoot
+      summary: Update the navigation property outboundProvisioningFlowSets in external
+      operationId: external.industryData_UpdateOutboundProvisioningFlowSet
+      parameters:
+        - name: outboundProvisioningFlowSet-id
+          in: path
+          description: The unique identifier of outboundProvisioningFlowSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundProvisioningFlowSet
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.outboundProvisioningFlowSet'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.outboundProvisioningFlowSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.industryDataRoot
+      summary: Delete navigation property outboundProvisioningFlowSets for external
+      operationId: external.industryData_DeleteOutboundProvisioningFlowSet
+      parameters:
+        - name: outboundProvisioningFlowSet-id
+          in: path
+          description: The unique identifier of outboundProvisioningFlowSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundProvisioningFlowSet
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/outboundProvisioningFlowSets/{outboundProvisioningFlowSet-id}/provisioningFlows':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get provisioningFlows from external
+      description: A flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
+      operationId: external.industryData.outboundProvisioningFlowSet_ListProvisioningFlow
+      parameters:
+        - name: outboundProvisioningFlowSet-id
+          in: path
+          description: The unique identifier of outboundProvisioningFlowSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundProvisioningFlowSet
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.industryData.provisioningFlowCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.industryDataRoot
+      summary: Create new navigation property to provisioningFlows for external
+      operationId: external.industryData.outboundProvisioningFlowSet_CreateProvisioningFlow
+      parameters:
+        - name: outboundProvisioningFlowSet-id
+          in: path
+          description: The unique identifier of outboundProvisioningFlowSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundProvisioningFlowSet
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.provisioningFlow'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.provisioningFlow'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/outboundProvisioningFlowSets/{outboundProvisioningFlowSet-id}/provisioningFlows/{provisioningFlow-id}':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get provisioningFlows from external
+      description: A flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
+      operationId: external.industryData.outboundProvisioningFlowSet_GetProvisioningFlow
+      parameters:
+        - name: outboundProvisioningFlowSet-id
+          in: path
+          description: The unique identifier of outboundProvisioningFlowSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundProvisioningFlowSet
+        - name: provisioningFlow-id
+          in: path
+          description: The unique identifier of provisioningFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: provisioningFlow
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.provisioningFlow'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.industryDataRoot
+      summary: Update the navigation property provisioningFlows in external
+      operationId: external.industryData.outboundProvisioningFlowSet_UpdateProvisioningFlow
+      parameters:
+        - name: outboundProvisioningFlowSet-id
+          in: path
+          description: The unique identifier of outboundProvisioningFlowSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundProvisioningFlowSet
+        - name: provisioningFlow-id
+          in: path
+          description: The unique identifier of provisioningFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: provisioningFlow
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.industryData.provisioningFlow'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.provisioningFlow'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.industryDataRoot
+      summary: Delete navigation property provisioningFlows for external
+      operationId: external.industryData.outboundProvisioningFlowSet_DeleteProvisioningFlow
+      parameters:
+        - name: outboundProvisioningFlowSet-id
+          in: path
+          description: The unique identifier of outboundProvisioningFlowSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundProvisioningFlowSet
+        - name: provisioningFlow-id
+          in: path
+          description: The unique identifier of provisioningFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: provisioningFlow
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/industryData/outboundProvisioningFlowSets/{outboundProvisioningFlowSet-id}/provisioningFlows/$count':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.outboundProvisioningFlowSet.provisioningFlow_GetCount
+      parameters:
+        - name: outboundProvisioningFlowSet-id
+          in: path
+          description: The unique identifier of outboundProvisioningFlowSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundProvisioningFlowSet
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /external/industryData/outboundProvisioningFlowSets/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.outboundProvisioningFlowSet_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/referenceDefinitions:
     get:
       tags:
         - external.industryDataRoot
-      summary: List referenceDefinitions
-      description: Get a list of the referenceDefinition objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0
+      summary: Get referenceDefinitions from external
+      description: Set of user modifiable system picker types.
       operationId: external.industryData_ListReferenceDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3405,23 +3363,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - code
-                - code desc
-                - createdDateTime
-                - createdDateTime desc
-                - isDisabled
-                - isDisabled desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - referenceType
-                - referenceType desc
-                - sortIndex
-                - sortIndex desc
-                - source
-                - source desc
               type: string
         - name: $select
           in: query
@@ -3432,15 +3373,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - code
-                - createdDateTime
-                - isDisabled
-                - lastModifiedDateTime
-                - referenceType
-                - sortIndex
-                - source
               type: string
         - name: $expand
           in: query
@@ -3451,8 +3383,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3489,11 +3419,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get referenceDefinition
-      description: Read the properties and relationships of a referenceDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-referencedefinition-get?view=graph-rest-1.0
+      summary: Get referenceDefinitions from external
+      description: Set of user modifiable system picker types.
       operationId: external.industryData_GetReferenceDefinition
       parameters:
         - name: referenceDefinition-id
@@ -3513,15 +3440,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - code
-                - createdDateTime
-                - isDisabled
-                - lastModifiedDateTime
-                - referenceType
-                - sortIndex
-                - source
               type: string
         - name: $expand
           in: query
@@ -3532,8 +3450,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3620,11 +3536,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List roleGroups
-      description: Get a list of the roleGroup objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0
+      summary: Get roleGroups from external
+      description: Set of groups of individual roles that makes role-based admin simpler.
       operationId: external.industryData_ListRoleGroup
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3641,13 +3554,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - roles
-                - roles desc
               type: string
         - name: $select
           in: query
@@ -3658,10 +3564,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - roles
               type: string
         - name: $expand
           in: query
@@ -3672,8 +3574,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3710,11 +3610,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get roleGroup
-      description: Read the properties and relationships of a roleGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-rolegroup-get?view=graph-rest-1.0
+      summary: Get roleGroups from external
+      description: Set of groups of individual roles that makes role-based admin simpler.
       operationId: external.industryData_GetRoleGroup
       parameters:
         - name: roleGroup-id
@@ -3734,10 +3631,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - roles
               type: string
         - name: $expand
           in: query
@@ -3748,8 +3641,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -3836,11 +3727,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List industryDataRuns
-      description: Get a list of the industryDataRun objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-1.0
+      summary: Get runs from external
+      description: Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
       operationId: external.industryData_ListRun
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3857,19 +3745,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - blockingError
-                - blockingError desc
-                - displayName
-                - displayName desc
-                - endDateTime
-                - endDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -3880,14 +3755,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blockingError
-                - displayName
-                - endDateTime
-                - startDateTime
-                - status
-                - activities
               type: string
         - name: $expand
           in: query
@@ -3898,9 +3765,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
               type: string
       responses:
         2XX:
@@ -3915,11 +3779,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get industryDataRun
-      description: Read the properties and relationships of an industryDataRun object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-get?view=graph-rest-1.0
+      summary: Get runs from external
+      description: Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
       operationId: external.industryData_GetRun
       parameters:
         - name: industryDataRun-id
@@ -3939,14 +3800,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blockingError
-                - displayName
-                - endDateTime
-                - startDateTime
-                - status
-                - activities
               type: string
         - name: $expand
           in: query
@@ -3957,9 +3810,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activities
               type: string
       responses:
         2XX:
@@ -4001,15 +3851,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - blockingError
-                - blockingError desc
-                - displayName
-                - displayName desc
-                - status
-                - status desc
               type: string
         - name: $select
           in: query
@@ -4020,12 +3861,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blockingError
-                - displayName
-                - status
-                - activity
               type: string
         - name: $expand
           in: query
@@ -4036,9 +3871,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activity
               type: string
       responses:
         2XX:
@@ -4082,12 +3914,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - blockingError
-                - displayName
-                - status
-                - activity
               type: string
         - name: $expand
           in: query
@@ -4098,9 +3924,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - activity
               type: string
       responses:
         2XX:
@@ -4145,10 +3968,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - readinessStatus
               type: string
         - name: $expand
           in: query
@@ -4159,8 +3978,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4199,6 +4016,10 @@ paths:
       tags:
         - external.Functions
       summary: Invoke function getStatistics
+      description: Get statistics for an industryDataRun.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-getstatistics?view=graph-rest-beta
       operationId: external.industryData.run_getStatistics
       parameters:
         - name: industryDataRun-id
@@ -4253,11 +4074,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List sourceSystemDefinitions
-      description: Get a list of the sourceSystemDefinition objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-list?view=graph-rest-1.0
+      summary: Get sourceSystems from external
+      description: Set of source definitions that represents real-world external systems.
       operationId: external.industryData_ListSourceSystem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4274,15 +4092,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - userMatchingSettings
-                - userMatchingSettings desc
-                - vendor
-                - vendor desc
               type: string
         - name: $select
           in: query
@@ -4293,11 +4102,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - userMatchingSettings
-                - vendor
               type: string
         - name: $expand
           in: query
@@ -4308,8 +4112,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4323,11 +4125,7 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create sourceSystemDefinition
-      description: Create a new sourceSystemDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-post?view=graph-rest-1.0
+      summary: Create new navigation property to sourceSystems for external
       operationId: external.industryData_CreateSourceSystem
       requestBody:
         description: New navigation property
@@ -4350,11 +4148,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get sourceSystemDefinition
-      description: Read the properties and relationships of a sourceSystemDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-get?view=graph-rest-1.0
+      summary: Get sourceSystems from external
+      description: Set of source definitions that represents real-world external systems.
       operationId: external.industryData_GetSourceSystem
       parameters:
         - name: sourceSystemDefinition-id
@@ -4374,11 +4169,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - userMatchingSettings
-                - vendor
               type: string
         - name: $expand
           in: query
@@ -4389,8 +4179,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4405,11 +4193,7 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update sourceSystemDefinition
-      description: Update the properties of a sourceSystemDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-update?view=graph-rest-1.0
+      summary: Update the navigation property sourceSystems in external
       operationId: external.industryData_UpdateSourceSystem
       parameters:
         - name: sourceSystemDefinition-id
@@ -4440,11 +4224,7 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete sourceSystemDefinition
-      description: Delete a sourceSystemDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property sourceSystems for external
       operationId: external.industryData_DeleteSourceSystem
       parameters:
         - name: sourceSystemDefinition-id
@@ -4485,11 +4265,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List yearTimePeriodDefinitions
-      description: Get a list of the yearTimePeriodDefinition objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-list?view=graph-rest-1.0
+      summary: Get years from external
+      description: Set of years represented in the system.
       operationId: external.industryData_ListYear
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4506,17 +4283,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - displayName
-                - displayName desc
-                - endDate
-                - endDate desc
-                - startDate
-                - startDate desc
-                - year
-                - year desc
               type: string
         - name: $select
           in: query
@@ -4527,12 +4293,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - endDate
-                - startDate
-                - year
               type: string
         - name: $expand
           in: query
@@ -4543,8 +4303,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4558,11 +4316,7 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create yearTimePeriodDefinition
-      description: Create a new yearTimePeriodDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-post?view=graph-rest-1.0
+      summary: Create new navigation property to years for external
       operationId: external.industryData_CreateYear
       requestBody:
         description: New navigation property
@@ -4585,11 +4339,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get yearTimePeriodDefinition
-      description: Read the properties and relationships of a yearTimePeriodDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-get?view=graph-rest-1.0
+      summary: Get years from external
+      description: Set of years represented in the system.
       operationId: external.industryData_GetYear
       parameters:
         - name: yearTimePeriodDefinition-id
@@ -4609,12 +4360,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - displayName
-                - endDate
-                - startDate
-                - year
               type: string
         - name: $expand
           in: query
@@ -4625,8 +4370,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4641,11 +4384,7 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update yearTimePeriodDefinition
-      description: Update the properties of a yearTimePeriodDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-update?view=graph-rest-1.0
+      summary: Update the navigation property years in external
       operationId: external.industryData_UpdateYear
       parameters:
         - name: yearTimePeriodDefinition-id
@@ -4676,11 +4415,7 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete yearTimePeriodDefinition
-      description: Delete a yearTimePeriodDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-delete?view=graph-rest-1.0
+      summary: Delete navigation property years for external
       operationId: external.industryData_DeleteYear
       parameters:
         - name: yearTimePeriodDefinition-id
@@ -4733,11 +4468,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - acronyms
-                - bookmarks
-                - qnas
               type: string
         - name: $expand
           in: query
@@ -4748,11 +4478,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
-                - acronyms
-                - bookmarks
-                - qnas
               type: string
       responses:
         2XX:
@@ -4790,11 +4515,8 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: List acronyms
-      description: Get a list of the acronym objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
+      summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in an organization.
       operationId: search_ListAcronym
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4811,23 +4533,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - webUrl
-                - webUrl desc
-                - standsFor
-                - standsFor desc
-                - state
-                - state desc
               type: string
         - name: $select
           in: query
@@ -4838,15 +4543,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - webUrl
-                - standsFor
-                - state
               type: string
         - name: $expand
           in: query
@@ -4857,8 +4553,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4872,11 +4566,7 @@ paths:
     post:
       tags:
         - search.acronym
-      summary: Create acronym
-      description: Create a new acronym object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
+      summary: Create new navigation property to acronyms for search
       operationId: search_CreateAcronym
       requestBody:
         description: New navigation property
@@ -4899,11 +4589,8 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: Get acronym
-      description: Read the properties and relationships of an acronym object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0
+      summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in an organization.
       operationId: search_GetAcronym
       parameters:
         - name: acronym-id
@@ -4923,15 +4610,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - webUrl
-                - standsFor
-                - state
               type: string
         - name: $expand
           in: query
@@ -4942,8 +4620,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -4958,11 +4634,7 @@ paths:
     patch:
       tags:
         - search.acronym
-      summary: Update acronym
-      description: Update the properties of an acronym object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0
+      summary: Update the navigation property acronyms in search
       operationId: search_UpdateAcronym
       parameters:
         - name: acronym-id
@@ -4993,11 +4665,7 @@ paths:
     delete:
       tags:
         - search.acronym
-      summary: Delete acronym
-      description: Deletes an acronym object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0
+      summary: Delete navigation property acronyms for search
       operationId: search_DeleteAcronym
       parameters:
         - name: acronym-id
@@ -5038,11 +4706,8 @@ paths:
     get:
       tags:
         - search.bookmark
-      summary: List bookmarks
-      description: Get a list of bookmark objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
+      summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_ListBookmark
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5059,41 +4724,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - webUrl
-                - webUrl desc
-                - availabilityEndDateTime
-                - availabilityEndDateTime desc
-                - availabilityStartDateTime
-                - availabilityStartDateTime desc
-                - categories
-                - categories desc
-                - groupIds
-                - groupIds desc
-                - isSuggested
-                - isSuggested desc
-                - keywords
-                - keywords desc
-                - languageTags
-                - languageTags desc
-                - platforms
-                - platforms desc
-                - powerAppIds
-                - powerAppIds desc
-                - state
-                - state desc
-                - targetedVariations
-                - targetedVariations desc
               type: string
         - name: $select
           in: query
@@ -5104,24 +4734,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - webUrl
-                - availabilityEndDateTime
-                - availabilityStartDateTime
-                - categories
-                - groupIds
-                - isSuggested
-                - keywords
-                - languageTags
-                - platforms
-                - powerAppIds
-                - state
-                - targetedVariations
               type: string
         - name: $expand
           in: query
@@ -5132,8 +4744,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5147,11 +4757,7 @@ paths:
     post:
       tags:
         - search.bookmark
-      summary: Create bookmark
-      description: Create a new bookmark object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
+      summary: Create new navigation property to bookmarks for search
       operationId: search_CreateBookmark
       requestBody:
         description: New navigation property
@@ -5174,11 +4780,8 @@ paths:
     get:
       tags:
         - search.bookmark
-      summary: Get bookmark
-      description: Read the properties and relationships of a bookmark object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-1.0
+      summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_GetBookmark
       parameters:
         - name: bookmark-id
@@ -5198,24 +4801,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - webUrl
-                - availabilityEndDateTime
-                - availabilityStartDateTime
-                - categories
-                - groupIds
-                - isSuggested
-                - keywords
-                - languageTags
-                - platforms
-                - powerAppIds
-                - state
-                - targetedVariations
               type: string
         - name: $expand
           in: query
@@ -5226,8 +4811,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5242,11 +4825,7 @@ paths:
     patch:
       tags:
         - search.bookmark
-      summary: Update bookmark
-      description: Update the properties of a bookmark object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-1.0
+      summary: Update the navigation property bookmarks in search
       operationId: search_UpdateBookmark
       parameters:
         - name: bookmark-id
@@ -5277,11 +4856,7 @@ paths:
     delete:
       tags:
         - search.bookmark
-      summary: Delete bookmark
-      description: Delete a bookmark object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-1.0
+      summary: Delete navigation property bookmarks for search
       operationId: search_DeleteBookmark
       parameters:
         - name: bookmark-id
@@ -5326,7 +4901,7 @@ paths:
       description: Run a specified search query. Search results are provided in the response.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-beta
       operationId: search_query
       requestBody:
         description: Action parameters
@@ -5369,11 +4944,8 @@ paths:
     get:
       tags:
         - search.qna
-      summary: List qnas
-      description: Get a list of the qna objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
+      summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
       operationId: search_ListQna
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5390,37 +4962,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - webUrl
-                - webUrl desc
-                - availabilityEndDateTime
-                - availabilityEndDateTime desc
-                - availabilityStartDateTime
-                - availabilityStartDateTime desc
-                - groupIds
-                - groupIds desc
-                - isSuggested
-                - isSuggested desc
-                - keywords
-                - keywords desc
-                - languageTags
-                - languageTags desc
-                - platforms
-                - platforms desc
-                - state
-                - state desc
-                - targetedVariations
-                - targetedVariations desc
               type: string
         - name: $select
           in: query
@@ -5431,22 +4972,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - webUrl
-                - availabilityEndDateTime
-                - availabilityStartDateTime
-                - groupIds
-                - isSuggested
-                - keywords
-                - languageTags
-                - platforms
-                - state
-                - targetedVariations
               type: string
         - name: $expand
           in: query
@@ -5457,8 +4982,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5472,11 +4995,7 @@ paths:
     post:
       tags:
         - search.qna
-      summary: Create qna
-      description: Create a new qna object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
+      summary: Create new navigation property to qnas for search
       operationId: search_CreateQna
       requestBody:
         description: New navigation property
@@ -5499,11 +5018,8 @@ paths:
     get:
       tags:
         - search.qna
-      summary: Get qna
-      description: Read the properties and relationships of a qna object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0
+      summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
       operationId: search_GetQna
       parameters:
         - name: qna-id
@@ -5523,22 +5039,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - id
-                - description
-                - displayName
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - webUrl
-                - availabilityEndDateTime
-                - availabilityStartDateTime
-                - groupIds
-                - isSuggested
-                - keywords
-                - languageTags
-                - platforms
-                - state
-                - targetedVariations
               type: string
         - name: $expand
           in: query
@@ -5549,8 +5049,6 @@ paths:
             uniqueItems: true
             type: array
             items:
-              enum:
-                - '*'
               type: string
       responses:
         2XX:
@@ -5565,11 +5063,7 @@ paths:
     patch:
       tags:
         - search.qna
-      summary: Update qna
-      description: Update the properties of a qna object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0
+      summary: Update the navigation property qnas in search
       operationId: search_UpdateQna
       parameters:
         - name: qna-id
@@ -5600,11 +5094,7 @@ paths:
     delete:
       tags:
         - search.qna
-      summary: Delete qna
-      description: Delete a qna object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0
+      summary: Delete navigation property qnas for search
       operationId: search_DeleteQna
       parameters:
         - name: qna-id
@@ -5894,6 +5384,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
               description: Set of ephemeral operations that the system runs currently. Read-only.
               x-ms-navigationProperty: true
+            outboundProvisioningFlowSets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.industryData.outboundProvisioningFlowSet'
+              x-ms-navigationProperty: true
             referenceDefinitions:
               type: array
               items:
@@ -6035,6 +5530,63 @@ components:
               type: string
               description: Details about the status of the operation.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.outboundProvisioningFlowSet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: outboundProvisioningFlowSet
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the flowSet was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+              readOnly: true
+            displayName:
+              type: string
+              description: The display name of the flowSet provided by the caller.
+            filter:
+              $ref: '#/components/schemas/microsoft.graph.industryData.filter'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the flowSet was most recently changed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+              readOnly: true
+            provisioningFlows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.industryData.provisioningFlow'
+              description: A flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.industryData.provisioningFlow:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: provisioningFlow
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the provisioning flow was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+              readOnly: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the provisioning flow was most recently changed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+              readOnly: true
+            readinessStatus:
+              $ref: '#/components/schemas/microsoft.graph.industryData.readinessStatus'
           additionalProperties:
             type: object
     microsoft.graph.industryData.referenceDefinition:
@@ -6188,7 +5740,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.acronym'
-              description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
+              description: Administrative answer in Microsoft Search results to define common acronyms in an organization.
               x-ms-navigationProperty: true
             bookmarks:
               type: array
@@ -6200,7 +5752,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.qna'
-              description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+              description: Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -6227,13 +5779,13 @@ components:
             availabilityEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the bookmark will stop to appear as a search result. Set as null for always available.
+              description: 'Date and time when the bookmark stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             availabilityStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the bookmark will start to appear as a search result. Set as null for always available.
+              description: 'Date and time when the bookmark starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             categories:
@@ -6247,10 +5799,10 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of security groups able to view this bookmark.
+              description: The list of security groups that are able to view this bookmark.
             isSuggested:
               type: boolean
-              description: True if this bookmark was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+              description: 'True if this bookmark was suggested to the admin, by a user, or was mined and suggested by Microsoft. Read-only.'
               nullable: true
             keywords:
               $ref: '#/components/schemas/microsoft.graph.search.answerKeyword'
@@ -6259,25 +5811,25 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'A list of language names that are geographically specific and that this bookmark can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.'
+              description: 'A list of geographically specific language names in which this bookmark can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.'
             platforms:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
-              description: 'List of devices and operating systems able to view this bookmark. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.'
+              description: 'List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
             powerAppIds:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks, such as to enter vacation time or to report expenses on the search results page.'
+              description: 'List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks directly on the search results page, such as entering vacation time or reporting expenses.'
             state:
               $ref: '#/components/schemas/microsoft.graph.search.answerState'
             targetedVariations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
-              description: 'Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.'
+              description: 'Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.searchRequest:
@@ -6391,13 +5943,13 @@ components:
             availabilityEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the qna stops to appear as a search result. Set as null for always available.
+              description: 'Date and time when the QnA stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             availabilityStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the qna starts to appear as a search result. Set as null for always available.
+              description: 'Date and time when the QnA starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             groupIds:
@@ -6405,10 +5957,10 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of security groups able to view this qna.
+              description: The list of security groups that are able to view this QnA.
             isSuggested:
               type: boolean
-              description: True if a user or Microsoft suggested this qna to the admin. Read-only.
+              description: True if a user or Microsoft suggested this QnA to the admin. Read-only.
               nullable: true
             keywords:
               $ref: '#/components/schemas/microsoft.graph.search.answerKeyword'
@@ -6417,19 +5969,19 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.'
+              description: 'A list of geographically specific language names in which this QnA can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.'
             platforms:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
-              description: 'List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.'
+              description: 'List of devices and operating systems that are able to view this QnA. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.'
             state:
               $ref: '#/components/schemas/microsoft.graph.search.answerState'
             targetedVariations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
-              description: 'Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
+              description: 'Variations of a QnA for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -6675,6 +6227,21 @@ components:
         - failed
         - unknownFutureValue
       type: string
+    microsoft.graph.industryData.filter:
+      title: filter
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.readinessStatus:
+      title: readinessStatus
+      enum:
+        - notReady
+        - ready
+        - failed
+        - disabled
+        - expired
+        - unknownFutureValue
+      type: string
     microsoft.graph.industryData.roleReferenceValue:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.industryData.referenceValue'
@@ -6701,16 +6268,6 @@ components:
         - completed
         - completedWithErrors
         - completedWithWarnings
-        - unknownFutureValue
-      type: string
-    microsoft.graph.industryData.readinessStatus:
-      title: readinessStatus
-      enum:
-        - notReady
-        - ready
-        - failed
-        - disabled
-        - expired
         - unknownFutureValue
       type: string
     microsoft.graph.industryData.industryDataActivityStatistics:
@@ -6803,22 +6360,22 @@ components:
           properties:
             description:
               type: string
-              description: Search answer description shown on search results page.
+              description: The search answer description that is shown on the search results page.
               nullable: true
             displayName:
               type: string
-              description: Search answer name displayed in search results.
+              description: The search answer name that is displayed in search results.
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.search.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the search answer is created or edited. Read-only.
+              description: 'Date and time when the search answer was created or last edited. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             webUrl:
               type: string
-              description: 'Search answer URL link. When users click this search answer in search results, they''ll go to this URL.'
+              description: 'The URL link for the search answer. When users select this search answer from the search results, they''re directed to the specified URL.'
               nullable: true
           additionalProperties:
             type: object
@@ -6849,7 +6406,7 @@ components:
           items:
             type: string
             nullable: true
-          description: Unique keywords that will guarantee the search answer is triggered.
+          description: Unique keywords that guarantee the search answer is triggered.
       additionalProperties:
         type: object
     microsoft.graph.devicePlatformType:
@@ -6868,6 +6425,7 @@ components:
         - androidMobileApplicationManagement
         - iOSMobileApplicationManagement
         - unknownFutureValue
+        - windowsMobileApplicationManagement
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -6913,26 +6471,30 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use
             name: unknownFutureValue
+          - value: windowsMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for Windows devices.
+            name: windowsMobileApplicationManagement
     microsoft.graph.search.answerVariant:
       title: answerVariant
       type: object
       properties:
         description:
           type: string
-          description: Answer variation description shown on search results page.
+          description: The answer variation description that is shown on the search results page.
           nullable: true
         displayName:
           type: string
-          description: Answer variation name displayed in search results.
+          description: The answer variation name that is displayed in search results.
           nullable: true
         languageTag:
           type: string
+          description: The country or region that can view this answer variation.
           nullable: true
         platform:
           $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
         webUrl:
           type: string
-          description: 'Answer variation URL link. When users click this answer variation in search results, they will go to this URL.'
+          description: 'The URL link for the answer variation. When users select this answer variation from the search results, they''re directed to the specified URL.'
           nullable: true
       additionalProperties:
         type: object
@@ -6944,12 +6506,12 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bucketAggregationDefinition'
         field:
           type: string
-          description: Computes aggregation on the field while the field exists in current entity type. Required.
+          description: Computes aggregation on the field while the field exists in the current entity type. Required.
         size:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
+          description: 'The number of searchBucket resources to be returned. This isn''t required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.'
           format: int32
           nullable: true
       additionalProperties:
@@ -7233,6 +6795,32 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.outboundProvisioningFlowSetCollectionResponse:
+      title: Collection of outboundProvisioningFlowSet
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.outboundProvisioningFlowSet'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.industryData.provisioningFlowCollectionResponse:
+      title: Collection of provisioningFlow
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.industryData.provisioningFlow'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -7932,6 +7520,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.longRunningOperationCollectionResponse'
+    microsoft.graph.industryData.outboundProvisioningFlowSetCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.industryData.outboundProvisioningFlowSetCollectionResponse'
+    microsoft.graph.industryData.provisioningFlowCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.industryData.provisioningFlowCollectionResponse'
     microsoft.graph.industryData.referenceDefinitionCollectionResponse:
       description: Retrieved collection
       content:
