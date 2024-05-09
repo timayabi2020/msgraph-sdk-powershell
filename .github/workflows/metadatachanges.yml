@@ -37,7 +37,7 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-          const name = '${{ github.workflow   }}';
+          const name = 'OpenApiChecks';
           const body = `$'**Changes in metadata detected!** :warning:'}\n Please review v1.0 and beta metadata changes inside openAPIErrors under docs/OpenApiInfo folder`;
   
           await github.rest.issues.createComment({
