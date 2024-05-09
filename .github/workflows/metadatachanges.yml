@@ -7,9 +7,6 @@ name: "Metadata Changes"
 # events but only for the master branch
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - WeeklyApiRefresh/*
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
