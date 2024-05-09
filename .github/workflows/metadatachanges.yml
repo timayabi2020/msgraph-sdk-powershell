@@ -43,7 +43,7 @@ jobs:
       with:
         script: |
           const name = 'OpenApiChecks';
-          const body = '**Changes in metadata detected!!** :warning:\n Please take a look at the metadata changes report in `docs/OpenApiInfo/v1.0/openAPIErrors.csv`\nThis action is important before merging.';
+          const body = '**Changes in metadata detected :bangbang:** :warning:\n Please have a look at the metadata changes report in `docs/OpenApiInfo/v1.0/openAPIErrors.csv`\nThis action is important before merging.:pleading_face:';
   
           await github.rest.issues.createComment({
             issue_number: context.issue.number,
